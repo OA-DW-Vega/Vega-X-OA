@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="grn_list">GRN list</string>
+    <string name="weigh_bridge_id">ID du pont bascule</string>
+    <string name="procurement_type">Type</string>
+    <string name="supplier">Fournisseur</string>
+    <string name="weight">Poids</string>
+    <string name="date">Date</string>
+    <string name="total_value">Total Value</string>
+    <string name="usd">USD</string>
+    <string name="do_you_want_proceed_grn">Do you want create GRN?</string>
+    <string name="confirm_grn">Confirmer GRN</string>
+    <string name="no_data_found">Aucune donnée disponible</string>
+    <string name="spot_purchase">Spot Purchase</string>
+    <string name="fixed_purchase">Fixed Purchase</string>
+    <string name="final_price_per_unit">Final price per unit</string>
+    <string name="wb_id">ID PONT BASCULE: </string>
+    <string name="po_number">Numéro du bon de commande</string>
+    <string name="netWeight">Net Weight</string>
+    <string name="poPrice">PO Price</string>
+    <string name="storage_location">Emplacement de stockage</string>
+    <string name="price_details">Price Details</string>
+    <string name="lot_information">Informations sur le LOT</string>
+    <string name="bc_approval_price">BC Approval - Price</string>
+    <string name="price_validation">Paid price should not be empty</string>
+    <string name="grn_success">GRN created Successfully</string>
+    <string name="grn_success_offline">Offline GRN created Successfully</string>
+    <string name="grn">GRN</string>
+    <string name="grn_fail_msg">GRN Failed</string>
+    <string name="grn_offline_summary">GRN Offline Summary</string>
+    <string name="material">matériel</string>
+    <string name="view_details">View Details</string>
+    <string name="proceed">Procéder</string>
+    <string name="cancel">Soumettre</string>
+</resources>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_padding_size_small"
+    android:background="@color/white"
+    app:cardCornerRadius="4dp">
+
+    <TextView
+        android:id="@+id/tvRightMove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/ic_right_arrow"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/margin_padding_size_small"
+        android:paddingTop="@dimen/leftTabPaddingEnd"
+        android:paddingEnd="@dimen/margin_padding_size_small"
+        android:paddingBottom="@dimen/leftTabPaddingEnd"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_margin="2dp"
+        android:background="@drawable/do_circle_blue"
+        android:backgroundTint="@color/grey_button"
+        android:contentDescription="@string/sync"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:src="@drawable/ic_close_white_24dp"
+        android:tint="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cbSelectStocks"
+        android:padding="@dimen/margin_very_small">
+
+        <TextView
+            android:id="@+id/tvPoLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text="@string/temp_fgrn_no"
+            android:textColor="@color/grey_border"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPoNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPoLbl"
+            tools:text="18GD2345A1" />
+
+
+        <TextView
+            android:id="@+id/tv_material_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text="@string/output_material"
+            android:textColor="@color/grey_border"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_Date_lbl"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPoNo" />
+
+        <TextView
+            android:id="@+id/tv_Date_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text="@string/date"
+            android:textColor="@color/grey_border"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_material_lbl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1.2"
+            app:layout_constraintStart_toEndOf="@+id/tv_material_lbl"
+            app:layout_constraintTop_toBottomOf="@+id/tvPoNo"
+            app:layout_constraintTop_toTopOf="@+id/tv_material_lbl" />
+
+
+        <TextView
+            android:id="@+id/tv_material_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvDate"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_material_lbl"
+            tools:text="sample text for my material data " />
+
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_material_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1.2"
+            app:layout_constraintStart_toEndOf="@+id/tv_material_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Date_lbl"
+            app:layout_constraintTop_toTopOf="@+id/tv_material_name"
+            tools:text="11/06/2020" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

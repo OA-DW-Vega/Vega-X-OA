@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/litGrey"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/margin_small"
+        android:text="@string/truck_in_sale"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_medium"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/consignment_details"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/layout_border_top_corner"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margin_padding_size_medium">
+
+                    <TextView
+                        android:id="@+id/tvDispatchWhLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/warehouse"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDispatchWarehouse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_grey_border_top_right_corner"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_border_bottom_corner"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margin_padding_size_medium">
+
+                    <TextView
+                        android:id="@+id/tvProductLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/material"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvProduct"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_grey_border_bottom_right_corner"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_large"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/truck_details"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:background="@drawable/layout_border_top_corner"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margin_padding_size_medium">
+
+                    <TextView
+                        android:id="@+id/tvTruckNoLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start"
+                        android:text="@string/truck_number"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/tvTruckNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_grey_border_top_right_corner"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_border"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margin_padding_size_medium">
+
+                    <TextView
+                        android:id="@+id/tvDriverNameLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start"
+                        android:text="@string/driver_name"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/tvDriverName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_grey_border"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_border_bottom_corner"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margin_padding_size_medium">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start"
+                        android:text="@string/phone_number"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/tvPhoneNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_grey_border_bottom_right_corner"
+                    android:digits="0123456789"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTruckInLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_large"
+                android:text="@string/truck_in_weight"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_entercontainerID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_height"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/custom_edit_text"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/etTruckGrossWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_weight="4"
+                    android:background="@android:color/transparent"
+                    android:digits="0123456789"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:hint="@string/enter_truck_weight"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:ignore="Autofill" />
+
+                <TextView
+                    android:id="@+id/tvUom"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/kg"
+                    tools:text="KG" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvLotDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_large"
+                android:text="@string/lot_details"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLotDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mic_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_mic_small"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_mic_small"
+                        android:text="@string/batch_number"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_size_xmedium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spBatchNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:backgroundTint="@android:color/black"
+                            android:dropDownWidth="match_parent"
+                            android:dropDownHeight="150dp"
+                            android:overlapAnchor="false"
+                            android:popupBackground="@color/white"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_mic_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvMaterial"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.3"
+                            android:text="@string/product"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".7"
+                            android:text="@string/weight"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_size_small" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_mic_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvMaterialName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.3"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold"
+                            tools:text="LBA" />
+
+                        <TextView
+                            android:id="@+id/tvWeight"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".7"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold"
+                            tools:text="1000" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnNxt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/next"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</LinearLayout>
+

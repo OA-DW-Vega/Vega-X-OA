@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_border_black"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/buttonDelete"
+        android:layout_toLeftOf="@+id/buttonDelete"
+        android:text="Spiderman"
+        android:drawableEnd="@drawable/ic_success_tick"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+        <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:background="@drawable/md_transparent"
+        android:drawableEnd="@drawable/ic_close_circle"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,396 @@
+package com.olam.warehouse.vegax.mtntcameroon.ui
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.olam.warehouse.master.common.model.VegaDeliveryPostResponse
+import com.olam.warehouse.master.vega.entity.*
+import com.olam.warehouse.master.vega.model.VegaCocoaMtntWithLots
+import com.olam.warehouse.master.vegacocoa.entity.VegaCocoaDispatchLots
+import com.olam.warehouse.master.vegacocoa.entity.VegaCocoaDispatchWB
+import com.olam.warehouse.master.vegacocoa.entity.VegaCocoaFgrnGradesMatrialWeights
+import com.olam.warehouse.master.vegacocoa.entity.VegaCocoaSweepingBagMaterial
+import com.olam.warehouse.presentation.data.domain.model.GenericReqAndResp
+import com.olam.warehouse.presentation.data.remote.AppDispatchers
+import com.olam.warehouse.presentation.data.remote.Resource
+import com.olam.warehouse.presentation.ui.BaseViewModel
+import com.olam.warehouse.presentation.utils.extension.mutableLiveDataOf
+import com.olam.warehouse.vegax.mtntcameroon.data.domain.model.VegaCameroonDeliveryPost
+import com.olam.warehouse.vegax.mtntcameroon.data.domain.model.VegaCameroonMtntDeliveryDetail
+import com.olam.warehouse.vegax.mtntcameroon.data.domain.model.VegaCameroonPurchaseOrder
+import com.olam.warehouse.vegax.mtntcameroon.data.domain.model.VegaCameroonWeighScalePallet
+import com.olam.warehouse.vegax.mtntcameroon.data.domain.usecase.VegaCameroonDispatchUseCase
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+class VegaCameroonMtntViewModel(private val useCase: VegaCameroonDispatchUseCase, private val dispatchers: AppDispatchers) :
+    BaseViewModel() {
+    var dispatchWh = VegaCocoaDispatchWB()
+    var lotList = ArrayList<VegaCocoaDispatchLots>()
+    var materialModelList = ArrayList<VegaCoffeePurchaseOrderMaterialModel>()
+    val bagWithMaterial = MutableLiveData<List<VegaCocoaFgrnGradesMatrialWeights>>()
+
+
+    private var dispatchWeighBridge: LiveData<VegaCocoaDispatchWB> = MutableLiveData()
+    private val _dispatchWB = MediatorLiveData<VegaCocoaDispatchWB>()
+    val dispatchWB: LiveData<VegaCocoaDispatchWB> get() = _dispatchWB
+
+    private var dispatchLotsSource: LiveData<List<VegaCocoaDispatchLots>> = MutableLiveData()
+    private val _dispatchLots = MediatorLiveData<List<VegaCocoaDispatchLots>>()
+    val dispatchLots: LiveData<List<VegaCocoaDispatchLots>> get() = _dispatchLots
+
+    private var weighBridgeWithLotSource: LiveData<VegaCocoaMtntWithLots> = MutableLiveData()
+    private val _weighBridgeWithLot = MediatorLiveData<VegaCocoaMtntWithLots>()
+    val weighBridgeWithLotsSource: LiveData<VegaCocoaMtntWithLots> get() = _weighBridgeWithLot
+
+
+    private var lotSource: LiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchLots>>>> = MutableLiveData()
+    private val _lots = MediatorLiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchLots>>>>()
+    val stockLots: LiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchLots>>>> get() = _lots
+
+    val validateLot = MutableLiveData<VegaCocoaDispatchLots>()
+    val weighBridgeWithLots = MutableLiveData<VegaCocoaMtntWithLots>()
+    val weighScaleWithLotMaterial = MutableLiveData<VegaCocoaMtntWithLots>()
+
+    private var supplierSource: LiveData<List<VegaVendor>> = MutableLiveData()
+    private val _supplier = MediatorLiveData<List<VegaVendor>>()
+    val suppplier: LiveData<List<VegaVendor>> get() = _supplier
+
+    private var dispatchTruckResource: LiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchWB>>>> =
+        MutableLiveData()
+    private val _trucks = MediatorLiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchWB>>>>()
+    val trucks: LiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchWB>>>> get() = _trucks
+
+    private var purchaseSource: LiveData<Resource<GenericReqAndResp<List<VegaCameroonPurchaseOrder>>>> = MutableLiveData()
+    private val _purchaseOrder = MediatorLiveData<Resource<GenericReqAndResp<List<VegaCameroonPurchaseOrder>>>>()
+    val purchaseOrder: LiveData<Resource<GenericReqAndResp<List<VegaCameroonPurchaseOrder>>>> get() = _purchaseOrder
+
+    private var qualityParamSource: LiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchLots>>>> =
+        MutableLiveData()
+    private val _qualityDetails = MediatorLiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchLots>>>>()
+    val qualityDetails: LiveData<Resource<GenericReqAndResp<List<VegaCocoaDispatchLots>>>> get() = _qualityDetails
+
+    private var productSource: LiveData<VegaMaterial> = mutableLiveDataOf()
+    private val _product = MediatorLiveData<VegaMaterial>()
+    val product: LiveData<VegaMaterial> get() = _product
+
+
+    private var allProductSource: LiveData<List<VegaMaterial>> = mutableLiveDataOf()
+    private val _allProduct = MediatorLiveData<List<VegaMaterial>>()
+    val allProduct: LiveData<List<VegaMaterial>> get() = _allProduct
+
+    private var configSource: LiveData<List<VegaConfigDetails>> = mutableLiveDataOf()
+    private val _configItems = MediatorLiveData<List<VegaConfigDetails>>()
+    val configItems: LiveData<List<VegaConfigDetails>> get() = _configItems
+
+    private var deliverySource: LiveData<Resource<GenericReqAndResp<VegaDispatchDelivery>>> = MutableLiveData()
+    private val _delivery = MediatorLiveData<Resource<GenericReqAndResp<VegaDispatchDelivery>>>()
+    val delivery: LiveData<Resource<GenericReqAndResp<VegaDispatchDelivery>>> get() = _delivery
+
+    private var deliveryPostSource: LiveData<Resource<GenericReqAndResp<VegaDeliveryPostResponse>>> = MutableLiveData()
+    private val _deliveryPost = MediatorLiveData<Resource<GenericReqAndResp<VegaDeliveryPostResponse>>>()
+    val deliveryPost: LiveData<Resource<GenericReqAndResp<VegaDeliveryPostResponse>>> get() = _deliveryPost
+
+
+    private var weighScaleDeliveryPostSource: LiveData<Resource<GenericReqAndResp<List<VegaCameroonMtntDeliveryDetail>>>> =
+        MutableLiveData()
+    private val _weighScaleDeliveryPost =
+        MediatorLiveData<Resource<GenericReqAndResp<List<VegaCameroonMtntDeliveryDetail>>>>()
+    val weighScaleDeliveryPost: LiveData<Resource<GenericReqAndResp<List<VegaCameroonMtntDeliveryDetail>>>> get() = _weighScaleDeliveryPost
+
+    var lots: ArrayList<VegaCocoaDispatchLots> = ArrayList()
+    var enableProceed = MutableLiveData<Boolean>()
+
+    private var bagSource: LiveData<List<VegaCocoaSweepingBagMaterial>> = mutableLiveDataOf()
+    private val _bagItems = MediatorLiveData<List<VegaCocoaSweepingBagMaterial>>()
+    val bagItems: LiveData<List<VegaCocoaSweepingBagMaterial>> get() = _bagItems
+
+    private var palletResource: LiveData<Resource<GenericReqAndResp<List<VegaCameroonWeighScalePallet>>>> =
+        MutableLiveData()
+    private val _pallet = MediatorLiveData<Resource<GenericReqAndResp<List<VegaCameroonWeighScalePallet>>>>()
+    val pallet: LiveData<Resource<GenericReqAndResp<List<VegaCameroonWeighScalePallet>>>> get() = _pallet
+
+    val custonLocation: LiveData<List<VegaCustomStLocation>> get() = _custonLocation
+    private var customLocationSource: LiveData<List<VegaCustomStLocation>> = MutableLiveData()
+    private val _custonLocation = MediatorLiveData<List<VegaCustomStLocation>>()
+
+    fun getCustomLocations() = viewModelScope.launch(dispatchers.main) {
+        _custonLocation.removeSource(customLocationSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            customLocationSource = useCase.getCustomLocations()
+        }
+        _custonLocation.addSource(customLocationSource) {
+            _custonLocation.value = it
+        }
+    }
+
+    fun removeLotList() = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.removeLotFromList()
+        }
+    }
+
+    fun getDelivery(delivery: String, deliveryItem: String) = viewModelScope.launch(dispatchers.main) {
+        _delivery.removeSource(deliverySource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            deliverySource = useCase.getDelivery(delivery, deliveryItem)
+        }
+        _delivery.addSource(deliverySource) {
+            _delivery.value = it
+        }
+    }
+
+    fun postDeliveryDetail(vegaDeliveryPost: VegaCameroonDeliveryPost) = viewModelScope.launch(dispatchers.main) {
+        _deliveryPost.removeSource(deliveryPostSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            deliveryPostSource = useCase.postDeliveryDetail(vegaDeliveryPost)
+        }
+        _deliveryPost.addSource(deliveryPostSource) {
+            _deliveryPost.value = it
+        }
+    }
+
+
+    fun postWeighScaleDeliveryDetails(vegaDeliveryPost: VegaCameroonDeliveryPost) =
+        viewModelScope.launch(dispatchers.main) {
+            _weighScaleDeliveryPost.removeSource(weighScaleDeliveryPostSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+            withContext(dispatchers.io) {
+                weighScaleDeliveryPostSource = useCase.postWeighScaleDeliveryDetail(vegaDeliveryPost)
+            }
+            _weighScaleDeliveryPost.addSource(weighScaleDeliveryPostSource) {
+                _weighScaleDeliveryPost.value = it
+            }
+        }
+
+    fun getWeighBridgeWithLotAndMaterial(wbID: String) = viewModelScope.launch(dispatchers.main) {
+        _weighBridgeWithLot.removeSource(weighBridgeWithLotSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            weighBridgeWithLotSource = useCase.getMtntWithLotsAndMaterial(wbID)
+        }
+        _weighBridgeWithLot.addSource(weighBridgeWithLotSource) {
+            _weighBridgeWithLot.value = it
+        }
+    }
+
+    fun getWeighScaleWithLotAndMaterial(whID: String, stoId: String) = viewModelScope.launch(dispatchers.main) {
+        withContext(dispatchers.io) {
+            weighScaleWithLotMaterial.postValue(useCase.getWeighScaleInfo(whID, stoId))
+        }
+    }
+
+
+    fun getTruckList() = viewModelScope.launch(dispatchers.main) {
+        _trucks.removeSource(dispatchTruckResource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            dispatchTruckResource = useCase.getTrucks()
+        }
+        _trucks.addSource(dispatchTruckResource) {
+            _trucks.value = it
+        }
+    }
+
+    fun getPurchaseOrder(receivingWerks: String) = viewModelScope.launch(dispatchers.main) {
+        _purchaseOrder.removeSource(purchaseSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            purchaseSource = useCase.getPurchaseOrder(receivingWerks)
+        }
+        _purchaseOrder.addSource(purchaseSource) {
+            _purchaseOrder.value = it
+        }
+    }
+
+    fun getLotDetails(charge: String, material: List<String>, whId: String) =
+        viewModelScope.launch(dispatchers.main) {
+            _qualityDetails.removeSource(qualityParamSource)
+            withContext(dispatchers.io) {
+                qualityParamSource = useCase.getQualityParams(charge, material, whId)
+            }
+            _qualityDetails.addSource(qualityParamSource) {
+                _qualityDetails.value = it
+            }
+        }
+
+
+    fun getAllProduct() = viewModelScope.launch(dispatchers.main) {
+        _allProduct.removeSource(allProductSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            allProductSource = useCase.getAllProducts()
+        }
+        _allProduct.addSource(allProductSource) {
+            _allProduct.value = it
+        }
+    }
+
+
+    fun getConfigItems(role: String) = viewModelScope.launch(dispatchers.main) {
+        _configItems.removeSource(configSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            configSource = useCase.getConfigItems(role)
+        }
+        _configItems.addSource(configSource) {
+            _configItems.value = it
+        }
+    }
+
+    fun saveWeighBridgeAndLotDetails() = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.saveDispatchAndLots(dispatchWh, lotList)
+        }
+    }
+
+    fun saveMaterialDetails(list: List<VegaCoffeePurchaseOrderMaterialModel>) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.insertMaterialDetails(list)
+        }
+    }
+
+
+    fun updateStartLoading() = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.updateStartLoad(dispatchWh.startTime, dispatchWh.weighBridgeId)
+        }
+    }
+
+    fun deleteMaterialData(whId: String) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.deleteMaterialData(whId)
+        }
+    }
+
+    fun deleteMaterialData() = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.deleteMaterialData()
+        }
+    }
+
+    fun addLoTInDB(lot: VegaCocoaDispatchLots) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.insertLot(dispatchWh.weighBridgeId, lot)
+        }
+    }
+
+    fun addLoTInDB(lot: List<VegaCocoaDispatchLots>) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.insertLotList(dispatchWh.weighBridgeId, lot)
+        }
+    }
+
+    fun saveWeighBridgeDetails() = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.insertTruckInfo(dispatchWh)
+        }
+    }
+
+    fun removeLotFromList(batchNumber: String) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.removeLotFromTruck(batchNumber)
+        }
+    }
+
+    fun updateRemarks(remark: String, isStart: Boolean, whId: String) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.updateRemark(remark, isStart, whId)
+        }
+    }
+
+    fun updateDeliveryItem(deliveryItem: String, deliveryStatus: Boolean, whId: String) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.updateDeliveryItem(deliveryItem, deliveryStatus, whId)
+        }
+    }
+
+    fun validateLot(batchNumber: String) = viewModelScope.launch(dispatchers.main) {
+        withContext(dispatchers.io) {
+            validateLot.postValue(useCase.validateLot(batchNumber))
+        }
+    }
+
+    fun getStockList(material: ArrayList<String>) = viewModelScope.launch(dispatchers.main) {
+        _lots.removeSource(lotSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            lotSource = useCase.getStocks(material)
+        }
+        _lots.addSource(lotSource) {
+            _lots.value = it
+        }
+    }
+
+    fun getMtntWithLots(wbId: String) = viewModelScope.launch(dispatchers.main) {
+        withContext(dispatchers.io) {
+            weighBridgeWithLots.postValue(useCase.getMtntWithLots(wbId))
+        }
+    }
+
+    fun getMtntOfflineGradeWithBags(fgrnIdWithMatrial: String, batchNo: String) =
+        viewModelScope.launch(dispatchers.main) {
+            withContext(dispatchers.io) {
+                bagWithMaterial.postValue(useCase.getOfflineGradeWithBagsRmin(fgrnIdWithMatrial, batchNo))
+            }
+        }
+
+    fun saveBagDetails(bagMaterial: VegaCocoaSweepingBagMaterial) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.saveBagDetails(bagMaterial)
+        }
+    }
+
+    fun deleteBagDetails(id: Int) = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.deleteBagDetails(id)
+        }
+    }
+
+    fun getBagItems(batchNumber: String, material: String) = viewModelScope.launch(dispatchers.main) {
+        _bagItems.removeSource(bagSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            bagSource = useCase.getBagItems(batchNumber, material)
+        }
+        _bagItems.addSource(bagSource) {
+            _bagItems.value = it
+        }
+    }
+
+    fun getBagItems() = viewModelScope.launch(dispatchers.main) {
+        _bagItems.removeSource(bagSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            bagSource = useCase.getAllBagItems()
+        }
+        _bagItems.addSource(bagSource) {
+            _bagItems.value = it
+        }
+    }
+
+    fun deleteBagDetails() = viewModelScope.launch {
+        withContext(dispatchers.io) {
+            useCase.deleteBagDetails()
+        }
+    }
+
+    fun getPalletInfo(batchNumber: String, material: String) = viewModelScope.launch(dispatchers.main) {
+        _pallet.removeSource(palletResource)
+        withContext(dispatchers.io) {
+            palletResource = useCase.getPalletDetails(batchNumber, material)
+        }
+        _pallet.addSource(palletResource) {
+            _pallet.value = it
+        }
+    }
+
+    fun getSuppliers() = viewModelScope.launch(dispatchers.main) {
+        _supplier.removeSource(supplierSource) // We make sure there is only one source of livedata (allowing us properly refresh)
+        withContext(dispatchers.io) {
+            supplierSource = useCase.getSupplier()
+        }
+        _supplier.addSource(supplierSource) {
+            _supplier.value = it
+        }
+    }
+
+    fun updateSyncStatus(model: VegaCocoaMtntWithLots) =
+        viewModelScope.launch {
+            withContext(dispatchers.io) {
+                useCase.updateAllSyncStatus(model)
+            }
+        }
+}

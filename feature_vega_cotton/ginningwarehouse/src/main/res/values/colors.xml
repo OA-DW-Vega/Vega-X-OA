@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lightgreen">#a0c800</color>
+    <color name="green_button">#a0c800</color>
+    <color name="grey_button">#6e6e6e</color>
+
+    <color name="blue">#253646</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="grey">#808080</color>
+    <color name="green">#a0c800</color>
+    <color name="dark_green">#407921</color>
+    <color name="pale_green">#DFFAD0</color>
+    <color name="orange">#ff6a00</color>
+    <color name="orange_light">#FD8104</color>
+    <color name="grey_dark">#8A795D</color>
+    <color name="pale_red_border">#FCC2C2</color>
+    <color name="red">#FF0000</color>
+    <color name="pale_red">#FFE0E0</color>
+    <color name="crimson_red">#DB5D5D</color>
+    <color name="light_grey_2">#B0C4DE</color>
+    <color name="blue_light">#00ACC6</color>
+    <color name="transparent_black">#99000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_Grey">#EEECE9</color>
+    <color name="grey_light">#dedad4</color>
+    <color name="grey_reweigh">#D1B089</color>
+    <color name="warm_grey">#dbd7d6</color>
+    <color name="warm_white">#F5F5F5</color>
+    <color name="container_header">#F4F4F4</color>
+    <color name="yellow">#ffcc99</color>
+    <color name="blue_lit">#3895D3</color>
+    <color name="bale_summary_bg">#786E65</color>
+</resources>

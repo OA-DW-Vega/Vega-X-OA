@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnProceed"
+        android:background="@color/warm_white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryHeadOfi"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:gravity="start"
+            android:padding="@dimen/margin_small"
+            android:text="@string/grn_fixed_transaction_details"
+            android:textColor="@color/warm_white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/white">
+
+            <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/step_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/margin_small"
+                app:spb_currentStateNumber="one"
+                app:spb_maxStateNumber="four"
+                app:spb_stateBackgroundColor="@color/warm_white"
+                app:spb_stateForegroundColor="@color/colorPrimaryOfi1"
+                app:spb_stateNumberBackgroundColor="@color/black"
+                app:spb_stateNumberForegroundColor="@color/white"
+                app:spb_stateSize="@dimen/margin_padding_size_xlarge"
+                app:spb_stateTextSize="@dimen/text_size_medium" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/warm_white"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_medium">
+
+                <TextView
+                    android:id="@+id/tvVendorLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="@string/vendor"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvVendor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_edit_text"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:hint="@string/enter_vendor_name"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMaterialLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="@string/material"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMaterial"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_edit_text"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:hint="@string/select_material"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvGradeLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="@string/grade"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvGrade"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_edit_text"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:hint="@string/select_grade"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvPoNumberLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="@string/po_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvPoNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_edit_text"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:hint="@string/select_po_number"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvPoQuantityLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="@string/po_quantity"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvPoQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_edit_text"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvLocationLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_edit_text"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:gravity="start"
+                    android:hint="@string/select_location"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryOfi"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:text="@string/proceed"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium" />
+</RelativeLayout>

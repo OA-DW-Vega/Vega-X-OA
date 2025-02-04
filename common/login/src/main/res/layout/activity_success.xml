@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:gravity="center"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="@dimen/layout_height"
+                android:layout_height="@dimen/layout_height"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="success_outline.json" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_fail_view"
+                android:layout_width="@dimen/layout_height"
+                android:layout_height="@dimen/layout_height"
+                android:visibility="gone"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="error_new.json" />
+            <!-- <androidx.appcompat.widget.AppCompatImageView
+                 android:layout_width="@dimen/layout_height"
+                 android:layout_height="@dimen/layout_height"
+                 android:src="@drawable/ic_success_tick"
+                 tools:ignore="ContentDescription" />-->
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="Successfully Sealed" />
+
+            <TextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:gravity="center"
+                android:maxWidth="@dimen/max_width"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="Successfully Sealed" />
+
+            <TextView
+                android:id="@+id/tvOfflineSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/scanbale_corner"
+                android:gravity="center"
+                android:maxWidth="@dimen/max_width"
+                android:padding="@dimen/text_size_medium"
+                android:text="@string/view_offline"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnWHPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_wh_preview"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_preview"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/grnReceipt"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_grn_receipt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/invoicePrinting"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:visibility="gone"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_invoice"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            />
+
+        <Button
+            android:id="@+id/printLotCard"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:visibility="gone"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_lot_card"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium" />
+
+        <Button
+            android:id="@+id/btnObdScan"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/green"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/obd_scan"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnMtntPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_mtn_t_receipt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnCertificationPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingRight="@dimen/margin_padding_size_small"
+            android:paddingLeft="@dimen/margin_padding_size_small"
+            android:text="@string/print_certificstion_premium_receipt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btnWithholdTaxPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingRight="@dimen/margin_padding_size_small"
+            android:paddingLeft="@dimen/margin_padding_size_small"
+            android:text="@string/print_with_hold_tax_receipt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btnWithpoPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingRight="@dimen/margin_padding_size_small"
+            android:paddingLeft="@dimen/margin_padding_size_small"
+            android:text="@string/po_receipt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnWithquality"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingRight="@dimen/margin_padding_size_small"
+            android:paddingLeft="@dimen/margin_padding_size_small"
+            android:text="@string/quality_now"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/printTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_ticket"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/printFgrnTallySheet"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_fgrn_sample_ticket"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/printLocalSalesTallySheet"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/print_dispatch_tallysheet_localsales"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium" />
+    </LinearLayout>
+
+</LinearLayout>

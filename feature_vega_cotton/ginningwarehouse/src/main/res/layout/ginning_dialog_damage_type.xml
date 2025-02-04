@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/blue_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="start"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_large"
+            android:text="@string/select_damage_type"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center_vertical"
+            android:paddingLeft="@dimen/margin_large"
+            android:paddingRight="@dimen/margin_large"
+            android:src="@drawable/ic_close_white_24dp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/llCottonClean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_large"
+            android:text="@string/bale_wrap_damage_and_cotton_clean"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <FrameLayout
+            android:id="@+id/flCottonClean"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tick" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCottonDirty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_large"
+            android:text="@string/bale_wrap_damage_and_cotton_dirty"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <FrameLayout
+            android:id="@+id/flCottonDirty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tick" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTieDamage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_large"
+            android:text="@string/bale_tie_damage"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <FrameLayout
+            android:id="@+id/flTieDamage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tick" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWetBale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_large"
+            android:text="@string/wet_bale"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <FrameLayout
+            android:id="@+id/flWetBale"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tick" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llNoBaleTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_large"
+            android:text="@string/no_bale_tag"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <FrameLayout
+            android:id="@+id/flNoBaleTag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tick" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

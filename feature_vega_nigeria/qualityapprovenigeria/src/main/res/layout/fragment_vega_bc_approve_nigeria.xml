@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="92"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llSortBy"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_height"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryHeadOfi"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvTruck_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/quality_details"
+                android:textColor="@color/warm_white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/weigh_bridge_id"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvApproveParamsWeighBID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="@string/test_str" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/light_grey"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_mic_small"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start"
+                android:text="@string/quality"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start"
+                android:text="@string/value"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_small">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+
+                        <TextView
+                            android:id="@+id/tvLotId"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:text="@string/lot_id"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/tvLotIdValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="10 %" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+
+                        <TextView
+                            android:id="@+id/tvSupplier"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:text="@string/supplier"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/tvSupplierValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="10 %" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tvMaterial"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:text="@string/material"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/tvMaterialValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="10 %" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tvStorageLocation"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:text="@string/plant"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/tvStorageLocationValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="10 %" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tvGrnQty"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:text="@string/grn_qty_kg"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/tvGrnQtyValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="10 %" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tvGrnNo"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:text="@string/grn_no"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/tvGrnNoValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="10 %" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:text="@string/date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/tvDateValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="10 %" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_grey"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:text="@string/quality_details"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvApproveQuality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_vega_qualty_approve_nigeria_params" />
+
+                <View
+                    android:id="@+id/vi_refractionDivision"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/dash_line"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llPrimaryRefraction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvPrimaryRefraction"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="@string/quality" />
+
+                    <TextView
+                        android:id="@+id/tvPrimaryRefractionValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llSecondaryRefraction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvSecondaryRefraction"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="@string/quality" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:weightSum="1.3">
+
+                        <EditText
+                            android:id="@+id/etSecondaryRefractionValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/custom_edit_text"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="start|center"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="10dp"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:ignore="Autofill,LabelFor"
+                            tools:text="123" />
+
+                        <TextView
+                            android:id="@+id/tvSecondaryRefractionValue"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:text="KG"
+                            android:textSize="@dimen/text_size_medium" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/vi_calculationDivision"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/dash_line"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llTotalRefraction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvTotalRefraction"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="@string/quality" />
+
+                    <TextView
+                        android:id="@+id/tvTotalRefractionValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />
+                    <!--<EditText
+                        android:id="@+id/tvSecondaryRefractionValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llDiscountedWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvDiscountedWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="@string/quality" />
+
+                    <TextView
+                        android:id="@+id/tvDiscountedWeightValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llpaidWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvPaidWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="@string/quality" />
+
+                    <TextView
+                        android:id="@+id/tvPaidWeightValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />
+                    <!--<EditText
+                        android:id="@+id/tvSecondaryRefractionValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llotLot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvotLotLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="@string/quality" />
+
+                    <TextView
+                        android:id="@+id/tvotLotValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llReceivingPlant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvReceivingPlant"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:text="Receiving Location"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="@string/quality" />
+
+                    <TextView
+                        android:id="@+id/tvReceivingPlantValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />
+
+                    <LinearLayout
+                        android:id="@+id/llDropDown"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.1"
+                        android:background="@drawable/custom_edit_text"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spReceivingPlant"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:backgroundTint="@android:color/black"
+                            android:dropDownWidth="match_parent"
+                            android:dropDownHeight="150dp"
+                            android:overlapAnchor="false"
+                            android:padding="@dimen/margin_mic_small"
+                            android:popupBackground="@color/white"
+                            android:spinnerMode="dropdown" />
+
+                    </LinearLayout>
+                    <!--<EditText
+                        android:id="@+id/tvSecondaryRefractionValue"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="start|center"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="10 %" />-->
+                </LinearLayout>
+
+                <!--   <View
+                       android:id="@+id/vi_procureType"
+                       android:layout_width="0dp"
+                       android:layout_height="2dp"
+                       android:layout_marginTop="8dp"
+                       android:background="@drawable/dash_line" />
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical">
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/white"
+                           android:baselineAligned="false"
+                           android:gravity="center"
+                           android:orientation="horizontal"
+                           android:padding="@dimen/margin_padding_size_small">
+                           <TextView
+                               android:id="@+id/tvTotalRefraction"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="5"
+                               android:fontFamily="@font/gt_walsheim_pro_regular"
+                               android:textColor="@color/black"
+                               tools:text="@string/quality" />
+                           <LinearLayout
+                               android:id="@+id/llTotalRefraction"
+                               android:layout_width="0dp"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1.1"
+                               android:background="@drawable/custom_edit_text"
+                               android:visibility="visible">
+
+                               <EditText
+                                   android:id="@+id/edTotalRefraction"
+                                   android:layout_width="0dp"
+                                   android:layout_height="40dp"
+                                   android:layout_weight=".8"
+                                   android:background="@android:color/transparent"
+                                   android:fontFamily="@font/gt_walsheim_pro_regular"
+                                   android:gravity="center"
+                                   android:inputType="numberDecimal"
+                                   tools:ignore="Autofill,LabelFor"
+                                   tools:text="123" />
+
+                               <TextView
+                                   android:id="@+id/tvTotalRefractionUnit"
+                                   android:layout_width="0dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight=".3"
+                                   android:gravity="center"
+                                   android:text="@string/percentage"
+                                   android:textSize="@dimen/text_size_medium" />
+                           </LinearLayout>
+
+                       </LinearLayout>
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/white"
+                           android:baselineAligned="false"
+                           android:gravity="center"
+                           android:orientation="horizontal"
+                           android:padding="@dimen/margin_padding_size_small">
+                           <TextView
+                               android:id="@+id/tvPaidWeight"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="5"
+                               android:fontFamily="@font/gt_walsheim_pro_regular"
+                               android:textColor="@color/black"
+                               tools:text="@string/quality" />
+                           <LinearLayout
+                               android:id="@+id/llPaidWeight"
+                               android:layout_width="0dp"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1.1"
+                               android:background="@drawable/custom_edit_text"
+                               android:visibility="visible">
+
+                               <EditText
+                                   android:id="@+id/edPaidWeightValue"
+                                   android:layout_width="0dp"
+                                   android:layout_height="40dp"
+                                   android:layout_weight=".8"
+                                   android:background="@android:color/transparent"
+                                   android:fontFamily="@font/gt_walsheim_pro_regular"
+                                   android:gravity="center"
+                                   android:inputType="numberDecimal"
+                                   tools:ignore="Autofill,LabelFor"
+                                   tools:text="123" />
+
+                               <TextView
+                                   android:id="@+id/tvUnit"
+                                   android:layout_width="0dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight=".3"
+                                   android:gravity="center"
+                                   android:text="@string/percentage"
+                                   android:textSize="@dimen/text_size_medium" />
+                           </LinearLayout>
+
+                       </LinearLayout>
+                   </LinearLayout>-->
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOkApprove"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/ok"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/ic_cancel"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llItemBottomView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btnNegotiate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:gravity="center"
+            android:padding="@dimen/margin_very_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="@dimen/margin_medium"
+                android:gravity="center"
+                android:text="@string/negotiate"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnAccept"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryOfi"
+            android:gravity="center"
+            android:padding="@dimen/margin_very_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+                android:drawablePadding="@dimen/margin_medium"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:text="@string/accept"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnParamsProceed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryOfi"
+            android:text="@string/proceed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

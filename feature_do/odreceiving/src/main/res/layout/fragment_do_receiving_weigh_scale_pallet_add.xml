@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/llTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:padding="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/supplier_weigh_scale_pallet"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_small">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/layout_border"
+                            android:padding="@dimen/margin_padding_size_medium">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="start"
+                                android:text="@string/type_of_pallet"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_size_medium"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvTypeOfPallet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:background="@drawable/rectangle_grey_border"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold"
+                            tools:ignore="LabelFor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/layout_border"
+                            android:padding="@dimen/margin_padding_size_medium">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="start"
+                                android:text="@string/no_of_pallet"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_size_medium"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/etNoOfPallet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:background="@drawable/rectangle_grey_border"
+                            android:inputType="number"
+                            android:labelFor="@id/tvNoOfPallet"
+                            android:maxLength="10"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold"
+                            tools:ignore="Autofill,LabelFor" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:background="@color/lightGrey"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llScanBale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_large"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginEnd="@dimen/margin_large"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:background="@drawable/scanbale_corner"
+                        android:backgroundTint="@color/dark_marun"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btn_scanBale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:drawableStart="@drawable/qr_code"
+                            android:drawablePadding="@dimen/margin_padding_size_small"
+                            android:text="@string/pull_weight"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="@dimen/layout_width"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/grey_dark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/pull_or_add_manually"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <View
+                            android:layout_width="@dimen/layout_width"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/grey_dark" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/action_bar_height"
+                        android:layout_marginStart="@dimen/margin_large"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginEnd="@dimen/margin_large"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/rectangle_grey_border"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+
+                            <EditText
+                                android:id="@+id/etWeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/margin_small"
+                                android:background="@android:color/transparent"
+                                android:focusableInTouchMode="true"
+                                android:hint="@string/enter_weight"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:singleLine="false"
+                                android:textColorHint="@color/grey"
+                                tools:ignore="Autofill" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/green"
+                android:text="@string/next"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--<include layout ="@layout/empty_content"/>-->
+
+</LinearLayout>

@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llProceed"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_height"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimaryHeadOfi"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start"
+                android:padding="@dimen/margin_small"
+                android:text="@string/grn_ptbf_summary"
+                android:textColor="@color/warm_white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/totalPriceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_height"
+                android:layout_below="@+id/title"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/vendorNameTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transactionInformationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_mic_small"
+                android:background="@drawable/shape_gray_rect_border_grn"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_mic_small"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="@string/grn"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tvGrnNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="right"
+                        android:text="NA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_mic_small"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="@string/material"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tvMaterial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="right"
+                        android:text="NA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_mic_small"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="@string/grade"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tvGrade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="right"
+                        android:text="NA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_mic_small"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="@string/storage_location"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tvStorageLoctaion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="right"
+                        android:text="NA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_mic_small"
+                android:background="@drawable/shape_gray_rect_border_grn"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_mic_small"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvnetweightHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_regular"
+                        android:text="@string/net_weight"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tvNetWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gt_walsheim_pro_bold"
+                        android:gravity="right"
+                        android:text="NA"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/yield_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transaction_layout"
+                android:layout_margin="@dimen/margin_mic_small"
+                android:background="@drawable/shape_white_rectangle_box"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/qualityDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/shape_gray_rect_border"
+                    android:drawableEnd="@drawable/ic_baseline_expand_more"
+                    android:drawablePadding="@dimen/ia_padding_5"
+                    android:gravity="start|center"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="@dimen/margin_padding_size_medium"
+                    android:paddingRight="@dimen/margin_padding_size_medium"
+                    android:text="@string/quality"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <LinearLayout
+                    android:id="@+id/qualityDetailsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvQuality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/llProceed"
+                        android:layout_below="@+id/title"
+                        tools:listitem="@layout/item_vega_nicaragua_grn_summary" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_mic_small"
+                android:background="@drawable/shape_white_rectangle_box"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/priceCalculationDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/shape_gray_rect_border"
+                    android:drawableEnd="@drawable/ic_baseline_expand_more"
+                    android:drawablePadding="@dimen/ia_padding_5"
+                    android:gravity="start|center"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="@dimen/margin_padding_size_medium"
+                    android:paddingRight="@dimen/margin_padding_size_medium"
+                    android:text="@string/price_calculation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <LinearLayout
+                    android:id="@+id/priceCalculationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_mic_small"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginEnd="@dimen/margin_mic_small"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvExchangeRateHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="@string/exchange_rate"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:id="@+id/tvExchangeRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="right"
+                            android:text="0%"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_mic_small"
+                        android:layout_marginEnd="@dimen/margin_mic_small"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:paddingBottom="@dimen/margin_mic_small"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvBasePriceHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="@string/price_per_unit"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:id="@+id/tvBasePrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="right"
+                            android:text="C$ 0.00"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_mic_small"
+                        android:layout_marginEnd="@dimen/margin_mic_small"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/margin_mic_small"
+                        android:paddingBottom="@dimen/margin_mic_small"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvNetWeightHeadetr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="@string/net_weight"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:id="@+id/tvNetWeight2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="right"
+                            android:text="C$ 0.00"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_mic_small"
+                        android:layout_marginEnd="@dimen/margin_mic_small"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/margin_mic_small"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvTotalPriceHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_regular"
+                            android:text="@string/total_price"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:id="@+id/tvTotalPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="right"
+                            android:text="C$ 0.00"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/llProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryOfi1"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnProceed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryOfi"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="quality_analysis">Analyse de la qualité</string>
+    <string name="supplier">Fournisseur</string>
+    <string name="mtnr">MTN-R</string>
+    <string name="post_processing_quality">Qualité du post-traitement</string>
+    <string name="search">chercher</string>
+    <string name="quality_offline_list">Afficher la liste de qualité hors ligne</string>
+    <string name="back_navigation">Navigation</string>
+    <string name="no_data">Aucune donnée disponible</string>
+    <string name="weigh_bridge_id">ID Pont bascule</string>
+    <string name="test_str">18GRD00028</string>
+    <string name="weight">Poids</string>
+    <string name="qty_assesment">Évaluation de la qualité-</string>
+    <string name="batch_no">N ° de lot</string>
+    <string name="proceed">Procéder</string>
+    <string name="percentage">%</string>
+    <string name="confirm_Quty_message">Accepter la qualité</string>
+    <string name="confirm_Grn_message">Confirm GRN</string>
+    <string name="sort_by_im">Trier par <font fgcolor='#FFFFFF'>*</font></string>
+    <string name="truck_no">Camion Non</string>
+    <string name="no_of_bags">No de sacs</string>
+    <string name="date">Date</string>
+    <string name="reject">Rejeter</string>
+    <string name="accept">Accepter </string>
+    <string name="confirm_reject_message">Voulez-vous rejeter les données d évaluation de la qualité?</string>
+    <string name="enter_all_mandatory_fields">Veuillez saisir tous les champs obligatoires</string>
+    <string name="quality_success">Qualité réussie</string>
+    <string name="new_lot_id_created">Le nouveau lot a été créé avec succès \n</string>
+    <string name="lot_list">Liste des lots</string>
+    <string name="no_data_found">Aucune donnée disponible</string>
+    <string name="add_weight">Ajouter du poids</string>
+    <string name="st_location">Emplacement St</string>
+    <string name="end_pile_lot">Fin de la pile / lot</string>
+    <string name="create_grn">Create GRN</string>
+    <string name="qc_status">Qc Status</string>
+    <string name="qc_done">Done</string>
+    <string name="qc_not_done">en attente</string>
+    <string name="cancel">Soumettre</string>
+</resources>

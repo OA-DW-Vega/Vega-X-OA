@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_medium"
+    android:layout_marginEnd="@dimen/margin_medium"
+    android:layout_marginBottom="@dimen/margin_padding_size_small"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+    <CheckBox
+        android:id="@+id/cbLotId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:gravity="center_vertical"
+        android:text="" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_margin="2dp"
+        android:background="@drawable/do_circle_blue"
+        android:backgroundTint="@color/grey_button"
+        android:contentDescription="@string/sync"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:src="@drawable/ic_close_white_24dp"
+        android:tint="@color/white" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_medium">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clLotId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLotNoLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:text="@string/lot_id"
+                android:textColor="@color/grey_border"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLotNoValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/tvLotNoLbl"
+                app:layout_constraintTop_toBottomOf="@id/tvLotNoLbl"
+                tools:text="18GD235A16" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clLotId">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStorageLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:text="@string/st_location"
+                android:textColor="@color/grey_border"
+                app:layout_constraintEnd_toStartOf="@+id/tvWeightLbl"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeightLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:text="@string/weight"
+                android:textColor="@color/grey_border"
+                app:layout_constraintBottom_toBottomOf="@id/tvStorageLbl"
+                app:layout_constraintEnd_toStartOf="@+id/tvElWeightLbl"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvStorageLbl"
+                app:layout_constraintTop_toTopOf="@id/tvStorageLbl" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvElWeightLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:text="@string/eligible_weight"
+                android:textColor="@color/grey_border"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tvStorageLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvWeightLbl"
+                app:layout_constraintTop_toTopOf="@id/tvStorageLbl" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStorageValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/tvStorageLbl"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/tvStorageLbl"
+                app:layout_constraintTop_toBottomOf="@+id/tvStorageLbl"
+                tools:text="1000 Kg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeightValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/tvWeightLbl"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/tvWeightLbl"
+                app:layout_constraintTop_toTopOf="@id/tvStorageValue"
+                tools:text="Store1000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvElWeightValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_min"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tvStorageValue"
+                app:layout_constraintEnd_toEndOf="@id/tvElWeightLbl"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/tvElWeightLbl"
+                app:layout_constraintTop_toTopOf="@id/tvStorageValue"
+                tools:text="Store1000" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

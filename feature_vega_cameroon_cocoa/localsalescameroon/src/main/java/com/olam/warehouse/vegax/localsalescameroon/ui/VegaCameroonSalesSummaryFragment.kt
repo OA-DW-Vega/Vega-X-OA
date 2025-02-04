@@ -1,0 +1,564 @@
+package com.olam.warehouse.vegax.localsalescameroon.ui
+
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
+import com.afollestad.materialdialogs.customview.getCustomView
+import com.olam.warehouse.login.ui.succes.SuccessActivity
+import com.olam.warehouse.master.common.utils.getCurrentKey
+import com.olam.warehouse.master.common.utils.getPlantDetails
+import com.olam.warehouse.master.vega.entity.VegaReceiving
+import com.olam.warehouse.master.vegacoffee.entity.VegaCoffeeSalesBagMaterial
+import com.olam.warehouse.master.vegacoffee.entity.VegaCoffeeSalesLots
+import com.olam.warehouse.master.vegacoffee.entity.VegaCoffeeSalesOrder
+import com.olam.warehouse.master.vegacoffee.model.VegaCoffeeSalesLotWithbags
+import com.olam.warehouse.master.vegacoffee.model.VegaCoffeeSalesOrderWithLots
+import com.olam.warehouse.presentation.adapter.setUp
+import com.olam.warehouse.presentation.data.domain.model.GenericReqAndResp
+import com.olam.warehouse.presentation.data.remote.Resource
+import com.olam.warehouse.presentation.ui.BaseFragment
+import com.olam.warehouse.presentation.utils.AppUtils
+import com.olam.warehouse.presentation.utils.DateUtils
+import com.olam.warehouse.presentation.utils.UIUtils
+import com.olam.warehouse.presentation.utils.extension.formatThreeDigits
+import com.olam.warehouse.presentation.utils.extension.gone
+import com.olam.warehouse.presentation.utils.extension.putArgs
+import com.olam.warehouse.presentation.utils.extension.visible
+import com.olam.warehouse.vegax.App
+import com.olam.warehouse.vegax.localsalescameroon.R
+import com.olam.warehouse.vegax.localsalescameroon.data.domain.model.VegaCameroonLocalSalesAssignLot
+import com.olam.warehouse.vegax.localsalescameroon.data.domain.model.VegaCameroonSalesDeliveryDetail
+import com.olam.warehouse.vegax.localsalescameroon.data.domain.model.VegaCameroonSalesPostRequest
+import com.olam.warehouse.vegax.localsalescameroon.data.domain.model.materialList
+import com.olam.warehouse.vegax.localsalescameroon.databinding.FragmentCameroonSalesSummaryBinding
+import com.olam.warehouse.vegax.localsalescameroon.utils.*
+import kotlinx.android.synthetic.main.cameroon_custom_edit_text.view.*
+import kotlinx.android.synthetic.main.item_cameroon_sales_material_list.view.*
+import kotlinx.android.synthetic.main.item_lot_cameroon_sales_summary.view.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.matomo.sdk.Tracker
+import org.matomo.sdk.extra.TrackHelper
+import java.util.*
+import kotlin.collections.ArrayList
+
+/**
+ * Created by Baskaran Kannan on 8/21/2020.
+ */
+class VegaCameroonSalesSummaryFragment : BaseFragment() {
+
+    override val layoutResourceId: Int = R.layout.fragment_cameroon_sales_summary
+    private val vm: VegaCameroonSalesViewModel by viewModel()
+    private lateinit var binding: FragmentCameroonSalesSummaryBinding
+    private var materialList = ArrayList<materialList>()
+    private var bagList = arrayListOf<VegaCoffeeSalesBagMaterial>()
+    private var salesOrder = VegaCoffeeSalesOrder()
+    private var callBack: CallBack? = null
+    private var materialUOM: String = ""
+    private var mergedBatchNumbers: List<String?> = ArrayList<String>()
+    private var assignLotList= ArrayList<VegaCameroonLocalSalesAssignLot>()
+    private var selectedStorageLocation: String = ""
+    private var isEmptyMergedId: Boolean = false
+    private var recievingData = VegaReceiving()
+
+
+    interface CallBack {
+        fun editLotDetails(model: VegaCoffeeSalesOrder, lotId: VegaCoffeeSalesLots)
+        fun navigateToAssignLot(
+            salesOrder: VegaCoffeeSalesOrder,
+            materialList: ArrayList<materialList>
+        )
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as? CallBack
+    }
+
+
+    companion object {
+        fun newInstance(
+            model: VegaCoffeeSalesOrder,
+            materialList: ArrayList<materialList>
+        ) = VegaCameroonSalesSummaryFragment().putArgs {
+            putParcelable(SALES_ITEM, model)
+            putParcelableArrayList(MATERIAL_LIST, materialList)
+        }
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setHasOptionsMenu(true)
+        binding = FragmentCameroonSalesSummaryBinding.inflate(inflater)
+        initExtra()
+        initUI()
+        return binding.root
+    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        //initUI()
+        val tracker: Tracker? = App.getTracker()
+        TrackHelper.track().screen("localsalescameroon/ui/VegaCameroonSalesSummaryFragment")
+            .title("Vega_Cameroon/Local Sales").with(tracker)
+    }
+    private fun initExtra() {
+        materialList = arguments?.getParcelableArrayList<materialList>(MATERIAL_LIST) ?: ArrayList<materialList>()
+        salesOrder = arguments?.getParcelable<VegaCoffeeSalesOrder>(SALES_ITEM) ?: VegaCoffeeSalesOrder()
+        vm.salesOrder = salesOrder
+        setUpMaterialAdapter(materialList)
+        binding.tvDestValue.text = salesOrder.saleOrderId
+        binding.tvDateValue.text = salesOrder.customerName
+        recievingData.customerNum = salesOrder.customerName
+        if (salesOrder.remarks.isNullOrEmpty()) {
+            binding.cvRemark.gone()
+            binding.tvRemarks.gone()
+        } else {
+            binding.cvRemark.visible()
+            binding.tvRemarks.visible()
+        }
+        binding.tvRemark.text = salesOrder.remarks
+
+        var mergedids = ArrayList<String>()
+        vm.salesOrder.lotList.forEach {
+            if(it.mergedLotId == "")
+                isEmptyMergedId = true
+            else
+                mergedids.add(it.mergedLotId.toString())
+        }
+        if(!isEmptyMergedId)
+        {
+            if(vm.salesOrder.lotList.size > 1)
+                binding.tvAssignLot.text = "LOT IDs: ".plus(mergedids.distinct().toString().replace("[","").replace("]",""))
+        }
+    }
+
+    private fun initUI() {
+        vm.dispatchSummarySalesItem.observe(
+            viewLifecycleOwner,
+            Observer {
+                if (it != null) updateSalesItem(it) else updateSalesItem(
+                    VegaCoffeeSalesOrderWithLots()
+                )
+            })
+        vm.getDispatchSummarySalesItem(
+            salesOrder.saleOrderId,
+            salesOrder.salesType,
+            salesOrder.salesTempId
+        )
+        binding.ivEditRemark.setOnClickListener { showRemarkDialog() }
+        binding.btProceed.setOnClickListener {
+            validateProceed()
+        }
+        binding.btAssignLot.setOnClickListener { moveToAssignLot() }
+        vm.deliveryPost.observe(viewLifecycleOwner, Observer { updateUI(it) })
+    }
+
+    private fun moveToAssignLot() {
+        callBack?.navigateToAssignLot(vm.salesOrder,materialList)
+    }
+
+    private fun updateUI(response: Resource<GenericReqAndResp<VegaCameroonSalesPostRequest>>) {
+        when (response.status) {
+            Resource.Status.SUCCESS -> {
+                hideLoading()
+                val data = response.data?.data?.deliveryDetails
+                val postedLot = arrayListOf<VegaCoffeeSalesLots>()
+                data?.forEach {
+                    val lot = VegaCoffeeSalesLots()
+                    lot.batchNumber = it.batchNumber.toString()
+                    lot.delivery = it.delivery.toString()
+                    lot.deliveryItem = it.deliveryItem.toString()
+                    lot.salesTempId = salesOrder.salesTempId
+                    lot.weighBridgeId = it.weighBridgeId.toString()
+                    lot.deliveryFlag = it.deliveryFlag
+                    lot.pickingFlag = it.pickingFlag
+                    lot.pgiFlag = it.pgiFlag
+                    lot.storageLossFlag = it.storageLossFlag
+                    lot.endLotFlag = it.endLotFlag
+                    postedLot.add(lot)
+                }
+                vm.updateLotWeightInfo(postedLot)
+                if (response.data?.success!!) {
+                    moveToSuccessPage(data)
+                } else {
+                    response.data?.message?.let { UIUtils.showErrorDialog(requireContext(), it) }
+                }
+            }
+            Resource.Status.LOADING -> showLoading()
+            Resource.Status.ERROR -> {
+                hideLoading()
+                UIUtils.showErrorDialog(requireContext(), response.error.toString())
+            }
+        }
+    }
+
+    private fun showRemarkDialog() {
+        MaterialDialog(requireContext()).show {
+            title(R.string.edit_remark)
+            message(R.string.remark)
+            cancelOnTouchOutside(false)
+            var remark = ""
+            customView(R.layout.cameroon_custom_edit_text)
+            val editValue = this.getCustomView().etValue
+            if (!vm.salesOrder.remarks.isNullOrEmpty()) editValue.setText(vm.salesOrder.remarks)
+            editValue.hint = getString(com.olam.warehouse.presentation.R.string.enter_remark)
+            UIUtils.getMetirialCustomView(
+                this,
+                getString(com.olam.warehouse.presentation.R.string.confirm),
+                getString(com.olam.warehouse.presentation.R.string.cancel),
+                {
+                    if (!editValue.text.isNullOrEmpty()) {
+                        vm.salesOrder.remarks = editValue.text.toString()
+                        binding.tvRemark.text = editValue.text.toString()
+                        vm.saveWeighBridgeAndLotDetails()
+                    } else {
+                        editValue.error =
+                            getString(com.olam.warehouse.presentation.R.string.enter_remark)
+                    }
+                },
+                { dismiss() })
+        }
+    }
+
+    private fun setUpMaterialAdapter(selectedSales: List<materialList>) {
+        binding.rvMaterialList.setUp(
+            selectedSales as MutableList<materialList>,
+            R.layout.item_cameroon_sales_material_list,
+            { it, pos ->
+                materialUOM = it.meins.toString()
+                tvMaterial.text = it.materialDesc
+                tvSoWeight.text = it.openQuantity?.toDouble()?.formatThreeDigits().plus(" ").plus(it.meins)
+                when(it.meins){
+                    "KG" -> {
+                        tvSoWeight.text = it.openQuantity?.toDouble()?.formatThreeDigits().plus(" ").plus(it.meins)
+                    }
+                    "MT" -> {
+                        tvSoWeight.text = convertMtToKg(it.openQuantity.toString()).toDouble()
+                            .formatThreeDigits()
+                            .plus(" ").plus("KG")
+                    }
+                }
+
+            })
+    }
+
+    private fun updateSalesItem(it: VegaCoffeeSalesOrderWithLots) {
+        if (it.lineItems.size > 0) {
+            if(it.lineItems.size == 1){
+                binding.btAssignLot.visibility = View.GONE
+                mergedBatchNumbers = listOf(it.lineItems[0].salesLot.batchNumber)
+
+            }
+            else
+                binding.btAssignLot.visibility = View.VISIBLE
+
+            var data = mutableListOf<VegaCoffeeSalesLotWithbags>()
+            if (salesOrder.salesTempId.isNotEmpty()) data =
+                it.lineItems.filter { it1 -> it1.salesLot.salesTempId.equals(salesOrder.salesTempId) } as MutableList<VegaCoffeeSalesLotWithbags>
+            else {
+                if (it.salesOrder.salesType.equals(SALES_TYPE_ANTICIPATED))
+                    data =
+                        it.lineItems.filter { it2 -> it2.salesLot.salesType.equals(SALES_TYPE_ANTICIPATED) } as MutableList<VegaCoffeeSalesLotWithbags>
+                else
+                    data = mutableListOf()
+            }
+            setUpAdapter(data)
+        } else setUpAdapter(mutableListOf())
+    }
+
+    private fun setUpAdapter(lineItems: MutableList<VegaCoffeeSalesLotWithbags>) {
+        vm.lots = lineItems.map { it.salesLot } as ArrayList<VegaCoffeeSalesLots>
+        val isFailure = vm.lots.any { it.deliveryFlag!! || it.pickingFlag!! || it.pgiFlag!! }
+        if (isFailure) binding.btProceed.text = getString(R.string.retry) else binding.btProceed.text =
+            getString(R.string.confirm_dispatch)
+        bagList.clear()
+        lineItems.forEach {
+            bagList.addAll(it.lineItems)
+        }
+        binding.rvLots.setUp(lineItems, R.layout.item_lot_cameroon_sales_summary, { it, pos ->
+            val lot = it.salesLot
+            tvLotId.text = lot.batchNumber
+            tvStLocation.text = lot.storageLocationCode
+            tvGradeValue.text = lot.materialName
+            recievingData.materialName = lot.materialName
+            tvWeightValue.text = lot.weight.plus(" ").plus(lot.unitOfMeasure)
+            tvWeightToProcessValue.text = lot.editedWeight.plus(" ").plus(lot.unitOfMeasure)
+            when (lot.unitOfMeasure) {
+                "KG" -> {
+                    tvWeightValue.text = lot.weight.plus(" ").plus(lot.unitOfMeasure)
+                    tvWeightToProcessValue.text = lot.editedWeight.plus(" ").plus(lot.unitOfMeasure)
+                }
+                "MT" -> {
+                    tvWeightValue.text = convertMtToKg(lot.weight.toString()).plus(" ").plus("KG")
+                    tvWeightToProcessValue.text =
+                        convertMtToKg(lot.editedWeight.toString()).plus(" ").plus("KG")
+                }
+            }
+            ivEdit.setOnClickListener { view -> showLotEditDialog(it.salesLot, view) }
+        }, itemClick = {
+
+        })
+    }
+
+    private fun showLotEditDialog(lot: VegaCoffeeSalesLots, view: View) {
+        MaterialDialog(view.context).show {
+            message((R.string.edit_lot))
+            UIUtils.getMetirialCustomView(
+                this,
+                getString(com.olam.warehouse.presentation.R.string.confirm),
+                getString(com.olam.warehouse.presentation.R.string.cancel),
+                {
+                    callBack?.editLotDetails(salesOrder, lot)
+                },
+                { dismiss() })
+        }
+    }
+    private fun validateProceed() {
+        when {
+            mergedBatchNumbers.isNullOrEmpty() -> showSnack(getString(R.string.msg_assign_before_confirm))
+            else -> showConformationDialog()
+        }
+    }
+
+    private fun showConformationDialog() {
+        MaterialDialog(requireContext()).show {
+            message(R.string.conform_dispatch)
+            UIUtils.getMetirialCustomView(
+                this,
+                getString(com.olam.warehouse.presentation.R.string.confirm),
+                getString(com.olam.warehouse.presentation.R.string.cancel),
+                {
+                    postDelivery()
+                },
+                { dismiss() })
+        }
+    }
+
+    private fun postDelivery() {
+        vm.postDeliveryDetail(
+            VegaCameroonSalesPostRequest(
+                key = getCurrentKey(),
+                plant = getPlantDetails(),
+                operatorName = "",
+                batchNumber = "",
+                delFlag = "",
+                deliveryDetails = prepareDeliveryList(),
+                weighmentType = salesOrder.salesType
+            )
+        )
+    }
+
+    private fun prepareDeliveryList(): List<VegaCameroonSalesDeliveryDetail> {
+        val list = ArrayList<VegaCameroonSalesDeliveryDetail>()
+        val year: Int = Calendar.getInstance().get(Calendar.YEAR)
+        for (item in vm.lots) {
+            val deliveryDetail = VegaCameroonSalesDeliveryDetail()
+            var bagItems = bagList.filter { it.batchNumber == item.batchNumber }
+            deliveryDetail.batchNumber = item.batchNumber
+            deliveryDetail.materialCode = item.materialCode
+            deliveryDetail.plantId = item.plantId
+            deliveryDetail.remarks = salesOrder.remarks
+
+            if (getCurrentKey().split("_")[1].contains("NI")) {
+                deliveryDetail.netWeight = convertWeights(
+                    item.editedWeight?.trim() ?: "0.0",
+                    materialUOM, item.unitOfMeasure ?: ""
+                )
+            } else {
+                deliveryDetail.netWeight = convertWeight(
+                    item.editedWeight?.trim() ?: "0.0",
+                    materialUOM, item.unitOfMeasure ?: ""
+                )
+            }
+            deliveryDetail.createdDate = salesOrder.createdDate
+            deliveryDetail.salesOrderNum = salesOrder.saleOrderId
+            deliveryDetail.recStorageLocationCode = item.storageLocationCode
+            deliveryDetail.storageLocationCode = item.storageLocationCode
+            val salesItem = materialList.filter { it.salesOrderId.equals(salesOrder.saleOrderId) }
+                .filter { it.materialNumber.equals(item.materialCode) }
+            if (salesItem.size > 0) deliveryDetail.salesItem = salesItem[0].salesItemNum
+            deliveryDetail.weighBridgeId = item.weighBridgeId
+            deliveryDetail.delivery = item.delivery
+            deliveryDetail.deliveryItem = item.deliveryItem
+            deliveryDetail.deliveryFlag = item.deliveryFlag
+            deliveryDetail.pickingFlag = item.pickingFlag
+            deliveryDetail.pgiFlag = item.pgiFlag
+            deliveryDetail.storageLossFlag = item.storageLossFlag
+            deliveryDetail.endLotFlag = item.endLotFlag
+            deliveryDetail.unitsOfMeasure = materialUOM
+            if(vm.lots.size == 1){
+                deliveryDetail.recStorageLocationCode = item.storageLocationCode
+                deliveryDetail.mergedBatchNumber = item.batchNumber
+            }else{
+                deliveryDetail.recStorageLocationCode = item.receivingStorageLocation
+                deliveryDetail.mergedBatchNumber = item.mergedLotId
+            }
+            deliveryDetail.year = year.toString()
+            //Bag and pallet details
+            var grossWeight = 0.0
+            var tareWeight = 0.0
+            var bagTareWeight = 0.0
+            var startTime = ""
+            var endTime = ""
+            bagItems.forEach { item1 ->
+                val palletAvg =
+                    if (item1.noOfPallet?.toInt() != 0) item1.palletWeight?.toDouble()
+                        ?.div(item1.noOfPallet?.toInt()!!) else 0.0
+                grossWeight = grossWeight.plus(item1.grossWeight.toDouble())
+                tareWeight = tareWeight.plus(item1.tareWeight?.toDouble()?.times(item1.bagCount.toDouble())!!)
+                    .plus(palletAvg!!)
+                bagTareWeight = bagTareWeight.plus(item1.tareWeight?.toDouble()?.times(item1.bagCount.toDouble())!!)
+                item1.noOfPallet = if (item1.noOfPallet?.toInt() ?: 0 <= 0) "0" else item1.noOfPallet
+            }
+            if (item.salesType.equals(SALES_TYPE_ANTICIPATED)) deliveryDetail.grossWeight = deliveryDetail.netWeight
+            deliveryDetail.grossWeight = grossWeight.toString().trim()
+            deliveryDetail.startTime = salesOrder.startTime
+            deliveryDetail.endTime = salesOrder.endTime
+            deliveryDetail.turnAroundTime = salesOrder.turnAroundTime
+            if (bagItems.isNotEmpty()) {
+                val bagSort = mutableListOf<VegaCoffeeSalesBagMaterial>()
+                val dat = bagItems.sortedByDescending { it.createdPosition }
+                bagSort.addAll(dat)
+                bagItems = bagSort.asReversed()
+                deliveryDetail.huno = bagItems[0].unitsOfMeasure
+                deliveryDetail.huwt = bagTareWeight.formatThreeDigits().toString().trim()
+                deliveryDetail.huno2 = "KG"
+                deliveryDetail.huwt2 = bagItems[0].palletAverage
+                deliveryDetail.nohu1 = bagItems.sumBy { tar -> tar.bagCount.toInt() }.toString().trim()
+                deliveryDetail.nohu2 = bagItems[0].noOfPallet
+                deliveryDetail.bagList = bagItems
+            }
+            list.add(deliveryDetail)
+        }
+        return list
+    }
+
+    private fun convertWeight(weight: String, soUom: String, lotUom: String): String {
+        if (soUom == lotUom) {
+            return weight
+        } else {
+            if (soUom == UNIT_MT && lotUom == UNIT_KG) {
+                return convertKgToMT(weight)
+            } else if (soUom == UNIT_KG && lotUom == UNIT_MT) return convertMtToKg(weight)
+        }
+        return "0"
+    }
+
+    private fun convertWeights(weight: String, soUom: String, lotUom: String): String {
+        if (soUom == lotUom) {
+            return weight
+        } else {
+            if (soUom == UNIT_LB1 && lotUom == UNIT_KG) {
+                return convertKgToLB1(weight)
+            } else if (soUom == UNIT_KG && lotUom == UNIT_LB1)
+                return convertLB1ToKg(weight)
+        }
+        return "0"
+    }
+
+    private fun moveToSuccessPage(data: List<VegaCameroonSalesDeliveryDetail>?) {
+        val deveryIds = arrayListOf<String>()
+        val batchIds = arrayListOf<String>()
+        var customMessage = ""
+
+        val docNo =
+            data?.filter { !it.documentNum.isNullOrEmpty() }?.map { it.documentNum.toString() }
+                ?: listOf()
+        val documentNo =
+            if (docNo.size > 0) docNo.toString().replace("[", "").replace("]", "") else ""
+        data?.forEach {
+            batchIds.add(it.mergedBatchNumber.toString())
+            deveryIds.add(it.delivery.toString())
+        }
+        customMessage = "Delivery Number ".plus(
+            deveryIds.distinct().toString().replace("[", "").replace("]", "")
+        ).plus(" created successfully for merged batch number : ")
+            .plus(batchIds.distinct().toString().replace("[", "").replace("]", ""))
+
+        val intent = Intent(requireContext(), SuccessActivity::class.java)
+        intent.putExtra(AppUtils.TITLE, getString(R.string.success_dispatch))
+        if (salesOrder.salesType == SALES_TYPE_ANTICIPATED) {
+            intent.putExtra(AppUtils.PRINT_ENABLE, true)
+            intent.putExtra("fromcoffee", true)
+            intent.putParcelableArrayListExtra(AppUtils.LOT_CARD, vm.lots)
+        }
+        if (!documentNo.isEmpty())
+            intent.putExtra(
+                AppUtils.SUB_TITLE,
+                deveryIds.toString().replace("[", "").replace("]", "").replace(
+                    ",",
+                    "\n"
+                ).plus(getString(R.string.ws_success_docu_no, documentNo))
+            )
+        else
+            intent.putExtra(AppUtils.SUB_TITLE, customMessage)
+
+        if (getCurrentKey().split("_")[1].contains("NI") &&
+            getCurrentKey().split("_")[2].contains("COFF")
+        ) {
+
+            val batchid = batchIds.distinct().toString().replace("[", "").replace("]", "")
+            val deliveryid = deveryIds.distinct().toString().replace("[", "").replace("]", "")
+
+            data?.forEach {
+                recievingData.batchNumber = batchid
+                recievingData.delivery = deliveryid
+                recievingData.createdDate = DateUtils.getUTCDateTime(
+                    System.currentTimeMillis().toString(),
+                    App.getAppContext()
+                )
+                recievingData.netWeight = convertLB1ToKg(it.netWeight!!)
+                recievingData.bagCount = it.nohu1
+                recievingData.unitsOfMeasure = "KG"
+                recievingData.weighBridgeId = it.weighBridgeId!!
+                recievingData.grossWeight = it.grossWeight
+                recievingData.remarks = it.remarks
+            }
+
+            val dataPost = data?.filter { batchid == it.batchNumber && deliveryid == it.delivery }
+
+
+            intent.putExtra(UIUtils.PRINT_LOCAL_SALES_TALLY_SHEET, true)
+            //intent.putExtra(UIUtils.NICARAGUA_PRINT_TYPE, UIUtils.NICARAGUA_PRINT_TALLYSHEET)
+            intent.putExtra(UIUtils.RECEIVING_DATA, recievingData)
+            intent.putExtra(UIUtils.DELIVERYID, deliveryid)
+            intent.putExtra(UIUtils.BATCHID, batchid)
+
+        }
+
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
+    fun updateAssignLotText(
+        mergedLotIds: List<String?>,
+        list: ArrayList<VegaCameroonLocalSalesAssignLot>,
+        storageLocation: String
+    ) {
+        mergedBatchNumbers = mergedLotIds
+        selectedStorageLocation = storageLocation
+        assignLotList = list
+        binding.tvAssignLot.text = "LOT IDs: ".plus(mergedLotIds.toString().replace("[", "").replace("]", ""))
+        list.forEach {mergedLot ->
+            vm.salesOrder.lotList.forEach {
+                if( it.materialName == mergedLot.materialName)
+                {
+                    it.mergedLotId = mergedLot.mergedLotId
+                    it.receivingStorageLocation = storageLocation // Added for Storage Location field
+                }
+            }
+            vm.lots.forEach {
+                    if( it.materialName == mergedLot.materialName)
+                    {
+                        it.mergedLotId = mergedLot.mergedLotId
+                        it.receivingStorageLocation = storageLocation // Added for Storage Location field
+                    }
+            }
+        }
+        vm.saveWeighBridgeAndLotDetails()
+    }
+}

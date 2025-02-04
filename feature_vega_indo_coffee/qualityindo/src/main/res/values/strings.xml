@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="quality_analysis">Quality Analysis</string>
+    <string name="supplier">Supplier</string>
+    <string name="mtnr">MTN-R</string>
+    <string name="post_processing_quality">Post Processing Quality</string>
+    <string name="search">search</string>
+    <string name="quality_offline_list">View Offline Quality List</string>
+    <string name="back_navigation">navigation</string>
+    <string name="no_data">No Data Found</string>
+    <string name="weigh_bridge_id">WeighBridge ID</string>
+    <string name="test_str">18GRD00028</string>
+    <string name="weight">Weight</string>
+    <string name="qty_assesment">Quality Assessment-</string>
+    <string name="batch_no">Batch No</string>
+    <string name="proceed">Proceed</string>
+    <string name="percentage">%</string>
+    <string name="confirm_Quty_message">Accept Quality</string>
+    <string name="confirm_Grn_message">Confirm GRN</string>
+    <string name="sort_by_im">Sort By <font fgcolor='#FFFFFF'>*</font></string>
+    <string name="truck_no">Truck No</string>
+    <string name="no_of_bags">No of Bags</string>
+    <string name="date">Date</string>
+    <string name="reject">Reject</string>
+    <string name="accept">Accept</string>
+    <string name="confirm_reject_message">Do you want reject quality Assessment data?</string>
+    <string name="enter_all_mandatory_fields">Please enter all the mandatory field</string>
+    <string name="quality_success">Quality Approved Successfully</string>
+    <string name="quality_reject_success">Quality Rejected Successfully</string>
+    <string name="new_lot_id_created">New LOT id has been successfully created \n</string>
+    <string name="lot_list">Lot List</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="add_weight">Add Weight</string>
+    <string name="st_location">St Location</string>
+    <string name="end_pile_lot">End Pile/Lot</string>
+    <string name="create_grn">Create GRN</string>
+    <string name="qc_status">Qc Status</string>
+    <string name="qc_done">Done</string>
+    <string name="qc_not_done">Pending</string>
+    <string name="batch_error">Please enter batch number</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="search_vendor_name">search vendor name</string>
+    <string name="sort_by_date">Sort By Date</string>
+    <string name="receiving_location">Receiving Location</string>
+    <string name="procure_type">Procure Type</string>
+    <string name="sap_error_message">SAP Error Message</string>
+    <string name="read_more">Read More...</string>
+    <string name="transaction_details_quality">Transaction Details - Quality</string>
+    <string name="sync_all">Do you want to sync all offline data to cloud?</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+
+</resources>

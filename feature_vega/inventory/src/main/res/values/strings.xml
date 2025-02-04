@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    //Inventory
+
+    <string name="inventory_list">Warehouses</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="storage_location">Storage Location</string>
+    <string name="kor">KOR</string>
+    <string name="orgin">Origin</string>
+    <string name="weight">Weight</string>
+    <string name="total_weight">Total Weight</string>
+    <string name="kor_range">Average KOR</string>
+    <string name="lot_name">Lot Name</string>
+    <string name="moisure">Moisture</string>
+    <string name="apply">Apply</string>
+    <string name="filter_inventory">Filter Inventory</string>
+    <string name="material_name">Material Name</string>
+    <string name="plantid">PlantID</string>
+    <string name="last_sync_time">Last Sync Time</string>
+    <string name="sync_status">Sync Status</string>
+    <string name="sync_details">Sync Details</string>
+    <string name="proceed">Proceed</string>
+    <string name="cancel">Cancel</string>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <View
+        android:id="@+id/vBarLine"
+        android:layout_width="80dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@color/grey_light"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/ivScaleClose"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vBarLine1"
+        android:layout_width="20dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@color/grey_light"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/ivScaleClose"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivScaleClose"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:elevation="5dp"
+        android:contentDescription="@string/material"
+        android:src="@drawable/ic_coffee_cicle_close"
+        app:layout_constraintStart_toEndOf="@+id/vBarLine1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:gravity="end"
+        android:maxWidth="55dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/vBarLine1"
+        app:layout_constraintTop_toBottomOf="@+id/ivScaleClose"
+        tools:text="Item Name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

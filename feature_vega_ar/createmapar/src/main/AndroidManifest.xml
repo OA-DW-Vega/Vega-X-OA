@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.olam.warehouse.vegax.createmapar">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_createmapar">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="false"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,MissingApplicationIcon,LockedOrientationActivity"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="com.olam.warehouse.vegax.createmapar.ui.ArCoreMainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.vegax.createmapar.ui.arcore.ArCoreViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
+        <!-- <meta-data
+             android:name="com.google.android.ar.API_KEY"
+             android:value="AIzaSyDxEdr_lBQj01Dmd4BWN3Oty9M_sXD36d0" />-->
+    </application>
+</manifest>

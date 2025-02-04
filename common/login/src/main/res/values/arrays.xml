@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_list_language_titles">
+        <item>English</item>
+    </string-array>
+    <string-array name="settings_list_language_values">
+        <item>en</item>
+    </string-array>
+    <string-array name="settings_list_language_titles_spanish">
+        <item>English</item>
+        <item>Spanish</item>
+    </string-array>
+    <string-array name="settings_list_language_values_spanish">
+        <item>en</item>
+        <item>es</item>
+    </string-array>
+    <string-array name="settings_list_language_titles_vietnamese">
+        <item>English</item>
+        <item>Vietnamese</item>
+    </string-array>
+    <string-array name="settings_list_language_values_vietnamese">
+        <item>en</item>
+        <item>vi</item>
+    </string-array>
+    <string-array name="settings_list_language_titles_bahasa">
+        <item>English</item>
+        <item>Bahasa</item>
+    </string-array>
+    <string-array name="settings_list_language_values_bahasa">
+        <item>en</item>
+        <item>in</item>
+    </string-array>
+
+    <string-array name="settings_list_language_titles_ivc">
+        <item>English</item>
+        <item>French</item>
+    </string-array>
+    <string-array name="settings_list_language_values_ivc">
+        <item>en</item>
+        <item>fr</item>
+    </string-array>
+</resources>

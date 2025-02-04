@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">master</string>
+    <string name="syncing">Đồng bộ hoá...</string>
+    <string name="master_data_downloading">Tải xuống dữ liệu chủ...</string>
+    <string name="master_data_download_success">Dữ liệu chủ được tải xuống thành công</string>
+    <string name="data_downloading">Tải xuống dữ liệu...</string>
+    <string name="data_download_success">Dữ liệu được tải xuống thành công</string>
+</resources>

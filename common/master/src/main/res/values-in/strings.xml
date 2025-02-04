@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">master</string>
+    <string name="syncing">Sinkronisasi...</string>
+    <string name="master_data_downloading">Pengunduhan data master...</string>
+    <string name="master_data_download_success">Data master berhasil diunduh</string>
+    <string name="data_downloading">Pengunduhan data...</string>
+    <string name="data_download_success">Data berhasil diunduh</string>
+</resources>

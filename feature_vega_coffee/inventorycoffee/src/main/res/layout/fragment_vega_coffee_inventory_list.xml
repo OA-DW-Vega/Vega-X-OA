@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:clickable="true"
+    android:focusable="true">
+
+
+    <TextView
+        android:id="@+id/tvTruck_no"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:gravity="center|start"
+        android:paddingStart="@dimen/margin_medium"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSearchLot"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/inventory_list" />
+
+    <TextView
+        android:id="@+id/tvSearchLot"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryOfi"
+        android:drawableEnd="@drawable/ic_search"
+        android:drawablePadding="@dimen/margin_padding_size_small"
+        android:drawableTint="@color/white"
+        android:gravity="center|end"
+        android:paddingEnd="@dimen/margin_medium"
+        android:text="@string/search_lot"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTruck_no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTruck_no"
+        app:layout_constraintTop_toTopOf="@id/tvTruck_no" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cvLotDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTruck_no">
+
+        <TextView
+            android:id="@+id/tvTotalCount"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/layout_border_without_down"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:paddingBottom="@dimen/margin_small"
+            android:textColor="@color/dark_marun"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvTotalWeight"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/lots_count" />
+
+        <TextView
+            android:id="@+id/tvTotalWeight"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/layout_border_without_down"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:paddingBottom="@dimen/margin_small"
+            android:textColor="@color/dark_marun"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_sort"
+            app:layout_constraintHorizontal_weight="1.5"
+            app:layout_constraintStart_toEndOf="@+id/tvTotalCount"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/total_weight" />
+
+
+        <TextView
+            android:id="@+id/tv_sort"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/layout_border_without_down"
+            android:drawableRight="@drawable/ic_sort_black"
+            android:drawableTint="@color/dark_marun"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_small"
+            android:text="@string/sort"
+            android:textColor="@color/dark_marun"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_filter"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tvTotalWeight"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_filter"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/layout_border_without_down"
+            android:drawableRight="@drawable/ic_filter_list_black_24dp"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_small"
+            android:text="@string/filter"
+            android:textColor="@color/dark_marun"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_sort"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tv_sort"
+            app:layout_constraintTop_toTopOf="@id/tv_sort" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<TextView
+        android:id="@+id/tv_sort"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/warmgrey"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:gravity="center"
+        android:text="Sort by Weight"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTruck_no" />
+
+    <TextView
+        android:id="@+id/tv_filter"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="#D2CECC"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:gravity="center"
+        android:text="@string/filter"
+        android:textColor="#6C5D56"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_sort"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_sort"
+        app:layout_constraintTop_toTopOf="@id/tv_sort" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSortDownUp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:contentDescription="@string/inventory_list"
+        android:paddingStart="@dimen/margin_mic_small"
+        android:src="@drawable/ic_sort_white"
+        app:layout_constraintBottom_toBottomOf="@id/tv_sort"
+        app:layout_constraintEnd_toEndOf="@id/tv_sort"
+        app:layout_constraintTop_toTopOf="@id/tv_sort" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFilter"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/margin_xlarge"
+        android:contentDescription="@string/inventory_list"
+        android:src="@drawable/ic_filter_list_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_filter"
+        app:layout_constraintEnd_toEndOf="@id/tv_filter"
+        app:layout_constraintTop_toTopOf="@id/tv_filter" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_weigh_bridge_id"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvLotDetails" />
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_data_found"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="search">search</string>
+    <string name="quality_analysis">Quality Analysis</string>
+    <string name="quality_assessment">Quality Assessment</string>
+    <string name="mtn_r">MTN-R</string>
+    <string name="supplier">Supplier</string>
+    <string name="weigh_bridge_id">WeighBridge ID</string>
+    <string name="quality_offline_list">View Offline Quality List</string>
+    <string name="back_navigation">navigation</string>
+    <string name="weigh_bridge_count">Total WB 00</string>
+    <string name="weight">Weight</string>
+    <string name="date">Date</string>
+    <string name="no_data">No Data Found</string>
+    <string name="type">Type</string>
+    <string name="material">Material</string>
+    <string name="spot_purchase">Spot Purchase</string>
+    <string name="fixed_purchase">Fixed Purchase</string>
+
+    <string name="qty_assesment">Quality Assessment -</string>
+    <string name="wb_id">WB ID: </string>
+    <string name="batch_no">Batch No</string>
+    <string name="percentage">%</string>
+    <string name="reject">Reject</string>
+    <string name="accept">Accept</string>
+    <string name="proceed">Proceed</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_quality_message">Accept Quality</string>
+    <string name="confirm_reject_message">Do you want reject quality Assessment data?</string>
+    <string name="enter_all_mandatory_fields">Please enter all the mandatory field</string>
+
+    <string name="quality_success">Quality Successful</string>
+    <string name="quality_success_offline">Offline Quality Successful</string>
+    <string name="quality_reject">Consignment has been Rejected.</string>
+    <string name="quality_reject_offline">Offline Consignment has been Rejected.</string>
+    <string name="new_lot_id_created">New LOT id has been successfully created \n</string>
+    <string name="quality_offline_summary">Quality Offline Summary</string>
+    <string name="view_details">View Details</string>
+    <string name="grade">Grade</string>
+    <string name="quality_params_not_available">Quality params not available for this material</string>
+    <string name="select">Select</string>
+</resources>

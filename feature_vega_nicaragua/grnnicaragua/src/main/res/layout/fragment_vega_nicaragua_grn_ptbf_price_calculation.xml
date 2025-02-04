@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnProceed"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_height"
+                android:background="@color/colorPrimaryHeadOfi"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start"
+                android:padding="@dimen/margin_small"
+                android:text="@string/grn_ptbf_pricing"
+                android:textColor="@color/warm_white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rlStateProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/white">
+
+                <com.kofigyan.stateprogressbar.StateProgressBar
+                    android:id="@+id/step_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/margin_small"
+                    app:spb_currentStateNumber="four"
+                    app:spb_maxStateNumber="four"
+                    app:spb_stateBackgroundColor="@color/warm_white"
+                    app:spb_stateForegroundColor="@color/colorPrimaryOfi1"
+                    app:spb_stateNumberBackgroundColor="@color/black"
+                    app:spb_stateNumberForegroundColor="@color/white"
+                    app:spb_stateSize="@dimen/margin_padding_size_xlarge"
+                    app:spb_stateTextSize="@dimen/text_size_medium" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mic_small"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_mic_small"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvExchangeRateHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/exchange_rate"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tvExchangeRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="right"
+                    android:text="0%"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mic_small"
+                android:layout_marginEnd="@dimen/margin_mic_small"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_mic_small"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvBasePriceHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/price_per_unit"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tvBasePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="right"
+                    android:text="C$ 0.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mic_small"
+                android:layout_marginEnd="@dimen/margin_mic_small"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_mic_small"
+                android:paddingBottom="@dimen/margin_mic_small"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvNetWeightHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/net_weight"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tvNetWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="right"
+                    android:text="C$ 0.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mic_small"
+                android:layout_marginEnd="@dimen/margin_mic_small"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_mic_small"
+                android:paddingBottom="@dimen/margin_medium"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvTotalPriceHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/total_price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="right"
+                    android:text="C$ 0.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimaryOfi"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium" />
+
+</RelativeLayout>

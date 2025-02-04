@@ -1,0 +1,54 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.olam.warehouse.odreceiving">
+
+    <!--<uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />-->
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_odreceiving">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,MissingApplicationIcon,LockedOrientationActivity">
+
+        <activity
+            android:name=".ui.DOReceivingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.weigh.DOReceivingWeighActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.offline.DOReceivingOfflineSummaryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.summary.DOReceivingSummaryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.blt.ScannerActivityBlt"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>
+

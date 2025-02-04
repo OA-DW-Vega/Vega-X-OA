@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingStart="@dimen/margin_large"
+    android:paddingTop="@dimen/margin_medium"
+    android:paddingEnd="@dimen/margin_large"
+    android:paddingBottom="@dimen/margin_medium">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardCornerRadius="@dimen/margin_mic_small"
+        app:cardElevation="@dimen/margin_mic_small">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/container_header">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/margin_mic_small"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingEnd="@dimen/margin_mic_small"
+                    android:paddingBottom="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/container_no_colon"
+                        android:textSize="@dimen/margin_small" />
+
+                    <TextView
+                        android:id="@+id/tvContainerNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/margin_mic_small"
+                        android:paddingEnd="@dimen/margin_mic_small"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:text="CONT0000028" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                android:paddingBottom="@dimen/margin_small">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shipping_line"
+                        android:textSize="@dimen/margin_small" />
+
+                    <TextView
+                        android:id="@+id/tvShippingLine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_small"
+                        android:textStyle="bold"
+                        tools:text="Contex_Balcom" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shipping_line"
+                        android:textSize="@dimen/margin_small" />
+
+                    <TextView
+                        android:id="@+id/tvContainerType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_small"
+                        android:textStyle="bold"
+                        tools:text="Contex_Balcom" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shipping_line"
+                        android:textSize="@dimen/margin_small" />
+
+                    <TextView
+                        android:id="@+id/tvAddedOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/margin_small"
+                        android:textStyle="bold"
+                        tools:text="Contex_Balcom" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/iv_delete_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="-10dp"
+        android:background="@android:color/transparent"
+        android:elevation="10dp"
+        android:src="@drawable/ic_close_circle" />
+</FrameLayout>

@@ -1,0 +1,117 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">presentation</string>
+    <string name="loading">chargement</string>
+    <string name="network_not_available">Réseau non disponible, vérifiez votre connexion de données</string>
+    <string name="logo">logo</string>
+    <string name="tap_to_scan_lot">Scanner</string>
+    <string name="allow">Autoriser</string>
+    <string name="deny">Nier</string>
+
+    <!--camera permission-->
+    <string name="permission_camera_rationale">L\'autorisation de la caméra est nécessaire pour afficher l\'aperçu de la caméra.</string>
+    <string name="permission_camera_denied">L\'autorisation de la caméra a été refusée. Veuillez envisager de l\'accorder pour accéder à la caméra!</string>
+    <string name="permission_camera_never_ask_again">L\'autorisation de la caméra a été refusée et ne plus jamais demander.</string>
+    <string name="close">proche</string>
+
+    //Login Module String
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="version">Version :</string>
+
+    //feature download dialog
+    <string name="install_dialog_title">Feature: %s</string>
+    <string name="install_dialog_step_downloading">Downloading…</string>
+    <string name="install_dialog_installing">Installing…</string>
+    <string name="install_dialog_failed">Failed to install, error: %s</string>
+    <string name="install_dialog_installed">Installed successfully</string>
+
+    <string name="offline">hors ligne</string>
+    <string name="online">en ligne</string>
+
+    //Navigation
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_sync">Sync Master</string>
+    <string name="nav_sync_inventory">Synchronisation Inventaire</string>
+    <string name="user_name">User Name</string>
+    <string name="user_desc">Role</string>
+    <string name="reception_type">Reception Type</string>
+    <string name="product">Matériel</string>
+    <string name="company_code">Company Code</string>
+    <string name="purchase_org">Purchase Org</string>
+    <string name="plant">Usine</string>
+    <string name="warehouse_store_location">Emplacement de l\'entrepôt / magasin</string>
+    <string name="submit">Soumettre</string>
+    <string name="feature_not_avail">This Combination not available</string>
+    <string name="log_out">SE DÉCONNECTER</string>
+    <string name="logout_alert">Êtes-vous sûr de vouloir vous déconnecter?</string>
+    <string name="cocoa_logout_alert">cache data will be lost, do you still want to logout</string>
+    <string name="offline_logout_alert">Can\'t able to logout user in offline</string>
+    <string name="offline_data_logout_alert">Les données hors ligne qui doivent être synchronisées seront effacées. Êtes-vous sûr de vouloir vous déconnecter?</string>
+    <string name="confirm">Confirmer</string>
+    <string name="cancel">Annuler</string>
+    <string name="grn">GRN #</string>
+    <string name="grn1">GRN</string>
+    <string name="reconcilreport">Reconciliation Report</string>
+    <string name="mtnt">MTNT</string>
+    <string name="dispatch">Transfert</string>
+    <string name="processing">Usinage</string>
+    <string name="inventroy">Inventaire</string>
+    <string name="sweepings">Balayure</string>
+    <string name="pch">Fixez le prix</string>
+    <string name="processing_drying">Usinage</string>
+    <string name="sales">Ventes</string>
+    <string name="mtnr">MTNR</string>
+    <string name="nav_settings">Paramètres</string>
+    <string name="nav_transaction">Historique des transactions</string>
+    <string name="tran_master_sync">Voulez-vous poursuivre le processus de synchronisation du maître de transaction?</string>
+    <string name="search">chercher</string>
+    <string name="error">Erreur</string>
+    <string name="alert">Alerte!</string>
+    <string name="ok">D accord</string>
+
+    <string name="loading_text">S\'il vous plaît, attendez...</string>
+    <string name="olam">Olam</string>
+    <string name="delete_msg">Êtes-vous sûr? voulez-vous supprimer cet article</string>
+    <string name="copy">Copie</string>
+    <string name="edit">Vue</string>
+    <string name="edit1">Éditer</string>
+    <string name="delete">Supprimer</string>
+    <string name="sync">Synchronisation</string>
+    <string name="enter_batchno">Numéro de lot</string>
+    <string name="yes">Oui</string>
+
+    <string name="pallet_weight_details">Détails du poids de la palette</string>
+    <string name="pull_weight">capturer le poids</string>
+    <string name="no_of_pallet">Non de palette</string>
+    <string name="average_pallet_wt">Poids moyen des palettes</string>
+    <string name="sweepings_weight_entry">Balayages - Entrée de poids</string>
+    <string name="dispatch_weight_entry">Envoi - Entrée de poids</string>
+    <string name="fgrn_weight_entry">FGRN - Entrée de poids</string>
+    <string name="gross_weight">Poids brut</string>
+    <string name="enter_weight">Entrez le poids</string>
+    <string name="packaging_material">Matériel d\'emballage</string>
+    <string name="bag_type">Type de sac</string>
+    <string name="bag_types">Types de sacs</string>
+    <string name="no_of_bags">Nombre de sacs</string>
+    <string name="select_type">Sélectionner le genre</string>
+    <string name="enter_no_of_bags">Entrez le nombre de sacs</string>
+    <string name="net_weight">Poids net</string>
+    <string name="search_truck">Recherche par camion</string>
+    <string name="add">Ajouter</string>
+    <string name="select_bag_type">Sélectionnez le type de sac</string>
+    <string name="remarks">Remarques</string>
+    <string name="select_grade">rechercher grade</string>
+    <string name="enter_remark">S’il vous plait, entrez les remarques</string>
+    <string name="print">Imprimer la feuille de pointage</string>
+    <string name="print_preview">Aperçu avant impression</string>
+    <string name="please_select_the_printer">Veuillez sélectionner l\'imprimante</string>
+    <string name="search_by_lot">Recherche par lots</string>
+    <string name="nav_sync_vendor">Vendeur de synchronisation</string>
+    <string name="nav_data_sync">Synchronisation de données</string>
+
+</resources>

@@ -1,0 +1,110 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.olam.warehouse.vegax.ginningwarehouse">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_ginningwarehouse">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,MissingApplicationIcon,LockedOrientationActivity">
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.dispatch.GinningDispatchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.dispatch.GinningDispatchEditBaleActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.incominglots.GinningSelectIncomingLotTypeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+        android:name="com.olam.warehouse.ginning.ui.incominglots.seedcotton.GinningIncomingLotActivity"
+        android:configChanges="orientation|keyboardHidden"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.drying.GinningDryingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.pile.GinningPileManagementActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.pile.GinningPileBaleInfoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.inventory.GinningInventoryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" /> <activity
+        android:name="com.olam.warehouse.ginning.ui.inventory.GinningBaleDetailActivity"
+        android:configChanges="orientation|keyboardHidden"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.scan.ScanLotDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.ginninginprogress.GinningConfirmActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.ginninginprogress.GinningExtractionActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.ginninginprogress.GinningInprogressActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.incominglots.incomingmtn.GinningIncomingReviewBaleActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.incominglots.incomingmtn.offline.GinningIncomingMtnOfflineActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.olam.warehouse.ginning.ui.incominglots.incomingmtn.GinningIncomingBaleStatusActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+        android:name="com.olam.warehouse.ginning.ui.incominglots.incomingmtn.GinningIncomingVerifyBaleActivity"
+        android:configChanges="orientation|keyboardHidden"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ui.incominglots.incomingmtn.GinningIncomingMtnActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+    </application>
+</manifest>

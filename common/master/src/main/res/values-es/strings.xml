@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">master</string>
+    <string name="syncing">Sincronización...</string>
+    <string name="master_data_downloading">Descarga de datos maestros...</string>
+    <string name="master_data_download_success">Datos maestros descargados con éxito</string>
+    <string name="data_downloading">Data downloading...</string>
+    <string name="data_download_success">Datos descargados con éxito</string>
+</resources>

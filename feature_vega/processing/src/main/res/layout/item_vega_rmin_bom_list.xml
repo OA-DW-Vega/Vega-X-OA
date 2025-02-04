@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_small"
+    android:layout_marginEnd="@dimen/margin_small"
+    android:layout_marginBottom="@dimen/margin_small">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cbSelectStocks"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_mic_small"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvGradeTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/bom"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <TextView
+                android:id="@+id/tvBomNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                tools:text="3911004" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_mic_small"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvInputGradeLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/input_grade"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <TextView
+                android:id="@+id/tvInputGrade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                tools:text="CA Asalan FT" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_mic_small"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvOutputGradeLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/output_grade"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <TextView
+                android:id="@+id/tvOutputGrade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                tools:text="CA Asalan FT" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

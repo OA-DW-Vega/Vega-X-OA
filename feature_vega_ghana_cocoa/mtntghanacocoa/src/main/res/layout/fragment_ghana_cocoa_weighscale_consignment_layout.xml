@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/mtnt_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llOffline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/marun"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:padding="@dimen/text_size_medium"
+            android:text="@string/view_offline"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@string/offloading"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/white" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnProceed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llOffline">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_medium">
+
+            <TextView
+                android:id="@+id/tvTruckDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:paddingStart="@dimen/margin_large"
+                android:paddingEnd="@dimen/margin_small"
+                android:text="@string/truck_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_smedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTruck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvTruckDetails">
+
+                <TextView
+                    android:id="@+id/tvTruckId"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_ghana_rect_grey_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center"
+                    android:text="@string/truck_id_text"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvTruckIdValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvTruckIdValue"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/shape_ghana_rect_white_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:drawableEnd="@drawable/ic_qr_code_black"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTruckId"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvTruckId"
+                    app:layout_constraintTop_toTopOf="@id/tvTruckId"
+                    tools:text="Sample" />
+
+                <TextView
+                    android:id="@+id/tvTransportVendor"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_ghana_rect_grey_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center"
+                    android:text="@string/transport_vendor_text"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvTruckIdValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTruckId"  />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvTransportVendorValue"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/shape_ghana_rect_white_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTransportVendor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvTransportVendor"
+                    app:layout_constraintTop_toTopOf="@id/tvTransportVendor"
+                    tools:text="Sample" />
+
+                <TextView
+                    android:id="@+id/tvTruckNo"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_ghana_rect_grey_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center"
+                    android:text="@string/truck_number"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvTruckNoValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTransportVendor"  />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvTruckNoValue"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/shape_ghana_rect_white_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTruckNo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvTruckNo"
+                    app:layout_constraintTop_toTopOf="@id/tvTruckNo"
+                    tools:text="Sample" />
+
+
+                <TextView
+                    android:id="@+id/tvDriverName"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_ghana_rect_grey_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center"
+                    android:text="@string/driver_name"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDriverNameValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTruckNo" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvDriverNameValue"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/shape_ghana_rect_white_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDriverName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvDriverName"
+                    app:layout_constraintTop_toTopOf="@id/tvDriverName"
+                    tools:text="Sample" />
+
+                <TextView
+                    android:id="@+id/tvDriverNo"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_ghana_rect_grey_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center"
+                    android:text="@string/phone_number"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDriverNoValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDriverName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvDriverNoValue"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/shape_ghana_rect_white_bg"
+                    android:digits="1234567890"
+                    android:gravity="center"
+                    android:inputType="phone"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDriverNo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvDriverNo"
+                    app:layout_constraintTop_toTopOf="@id/tvDriverNo"
+                    tools:text="Sample" />
+
+                <TextView
+                    android:id="@+id/tvLicenseNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_ghana_rect_grey_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center"
+                    android:text="@string/license_number"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvLicenseNumberValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDriverNo"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvLicenseNumberValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_ghana_rect_white_bg"
+                    android:gravity="center"
+                    android:minHeight="60dp"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvLicenseNumber"
+                    app:layout_constraintTop_toBottomOf="@id/tvDriverNo"
+                    tools:text="Sample" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvTruckIDNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:paddingStart="@dimen/margin_large"
+                android:paddingEnd="@dimen/margin_small"
+                android:text="@string/consignment_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_smedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clTruck" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clConsign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvTruckIDNo">
+
+                <LinearLayout
+                    android:id="@+id/ll_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvDest"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/destination_wh_man"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvWhValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:drawableEnd="@drawable/ic_add_icon_new"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvDeparturePoint"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/departure_point"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/tvDeparturePointValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:layout_gravity="start"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/linearOne"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvRoute"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/route_text"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvRouteValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvSendingWH"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/sending_wh_man"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvSendingWHValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvproduct"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/product_text"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvproductValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvSDWaybillNo"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/sd_waybillno"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/tvSDWaybillNoValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:inputType="phone"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvSDWaybillNo"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tvSDWaybillNo"
+                            app:layout_constraintTop_toTopOf="@id/tvSDWaybillNo"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvEvacuationNo"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/evacuation_no"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/tvEvacuationNoValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:inputType="phone"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvEvacuationNo"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tvEvacuationNo"
+                            app:layout_constraintTop_toTopOf="@id/tvEvacuationNo"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvnoofbags"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/noofbags_text"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/tvnoofbagsValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:layout_weight="1"
+                            android:digits="1234567890"
+                            android:gravity="center"
+                            android:inputType="phone"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDriverNo"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tvDriverNo"
+                            app:layout_constraintTop_toTopOf="@id/tvDriverNo"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/tvClosingStock"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gt_walsheim_pro_bold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/closing_stock"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvClosingStockValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:text="@string/next_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

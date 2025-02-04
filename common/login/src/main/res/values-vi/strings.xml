@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">login</string>
+
+    // Home Page module names
+    <string name="receiving">Nhận hàng</string>
+    <string name="weighment">Cân</string>
+    <string name="offloading">Giảm tải</string>
+    <string name="quality">Chất lượng</string>
+    <string name="approve">Approve</string>
+    <string name="procurement_type">Loại mua :</string>
+    <string name="view_offline">Xem tóm tắt offline</string>
+    <string name="ok">OK</string>
+    <string name="choose_language">Chọn ngôn ngữ</string>
+    <string name="select_language">Chọn ngôn ngữ</string>
+    <string name="sync_vendor_credit">Sync Vendor Credit</string>
+    <string name="sync_advance_items">Sync Advance Items</string>
+    <string name="sync_exchange_rate">Sync Exchange Rate</string>
+    <string name="sync_error">Sync Error. Please try after some time</string>
+    <string name="digital_warehouse">Digital Warehouse</string>
+</resources>

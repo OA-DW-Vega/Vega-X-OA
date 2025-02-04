@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_medium">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cbSelectStocks"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLotId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                tools:text="19393024892" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_margin="2dp"
+                android:background="@drawable/do_circle_blue"
+                android:backgroundTint="@color/grey_button"
+                android:contentDescription="@string/sync"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/ic_close_white_24dp"
+                android:tint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvMaterialName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                tools:text="ECU Main Bush Bag Cocoa Bean" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mic_small"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvStorageLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/storage_location"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size_small" />
+
+
+            <TextView
+                android:id="@+id/tvEditWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/weight"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size_small" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/weight_to_dispatch"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size_small" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_mic_small"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvStorageLocationValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="start|center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="WH_Location_001" />
+
+
+            <TextView
+                android:id="@+id/tvWeightValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center|start"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="2020 QE" />
+
+            <EditText
+                android:id="@+id/etWeight"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/custom_edit_text"
+                android:fontFamily="@font/roboto_bold"
+                android:inputType="numberDecimal"
+                android:paddingStart="@dimen/margin_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/unit_of_measure"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSelectAllWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbSelectAll"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="false" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEntireLot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/select_entire_lot"
+                android:textColor="@color/grey_dark" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

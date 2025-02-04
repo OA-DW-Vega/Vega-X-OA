@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.container.AddContainerActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_bar"
+        android:orientation="vertical"
+        android:layout_above="@+id/btnShowSummary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/blue_port_background"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_large"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="@string/add_container"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="@string/container_num"
+            android:layout_marginTop="@dimen/margin_large"
+            android:textStyle="bold"
+            android:textSize="@dimen/margin_medium"
+            android:textColor="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/llScanContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@drawable/scanbale_port_corner"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:drawableStart="@drawable/qr_code_port"
+                    android:drawablePadding="@dimen/margin_small"
+                    android:text="@string/scan_container_id"
+                    android:textAllCaps="false"
+                    android:clickable="false"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/or"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:background="@color/grey" />
+            </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container_grey_stroke_port"
+            android:layout_marginTop="@dimen/margin_small">
+            <EditText
+                android:id="@+id/etContainerNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_mic_small"
+                android:paddingTop="@dimen/margin_mic_small"
+                android:paddingLeft="@dimen/margin_small"
+                android:layout_margin="@dimen/margin_small"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                android:maxLength="11"
+                android:paddingRight="@dimen/margin_small"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/dark_Grey"
+                android:background="@android:color/transparent"/>
+
+        </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:paddingStart="5dp"
+                android:text="@string/shipping_line"
+                android:textColor="@color/black"
+                android:textSize="@dimen/margin_medium"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/flShipLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/container_grey_stroke_port">
+
+                <TextView
+                    android:id="@+id/tvShippingLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingRight="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:textColor="@color/dark_Grey"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:src="@drawable/ic_down_arrow_black_port" />
+
+            </FrameLayout>
+
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="@string/container_type"
+            android:layout_marginTop="@dimen/margin_large"
+            android:textStyle="bold"
+            android:textSize="@dimen/margin_medium"
+            android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/container_grey_stroke_port">
+
+                <FrameLayout
+                    android:id="@+id/flContainerGood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/dark_Grey"
+                    android:layout_marginStart="@dimen/margin_min"
+                    android:layout_marginEnd="@dimen/margin_min"
+                    android:layout_marginTop="@dimen/margin_min"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_small">
+
+                    <RadioButton
+                        android:id="@+id/rbGood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:text="@string/good"
+                        android:clickable="false"
+                        android:checked="true"
+                        android:buttonTint="@color/blue"
+                        android:paddingStart="@dimen/margin_medium"
+                        android:textSize="@dimen/margin_medium"
+                        android:textStyle="bold"/>
+
+                </FrameLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"/>
+                <FrameLayout
+                    android:id="@+id/flContainerBad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_min"
+                    android:layout_marginEnd="@dimen/margin_min"
+                    android:layout_marginBottom="@dimen/margin_min"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_small">
+
+                    <RadioButton
+                        android:id="@+id/rbDamaged"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:text="@string/damaged"
+                        android:clickable="false"
+                        android:buttonTint="@color/blue"
+                        android:paddingStart="@dimen/margin_medium"
+                        android:textSize="@dimen/margin_medium"
+                        android:textStyle="bold"/>
+
+                </FrameLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnShowSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:enabled="true"
+        android:layout_above="@id/btnAddContainer"
+        android:paddingTop="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:text="Show Container Summary"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnAddContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_grey"
+        android:enabled="false"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:text="@string/add_container"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:visibility="visible" />
+</RelativeLayout>

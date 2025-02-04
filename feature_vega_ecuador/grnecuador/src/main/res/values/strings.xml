@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="grn_list">GRN list</string>
+    <string name="weigh_bridge_id">WeighBridge ID</string>
+    <string name="procurement_type">Type</string>
+    <string name="supplier">Supplier</string>
+    <string name="weight">Weight</string>
+    <string name="date">Date</string>
+    <string name="total_value">Total Value</string>
+    <string name="usd">USD</string>
+    <string name="do_you_want_proceed_grn">Do you want create GRN?</string>
+    <string name="confirm_grn">Confirm GRN</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="spot_purchase">Spot Purchase</string>
+    <string name="fixed_purchase">Fixed Purchase</string>
+    <string name="final_price_per_unit">Final price per unit</string>
+    <string name="wb_id">WB ID: </string>
+    <string name="po_number">PO Number</string>
+    <string name="netWeight">Net Weight</string>
+    <string name="poPrice">PO Price</string>
+    <string name="storage_location">Storage Location</string>
+    <string name="price_details">Price Details</string>
+    <string name="lot_information">Lot Information</string>
+    <string name="bc_approval_price">BC Approval - Price</string>
+    <string name="price_validation">Paid price should not be empty</string>
+    <string name="grn_success">GRN created Successfully</string>
+    <string name="grn_success_offline">Offline GRN created Successfully</string>
+    <string name="grn">GRN</string>
+    <string name="grn_fail_msg">GRN Failed</string>
+    <string name="grn_offline_summary">GRN Offline Summary</string>
+    <string name="material">Material</string>
+    <string name="view_details">View Details</string>
+    <string name="cancel">Cancel</string>
+</resources>

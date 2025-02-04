@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        android:dialogTitle="@string/select_language"
+        android:entries="@array/settings_list_language_titles"
+        android:entryValues="@array/settings_list_language_values"
+        android:key="list"
+        android:summary="Click to show a list to choose from"
+        android:title="@string/choose_language"
+        app:isPreferenceVisible="false" />
+
+    <ListPreference
+        android:dialogTitle="@string/select_language"
+        android:entries="@array/settings_list_language_titles_spanish"
+        android:entryValues="@array/settings_list_language_values_spanish"
+        android:key="listSpanish"
+        android:summary="Click to show a list to choose from"
+        android:title="@string/choose_language"
+        app:isPreferenceVisible="false" />
+
+    <ListPreference
+        android:dialogTitle="@string/select_language"
+        android:entries="@array/settings_list_language_titles_vietnamese"
+        android:entryValues="@array/settings_list_language_values_vietnamese"
+        android:key="listVietnamese"
+        android:summary="Click to show a list to choose from"
+        android:title="@string/choose_language"
+        app:isPreferenceVisible="false" />
+
+    <ListPreference
+        android:dialogTitle="@string/select_language"
+        android:entries="@array/settings_list_language_titles_bahasa"
+        android:entryValues="@array/settings_list_language_values_bahasa"
+        android:key="listBahasa"
+        android:summary="Click to show a list to choose from"
+        android:title="@string/choose_language"
+        app:isPreferenceVisible="false" />
+
+    <ListPreference
+        android:dialogTitle="@string/select_language"
+        android:entries="@array/settings_list_language_titles_ivc"
+        android:entryValues="@array/settings_list_language_values_ivc"
+        android:key="listIvc"
+        android:summary="Click to show a list to choose from"
+        android:title="@string/choose_language"
+        app:isPreferenceVisible="false" />
+</PreferenceScreen>

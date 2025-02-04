@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_border_black_port"
+    android:baselineAligned="false"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/margin_medium"
+    android:paddingBottom="@dimen/margin_medium">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/rbMtnn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/green" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mtn_no"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvMtnNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="BK 1536 MI" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_min"
+            android:layout_marginBottom="@dimen/margin_min"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/supply_plant_name"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvSupplyPlantIdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="4415" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_min"
+            android:layout_marginBottom="@dimen/margin_min"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/truck_no"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvTruckNumberr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="18GRD00028" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_of_bales_colon"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvNoOfBaless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="100" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grades: "
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvGradess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="MICK 1/8" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

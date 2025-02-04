@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tvTransactionHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/transaction_details"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clOffloading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTransactionHeading">
+
+        <TextView
+            android:id="@+id/tvOffloading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/offloading" />
+
+        <TextView
+            android:id="@+id/tvOffloadingPendSync"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOffloading"
+            app:layout_constraintEnd_toStartOf="@+id/ivOffloadingRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvOffloading"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivOffloadingRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOffloading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvOffloading" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clOffloading">
+
+        <TextView
+            android:id="@+id/tvInvoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Invoice" />
+
+        <TextView
+            android:id="@+id/tvInvoiceSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            tools:visibility="visible"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:visibility="gone"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@+id/tvInvoice"
+            app:layout_constraintEnd_toStartOf="@+id/ivInvoiceRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvInvoice" />
+
+        <ImageView
+            android:id="@+id/ivInvoiceRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvInvoice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvInvoice" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAdvance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clInvoice">
+
+        <TextView
+            android:id="@+id/tvAdvanceCreation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Advance Creation" />
+
+        <TextView
+            android:id="@+id/tvAdvanceSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            tools:visibility="gone"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAdvanceCreation"
+            app:layout_constraintEnd_toStartOf="@+id/ivAdvanceRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvAdvanceCreation" />
+
+        <ImageView
+            android:id="@+id/ivAdvanceRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAdvanceCreation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvAdvanceCreation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clForwordPo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clAdvance">
+
+        <TextView
+            android:id="@+id/tvForwordPO"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Forward PO" />
+
+        <TextView
+            android:id="@+id/tvForwordPOSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            tools:visibility="visible"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:visibility="gone"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@+id/tvForwordPO"
+            app:layout_constraintEnd_toStartOf="@+id/ivForwordPORight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvForwordPO" />
+
+        <ImageView
+            android:id="@+id/ivForwordPORight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvForwordPO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvForwordPO" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clQuality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clForwordPo">
+
+        <TextView
+            android:id="@+id/tvQuality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/quality" />
+
+        <TextView
+            android:id="@+id/tvQualityPendSync"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvQuality"
+            app:layout_constraintEnd_toStartOf="@+id/ivQualityRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvQuality"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivQualityRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvQuality"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvQuality" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clGrn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clQuality">
+
+        <TextView
+            android:id="@+id/tvGrn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="GRN" />
+
+        <TextView
+            android:id="@+id/tvGrnSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvGrn"
+            app:layout_constraintEnd_toStartOf="@+id/ivRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvGrn" />
+
+        <ImageView
+            android:id="@+id/ivRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvGrn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvGrn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clExportSales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clGrn">
+
+        <TextView
+            android:id="@+id/tvExportSales"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/export_sales" />
+
+        <TextView
+            android:id="@+id/tvExportSalesPendSync"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvExportSales"
+            app:layout_constraintEnd_toStartOf="@+id/ivExportSalesRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvExportSales"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivExportSalesRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvExportSales"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvExportSales" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMtnt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clExportSales">
+
+        <TextView
+            android:id="@+id/tvMtnt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Mtnt" />
+
+        <TextView
+            android:id="@+id/tvMtntSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMtnt"
+            app:layout_constraintEnd_toStartOf="@+id/ivMtntRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvMtnt"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivMtntRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMtnt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvMtnt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cICertificatePremiumReceiptLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clMtnt">
+
+        <TextView
+            android:id="@+id/tvCertificatePremiumReceiept"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Certificate Premium Receipt" />
+
+        <TextView
+            android:id="@+id/tvCertificateSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCertificatePremiumReceiept"
+            app:layout_constraintEnd_toStartOf="@+id/ivcertificateRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvCertificatePremiumReceiept"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivcertificateRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCertificatePremiumReceiept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvCertificatePremiumReceiept" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cIWithHoldTaxReceiptLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cICertificatePremiumReceiptLayout">
+
+        <TextView
+            android:id="@+id/tvWithHoldTax"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Withholding Tax " />
+
+        <TextView
+            android:id="@+id/WithHoldTaxSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWithHoldTax"
+            app:layout_constraintEnd_toStartOf="@+id/ivWithHoldTaxRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvWithHoldTax"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivWithHoldTaxRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWithHoldTax"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvWithHoldTax" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cIWithForwardPoReceiptLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cIWithHoldTaxReceiptLayout">
+
+        <TextView
+            android:id="@+id/tvWithForwardPo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Forward PO " />
+
+        <TextView
+            android:id="@+id/WithForwardPoSycData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/pale_red"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/rightTabPaddingStart"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/rightTabPaddingStart"
+            android:text="@string/pending_sync"
+            android:textColor="@color/orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWithForwardPo"
+            app:layout_constraintEnd_toStartOf="@+id/ivWithForwardPoRight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toTopOf="@+id/tvWithForwardPo"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivWithForwardPoRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWithForwardPo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvWithForwardPo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTicketReceipt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:padding="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cIWithForwardPoReceiptLayout">
+
+        <TextView
+            android:id="@+id/tvTicketReceipt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ticket " />
+
+        <ImageView
+            android:id="@+id/ivWithTicketReceiptRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTicketReceipt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toTopOf="@+id/tvTicketReceipt" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

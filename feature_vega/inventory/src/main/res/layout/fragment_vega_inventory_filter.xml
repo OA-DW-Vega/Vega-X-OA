@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_kor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_origin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <CheckBox
+            android:id="@+id/cb_kor"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_kor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:text="KOR"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/cb_kor"
+            app:layout_constraintStart_toEndOf="@id/cb_kor"
+            app:layout_constraintTop_toTopOf="@id/cb_kor" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/cb_kor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_kor"
+            app:layout_constraintTop_toTopOf="@id/cb_kor" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_kor"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cb_kor"
+            app:layout_constraintTop_toBottomOf="@id/cb_kor" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_origin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/cl_kor"
+        app:layout_constraintTop_toBottomOf="@+id/cl_kor">
+
+        <CheckBox
+            android:id="@+id/cb_orgin"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:text="@string/orgin"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/cb_orgin"
+            app:layout_constraintStart_toEndOf="@id/cb_orgin"
+            app:layout_constraintTop_toTopOf="@id/cb_orgin" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/cb_orgin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_origin"
+            app:layout_constraintTop_toTopOf="@id/cb_orgin" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_orgin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cb_orgin"
+            app:layout_constraintTop_toBottomOf="@id/cb_orgin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btFilter"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/apply"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

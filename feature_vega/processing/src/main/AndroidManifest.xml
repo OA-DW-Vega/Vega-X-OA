@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.olam.warehouse.vegax.processing">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_processing">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+    <application tools:ignore="GoogleAppIndexingWarning,MissingApplicationIcon,LockedOrientationActivity">
+        <activity
+            android:name=".ui.VegaProcessingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>
+

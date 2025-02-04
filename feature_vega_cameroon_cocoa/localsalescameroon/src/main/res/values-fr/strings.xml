@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="less_weight_for_so_error">Veuillez entrer un poids inférieur au poids du matériel SO</string>
+    <string name="stored_locally">Stocké localement</string>
+    <string name="total_lot">Total des lots:</string>
+    <string name="temp_id">Temp ID</string>
+    <string name="enter_remark">Veuillez saisir la remarque</string>
+    <string name="delivery_no">No de livraison:</string>
+    <string name="retry">Réessayer l envoi</string>
+    <string name="conform_delete_item">Voulez-vous vraiment supprimer cet élément?</string>
+    <string name="end_lot">Fin de la pile / lot</string>
+    <string name="ws_success_docu_no">\n Création du document d inventaire physique %1$2s\ </string>
+    <string name="weighment_mismatch">Le nombre de palettes et les poids ajoutés ne correspondent pas</string>
+    <string name="local_sales">Ventes locales</string>
+    <string name="weighscale">Balance de pesée</string>
+    <string name="weighbridge_weighscale">Pont bascule - balance de pesée</string>
+    <string name="anticipated">Anticipé</string>
+    <string name="so_number">Donc numéro</string>
+    <string name="customer">Client</string>
+    <string name="operator_name">Nom de l opérateur</string>
+    <string name="add_lots_to_dispatch">AJOUTER DES LOTS à expédier</string>
+    <string name="or">--OU--</string>
+    <string name="scan_lot_id">Scanner l’ID du Lot</string>
+    <string name="enter_lot_id">Entrez l’ID du LOT</string>
+    <string name="dispatch_summary">Résumé du transfert</string>
+    <string name="save">Sauvegarder</string>
+    <string name="proceed">Procéder</string>
+    <string name="select_from_inventory">Sélectionner dans l’inventaire</string>
+    <string name="so_weight">Poids SO</string>
+    <string name="add_weight">Ajouter du poids</string>
+    <string name="weight">Poids</string>
+    <string name="st_location">Magasin</string>
+    <string name="wt_to_weight">Poids à transférer</string>
+    <string name="select_entire_lot">Sélectionnez tout le LOT</string>
+    <string name="tare_weight">Poids vide</string>
+    <string name="weight_summary">Poids Résumé</string>
+    <string name="s_no">S.No</string>
+    <string name="bag">Sac</string>
+    <string name="gross_n_weight">Poids \n brut</string>
+    <string name="tare_n_bag_pallet">Poids vide  \n (Sac + palette)</string>
+    <string name="net_n_weight">Poids \n net</string>
+    <string name="no_weight_added">Aucun poids ajouté</string>
+    <string name="truck_id">ID du camion</string>
+    <string name="confirm_dispatch">Confirmer  Le transfert</string>
+    <string name="remark">Remarque</string>
+    <string name="lot_id">ID du Lot</string>
+    <string name="date">Date</string>
+    <string name="sort_by">Trier par</string>
+    <string name="pending_list">Liste en attente</string>
+    <string name="create_new_sales_dispatch">Créer une nouvelle vente</string>
+    <string name="select_so">Sélectionnez le numéro SO</string>
+    <string name="no_data_found">Aucune donnée disponible</string>
+    <string name="select_warehouse">Sélectionnez Entrepôt</string>
+    <string name="dispatch_sales_inventory">Le transfert - Ventes- Inventaire</string>
+    <string name="search_by_lots">Recherche par Lots </string>
+    <string name="all">Tout</string>
+    <string name="already_added">Lot déjà ajouté au transfert</string>
+    <string name="details_lose">Voulez-vous vraiment modifier la SO, vous risquez de perdre les informations des Lots  ajoutées?</string>
+    <string name="local_save_msg">Données enregistrées localement</string>
+    <string name="zero_weight_error">Veuillez saisir un poids valide</string>
+    <string name="less_weight_error">Veuillez entrer un poids inférieur au poids du Lot</string>
+    <string name="prceed_error">Ajoutez un Lot pour continuer</string>
+    <string name="third_party_sales">Ventes à des tiers</string>
+    <string name="choose_lot">Choisissez un Lot</string>
+    <string name="conform_remove">Voulez-vous vraiment supprimer le Lot?</string>
+    <string name="conform_dispatch">Confirmer les ventes à transférer</string>
+    <string name="success_dispatch">Le transfert est réussi</string>
+
+    <!--missing-->
+    <string name="save_confirm">Are sure do you want to save data locally</string>
+    <string name="edit_remark">Are sure do you want to edit remarks</string>
+    <string name="edit_lot">Are sure do you want to edit the lot</string>
+    <string name="stop_loding_confirmation">Do you want to stop \n Loading Process?</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+
+</resources>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/ia_padding_10"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvReasonLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            android:background="@drawable/shape_ghana_offload_rect_grey_border"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:minHeight="60dp"
+            android:text="@string/reason_text" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@+id/flContainer"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_light_grey">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/tvReason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="1dp"
+                android:background="@drawable/border_light_grey"
+                android:dropDownWidth="match_parent"
+                android:dropDownHeight="150dp"
+                android:gravity="center_vertical"
+                android:minHeight="60dp"
+                android:overlapAnchor="false"
+                android:padding="@dimen/margin_mic_small"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btAdd"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@null"
+                android:padding="5dp"
+                android:src="@drawable/ic_down_arrow"
+                />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_ghana_offload_rect_grey_border"
+            android:drawableEnd="@drawable/ic_add_icon_new"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:minHeight="60dp"
+            android:text="@string/select_reason"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+             />
+
+        <EditText
+            android:id="@+id/tvRejectReasonCount"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_ghana_offload_rect_white_bg"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/margin_padding_size_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+             />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAddRejectReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_small"
+        android:text="@string/add_rejection_reason"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_smedium"
+       />
+
+
+</LinearLayout>

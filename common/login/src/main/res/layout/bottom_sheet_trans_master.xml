@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tvClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@drawable/circle_shape"
+        android:backgroundTint="@color/black"
+        android:padding="@dimen/margin_min"
+        android:src="@drawable/ic_close_white_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+        <!--<ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>-->
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:minWidth="250dp"
+            android:minHeight="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvClose">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_border_black"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_padding_size_small"
+            app:layout_constraintBottom_toTopOf="@+id/clNetworkDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Sync Status"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvStatusValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStatusValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/syncing"
+                android:textColor="@color/blue_mic_dark"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvStatus"
+                app:layout_constraintTop_toTopOf="@+id/tvStatus" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTimeTaken"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Time taken for Sync"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvTimeTakenValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTimeTakenValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="0 s"
+                android:textColor="@color/blue_mic_dark"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvTimeTaken"
+                app:layout_constraintTop_toTopOf="@+id/tvTimeTaken" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clNetworkDetails"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bottom_border_black"
+            android:padding="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clStatus">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSyncLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Last Sync"
+                android:textColor="@color/grey"
+                app:layout_constraintEnd_toStartOf="@+id/tvNtTypeLabel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNtTypeLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Network Type"
+                android:textColor="@color/grey"
+                app:layout_constraintEnd_toStartOf="@+id/tvNtSpeedLabel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvSyncLabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNtSpeedLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Network Speed"
+                android:textColor="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvNtTypeLabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSync"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="DD/MM/YY 00:00"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvNtTypeLabel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSyncLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNtType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvNtSpeedLabel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvSyncLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvNtTypeLabel"
+                tools:text="WIFI" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNtSpeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvNtTypeLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvNtSpeedLabel"
+                tools:text="300Mbps" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTransData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_medium"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clNetworkDetails">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction Master Data Details"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPO"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Purchase Order"
+                app:layout_constraintEnd_toStartOf="@+id/tvPOCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvHead" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPOCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvPO"
+                app:layout_constraintTop_toTopOf="@+id/tvPO"
+                tools:text="0 items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvInvoice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Invoice Reprint Details"
+                app:layout_constraintEnd_toStartOf="@+id/tvInvoiceCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvPO" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvInvoiceCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvInvoice"
+                app:layout_constraintTop_toTopOf="@+id/tvInvoice"
+                tools:text="0 items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGrnReprint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Grn Reprint Details"
+                app:layout_constraintEnd_toStartOf="@+id/tvGrnReprintCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvInvoice" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGrnReprintCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvGrnReprint"
+                app:layout_constraintTop_toTopOf="@+id/tvGrnReprint"
+                tools:text="0 items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGrnPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Grn Price Details"
+                app:layout_constraintEnd_toStartOf="@+id/tvGrnPriceCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvGrnReprint" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGrnPriceCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvGrnPrice"
+                app:layout_constraintTop_toTopOf="@+id/tvGrnPrice"
+                tools:text="0 items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCharDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Grn Char Details"
+                app:layout_constraintEnd_toStartOf="@+id/tvCharDetailsCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvGrnPrice" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCharDetailsCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvCharDetails"
+                app:layout_constraintTop_toTopOf="@+id/tvCharDetails"
+                tools:text="0 items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAdvance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Advance Line Item Details"
+                app:layout_constraintEnd_toStartOf="@+id/tvAdvanceCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvCharDetails" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAdvanceCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvAdvance"
+                app:layout_constraintTop_toTopOf="@+id/tvAdvance"
+                tools:text="0 items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvVendorCredit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Vendor Credit Limit Details"
+                app:layout_constraintEnd_toStartOf="@+id/tvVendorCreditCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdvance" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvVendorCreditCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvVendorCredit"
+                app:layout_constraintTop_toTopOf="@+id/tvVendorCredit"
+                tools:text="0 items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStocks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Stocks Details"
+                app:layout_constraintEnd_toStartOf="@+id/tvStocksCount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvVendorCredit" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStocksCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvStocks"
+                app:layout_constraintTop_toTopOf="@+id/tvStocks"
+                tools:text="0 items" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

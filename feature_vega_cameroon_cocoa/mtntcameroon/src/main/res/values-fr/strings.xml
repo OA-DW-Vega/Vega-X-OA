@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="Confirm">Accepter</string>
+    <string name="Cancel">Soumettre</string>
+    <string name="dispatch_mtnt">MTNT - Pont-bascule</string>
+    <string name="destination_wh_man">Entrepôt de destination <font color='#CB410B'>*</font></string>
+    <string name="sto_number_man">STO Numéro <font color='#CB410B'>*</font> </string>
+    <string name="sto_weight_man">STO Poids <font color='#CB410B'>*</font></string>
+    <string name="material_man">Matériel <font color='#CB410B'>*</font></string>
+    <string name="destination_wh">Entrepôt de destination </string>
+    <string name="sto_number">STO Numéro </string>
+    <string name="sto_weight">STO Poids </string>
+    <string name="material">Matériel</string>
+    <string name="grade">Type de matériel</string>
+    <string name="start_loading">Start Loading</string>
+    <string name="add">AJOUTER</string>
+    <string name="add_lot_from_inventory">Ajouter le lot à partir de l’inventaire</string>
+    <string name="truck_no">Numéro du camion </string>
+    <string name="weighbridge_id">Pont-bascule ID</string>
+    <string name="end_loading">FIN DU CHARGEMENT</string>
+    <string name="stop_load">ARRÊTER LE CHARGEMENT</string>
+    <string name="select_dest_wh">Sélectionnez l’entrepôt de destination</string>
+    <string name="select_sto">Sélectionnez le numéro de la STO</string>
+    <string name="start_msg">Voulez-vous démarrer le processus de chargement ?</string>
+    <string name="end_load_msg">Voulez-vous arrêter le processus de chargement ? </string>
+    <string name="success_dispatch_offline">Le transfert est réussi sans connection</string>
+    <string name="mtnt_wb_success">La livraison OD%1$2s" est créée et les détails de prélèvement sont mis à jour</string>
+    <string name="mtnr_ws_success">%1$2s" is created and picking detail is updated and PGI done successfully</string>
+    <string name="mtnr_ws_success_docu_no">\n Physical Inventaire document %1$2s created</string>
+    <string name="update_remark_title">Veuillez mettre à jour la remarque</string>
+    <string name="go_back">Are you sure to go back</string>
+    <string name="cancel">Cancel</string>
+    <string name="lot_more_weight">Entered Lot is higher than the existing Lot Poids </string>
+    <string name="add_lot_msg">Veuillez ajouter le Lot pour terminer le chargement</string>
+    <string name="unit_of_measure">MT</string>
+    <string name="conform_bag_remove">Voulez-vous vraiment retirer le sac?</string>
+    <string name="conform_change_so">Voulez-vous vraiment modifier la commande d’entrepôt / SO? Vous risquez de perdre le résumé du Lot?</string>
+    <string name="clear_all">Tout effacer</string>
+    <string name="truck_list">Camion List</string>
+    <string name="quality_analysis">Analyse de la qualité</string>
+    <string name="lot_selected">LOT sélectionné:</string>
+    <string name="weigh_scale">Balance de pesée</string>
+    <string name="weigh_bridge">Pont bascule</string>
+    <string name="select_dispatch">Sélectionnez Le transfert</string>
+    <string name="please_add_lot">Veuillez ajouter un Lot</string>
+    <string name="wb_id">ID PONT BASCULE:</string>
+    <string name="truck_number">Numéro du camion<font color='#CB410B'>*</font></string>
+    <string name="driver_name">Nom du conducteur<font color='#CB410B'>*</font></string>
+    <string name="phone_number">Numéro de téléphone</string>
+    <string name="transport_vendor">Transporteur<font color='#CB410B'>*</font></string>
+    <string name="consignment_details">Détails du transfert</string>
+    <string name="truck_details">Détails du camion</string>
+    <string name="mtnt_weighscale">MTNT - Balance de pesée</string>
+    <string name="mtnt_weighbridge">MTNT – Pont bascule</string>
+    <string name="trans_vendor_popup">Sélectionnez le transporteur</string>
+    <string name="add_lot_for_dispatch">Ajouter un Lot à transférer</string>
+    <string name="mandatory">Veuillez enter Tout mandatOUy fields</string>
+    <string name="weight_to_dispatch">Poids à transférer</string>
+    <string name="morethan_so_weight">Le poids ajoutée est supérieur au poids de la SO, veuillez changer la quantité à transférer.</string>
+    <string name="lot_summary">Résumé du Lot</string>
+    <string name="sending_wh">Entrepôt de destination</string>
+    <string name="obd_number">Numéro du OBD</string>
+    <string name="receiving_wh">Entrepôt de réception</string>
+    <string name="conform_back">Vous serez dirigé vers la page d’accueil et les données ajoutées seront effacées. Voulez-vous continuer?</string>
+    <string name="waybill_number">Numéro du bordereau d’expédition<font color='#CB410B'>*</font></string>
+    <string name="obd_no">Numéro du OBD <font color='#CB410B'>*</font></string>
+    <string name="deliveryqty">Quantité livrée<font color='#CB410B'>*</font></string>
+    <string name="end_pile_lot">Fin de la pile / Lot</string>
+    <string name="enter_way_bill">Veuillez saisir le numéro de la facture</string>
+    <string name="add_lots"> Ajouter des Lots </string>
+    <string name="lot_to_dispatch">Lot à transférer</string>
+    <string name="start_weighing">Commencer la pesée</string>
+    <string name="contact">Contact</string>
+    <string name="pallet_not_matched">Le nombre de palettes et les poids ajoutés ne correspondent pas aux Lots suivants</string>
+    <string name="stored_locally">Stocké localement</string>
+    <string name="total_lot">Total des lots:</string>
+    <string name="enter_remark">Veuillez saisir la remarque</string>
+    <string name="delivery_no">No de livraison:</string>
+    <string name="local_sales">Ventes locales</string>
+    <string name="add_lots_to_dispatch">AJOUTER DES LOTS à expédier</string>
+    <string name="or">--OU--</string>
+    <string name="scan_lot_id">Scanner l’ID du Lot</string>
+    <string name="enter_lot_id">Entrez l’ID du LOT</string>
+    <string name="dispatch_summary">Résumé du transfert</string>
+    <string name="save">Sauvegarder</string>
+    <string name="proceed">Procéder</string>
+    <string name="add_weight">Ajouter du poids</string>
+    <string name="weight">Poids</string>
+    <string name="st_location">Magasin</string>
+    <string name="select_entire_lot">Sélectionnez tout le LOT</string>
+    <string name="tare_weight">Poids vide</string>
+    <string name="weight_summary">Poids Résumé</string>
+    <string name="s_no">S.No</string>
+    <string name="bag">Sac</string>
+    <string name="gross_n_weight">Poids \n brut</string>
+    <string name="tare_n_bag_pallet">Poids vide  \n (Sac + palette)</string>
+    <string name="net_n_weight">Poids \n net</string>
+    <string name="no_weight_added">Aucun poids ajouté</string>
+    <string name="truck_id">ID du camion</string>
+    <string name="confirm_dispatch">Confirmer  Le transfert</string>
+    <string name="remark">Remarque</string>
+    <string name="lot_id">ID du Lot</string>
+    <string name="date">Date</string>
+    <string name="sort_by">Trier par</string>
+    <string name="no_data_found">Aucune donnée disponible</string>
+    <string name="select_warehouse">Sélectionnez Entrepôt</string>
+    <string name="all">Tout</string>
+    <string name="already_added">Lot déjà ajouté au transfert</string>
+    <string name="less_weight_error">Veuillez entrer un poids inférieur au poids du Lot</string>
+    <string name="prceed_error">Ajoutez un Lot pour continuer</string>
+    <string name="third_party_sales">Ventes à des tiers</string>
+    <string name="choose_lot">Choisissez un Lot</string>
+    <string name="conform_remove">Voulez-vous vraiment supprimer le Lot?</string>
+    <string name="conform_dispatch">Confirmer les ventes à transférer</string>
+    <string name="success_dispatch">Le transfert est réussi</string>
+    <string name="confirm">Confirm</string>
+</resources>

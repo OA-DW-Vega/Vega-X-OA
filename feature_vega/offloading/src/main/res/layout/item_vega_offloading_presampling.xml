@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_border"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:padding="@dimen/margin_padding_size_medium"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/etItem"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:imeOptions="actionNext"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:background="@drawable/rectangle_grey_border"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/margin_padding_size_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvPopupItem"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textStyle="bold"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:layout_gravity="start"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@drawable/rectangle_grey_border"
+        android:drawableEnd="@drawable/ic_add_icon_new"
+        android:padding="@dimen/margin_padding_size_small"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="gone" />
+
+
+</LinearLayout>

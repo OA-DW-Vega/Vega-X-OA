@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:elevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_lits">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTopHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDocNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/document_no"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvMovementType"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovementType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/movement_type"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvDocNo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvDocNo"
+                app:layout_constraintTop_toTopOf="@id/tvDocNo" />
+
+            <!--<androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQualityGrade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/quality_grade"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvDocNo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvMovementType"
+                app:layout_constraintTop_toTopOf="@id/tvDocNo" />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDocNoValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tvMovementType"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDocNo"
+                tools:text="dshasv12312312" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovementTypeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvDocNoValue"
+                app:layout_constraintTop_toTopOf="@id/tvDocNoValue"
+                tools:text="jhdadsa" />
+
+            <!--<androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQualityGradeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvMovementTypeValue"
+                app:layout_constraintTop_toTopOf="@id/tvDocNoValue"
+                tools:text="Samldjflkdsf " />-->
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvnetWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/net_weight"
+                android:textColor="@color/grey_dark"
+                app:layout_constraintEnd_toStartOf="@+id/tvMovementType"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDocNoValue" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvVendorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/vendor_name"
+                android:textColor="@color/grey_dark"
+                app:layout_constraintBottom_toBottomOf="@id/tvnetWeight"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvnetWeight"
+                app:layout_constraintTop_toTopOf="@id/tvnetWeight" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvnetWeightValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tvMovementType"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvnetWeight"
+                tools:text="vendor_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvVendorNameValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvnetWeightValue"
+                app:layout_constraintTop_toTopOf="@id/tvnetWeightValue"
+                tools:text="Quality jdjsbb" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQualityGrade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/quality_grade"
+                android:textColor="@color/grey_dark"
+                android:textSize="12sp"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvnetWeightValue"
+                app:layout_constraintTop_toBottomOf="@+id/tvnetWeightValue" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQualityGradeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvQualityGrade"
+                app:layout_constraintTop_toBottomOf="@id/tvQualityGrade"
+                tools:text="Samldjflkdsf " />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/light_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clTopHead">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNetPayment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingEnd="2dp"
+                android:text="@string/net_payment"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNetPaymentValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/tvNetPayment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvNetPayment"
+                tools:text="7367218" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

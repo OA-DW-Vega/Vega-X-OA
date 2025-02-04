@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="inventory">Inventory</string>
+    <string name="sort_by_weight">Sort by Weight</string>
+    <string name="filter">Filter</string>
+    <string name="inventory_list">Inventory List</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="sync_status">Sync Status</string>
+    <string name="sync_details">Sync Details</string>
+
+    <string name="material">Material</string>
+    <string name="humidity">Humidity</string>
+    <string name="admixture">Admixture</string>
+    <string name="total_impurities">Total Impurities</string>
+    <string name="mould">Mould</string>
+    <string name="apply">Apply</string>
+    <string name="confirm">Confirm</string>
+    <string name="lot_name">Lot Name</string>
+    <string name="material_name">Material Name</string>
+    <string name="total_impurity">Total Impurity</string>
+    <string name="weight">Weight</string>
+    <string name="storage_location">Storage Location</string>
+    <string name="total_weight">Total Weight</string>
+    <string name="search_by_lots">Search by Lots</string>
+    <string name="kor">Batch Quality</string>
+    <string name="cancel">Cancel</string>
+    <string name="proceed">Proceed</string>
+
+</resources>

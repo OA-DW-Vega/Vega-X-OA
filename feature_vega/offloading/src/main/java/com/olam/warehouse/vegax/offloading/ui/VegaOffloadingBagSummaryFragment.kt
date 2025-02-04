@@ -1,0 +1,198 @@
+package com.olam.warehouse.vegax.offloading.ui
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import com.afollestad.materialdialogs.MaterialDialog
+import com.olam.warehouse.login.ui.succes.SuccessActivity
+import com.olam.warehouse.master.common.utils.getCurrentKey
+import com.olam.warehouse.master.common.utils.getPlantDetails
+import com.olam.warehouse.master.vega.entity.VegaOffloadingParameter
+import com.olam.warehouse.master.vega.entity.VegaOffloadingTrucks
+import com.olam.warehouse.master.vega.entity.VegaQualityParameter
+import com.olam.warehouse.presentation.adapter.setUp
+import com.olam.warehouse.presentation.data.domain.model.GenericReqAndResp
+import com.olam.warehouse.presentation.data.remote.Resource
+import com.olam.warehouse.presentation.ui.BaseFragment
+import com.olam.warehouse.presentation.utils.AppUtils
+import com.olam.warehouse.presentation.utils.UIUtils
+import com.olam.warehouse.presentation.utils.UIUtils.getActionBtnChangedView
+import com.olam.warehouse.presentation.utils.extension.putArgs
+import com.olam.warehouse.vegax.App
+import com.olam.warehouse.vegax.offloading.R
+import com.olam.warehouse.vegax.offloading.data.domain.model.OffloadingQualityPostResponse
+import com.olam.warehouse.vegax.offloading.data.domain.model.VegaOffloadingQualityPost
+import com.olam.warehouse.vegax.offloading.databinding.FragmentVegaOffloadingSummaryBinding
+import com.olam.warehouse.vegax.offloading.utils.*
+import kotlinx.android.synthetic.main.item_vega_offloading_summary.view.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.matomo.sdk.Tracker
+import org.matomo.sdk.extra.TrackHelper
+import java.util.*
+
+class VegaOffloadingBagSummaryFragment : BaseFragment() {
+
+    private var offloadingData = VegaOffloadingTrucks()
+    private var offloadingParamList = mutableListOf<VegaQualityParameter>()
+    private var qualityPostList = arrayListOf<VegaOffloadingTrucks>()
+
+    private val vm: VegaOffloadingViewModel by viewModel()
+    private lateinit var binding: FragmentVegaOffloadingSummaryBinding
+    override val layoutResourceId = R.layout.fragment_vega_offloading_summary
+
+    companion object {
+        fun newInstance(
+            offloadingData: VegaOffloadingTrucks,
+            offloadingParamList: ArrayList<VegaQualityParameter>
+        ) = VegaOffloadingBagSummaryFragment().putArgs {
+            putParcelable(OFFLOADING_DATA, offloadingData)
+            putParcelableArrayList(OFFLOADING_PARAM_DATA, offloadingParamList)
+        }
+    }
+
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentVegaOffloadingSummaryBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val tracker: Tracker? = App.getTracker()
+        TrackHelper.track().screen("offloading/ui/VegaOffloadingBagSummaryFragment").title("Offloading").with(tracker)
+        initUI()
+    }
+
+    private fun initUI() {
+        context?.let {
+            getActionBtnChangedView(binding.llTitle, it, false)
+            getActionBtnChangedView(binding.btnConfirm, it, true)
+        }
+        offloadingData = arguments?.getParcelable(OFFLOADING_DATA)!!
+        offloadingParamList =
+            arguments?.getParcelableArrayList<VegaQualityParameter>(OFFLOADING_PARAM_DATA)!!
+        setUpAdapter(offloadingParamList)
+
+        binding.tvType.text = if (offloadingData.weighBridgeType == PROCURE) SUPPLIER else MTNR
+        binding.tvTruckID.text = getString(R.string.truck_id).plus(offloadingData.vehicleNumber)
+        binding.tvWeighBridgeId.text = offloadingData.weighBridgeId
+        binding.tvBatchNo.text = offloadingData.batchNumber
+        binding.tvSupplierName.text = offloadingData.supplierName ?: offloadingData.supplierCode
+        binding.tvWeight.text = offloadingData.netWeight.plus(offloadingData.unitsOfMeasure)
+        binding.tvBagsCount.text = offloadingData.bagCount
+
+        if (offloadingData.weighBridgeType == PROCURE) {
+            binding.tvdifference.text = SUPPLIER
+        } else {
+            binding.tvdifference.visibility = View.GONE
+            binding.tvSupplierName.visibility = View.GONE
+            binding.tvdifference.text = WAREHOUSE
+        }
+        binding.btnConfirm.setOnClickListener { showConfirmDialog() }
+
+        vm.quality.observe(viewLifecycleOwner, Observer { updateUI(it) })
+        when {
+            offloadingData.weighBridgeType != PROCURE -> {
+                binding.tvBagsCount.visibility = View.GONE
+                binding.tvNoofBagsLabel.visibility = View.GONE
+            }
+            else -> {
+                binding.tvBagsCount.visibility = View.VISIBLE
+                binding.tvNoofBagsLabel.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun showConfirmDialog() {
+        MaterialDialog(requireContext()).show {
+            message(R.string.confirm_offloading)
+            UIUtils.getMetirialCustomView(
+                this,
+                getString(R.string.confirm),
+                getString(R.string.cancel),
+                {
+                    postQuality(offloadingParamList)
+                },
+                { dismiss() })
+        }
+    }
+
+    private fun updateUI(response: Resource<GenericReqAndResp<OffloadingQualityPostResponse>>) {
+        response.let {
+            when (it.status) {
+                Resource.Status.SUCCESS -> {
+                    hideCustomLoading()
+                    when (it.data?.success) {
+                        true -> {
+                            moveToSuccessPage(it.data?.data?.currentWbid, it.data?.data?.charg)
+                            vm.updateDB(it.data?.data?.currentWbid)
+                        }
+                        else -> UIUtils.showErrorDialog(requireContext(), "${it.data?.message}")
+                    }
+                }
+                Resource.Status.LOADING -> showCustomLoading()
+                Resource.Status.ERROR -> {
+                    hideCustomLoading()
+                    UIUtils.showErrorDialog(requireContext(), "${it.error}")
+                }
+            }
+        }
+    }
+
+    private fun moveToSuccessPage(currentWbid: String?, charg: String?) {
+        val intent = Intent(requireContext(), SuccessActivity::class.java)
+        if (AppUtils.isOnline()) intent.putExtra(
+            AppUtils.TITLE,
+            getString(R.string.offloading_saved)
+        ) else intent.putExtra(
+            AppUtils.TITLE,
+            getString(R.string.offloading_saved_offline)
+        )
+        if (charg?.isNotEmpty()!!)
+            intent.putExtra(AppUtils.SUB_TITLE, getString(R.string.new_lot_id_created).plus(charg))
+        else
+            intent.putExtra(AppUtils.SUB_TITLE, getString(R.string.weigh_bridge_id).plus(currentWbid))
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
+    private fun postQuality(offloadingParamList: MutableList<VegaQualityParameter>) {
+        val offloadingParams = offloadingParamList.filter { it.qualityParameterValue!!.isNotEmpty() }
+        if (AppUtils.isOnline()) {
+            @Suppress("UNCHECKED_CAST")
+            offloadingData.qualityDetails = offloadingParams as List<VegaOffloadingParameter>
+            offloadingData.plant = getPlantDetails().plantId
+            qualityPostList.add(offloadingData)
+            vm.postQualityParams(
+                VegaOffloadingQualityPost(
+                    key = getCurrentKey(),
+                    plant = getPlantDetails(),
+                    lotDetails = qualityPostList
+                )
+            )
+        } else {
+            offloadingParamList.forEach {
+                it.wbid = offloadingData.weighBridgeId.toString()
+                vm.saveQualityData(prepareDOQualityData(it), offloadingData.batchNumber.toString())
+            }
+            moveToSuccessPage(offloadingData.weighBridgeId, "")
+
+        }
+
+    }
+
+
+    private fun setUpAdapter(data: MutableList<VegaQualityParameter>) {
+        var list = mutableListOf<VegaQualityParameter>()
+        data.let { list = it }
+        binding.rvBagDetailSummary.setUp(list, R.layout.item_vega_offloading_summary, { it, pos ->
+            tvItemName.text = if (!it.qualityParamLabel.isNullOrEmpty()) it.qualityParamLabel else it.descrChar
+            tvItemValue.text = if (!it.qualityParameterValue.isNullOrEmpty()) it.qualityParameterValue else "-"
+        })
+    }
+
+
+}

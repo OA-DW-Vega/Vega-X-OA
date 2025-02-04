@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:clickable="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryHeadOfi"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:gravity="start"
+            android:padding="@dimen/margin_small"
+            android:text="@string/rmin_select_process"
+            android:textColor="@color/warm_white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_small"
+                android:text="@string/select_material"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/border">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/spGrade"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/border"
+                    android:dropDownWidth="match_parent"
+                    android:dropDownHeight="150dp"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_grade"
+                    android:minHeight="60dp"
+                    android:overlapAnchor="false"
+                    android:padding="@dimen/margin_mic_small"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@null"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_down_arrow" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="start"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_small"
+                android:text="@string/select_stage_to_process"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/border">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spStage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/border"
+                    android:dropDownWidth="match_parent"
+                    android:dropDownHeight="150dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:overlapAnchor="false"
+                    android:padding="@dimen/margin_mic_small"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@null"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_down_arrow" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/vi_dash"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/dash_line"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectPo"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/border_light_grey"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="center|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="8dp"
+                android:text="@string/select_auto_po"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vi_dash" />
+
+            <CheckBox
+                android:id="@+id/cbPo"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvSelectPo"
+                app:layout_constraintEnd_toEndOf="@id/tvSelectPo"
+                app:layout_constraintTop_toTopOf="@id/tvSelectPo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/or"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectPo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectExPo"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="20dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/border_light_grey"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:gravity="center|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="8dp"
+                android:text="@string/select_existing_po"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOr" />
+
+            <CheckBox
+                android:id="@+id/cbExPo"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvSelectExPo"
+                app:layout_constraintEnd_toEndOf="@id/tvSelectExPo"
+                app:layout_constraintTop_toTopOf="@id/tvSelectExPo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_grey"
+        android:enabled="false"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:text="@string/proceed"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium" />
+</RelativeLayout>

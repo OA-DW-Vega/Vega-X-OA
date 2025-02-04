@@ -1,0 +1,476 @@
+package com.olam.warehouse.vegax.processingcoffee.ui.fgrn
+
+import android.content.Context
+import android.os.Bundle
+import android.text.InputFilter
+import android.util.Log
+import android.view.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import com.olam.warehouse.master.common.utils.getCurrentOriginEntity
+import com.olam.warehouse.master.common.utils.getPlantDetails
+import com.olam.warehouse.master.user.model.VegaCoffeeThirdPartyMaterialDetail
+import com.olam.warehouse.master.vega.entity.VegaConfigDetails
+import com.olam.warehouse.master.vega.entity.VegaCustomStLocation
+import com.olam.warehouse.master.vega.entity.VegaMaterial
+import com.olam.warehouse.master.vegacoffee.dao.VegaCoffeeFgrnItems
+import com.olam.warehouse.master.vegacoffee.entity.VegaCoffeeRminLots
+import com.olam.warehouse.presentation.adapter.setUp
+import com.olam.warehouse.presentation.data.domain.model.GenericReqAndResp
+import com.olam.warehouse.presentation.data.remote.Resource
+import com.olam.warehouse.presentation.enums.ConfigItems
+import com.olam.warehouse.presentation.enums.UserRoles
+import com.olam.warehouse.presentation.ui.BaseFragment
+import com.olam.warehouse.presentation.utils.UIUtils
+import com.olam.warehouse.presentation.utils.extension.gone
+import com.olam.warehouse.presentation.utils.extension.onChange
+import com.olam.warehouse.presentation.utils.extension.putArgs
+import com.olam.warehouse.presentation.utils.extension.visible
+import com.olam.warehouse.vegax.App
+import com.olam.warehouse.vegax.processingcoffee.R
+import com.olam.warehouse.vegax.processingcoffee.databinding.FragmentVegaCoffeeFgrnAssignLotBinding
+import com.olam.warehouse.vegax.processingcoffee.utils.*
+import kotlinx.android.synthetic.main.item_vega_coffee_fgrn_lot.view.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.matomo.sdk.Tracker
+import org.matomo.sdk.extra.TrackHelper
+
+class VegaCoffeeFgrnAssignLotFragment : BaseFragment() {
+
+    override val layoutResourceId = R.layout.fragment_vega_coffee_fgrn_assign_lot
+    private lateinit var binding: FragmentVegaCoffeeFgrnAssignLotBinding
+    private val vm: VegaCoffeeFgrnViewModel by viewModel()
+    private var callBack: CallBack? = null
+    private var fgrnItem = VegaCoffeeFgrnItems()
+    private var currentMaterial: String = ""
+    private var currentMaterialName: String = ""
+    private var customLocationList = mutableListOf<VegaCustomStLocation>()
+    private var stockList = mutableListOf<VegaCoffeeRminLots>()
+    private var filterData = mutableListOf<VegaCoffeeRminLots>()
+    private var fullFilter = java.util.ArrayList<String>()
+
+    //    private var materialList = mutableListOf<VegaMaterial>()
+    private var thirdPartyMaterials = mutableListOf<VegaCoffeeThirdPartyMaterialDetail>()
+    private var lotmaterials = mutableListOf<VegaCoffeeRminLots>()
+    private var startRange: String = "0"
+    private var endRange: String = "30"
+    private var aboveThirty: Boolean = false
+    private var storageLocation: String = ""
+    private var DefaultStoLoc: String = ""
+    private var isNewLotCreate: Boolean = false
+    private var isThirdPartyMaterialDetail = false
+    private val mSearchList = mutableListOf<VegaCoffeeRminLots>()
+    private var materialList = mutableListOf<VegaMaterial>()
+
+    interface CallBack {
+        fun replaceFGrnFragment(fragFilter: String, bundle: Bundle, fullFilter: java.util.ArrayList<String>)
+        fun updateLotDetails(bundle: Bundle)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as? CallBack
+    }
+
+    companion object {
+        fun newInstance(
+            model: VegaCoffeeFgrnItems,
+            id: String,
+            isThirdPartyMaterialDetail: Boolean,
+            material: String
+        ) =
+            VegaCoffeeFgrnAssignLotFragment().putArgs {
+                putParcelable(FRAG_ITEM, model)
+                putString(MATERIAL_CODE, id)
+                putString(MATERIAL_NAME, material)
+                putBoolean("thirdParty", isThirdPartyMaterialDetail)
+            }
+
+        const val SEARCH_HINT_TEXT = "Search Lot Item"
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setHasOptionsMenu(true)
+        binding = FragmentVegaCoffeeFgrnAssignLotBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initUI()
+        val tracker: Tracker? = App.getTracker()
+        TrackHelper.track().screen("processingcoffee/ui/fgrn/VegaCoffeeFgrnAssignLotFragment").title("Processing Cocoa")
+            .with(tracker)
+    }
+
+    private fun initUI() {
+        fgrnItem = arguments?.getParcelable(FRAG_ITEM) ?: VegaCoffeeFgrnItems()
+        currentMaterial = arguments?.getString(MATERIAL_CODE) ?: ""
+        currentMaterialName = arguments?.getString(MATERIAL_NAME) ?: ""
+        isThirdPartyMaterialDetail = arguments?.getBoolean("thirdParty") ?: false
+        binding.tvCreateLot.setOnClickListener {
+            when (binding.clCreateLot.isVisible) {
+                true -> {
+                    binding.clCreateLot.gone()
+//                    binding.tvCreateLot.setBackgroundResource(com.olam.warehouse.presentation.R.drawable.ic_arrow_down_black_24dp)
+                }
+                false -> {
+                    setVisibility()
+//                    binding.tvCreateLot.setBackgroundResource(com.olam.warehouse.presentation.R.drawable.ic_arrow_up)
+                    binding.clCreateLot.visible()
+                }
+            }
+        }
+
+        binding.tvInventory.setOnClickListener {
+            when (binding.clInventory.isVisible) {
+                true -> {
+                    binding.clInventory.gone()
+//                    binding.tvInventory.setBackgroundResource(com.olam.warehouse.presentation.R.drawable.ic_arrow_down_black_24dp)
+                }
+                false -> {
+                    setVisibility()
+//                    binding.tvInventory.setBackgroundResource(com.olam.warehouse.presentation.R.drawable.ic_arrow_up)
+                    binding.clInventory.visible()
+                }
+            }
+        }
+
+        binding.tvFilter.setOnClickListener { filterActivity() }
+
+        /*binding.cbCreateNewLot.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                enableDisableBtn(true)
+                isNewLotCreate = true
+            } else {
+                enableDisableBtn(false)
+                isNewLotCreate = false
+            }
+        }*/
+        binding.etLotId.onChange { text ->
+            when {
+                text.isEmpty() -> enableDisableBtn(false)
+                text.isNotEmpty() -> {
+                    when (binding.tvBatchDefault.text.length) {
+                        6 -> if (text.length == 4) enableDisableBtn(true) else enableDisableBtn(false)
+                        7 -> if (text.length == 3) enableDisableBtn(true) else enableDisableBtn(false)
+                    }
+                }
+                else -> enableDisableBtn(false)
+            }
+        }
+
+        binding.tvAssignLot.setOnClickListener {
+           vm.getLotDetails(binding.tvBatchDefault.text.toString().plus(binding.etLotId.text.toString()), currentMaterial, getPlantDetails().plantId)
+            vm.qualityDetails.observe(viewLifecycleOwner, Observer {
+                when (it.status) {
+                    Resource.Status.SUCCESS -> {
+                        when (it.data?.success) {
+                            true -> {
+                                UIUtils.showErrorDialog(requireContext(),getString(R.string.batch_doesnt_exists) )
+                            }
+                            else -> UIUtils.showErrorDialog(requireContext(), "${it.data?.message}")
+                        }
+                    }
+                    Resource.Status.ERROR -> {
+                        hideLoading()
+                        moveBackToFgrn()
+                       // UIUtils.showErrorDialog(requireContext(), "${it.error}")
+                    }
+                }
+                Log.d("mesaage",it.data?.message.toString())
+            })
+            //moveBackToFgrn()
+        }
+        /* vm.product.observe(viewLifecycleOwner, Observer {
+             materialList = it as MutableList<VegaMaterial>
+             val currentMatName = materialList.filter { it.materialCode.equals(currentMaterial.removeRange(0, 6)) }
+             if (currentMatName.size > 0)
+                 binding.tvBatchDefault.text = vm.createBatchFormat(currentMatName[0])
+         })
+         vm.getProducts()*/
+
+        vm.getThirdPartyMaterials()
+        vm.thirdPartyMaterial.observe(viewLifecycleOwner, Observer {
+            thirdPartyMaterials = it as MutableList<VegaCoffeeThirdPartyMaterialDetail>
+            /* val currentMatName = thirdPartyMaterials.filter { it.materialName.toString().contains(currentMaterialName) }
+             if (currentMatName.size > 0)
+                 binding.tvBatchDefault.text = vm.createBatchFormat(currentMatName[0])
+             when (binding.tvBatchDefault.text.length) {
+                 6 -> binding.etLotId.filters = arrayOf(InputFilter.LengthFilter(4))
+                 7 -> binding.etLotId.filters = arrayOf(InputFilter.LengthFilter(3))
+                 else -> binding.etLotId.filters = arrayOf(InputFilter.LengthFilter(10))
+             }*/
+        })
+        vm.getProducts()
+        vm.product.observe(viewLifecycleOwner, Observer { updateProductUI(it) })
+        vm.stocks.observe(viewLifecycleOwner, Observer { updateUI(it) })
+        vm.fetchStocks(currentMaterial.removeRange(0, 6)/*"100000037431"*/)
+        vm.configItems.observe(viewLifecycleOwner, Observer { updateConfigItems(it) })
+        vm.getConfigItems(UserRoles.PROCESSING.role)
+        vm.custonLocation.observe(viewLifecycleOwner, Observer {
+            customLocationList = it.toMutableList()
+            updateStorageLoc(customLocationList)
+//            vm.getConfigItems(UserRoles.PROCESSING.role)
+        })
+        binding.etLotId.filters = arrayOf(InputFilter.AllCaps())
+        //vm.getCustomLocations()
+    }
+
+    private fun updateProductUI(it: List<VegaMaterial>?) {
+        materialList = it as MutableList<VegaMaterial>
+        val currentMatName = materialList.filter { currentMaterial.contains(it.materialCode) }
+        if (currentMatName.size > 0)
+            binding.tvBatchDefault.text = vm.createBatchFormat(currentMatName[0])
+        when (binding.tvBatchDefault.text.length) {
+            6 -> binding.etLotId.filters = arrayOf(InputFilter.LengthFilter(4))
+            7 -> binding.etLotId.filters = arrayOf(InputFilter.LengthFilter(3))
+            else -> binding.etLotId.filters = arrayOf(InputFilter.LengthFilter(10))
+        }
+    }
+
+    private fun moveBackToFgrn() {
+        val bundle = Bundle()
+        bundle.putString(STORAGE_LOC, storageLocation)
+        bundle.putString(LOT_ID, binding.tvBatchDefault.text.toString().plus(binding.etLotId.text.toString()))
+        bundle.putBoolean(CREATE_NEW_LOT, isNewLotCreate)
+        bundle.putParcelableArrayList(STOCK_LIST, stockList.filter { it.isChecked!! } as ArrayList<VegaCoffeeRminLots>)
+        activity?.onBackPressed()
+        callBack?.updateLotDetails(bundle)
+    }
+
+    private fun filterActivity() {
+        val bundle = Bundle()
+        val stoFilter = ArrayList<String>()
+        val stoLoc = stockList.map { it.storageLocationCode!! }
+        stoFilter.addAll(stoLoc)
+        bundle.putStringArrayList(FILTER_WH_LOC, stoFilter)
+        bundle.putString(FILTER_START_RANGE, startRange)
+        bundle.putString(FILTER_END_RANGE, endRange)
+        bundle.putBoolean(FILTER_ABOVE_RANGE, aboveThirty)
+        callBack?.replaceFGrnFragment(FRAG_FILTER, bundle, fullFilter)
+    }
+
+    private fun updateConfigItems(configItems: List<VegaConfigDetails>) {
+        val defaultStorageLoc = configItems.filter { it.process.equals(ConfigItems.DEFAULT_STORAGE_LOC.item) }
+        var isExist = false
+        val isMaterial = defaultStorageLoc.map { it.materialCode }.contains(currentMaterial.removeRange(0, 6))
+        defaultStorageLoc.forEach {
+            if (currentMaterial.contains(it.materialCode) && !it.materialCode.isNullOrEmpty() && !isExist && isMaterial) {
+                if (it.applicable?.contains("Y")!!) {
+                    DefaultStoLoc = it.value.toString()
+                    isExist = true
+                    return@forEach
+                }
+            } else if (it.materialCode.isNullOrEmpty() && !isExist && !isMaterial) {
+                if (it.applicable?.contains("Y")!!) {
+                    DefaultStoLoc = it.value.toString()
+                    isExist = true
+                }
+            }
+        }
+        val createNewLot = configItems.filter { it.process.equals(ConfigItems.CREATE_LOT.item) }
+        createNewLot.forEach {
+            if (it.applicable?.contains("Y")!!) {
+                binding.etLotId.visible()
+                binding.tvBatchDefault.visible()
+                binding.cbCreateNewLot.gone()
+            } else if (it.applicable?.contains("N")!!) {
+                binding.etLotId.gone()
+                binding.cbCreateNewLot.visible()
+                binding.tvBatchDefault.gone()
+            }
+        }
+
+        vm.getCustomLocations()
+    }
+
+    private fun updateStorageLoc(customLocationList: MutableList<VegaCustomStLocation>) {
+        customLocationList.let {
+            val storageLoc = arrayListOf<String>()
+            storageLoc.add(getString(R.string.select_storage_location))
+            val storageLoc1 = customLocationList.map { it.procureLocationCode.plus(" - ").plus(it.procureLocationName) }
+            storageLoc1.forEach { storageLoc.add(it) }
+            val stageAdapter =
+                ArrayAdapter(requireContext(), R.layout.item_vega_coffee_processing_rmin_grade, storageLoc)
+            stageAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
+            binding.spDefaultStorageLoc.adapter = stageAdapter
+            binding.spDefaultStorageLoc.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(p0: AdapterView<*>?) {}
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                    storageLocation = storageLoc[position].split(" - ")[0]
+                    binding.etLotId.isEnabled =
+                        !storageLoc[position].equals(getString(R.string.select_storage_location))
+                    if (!storageLoc[position].equals(getString(R.string.select_storage_location))) {
+                        //binding.etLotId.setText(storageLoc[position].split(" - ")[1].substring(0, 3))
+                        binding.etLotId.text?.length?.let { it1 -> binding.etLotId.setSelection(it1) }
+                        binding.cbCreateNewLot.isEnabled = true
+                        binding.etLotId.setOnClickListener {
+                            binding.etLotId.text?.length?.let { it1 ->
+                                binding.etLotId.setSelection(it1)
+                            }
+                        }
+                    } else {
+                        binding.cbCreateNewLot.isEnabled = false
+                    }
+                }
+            }
+            var ind = 0
+            storageLoc.forEachIndexed { index, s -> if (s.split(" - ")[0].equals(DefaultStoLoc)) ind = index }
+            binding.spDefaultStorageLoc.setSelection(if (DefaultStoLoc.isNotEmpty()) ind else 0)
+            if (DefaultStoLoc.isNotEmpty()) {
+                binding.spDefaultStorageLoc.isEnabled = false
+            }
+        }
+    }
+
+    private fun updateUI(response: Resource<GenericReqAndResp<List<VegaCoffeeRminLots>>>) {
+        response.let {
+            when (it.status) {
+                Resource.Status.SUCCESS -> {
+                    hideLoading()
+                    when (it.data?.success) {
+                        true -> {
+                            stockList.clear()
+                            val dataValue = it.data?.data!!
+                            if (isThirdPartyMaterialDetail) {
+                                stockList.addAll(dataValue.filter { it.vendor == fgrnItem.vendor })
+                            } else {
+                                stockList.addAll(dataValue)
+                            }
+                            updateAdapter(stockList)
+                        }
+                        else -> UIUtils.showErrorDialog(requireContext(), "${it.data?.message}")
+                    }
+                }
+                Resource.Status.LOADING -> showLoading()
+                Resource.Status.ERROR -> {
+                    hideLoading()
+                    UIUtils.showErrorDialog(requireContext(), "${it.error}")
+                }
+            }
+        }
+    }
+
+    private fun updateAdapter(stockList: MutableList<VegaCoffeeRminLots>) {
+        when {
+            stockList.size > 0 -> {
+                binding.rvInventoryLot.visible()
+                binding.tvNoData.gone()
+            }
+            else -> {
+                binding.rvInventoryLot.gone()
+                binding.tvNoData.visible()
+            }
+        }
+        binding.rvInventoryLot.setUp(stockList, R.layout.item_vega_coffee_fgrn_lot, { it, pos ->
+            ivDelete.gone()
+            tvLotNoValue.text = it.batchNumber
+            tvWeightValue.text = it.weight.plus(" ").plus(it.unitOfMeasure)
+            tvStorageValue.text = it.storageLocationCode
+            cbLotId.isChecked = it.isChecked!!
+            clItem.setOnClickListener { view ->
+                stockList.forEach { it.isChecked = false }
+                stockList[pos].isChecked = !it.isChecked!!
+                binding.rvInventoryLot.adapter?.notifyDataSetChanged()
+                enableDisableBtn(stockList.any { it.isChecked!! })
+            }
+        })
+    }
+
+    private fun enableDisableBtn(flag: Boolean) {
+        if (flag) {
+            binding.tvAssignLot.isEnabled = true
+            binding.tvAssignLot.setBackgroundColor(getColor(if(getCurrentOriginEntity().contains("OFI"))com.olam.warehouse.presentation.R.color.colorPrimaryOfi else com.olam.warehouse.presentation.R.color.green))
+        } else {
+            binding.tvAssignLot.isEnabled = false
+            binding.tvAssignLot.setBackgroundColor(getColor(com.olam.warehouse.presentation.R.color.light_grey))
+        }
+    }
+
+    private fun setVisibility() {
+        binding.clCreateLot.gone()
+        binding.clInventory.gone()
+    }
+
+    fun applyFilter(bundle: Bundle) {
+        val stoLocation = bundle.getStringArrayList(FILTER_WH_LOC) ?: ArrayList()
+        startRange = bundle.getString(FILTER_START_RANGE) ?: ""
+        endRange = bundle.getString(FILTER_END_RANGE) ?: ""
+        aboveThirty = bundle.getBoolean(FILTER_ABOVE_RANGE, false)
+        fullFilter = stoLocation
+        if (!aboveThirty && startRange.equals("0") && endRange.equals("30") && stoLocation.size == 0) {
+            updateAdapter(stockList)
+        } else {
+            filterData.clear()
+            var filterData1 = mutableListOf<VegaCoffeeRminLots>()
+            stockList.forEach { stock ->
+                stoLocation.forEach { loc ->
+                    if (loc.contains(stock.storageLocationCode.toString())) {
+                        filterData1.add(stock)
+                    }
+                }
+            }
+            if (stoLocation.size == 0) filterData1 = stockList
+
+            when {
+                !aboveThirty && startRange.equals("0") && endRange.equals("30") -> filterData = filterData1
+                !aboveThirty -> {
+                    filterData1.forEach {
+                        if (startRange.toDouble() <= it.weight?.toDouble() ?: 0.0 && it.weight?.toDouble() ?: 0.0 <= endRange.toDouble())
+                            filterData.add(it)
+                    }
+                }
+                else -> {
+                    filterData1.forEach {
+                        if ("30".toDouble() < it.weight?.toDouble() ?: 0.0)
+                            filterData.add(it)
+                    }
+                }
+            }
+            updateAdapter(filterData)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
+        super.onCreateOptionsMenu(menu, inflater)
+        activity?.menuInflater?.inflate(com.olam.warehouse.presentation.R.menu.search_menu, menu)
+        try {
+            val search = menu.findItem(com.olam.warehouse.presentation.R.id.search)
+            val searchView: SearchView =
+                search?.actionView as SearchView
+            searchView.setBackgroundColor(getColor(if(getCurrentOriginEntity().contains("OFI"))com.olam.warehouse.presentation.R.color.colorPrimaryOfi else com.olam.warehouse.presentation.R.color.green))
+            searchView.queryHint = getString(com.olam.warehouse.presentation.R.string.search_by_lot)
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    newText.let {
+                        if (newText?.isEmpty() == true) {
+                            updateAdapter(stockList)
+                        } else {
+                            mSearchList.clear()
+                            stockList.forEach { qtyWb ->
+                                newText?.let { text ->
+                                    if (qtyWb.batchNumber.contains(text)) {
+                                        mSearchList.add(qtyWb)
+                                    }
+                                }
+                            }
+                            updateAdapter(mSearchList)
+                        }
+                    }
+                    return true
+                }
+            })
+        } catch (e: ClassCastException) {
+            e.printStackTrace()
+        }
+    }
+}

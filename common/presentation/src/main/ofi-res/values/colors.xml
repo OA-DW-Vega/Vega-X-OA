@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //OFI Background and Components Colors
+
+    <color name="colorPrimaryOfi">#860063</color>
+    <color name="colorPrimaryHeadOfi">#860063</color>
+    <color name="colorSecondaryOfi">#860063</color>
+    <color name="colorPrimaryOfi1">#f78c2a</color>
+    <color name="colorPrimaryOfi2">#222222</color>
+    <color name="colorPrimaryOfi3">#ffffff</color>
+    <color name="dark_marun">#4A4949</color>
+    <color name="dark_grey">#4A4949</color>
+    <color name="dark_colorPrimaryOfi">#7B1960</color>
+
+
+    //Normal Background and Components Colors
+   <!-- <color name="colorPrimaryOfi">#a0c800</color>
+    <color name="colorPrimaryHeadOfi">#0B4B52</color>
+    <color name="colorSecondaryOfi">#00ACC6</color>
+    <color name="colorPrimaryOfi1">#00869D</color>
+    <color name="colorPrimaryOfi2">#222222</color>
+    <color name="colorPrimaryOfi3">#ffffff</color>
+    <color name="dark_marun">#6C5D56</color>
+    <color name="dark_grey">#4A4949</color>-->
+</resources>

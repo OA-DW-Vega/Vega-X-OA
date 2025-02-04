@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="fgrn">FGRN</string>
+    <string name="rmin">RMIN</string>
+    <string name="drying">Drying</string>
+    <string name="proceed">Proceed</string>
+    <string name="select_stage_to_process">Select Stage</string>
+    <string name="select_material"> Select Material to Process</string>
+    <string name="output_grade">Output Grade :</string>
+    <string name="input_grade">Input Grade :</string>
+    <string name="b_o_m">B.O.M :</string>
+    <string name="information">Information</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_lots_to_processing">Add LOTs to Processing</string>
+    <string name="material">Material</string>
+    <string name="stage">Stage</string>
+    <string name="weight_to_process">Weight To Process</string>
+    <string name="rmin_lots_to_process">RMIN - LOTs to Process</string>
+    <string name="select_warehouse">Select Warehouse</string>
+    <string name="add_lots_to_rmin">Add Lots to Rmin</string>
+    <string name="rmin_shift_selection">RMIN - Shift Selection</string>
+    <string name="select_shift">Select Shift</string>
+    <string name="shift_a">Shift A</string>
+    <string name="shift_b">Shift B</string>
+    <string name="shift_c">Shift C</string>
+    <string name="rmin_select_process">RMIN - Select Process</string>
+    <string name="select_grade">--Select Grade--</string>
+    <string name="select_stage">--Select Stage--</string>
+    <string name="select_storage_location">--Select Storage Location--</string>
+    <string name="select_auto_po">Select Auto PO</string>
+    <string name="or">- OR -</string>
+    <string name="or1">--- OR ---</string>
+    <string name="select_existing_po">Select Existing PO</string>
+    <string name="process_not_avail">Process Order Is Not Available</string>
+    <string name="pono">PO No :</string>
+    <string name="weight_in_process">Weight in Processing :</string>
+    <string name="dry_start_date">Date :</string>
+    <string name="rmin_summary">RMIN - Summary</string>
+    <string name="lot_information">LOT Information</string>
+    <string name="shift">Shift</string>
+    <string name="type_of_processing">Type of Processing</string>
+    <string name="lots_summary">LOTs Summary</string>
+    <string name="po_quantity_text">PO Qty(KG)</string>
+    <string name="conform_remove">Are sure want to remove the LoT?</string>
+    <string name="less_weight_error">Please enter valid lot weight</string>
+    <string name="select_bom">RMIN - Select B.O.M</string>
+    <string name="select_po">RMIN - Po Details</string>
+    <string name="conform_processing">Confirm Rmin Processing</string>
+    <string name="rmin_saved">RMIN Successfully Completed</string>
+    <string name="select_remark">Select Remark</string>
+    <string name="weight_to_process_man">Weight To Process<font color='#CB410B'>*</font></string>
+    <string name="empty_weight">Please enter the weight</string>
+    <string name="po_details">RMIN - Po Details</string>
+    <string name="fgrn_post_confirm">Do you want to Proceed \n Confirm FGRN ?</string>
+    <string name="fgrn_success">FGRN Successfully Completed</string>
+    <string name="for_the_po">for the PO : </string>
+
+
+    <string-array name="remarks">
+        <item>Select Remark</item>
+        <item>Rebagging</item>
+        <item>Drying + Rebagging</item>
+        <item>Cleaning + Drying + Rebagging</item>
+    </string-array>
+
+    //Fgrn
+
+    <string name="sort_by">Sort by</string>
+    <string name="fgrn_po_details">FGRN - PO Details</string>
+    <string name="no_data_found">No data found</string>
+    <string name="po_numaber">PO Number</string>
+    <string name="fgrn_pending_po">FGRN Pending PO</string>
+    <string name="create_new_fgrn">Create New FGRN</string>
+    <string name="total_pos_0">Total POs</string>
+    <string name="select_grades">Select Grades</string>
+    <string name="weight_summary">Weight Summary</string>
+    <string name="add_weight">Add Weight</string>
+    <string name="no_weight_added">No weight added</string>
+    <string name="fgrn_drying">FGRN</string>
+    <string name="st_location">St Location</string>
+    <string name="lot_id">Lot Id</string>
+    <string name="weight">Weight</string>
+    <string name="eligible_weight">Eligible Weight</string>
+    <string name="tare_weight">Tare Weight</string>
+    <string name="assign_lot">Assign Lot</string>
+    <string name="save">Save</string>
+    <string name="fgrn_assign_lot">FGRN - Assign LOT</string>
+    <string name="create_lot">Create LOT</string>
+    <string name="default_storage_location">Default Storage Location</string>
+    <string name="create_new_lot">Create New LOT</string>
+    <string name="lot_details">LOT Details</string>
+    <string name="fgrn_shift_selection">FGRN - Shift Selection</string>
+    <string name="fgrn_summary">FGRN - Summary</string>
+    <string name="processing_summary">Processing Summary</string>
+    <string name="filter">Filter</string>
+    <string name="temp_fgrn_no">Temp FGRN No</string>
+    <string name="date">Date</string>
+    <string name="please_check_atleast_one_grade">Please choose atleast one grade</string>
+    <string name="next">Next</string>
+    <string name="select_from_inventory">Select From Inventory</string>
+    <string name="wh_location">WH Location</string>
+    <string name="apply">Apply</string>
+    <string name="weight_range">Weight Range</string>
+    <string name="exceed_weight">Added weight is exceed eligible weight</string>
+    <string name="ok">OK</string>
+    <string name="please_assign_lot">Please Assign Lot</string>
+    <string name="above_30_mt">Above 30 MT</string>
+    <string name="please_add_lot">Please Add Lot</string>
+    <string name="please_add_po_quantity">Please enter the PO Quantity</string>
+    <string name="choose_remarks">Please choose remarks</string>
+    <string name="choose_shift">Please select shift</string>
+    <string name="new_lot">New Lot</string>
+    <string name="bag">Bag</string>
+    <string name="enter_operator_name">Enter operator name</string>
+    <string name="operator_name">Operator Name</string>
+    <string name="add_lots_to_rmins">RMIN - Add LOTs to RMIN</string>
+    <string name="grade">Grade</string>
+    <string name="select_entire_lot">Select Entire LOT</string>
+    <string name="all">ALL</string>
+    <string name="lot_selected">LOT Selected : </string>
+    <string name="pending_fgrn_po_details">Pending FGRN PO Details</string>
+    <string name="gross_n_weight">Gross \n weight</string>
+    <string name="net_n_weight">Net \n weight</string>
+    <string name="default_lot">Default Lot</string>
+    <string name="choose_batch">Choose batch number</string>
+    <string name="bag_consumption">Bag Consumption</string>
+    <string name="batch_number">Batch Number</string>
+    <string name="po_number">PO Qty</string>
+    <string name="weight_in_processing">Weight in Processing</string>
+    <string name="pile_management">Pile Management</string>
+    <string name="vendor">Vendor</string>
+    <string name="add_lots_to_dispatch">Add LOTs To Dispatch</string>
+    <string name="scan_lot_id">Scan Lot ID</string>
+    <string name="enter_lot_id">Enter Lot ID</string>
+    <string name="dispatch_summary">Dispatch Summary</string>
+    <string name="storage_location">Storage Location</string>
+    <string name="weight_to_transfer">Weight To Transfer</string>
+    <string name="pile_no">Pile No</string>
+    <string name="create_new_pile">Create New PILE</string>
+    <string name="create_pile">Create PILE</string>
+    <string name="select_existing_pile">Select Existing PILE</string>
+    <string name="enter_4_digit_lot_id">Enter 4 digit Lot id</string>
+    <string name="roundoff">RoundOff</string>
+    <string name="select_weighment_type">Select Weighment Type</string>
+    <string name="index_weight_details">Index Weight Details</string>
+    <string name="index_start_weight">Meter Start Weight</string>
+    <string name="index_end_weight">Meter End Weight</string>
+    <string name="add_lots_from_inventory">Add Tickets From Inventory</string>
+    <string name="offline_rmin_saved">RMIN Saved Locally</string>
+    <string name="qty_assesment">Quality Assessment-</string>
+    <string name="percentage">%</string>
+    <string name="enter_all_mandatory_fields">Please enter all the mandatory field</string>
+</resources>

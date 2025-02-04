@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="quality_analysis">Post Processing Quality Analysis</string>
+    <string name="post_processing_quality">Post Processing Quality</string>
+    <string name="ppq_offline_summary">PPQ Offline Summary</string>
+    <string name="no_data_found">Aucune donnée disponible</string>
+    <string name="po_number">Numéro du bon de commande</string>
+    <string name="batch_number">Numéro du lot</string>
+    <string name="lot_number">Numéro du lot</string>
+    <string name="weight">Poids</string>
+    <string name="date">Date</string>
+    <string name="inspection_lot">Numéro du lot d’inspection</string>
+    <string name="parcentage">%</string>
+    <string name="qty_assesment">Post Processing Quality Assessment</string>
+    <string name="reject">Rejeter</string>
+    <string name="accept">Accepter</string>
+    <string name="proceed">Procéder</string>
+    <string name="accept_quality">Accepter la qualité</string>
+    <string name="reject_quality">Rejeter la qualité</string>
+    <string name="success_accept">Qualité acceptée avec succès</string>
+    <string name="success_reject">Qualité rejetée avec succès</string>
+    <string name="material">Matériel: </string>
+    <string name="atleast_one_value">Veuillez enregistrer toutes les valeurs de paramètre</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+</resources>

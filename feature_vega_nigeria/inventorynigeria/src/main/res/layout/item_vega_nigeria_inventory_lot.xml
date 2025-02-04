@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvLotDetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_padding_size_small"
+    android:background="@color/white"
+    app:cardCornerRadius="4dp">
+
+    <TextView
+        android:id="@+id/tvQualityDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/left_round_bottom_corner"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawablePadding="@dimen/margin_medium"
+        android:drawableTint="@color/white"
+        android:gravity="center"
+        android:paddingStart="@dimen/margin_padding_size_small"
+        android:paddingTop="@dimen/leftTabPaddingEnd"
+        android:paddingEnd="@dimen/margin_padding_size_small"
+        android:paddingBottom="@dimen/leftTabPaddingEnd"
+        android:text="@string/quality_details"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cbSelectStocks"
+        android:padding="@dimen/margin_very_small">
+
+        <LinearLayout
+            android:id="@+id/llLotNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--<CheckBox
+                android:id="@+id/cbLotID"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <TextView
+                android:id="@+id/tvLotNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/blue_light"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+
+                tools:text="18GD2345A1" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_material_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text="@string/material"
+            android:textColor="@color/grey_border"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weight_lbl"
+            app:layout_constraintHorizontal_weight="1.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llLotNo" />
+
+        <TextView
+            android:id="@+id/tv_weight_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text="@string/weight"
+            android:textColor="@color/grey_border"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_material_lbl"
+            app:layout_constraintEnd_toStartOf="@+id/tvStLocLbl"
+            app:layout_constraintHorizontal_weight="1.2"
+            app:layout_constraintStart_toEndOf="@+id/tv_material_lbl"
+            app:layout_constraintTop_toBottomOf="@+id/llLotNo"
+            app:layout_constraintTop_toTopOf="@+id/tv_material_lbl" />
+
+        <TextView
+            android:id="@+id/tvStLocLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text="@string/st_location"
+            android:textColor="@color/grey_border"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight=".8"
+            app:layout_constraintStart_toEndOf="@+id/tv_weight_lbl"
+            app:layout_constraintTop_toBottomOf="@+id/llLotNo" />
+
+        <TextView
+            android:id="@+id/tv_material_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weight_data"
+            app:layout_constraintHorizontal_weight="1.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_material_lbl"
+            tools:text="sample text for my material data " />
+
+
+        <TextView
+            android:id="@+id/tv_weight_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_material_name"
+            app:layout_constraintEnd_toStartOf="@+id/tvStLocValue"
+            app:layout_constraintHorizontal_weight="1.2"
+            app:layout_constraintStart_toEndOf="@+id/tv_material_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_weight_lbl"
+            app:layout_constraintTop_toTopOf="@+id/tv_material_name"
+            tools:text="2500.00 KG" />
+
+        <TextView
+            android:id="@+id/tvStLocValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight=".8"
+            app:layout_constraintStart_toEndOf="@+id/tv_weight_data"
+            app:layout_constraintTop_toBottomOf="@+id/tvStLocLbl"
+            tools:text="21/05/2020" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cvQtyDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_material_name">
+
+            <TextView
+                android:id="@+id/tvBeanLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/discounted_bean_weight"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvMoistureLbl"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMoistureLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/moisture"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvFFALbl"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvBeanLbl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFFALbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/mould"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvFATLbl"
+                app:layout_constraintHorizontal_weight="1.2"
+                app:layout_constraintStart_toEndOf="@+id/tvMoistureLbl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFATLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/admixture"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvFFALbl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBeanCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvMoisture"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBeanLbl"
+                tools:text="1000" />
+
+            <TextView
+                android:id="@+id/tvMoisture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvFFA"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvBeanCount"
+                app:layout_constraintTop_toBottomOf="@+id/tvMoistureLbl"
+                tools:text="1000" />
+
+            <TextView
+                android:id="@+id/tvFFA"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvFAT"
+                app:layout_constraintHorizontal_weight="1.2"
+                app:layout_constraintStart_toEndOf="@+id/tvMoisture"
+                app:layout_constraintTop_toBottomOf="@+id/tvFFALbl"
+                tools:text="1000" />
+
+            <TextView
+                android:id="@+id/tvFAT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvFFA"
+                app:layout_constraintTop_toBottomOf="@+id/tvFATLbl"
+                tools:text="1000" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

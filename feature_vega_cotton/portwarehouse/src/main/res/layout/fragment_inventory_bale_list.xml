@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:animateLayoutChanges="true"
+    android:clipChildren="false"
+    android:clickable="true"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_port_background"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:text="@string/inventory_bale"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/grey_light"
+            android:orientation="horizontal">s
+
+            <LinearLayout
+                android:id="@+id/llCurrent"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/orange_light"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/tvBaleCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/currently_25000_mtns"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_medium"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_very_small"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:id="@+id/llSortBy"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/tvSortBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sort_by"
+                    android:textColor="@color/dark_Grey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:id="@+id/ivSortDownUp"
+                    android:layout_width="@dimen/margin_medium"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:contentDescription="@string/back_navigation"
+                    android:src="@drawable/ic_sort_white_port"
+                    app:tint="@color/dark_Grey" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:id="@+id/llFilterBy"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/tvFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter"
+                    android:textColor="@color/dark_Grey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_medium"
+                    android:contentDescription="@string/back_navigation"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:src="@drawable/ic_filter_grey_port" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_min_minus"
+            android:background="@null">
+
+            <ImageView
+                android:id="@+id/ivCurrentDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/back_navigation"
+                android:src="@drawable/ic_down_arrow" />
+
+            <ImageView
+                android:id="@+id/ivSortDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/back_navigation"
+                android:src="@drawable/ic_down_arrow"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivFilterDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/grey"
+                android:contentDescription="@string/back_navigation"
+                android:src="@drawable/ic_down_arrow"
+                android:visibility="invisible" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvInventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/llSortContainer"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:elevation="4dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RadioGroup
+                    android:id="@+id/rgSort"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbFirstIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/blue"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_padding_size_zero"
+                        android:text="@string/first_in" />
+
+                    <RadioButton
+                        android:id="@+id/rbLastIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/blue"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_padding_size_zero"
+                        android:text="@string/last_in" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/sortBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent_black"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

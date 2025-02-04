@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llShiplineWrapper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="@dimen/margin_medium"
+    android:paddingBottom="@dimen/margin_medium"
+    android:paddingStart="@dimen/margin_medium"
+    android:paddingEnd="@dimen/margin_medium">
+    
+    <TextView
+        android:id="@+id/tvShipline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="VKCARGO"
+        android:textColor="@color/black"
+        android:layout_gravity="start"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <ImageView
+        android:id="@+id/ivTick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_tick"
+        android:layout_gravity="end"
+        android:visibility="gone"/>
+
+</FrameLayout>

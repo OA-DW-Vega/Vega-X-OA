@@ -1,0 +1,67 @@
+<resources>
+
+    //Quality
+    <string name="grade">Loại : </string>
+    <string name="quality_analysis">Phân tích chất lượng</string>
+    <string name="weigh_bridge_count">Tổng WB 00</string>
+    <string name="total_wb_0">Tổng WB 0</string>
+    <string name="total_wb">Tổng WB</string>
+    <string name="new_lot_id_created">ID lô hàng mới đã được tạo thành công \n</string>
+    <string name="sort_by">Sắp xếp theo</string>
+    <string name="back_navigation">điều hướng</string>
+    <string name="filter">Lọc</string>
+    <string name="weigh_bridge_id">ID cân cầu : </string>
+    <string name="weight">Trọng lượng</string>
+    <string name="qty_assesment">Đánh giá chất lượng</string>
+    <string name="proceed">Tiến hành</string>
+    <string name="save">Tiết kiệm</string>
+    <string name="cancel">Huỷ</string>
+    <string name="test_str">18GRD00028</string>
+    <string name="oneweight">180 KG</string>
+    <string name="consignment_details">Chi tiết ký gửi</string>
+    <string name="select_weigh_type">Chọn loại trọng lượng</string>
+    <string name="select_pallet_type">Chọn loại pallet</string>
+    <string name="ok">OK</string>
+    <string name="weigh_details">Chi tiết trọng lượng</string>
+    <string name="no_of_bags">Số bao</string>
+    <string name="bag_weight">Trọng lượng bao</string>
+    <string name="confirm_Quty_message">Chấp nhận chất lượng</string>
+    <string name="save_Quty_message">Tiết kiệm chất lượng</string>
+    <string name="next">Tiếp</string>
+    <string name="type_of_pallet">Loại pallet</string>
+    <string name="no_of_pallet">Số pallet</string>
+    <string name="add">Thêm</string>
+    <string name="total_weight">Tổng trọng lượng</string>
+    <string name="pallet">Pallet</string>
+    <string name="bag">Bao</string>
+    <string name="delete">Xoá</string>
+    <string name="quality_success">Chất lượng được lưu thành công</string>
+    <string name="quality_success_offline">Chất lượng được lưu offline thành công</string>
+    <string name="percentage">%</string>
+    <string name="weigh_bridge_id_is">ID cân cầu::</string>
+    <string name="pallet_weight">Trọng lượng pallet</string>
+    <string name="no_data">Không tìm thấy dữ liệu</string>
+    <string name="select_warehouse">Chọn kho</string>
+    <string name="select_mtn">Chọn_mtn</string>
+    <string name="mtnr_weigh_scale">MTNR - Cân</string>
+    <string name="batch_no">Số lô</string>
+    <string name="view_offline">Xem tóm tắt offline</string>
+    <string name="master_offline">Dữ liệu chủ offline</string>
+    <string name="sync">Đồng bộ tất cả</string>
+    <string name="quality_incorrect"><![CDATA[Thông số chất lượng không chính xác & Lỗi nội bộ]]></string>
+    <string name="view_details">Xem chi tiết</string>
+    <string name="sync_all">Bạn có muốn đồng bộ tất cả dữ liệu offline lên cloud?</string>
+    <string name="delete_msg">Bạn có chắc? Bạn có muốn xoá mục này?</string>
+    <string name="quality_offline_list">Xem danh sách chất lượng offline</string>
+    <string name="sort_by_im">Sắp xếp theo <font fgcolor='#FFFFFF'>*</font></string>
+    <string name="received_on">Ngày nhận hàng : </string>
+    <string name="resync">Đồng bộ lại</string>
+    <string name="search_wb_item">Tìm kiếm WB mục</string>
+    <string name="value_out_of_range">Giá trị ngoài phạm vi!</string>
+    <string name="decimal_out_of_range">Thập phân ra khỏi phạm vi!</string>
+    <string name="enter_all_mandatory_fields">Vui lòng nhập tất cả các trường bắt buộc</string>
+    <string name="quality_params_not_available">Thông số chất lượng không có sẵn cho vật liệu này</string>
+    <string name="select">Lựa</string>
+    <string name="enter_lesser_or_greater">Total sum of beans is lesser/greater than 100 please correct to continue</string>
+
+</resources>

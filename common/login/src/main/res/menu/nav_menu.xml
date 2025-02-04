@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <group android:id="@+id/item1">
+            <item
+                android:id="@+id/navScan"
+                android:icon="@drawable/ic_menu_tap_to_scan"
+                android:title="@string/tap_to_scan"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item2">
+            <item
+                android:id="@+id/navReceving"
+                android:icon="@drawable/ic_receiving_menu"
+                android:title="@string/receiving"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item3">
+            <item
+                android:id="@+id/navWeighment"
+                android:icon="@drawable/ic_weighment_menu"
+                android:title="@string/weighment"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item3a">
+            <item
+                android:id="@+id/navMTnr"
+                android:icon="@drawable/ic_offloading_menu"
+                android:title="@string/mtnr"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item4">
+            <item
+                android:id="@+id/navOffloading"
+                android:icon="@drawable/ic_offloading_menu"
+                android:title="@string/offloading"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item5">
+            <item
+                android:id="@+id/navMtnr"
+                android:icon="@drawable/ic_mtnr_menu"
+                android:title="@string/mtnr"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item5a">
+            <item
+                android:id="@+id/navcontainer"
+                android:icon="@drawable/ic_container_management"
+                android:title="@string/container"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item5b">
+            <item
+                android:id="@+id/navLotQuality"
+                android:icon="@drawable/ic_quality_menu"
+                android:title="@string/lot_quality"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item6">
+            <item
+                android:id="@+id/navQuality"
+                android:icon="@drawable/ic_quality_menu"
+                android:title="@string/quality"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item7">
+            <item
+                android:id="@+id/navPpq"
+                android:icon="@drawable/ic_quality_menu"
+                android:title="@string/ppq"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item8">
+            <item
+                android:id="@+id/navPile"
+                android:icon="@drawable/ic_quality_menu"
+                android:title="@string/pile"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item9">
+            <item
+                android:id="@+id/navGrn"
+                android:icon="@drawable/ic_grn_menu"
+                android:title="@string/grn1"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item10">
+            <item
+                android:id="@+id/navApproval"
+                android:icon="@drawable/ic_approve_menu"
+                android:title="@string/approve"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item11">
+            <item
+                android:id="@+id/navSales"
+                android:icon="@drawable/ic_sales_menu"
+                android:title="@string/sales"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item12">
+            <item
+                android:id="@+id/navMtnt"
+                android:icon="@drawable/ic_dispatch_menu"
+                android:title="@string/dispatch"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item12a">
+            <item
+                android:id="@+id/navGateEntryApproval"
+                android:icon="@drawable/ic_approve_menu"
+                android:title="@string/gate_entry_approval"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item13">
+            <item
+                android:id="@+id/navProcessing"
+                android:icon="@drawable/ic_menu_processing"
+                android:title="@string/processing"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item14">
+            <item
+                android:id="@+id/navGateEntry"
+                android:icon="@drawable/ic_waiting_truck_menu"
+                android:title="@string/gate_entry"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item15">
+            <item
+                android:id="@+id/navSecretId"
+                android:icon="@drawable/ic_waiting_truck_menu"
+                android:title="@string/secret_id"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item16">
+            <item
+                android:id="@+id/navBagIssue"
+                android:icon="@drawable/ic_bag_mgmt"
+                android:title="@string/bag_issue"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item17">
+            <item
+                android:id="@+id/navInventory"
+                android:icon="@drawable/ic_inventory"
+                android:title="@string/inventroy"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item18">
+            <item
+                android:id="@+id/navIncomingLots"
+                android:icon="@drawable/ic_inventory"
+                android:title="@string/incoming_lots"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item19">
+            <item
+                android:id="@+id/navGinningInProgress"
+                android:icon="@drawable/ic_inventory"
+                android:title="@string/ginning_in_progress"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item20">
+            <item
+                android:id="@+id/navDryingInProgress"
+                android:icon="@drawable/ic_inventory"
+                android:title="@string/drying_in_progress"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item21">
+            <item
+                android:id="@+id/navPileManagement"
+                android:icon="@drawable/ic_inventory"
+                android:title="@string/pile_managemnet"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item22">
+            <item
+                android:id="@+id/navSweepings"
+                android:icon="@drawable/ic_menu_sweepings"
+                android:title="@string/sweepings"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item23">
+            <item
+                android:id="@+id/navPch"
+                android:icon="@drawable/ic_pch_menu"
+                android:title="@string/pch"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item24">
+            <item
+                android:id="@+id/navInvoice"
+                android:icon="@drawable/ic_invoice_menu"
+                android:title="@string/invoice"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item25a">
+            <item
+                android:id="@+id/navReconcillation"
+                android:icon="@drawable/ic_reconcil_menu_ofi"
+                android:title="@string/reconcillation_report"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item25">
+            <item
+                android:id="@+id/navTransactionDetails"
+                android:icon="@drawable/ic_trans_details_menu"
+                android:title="@string/transaction_details"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item26">
+            <item
+                android:id="@+id/navReprint"
+                android:icon="@drawable/ic_reprint_menu"
+                android:title="@string/reprint"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item27">
+            <item
+                android:id="@+id/navAdvance"
+                android:icon="@drawable/ic_advance_menu"
+                android:title="@string/advancing"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item28">
+            <item
+                android:id="@+id/navForward"
+                android:icon="@drawable/ic_forward_menu"
+                android:title="@string/trans_forward_po"
+                android:visible="false" />
+        </group>
+
+        <group android:id="@+id/item29">
+            <item
+                android:id="@+id/navSync"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/nav_sync"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item30">
+
+            <item
+                android:id="@+id/navSyncInventory"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/nav_sync_inventory"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item31">
+            <item
+                android:id="@+id/navSyncVendor"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/nav_sync_vendor"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item32">
+            <item
+                android:id="@+id/navDataSync"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/nav_data_sync"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item32a">
+            <item
+                android:id="@+id/navSyncVendorCredit"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/sync_vendor_credit"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item32b">
+            <item
+                android:id="@+id/navSyncVendorAdvance"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/sync_advance_items"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item32c">
+            <item
+                android:id="@+id/navSyncExchangeRate"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/sync_exchange_rate"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item33">
+            <item
+                android:id="@+id/navBaleDataSync"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/nav_bale_data_sync"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item34">
+            <item
+                android:id="@+id/navTransaction"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/nav_transaction"
+                android:visible="false" />
+        </group>
+        <group android:id="@+id/item35">
+            <item
+                android:id="@+id/navSettings"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/nav_settings"
+                android:visible="true" />
+        </group>
+        <group android:id="@+id/item36">
+            <item
+                android:id="@+id/navQuickPin"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/nav_quick_pin"
+                android:visible="true" />
+        </group>
+        <group android:id="@+id/item37">
+            <item
+                android:id="@+id/navLogout"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/log_out"
+                android:visible="true" />
+        </group>
+    </group>
+
+
+</menu>

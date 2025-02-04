@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white">
+
+    <TextView
+        android:id="@+id/tvGrnHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green_1"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/re_print_mtn_t"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/spWareHouse"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:background="@drawable/border_light_grey"
+        android:backgroundTint="#DEDAD4"
+        android:gravity="center_vertical"
+        android:hint="@string/select_material"
+        android:padding="@dimen/margin_mic_small"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGrnHeading" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDown"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:padding="@dimen/margin_mic_small"
+        android:src="@drawable/ic_down_arrow"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/spWareHouse"
+        app:layout_constraintEnd_toEndOf="@id/spWareHouse"
+        app:layout_constraintTop_toTopOf="@id/spWareHouse" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spWareHouse"
+        tools:listitem="@layout/fragment_vega_nic_ticket_reprint" />
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/no_data_found"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spWareHouse"
+        app:layout_constraintVertical_bias="0.433" />
+
+    <TextView
+        android:id="@+id/tvPrint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/print"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvTransaction" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

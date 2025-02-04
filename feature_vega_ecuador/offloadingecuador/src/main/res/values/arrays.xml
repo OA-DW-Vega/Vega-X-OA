@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="procurementType">
+        <item>Spot</item>
+        <item>Fixed</item>
+    </string-array>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.navigation.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigationView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:fitsSystemWindows="true"
+    android:layout_marginEnd="-65dp"
+    android:layout_marginRight="-65dp"
+    app:headerLayout="@layout/nav_header"
+    app:menu="@menu/nav_menu"
+    app:itemMaxLines="3"
+    app:theme="@style/NavigationViewStyle">
+
+    <TextView
+        android:id="@+id/tvLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimaryOfi1"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/log_out"
+        android:textColor="@color/white" />
+</com.google.android.material.navigation.NavigationView>

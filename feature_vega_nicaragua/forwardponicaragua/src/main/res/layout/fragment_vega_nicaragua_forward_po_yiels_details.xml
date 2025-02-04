@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:gravity="start"
+        android:padding="@dimen/margin_small"
+        android:text="@string/forward_po_creation_yield_details"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvYield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_above="@+id/btnProceed"
+        tools:listitem="@layout/item_vega_nicaragua_forward_po_yield" />
+
+    <RelativeLayout
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryOfi">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/colorPrimaryOfi"
+            android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+            android:drawablePadding="@dimen/margin_padding_size_small"
+            android:drawableTint="@color/white"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="@string/proceed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium" />
+    </RelativeLayout>
+</RelativeLayout>

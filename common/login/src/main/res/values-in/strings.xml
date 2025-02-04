@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">login</string>
+
+    // Home Page module names
+    <string name="receiving">Menerima</string>
+    <string name="quality">Kualitas</string>
+    <string name="approve">Menyetujui</string>
+    <string name="procurement_type">Jenis pengadaan :</string>
+    <string name="view_offline">Lihat Ringkasan Offline</string>
+    <string name="ok">OK</string>
+    <string name="choose_language">Pilih bahasa</string>
+    <string name="select_language">Pilih bahasa</string>
+
+    <string name="offloading">Bongkaran</string>
+    <string name="ppq">PPQ</string>
+    <string name="select_dispatch">Pilih pengiriman</string>
+    <string name="dispatch">Pengiriman</string>
+    <string name="transaction_details">Detail Transaksi</string>
+    <string name="pending_sync">Sinkronisasi Tertunda</string>
+    <string name="export_sales">Ekspor Penjualan</string>
+    <string name="material">Bahan</string>
+    <string name="weight">Berat</string>
+    <string name="output_material">Bahan Keluar</string>
+    <string name="proceed">Proceed</string>
+    <string name="sync_vendor_credit">Sync Vendor Credit</string>
+    <string name="sync_advance_items">Sync Advance Items</string>
+    <string name="sync_exchange_rate">Sync Exchange Rate</string>
+    <string name="sync_error">Sync Error. Please try after some time</string>
+    <string name="digital_warehouse">Digital Warehouse</string>
+</resources>

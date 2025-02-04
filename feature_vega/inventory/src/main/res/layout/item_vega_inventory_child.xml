@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvLotDetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_padding_size_small"
+    android:background="@drawable/custom_edit_text"
+    app:cardCornerRadius="4dp">
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        tools:background="@color/green" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cbSelectStocks"
+        android:padding="@dimen/margin_padding_size_small">
+
+        <TextView
+            android:id="@+id/tv_storage_loc_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/storage_location"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RelativeOverlap,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_storage_location_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_storage_loc_lbl"
+            app:layout_constraintTop_toBottomOf="@id/tv_storage_loc_lbl"
+            tools:ignore="RelativeOverlap,RtlSymmetry"
+            tools:text="Inventory_01" />
+
+
+        <TextView
+            android:id="@+id/tv_kor_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/kor_range"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium"
+            app:layout_constraintEnd_toStartOf="@+id/tv_origin_lbl"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tv_storage_loc_lbl"
+            app:layout_constraintTop_toBottomOf="@id/tv_storage_location_value" />
+
+        <TextView
+            android:id="@+id/tv_kor_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_weight_value"
+            app:layout_constraintEnd_toStartOf="@+id/tv_origin_value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tv_storage_loc_lbl"
+            app:layout_constraintTop_toTopOf="@id/tv_weight_value"
+            tools:text="LBA_001" />
+
+
+        <TextView
+            android:id="@+id/tv_origin_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/orgin"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weight_lbl"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_kor_lbl"
+            app:layout_constraintStart_toStartOf="@id/tv_origin_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_storage_location_value" />
+
+        <TextView
+            android:id="@+id/tv_origin_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_weight_value"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weight_value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_kor_value"
+            app:layout_constraintTop_toTopOf="@id/tv_weight_value"
+            tools:text="IVC_001,h jagsj shadh hasvdjva sahdvsajhadsbj jhsahjasvdvjas" />
+
+        <TextView
+            android:id="@+id/tv_weight_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/weight"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium"
+            app:layout_constraintEnd_toStartOf="@+id/iv_next"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_origin_lbl"
+            app:layout_constraintStart_toStartOf="@id/tv_weight_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_storage_location_value" />
+
+        <TextView
+            android:id="@+id/tv_weight_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_origin_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_weight_lbl"
+            tools:text="100.00 Kg" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_next"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

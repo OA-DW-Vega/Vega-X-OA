@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nFilter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/clHumidity"
+                app:layout_constraintHorizontal_bias="0.5">
+
+                <CheckBox
+                    android:id="@+id/cbMaterial"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMaterial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/material"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMaterial"
+                    app:layout_constraintStart_toEndOf="@+id/cbMaterial"
+                    app:layout_constraintTop_toTopOf="@+id/cbMaterial" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMaterial"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvMaterial"
+                    app:layout_constraintTop_toTopOf="@+id/cbMaterial" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMaterial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbMaterial"
+                    app:layout_constraintTop_toBottomOf="@+id/cbMaterial" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clHumidity"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clMaterial">
+
+                <CheckBox
+                    android:id="@+id/cbHumidity"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/humidity"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbHumidity"
+                    app:layout_constraintStart_toEndOf="@+id/cbHumidity"
+                    app:layout_constraintTop_toTopOf="@+id/cbHumidity" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbHumidity"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvHumidity"
+                    app:layout_constraintTop_toTopOf="@+id/cbHumidity" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvHumidity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbHumidity"
+                    app:layout_constraintTop_toBottomOf="@+id/cbHumidity" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTotalImpurity"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clHumidity">
+
+                <CheckBox
+                    android:id="@+id/cbTotalImpurity"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTotalImpurity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/smoky"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbTotalImpurity"
+                    app:layout_constraintStart_toEndOf="@+id/cbTotalImpurity"
+                    app:layout_constraintTop_toTopOf="@+id/cbTotalImpurity" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbTotalImpurity"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvTotalImpurity"
+                    app:layout_constraintTop_toTopOf="@+id/cbTotalImpurity" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTotalImpurity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbTotalImpurity"
+                    app:layout_constraintTop_toBottomOf="@+id/cbTotalImpurity" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clWaste"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clTotalImpurity">
+
+                <CheckBox
+                    android:id="@+id/cbWaste"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvWaste"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/waste"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbWaste"
+                    app:layout_constraintStart_toEndOf="@+id/cbWaste"
+                    app:layout_constraintTop_toTopOf="@+id/cbWaste" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbWaste"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvWaste"
+                    app:layout_constraintTop_toTopOf="@+id/cbWaste" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWaste"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbWaste"
+                    app:layout_constraintTop_toBottomOf="@+id/cbWaste" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clMould"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clWaste">
+
+                <CheckBox
+                    android:id="@+id/cbMould"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMould"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/mould"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMould"
+                    app:layout_constraintStart_toEndOf="@+id/cbMould"
+                    app:layout_constraintTop_toTopOf="@+id/cbMould" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMould"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvMould"
+                    app:layout_constraintTop_toTopOf="@+id/cbMould" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMould"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbMould"
+                    app:layout_constraintTop_toBottomOf="@+id/cbMould" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btFilter"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/apply"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

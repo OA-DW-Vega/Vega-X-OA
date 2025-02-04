@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llFgrn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_width"
+            android:background="@color/colorPrimaryOfi"
+            android:gravity="center|start"
+            android:paddingStart="@dimen/margin_medium"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:paddingEnd="0dp"
+            android:text="@string/fgrn_summary"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange_light"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingEnd="0dp"
+                android:text="@string/po_number_label"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvPono"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_width"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingEnd="0dp"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="123456789" />
+
+        </LinearLayout>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_width"
+            android:background="@color/warm_white"
+            android:gravity="center|start"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="0dp"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:text="@string/processing_summary"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llFgrn"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFgrnSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                tools:listitem="@layout/item_vega_fgrn_summary" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/proceed"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</RelativeLayout>

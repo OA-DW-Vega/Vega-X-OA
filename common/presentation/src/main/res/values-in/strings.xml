@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">presentation</string>
+    <string name="loading">loading</string>
+    <string name="network_not_available">Jaringan tidak tersedia, periksa koneksi data Anda</string>
+
+    //Navigation
+    <string name="navigation_drawer_open">Buka Kotak navigasi</string>
+    <string name="navigation_drawer_close">Tutup Kotak navigasi</string>
+    <string name="nav_header_desc">Tajuk navigasi</string>
+    <string name="nav_sync">Sinkronkan Master</string>
+    <string name="user_name">Nama pengguna</string>
+    <string name="user_desc">Kebijakan</string>
+    <string name="log_out">KELUAR</string>
+    <string name="logout_alert">Anda yakin ingin keluar?</string>
+    <string name="cocoa_logout_alert">cache data will be lost, do you still want to logout</string>
+    <string name="offline_data_logout_alert">Data offline yang perlu disinkronkan akan dihapus. Anda yakin ingin keluar?</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="cancel">Membatalkan</string>
+    <string name="nav_settings">Pengaturan</string>
+    <string name="tran_master_sync">Apakah Anda ingin melanjutkan proses sinkronisasi master transaksi?</string>
+    <string name="search">Cari</string>
+
+    <string name="loading_text">Tunggu sebentar...</string>
+    <string name="processing">Process</string>
+    <string name="inventroy">Inventaris</string>
+    <string name="pending">Tunda</string>
+    <string name="sync">sinkronisasi</string>
+    <string name="nav_sync_inventory">Sinkron Inventaris</string>
+    <string name="nav_sync_vendor">Sinkron Vendor</string>
+    <string name="gross_weight">Berat Kotor</string>
+    <string name="net_weight">inventaris</string>
+    <string name="pull_weight">Tarik Berat</string>
+    <string name="packaging_material">Kemasan Bahan</string>
+    <string name="bag_type">Tipe Karung</string>
+    <string name="no_of_bags">Jumlah Karung</string>
+    <string name="edit">melihat</string>
+    <string name="edit1">Edit</string>
+    <string name="delete">Hapus</string>
+    <string name="search_wb_item">Cari item WB</string>
+</resources>

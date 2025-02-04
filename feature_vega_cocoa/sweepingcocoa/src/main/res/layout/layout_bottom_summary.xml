@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clNet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_marun"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStockTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:gravity="start|center"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_min"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/plus"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/stock" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_net_weight_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:gravity="start|center"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_min"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tvStockTotal"
+            app:layout_constraintEnd_toStartOf="@+id/equal"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/plus"
+            app:layout_constraintTop_toTopOf="@id/tvStockTotal"
+            tools:text="@string/net_weight" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:gravity="start|center"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_min"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/equal"
+            tools:text="@string/total_weight" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNetWeightTotalValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="start|center"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_min"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tvStockTotalValue"
+            app:layout_constraintEnd_toEndOf="@id/tv_net_weight_total"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tv_net_weight_total"
+            app:layout_constraintTop_toTopOf="@id/tvStockTotalValue"
+            tools:text="1000 Kg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStockTotalValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="start|center"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_min"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tvStockTotal"
+            app:layout_constraintEnd_toStartOf="@+id/tv_net_weight_total"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tvStockTotal"
+            app:layout_constraintTop_toBottomOf="@id/tvStockTotal"
+            tools:text="1000 MT" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalWeightValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="start|center"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_min"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tvStockTotalValue"
+            app:layout_constraintEnd_toEndOf="@id/tvTotalWeight"
+            app:layout_constraintStart_toStartOf="@id/tvTotalWeight"
+            app:layout_constraintTop_toTopOf="@id/tvStockTotalValue"
+            tools:text="2000 MT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:text="  +  "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvStockTotalValue"
+            app:layout_constraintEnd_toStartOf="@+id/tv_net_weight_total"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvStockTotal"
+            app:layout_constraintTop_toTopOf="@id/tvStockTotal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/equal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gt_walsheim_pro_bold"
+            android:gravity="center"
+            android:text="  =  "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvStockTotalValue"
+            app:layout_constraintEnd_toStartOf="@+id/tvTotalWeight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_net_weight_total"
+            app:layout_constraintTop_toTopOf="@id/tvStockTotal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

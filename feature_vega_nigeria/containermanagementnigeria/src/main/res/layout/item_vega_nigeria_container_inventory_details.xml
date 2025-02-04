@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            tools:ignore="MissingDefaultResource">
+
+            <TextView
+                android:id="@+id/tvdateOFEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:visibility="visible"
+                android:background="@drawable/left_round_bottom_corner"
+                android:gravity="center"
+                android:paddingStart="@dimen/margin_padding_size_small"
+                android:paddingTop="@dimen/leftTabPaddingEnd"
+                android:paddingEnd="@dimen/margin_padding_size_small"
+                android:paddingBottom="@dimen/leftTabPaddingEnd"
+                android:text="08/05/2020"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10">
+                <View
+                    android:id="@+id/colorBand"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:visibility="gone"
+                    android:background="@drawable/left_round_corner" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/margin_mic_small"
+                    android:paddingBottom="@dimen/margin_mic_small"
+                    android:paddingEnd="@dimen/margin_small"
+                    android:paddingStart="@dimen/margin_small">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/container_id"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_size_xmedium"
+                            tools:ignore="RelativeOverlap,RtlSymmetry" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/container_size"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_size_xmedium"
+                            tools:ignore="RelativeOverlap,RtlSymmetry" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tvContainerIdValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="19393024892" />
+                        <TextView
+                            android:id="@+id/tvContainerSizeValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="19393024892" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/shipping_line"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_size_xmedium" />
+                        <TextView
+                            android:id="@+id/tvContainerStatusLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Status"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_size_xmedium" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_mic_small"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tvShippingValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="MSC" />
+                        <TextView
+                            android:id="@+id/tvContainerStatusValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="LBA" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

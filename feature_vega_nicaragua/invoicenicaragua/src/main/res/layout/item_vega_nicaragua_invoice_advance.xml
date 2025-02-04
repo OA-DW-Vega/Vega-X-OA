@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_medium">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/warm_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:padding="@dimen/margin_padding_size_small">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:text="@string/advance_number"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:text="@string/amount_cs"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:text="@string/date"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_padding_size_small"
+            android:paddingEnd="@dimen/margin_padding_size_small"
+            android:paddingBottom="@dimen/margin_padding_size_small">
+
+            <TextView
+                android:id="@+id/tvAdvanceNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"
+                tools:text="11233" />
+
+            <TextView
+                android:id="@+id/tvAmt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"
+                tools:text="100(CS)" />
+
+            <TextView
+                android:id="@+id/tvAdvanceDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"
+                tools:text="@string/date" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAmtDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/knock_off_amount"
+                    android:textColor="@color/grey_border"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/interest"
+                    android:textColor="@color/grey_border"
+                    android:textSize="@dimen/text_size_small" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small">
+
+                <TextView
+                    android:id="@+id/tvKnockAmt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"
+                    tools:text="@string/knock_off_amount" />
+
+                <TextView
+                    android:id="@+id/tvInterest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"
+                    tools:text="@string/interest" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/commission"
+                    android:textColor="@color/grey_border"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:text="@string/legal_expense"
+                    android:textColor="@color/grey_border"
+                    android:textSize="@dimen/text_size_small" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small">
+
+                <TextView
+                    android:id="@+id/tvCommission"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"
+                    tools:text="@string/commission" />
+
+                <TextView
+                    android:id="@+id/tvLegalExp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_border"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"
+                    tools:text="@string/legal_expense" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey"
+            android:gravity="center"
+            android:padding="@dimen/margin_padding_size_small">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:text="@string/amount_cs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:id="@+id/tvTotalAmt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"
+                tools:text="100(CS)" />
+
+            <ImageView
+                android:id="@+id/ivDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:src="@drawable/ic_arrow_down_black_24dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

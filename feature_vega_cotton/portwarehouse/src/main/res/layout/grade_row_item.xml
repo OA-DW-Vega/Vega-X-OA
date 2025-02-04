@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvRowItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_mic_small"
+    android:background="@drawable/border_corner_port"
+    android:ellipsize="end"
+    android:gravity="center"
+    android:maxLines="1"
+    android:padding="@dimen/margin_small"
+    android:text="@string/grade_dummy"
+    android:textColor="@color/black" />
+

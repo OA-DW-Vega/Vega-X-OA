@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/margin_small"
+        android:text="@string/supplier_bag_issue"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium">
+
+            <TextView
+                android:id="@+id/tvProductLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/product"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <AutoCompleteTextView
+                android:id="@+id/tvProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:hint="@string/enter_product"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_lit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSupplierLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/supplier"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/tvSupplier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    android:background="@drawable/custom_edit_text"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:hint="@string/enter_supplier"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_lit"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvLocationLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/storage_location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStorageLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:hint="@string/storage_location"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_lit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llBagIssue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvCurrentBagIssuedLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:textColor="@color/black"
+                    tools:text="Current bag issued"
+                    android:text="@string/current_bag_issued"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_very_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@drawable/dotted" />
+
+                <TextView
+                    android:id="@+id/tvBagIssueLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/enter_bag_qty_to_be_issued"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tvNoOfBagsValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    android:background="@drawable/custom_edit_text"
+                    android:digits="0123456789"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:hint="@string/enter_no_of_bags_to_be_issued"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_lit"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+
+                <TextView
+                    android:id="@+id/tvGatePassLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/gate_pass_no"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tvGatePassValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    android:background="@drawable/custom_edit_text"
+                    android:digits="0123456789"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:hint="@string/enter_gate_pass_number"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_lit"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</LinearLayout>

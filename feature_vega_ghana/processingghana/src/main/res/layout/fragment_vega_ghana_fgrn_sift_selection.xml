@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="4dp"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/fgrn_shift_selection"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProceed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectShift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:text="@string/select_shift"
+                android:textColor="@color/dark_marun"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/rgShift"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectShift">
+
+                <RadioButton
+                    android:id="@+id/rbA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/warm_grey"
+                    android:button="@null"
+                    android:drawableStart="@android:drawable/btn_radio"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:padding="@dimen/margin_medium"
+                    android:text="Morning"
+                    android:textColor="@color/grey_dark" />
+
+                <RadioButton
+                    android:id="@+id/rbB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/warm_grey"
+                    android:button="@null"
+                    android:drawableStart="@android:drawable/btn_radio"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:padding="@dimen/margin_medium"
+                    android:text="Night"
+                    android:textColor="@color/grey_dark" />
+
+                <RadioButton
+                    android:id="@+id/rbC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/warm_grey"
+                    android:button="@null"
+                    android:visibility="gone"
+                    android:drawableStart="@android:drawable/btn_radio"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/shift_c"
+                    android:textColor="@color/grey_dark" />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOperator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="@string/remarks"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rgShift" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOperator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:background="@drawable/custom_edit_text"
+                android:hint="@string/enter_remark"
+                android:padding="@dimen/margin_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOperator" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/proceed"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
