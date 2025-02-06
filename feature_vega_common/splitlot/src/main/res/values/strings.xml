@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="split_lot">Split Lot</string>
+    <string name="lot_summary">Lot Summary</string>
+    <string name="st_location">St Location</string>
+    <string name="split_status">Split Status</string>
+    <string name="split_done">Splited</string>
+    <string name="split">Split</string>
+    <string name="please_select_the_no_of_splits_do_you_want">Please select the no of splits. Do you want?</string>
+    <string name="save_n_quality">Save \n Quality</string>
+    <string name="lot_no">Lot No</string>
+    <string name="ticket">Ticket</string>
+    <string name="qc_status">Qc Status</string>
+    <string name="qc_status_done">Done</string>
+    <string name="qc_status_pending">Pending</string>
+    <string name="parent_lot_no">"Parent Lot No \n"</string>
+    <string name="parent_lot_weight">"Weight \n"</string>
+    <string name="qc_status_error">Error</string>
+    <string name="quality_grade">Quality Grade</string>
+    <string name="no_of_bag">No Of Bag</string>
+    <string name="dano">Dano</string>
+    <string name="check_entey">Kindly check the Entry</string>
+    <string name="select_quality_grade">Please select qualit grade</string>
+    <string name="back_to_lot_list">Back to Lot List</string>
+    <string name="print_tally">Print \n Ticket</string>
+    <string name="print_receipt">Print Receipt</string>
+    <string name="save_quality_all">Please save quality for all the lot</string>
+    <string name="quality_save_message">Has the quality been saved for all the lot. Do you want to exit the screen?</string>
+    <string name="weight_validation">Please enter the split weight less than or equal to parent lot weight</string>
+    <string name="print_ticket">Print Ticket</string>
+    <string name="print_sample_ticket">Print Sample Ticket</string>
+    <string name="select_ticket">Please select the ticket</string>
+</resources>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/margin_small">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small">
+
+
+        <TextView
+            android:id="@+id/tvStoNo"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/sto_number"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintEnd_toStartOf="@+id/tvDate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/date"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintBottom_toBottomOf="@id/tvStoNo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvStoNo"
+            app:layout_constraintTop_toTopOf="@id/tvStoNo" />
+
+
+        <TextView
+            android:id="@+id/tvStoNoValue"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_date_value"
+            app:layout_constraintEnd_toEndOf="@id/tvStoNo"
+            app:layout_constraintStart_toStartOf="@id/tvStoNo"
+            app:layout_constraintTop_toTopOf="@id/tv_date_value"
+            tools:text="SO121003099" />
+
+        <TextView
+            android:id="@+id/tv_date_value"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tvDate"
+            app:layout_constraintStart_toStartOf="@id/tvDate"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
+            tools:text="10/10/2002" />
+
+        <TextView
+            android:id="@+id/tvMaterial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/material"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintEnd_toStartOf="@+id/tvStoWeight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tvStoNo"
+            app:layout_constraintTop_toBottomOf="@id/tvStoNoValue" />
+
+
+        <TextView
+            android:id="@+id/tvStoWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/sto_weight"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintBottom_toBottomOf="@id/tvMaterial"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvMaterial"
+            app:layout_constraintTop_toTopOf="@id/tvMaterial" />
+
+
+        <TextView
+            android:id="@+id/tvMaterialName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tvMaterial"
+            app:layout_constraintEnd_toStartOf="@+id/tvStoWeightValue"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tvStoNo"
+            app:layout_constraintTop_toBottomOf="@id/tvMaterial"
+            tools:text="Bush Cocoa sdfsfdfdsfds sfvgdfdf " />
+
+
+        <TextView
+            android:id="@+id/tvStoWeightValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvMaterialName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvMaterialName"
+            app:layout_constraintTop_toTopOf="@id/tvMaterialName"
+            tools:text="1000 MT" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMaterialList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvDate"
+            app:layout_constraintStart_toStartOf="@id/tvStoWeight"
+            app:layout_constraintTop_toBottomOf="@id/tvStoNoValue"
+            tools:listitem="@layout/item_material_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

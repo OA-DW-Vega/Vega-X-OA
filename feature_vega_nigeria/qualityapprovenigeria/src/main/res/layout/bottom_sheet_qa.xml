@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnAccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Accept"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryOfi"
+        />
+
+    <Button
+        android:id="@+id/btnReject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Reject"
+        android:background="@color/red"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnRecheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Recheck"
+        android:background="@color/orange"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

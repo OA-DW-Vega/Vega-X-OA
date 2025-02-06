@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/tvHeadPoDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_small"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingEnd="@dimen/margin_large"
+        android:text="@string/fgrn_pending_po"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--<FrameLayout
+        android:id="@+id/flPoDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeadPoDetail">
+
+        <include
+            android:id="@+id/clPo"
+            layout="@layout/item_vega_cocoa_fgrn_po_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </FrameLayout>-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeadPoDetail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_toEndOf="@+id/cbSelectStocks"
+            android:padding="@dimen/margin_very_small">
+
+            <TextView
+                android:id="@+id/tvPoLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/po_numaber"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tv_weight_lbl"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_weight_lbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/weight_in_processing"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPoLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1.2"
+                app:layout_constraintStart_toEndOf="@+id/tvPoLbl"
+                app:layout_constraintTop_toTopOf="@+id/tvPoLbl" />
+
+            <TextView
+                android:id="@+id/tvPoNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:gravity="center_vertical"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvWeight"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPoLbl"
+                tools:text="18GD2345A1" />
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPoNo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1.2"
+                app:layout_constraintStart_toEndOf="@+id/tvPoNo"
+                app:layout_constraintTop_toTopOf="@+id/tvPoNo"
+                tools:text="2500.00 KG" />
+
+
+            <TextView
+                android:id="@+id/tv_material_lbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/material"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tv_weight_lbl"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPoNo" />
+
+            <TextView
+                android:id="@+id/tv_Date_lbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/date"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_material_lbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1.2"
+                app:layout_constraintStart_toEndOf="@+id/tv_material_lbl"
+                app:layout_constraintTop_toBottomOf="@+id/tvPoNo"
+                app:layout_constraintTop_toTopOf="@+id/tv_material_lbl" />
+
+
+            <TextView
+                android:id="@+id/tv_material_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvDate"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_material_lbl"
+                tools:text="sample text for my material data " />
+
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_material_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1.2"
+                app:layout_constraintStart_toEndOf="@+id/tv_material_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Date_lbl"
+                app:layout_constraintTop_toTopOf="@+id/tv_material_name"
+                tools:text="09/06/2020" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--<View
+        android:id="@+id/vDotted1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/light_grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flPoDetails" />-->
+
+
+    <!-- <View
+         android:id="@+id/vDotted2"
+         android:layout_width="match_parent"
+         android:layout_height="4dp"
+         android:background="@drawable/dotted"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/flCreateNewFgrn" />-->
+
+    <TextView
+        android:id="@+id/tv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/pending_fgrn_po_details"
+        android:textColor="@color/grey_button"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvPoCard" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPendingPoList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_padding_size_small"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_padding_size_small"
+        android:layout_marginBottom="@dimen/margin_medium"
+        app:layout_constraintBottom_toTopOf="@+id/flCreateNewFgrn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_list"
+        tools:listitem="@layout/item_vega_coffee_fgrn_pending" />
+
+    <TextView
+        android:id="@+id/tvNoTruck"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/no_data_found"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_list"
+        app:layout_constraintTop_toBottomOf="@id/tv_list" />
+
+    <FrameLayout
+        android:id="@+id/flCreateNewFgrn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvPendingPoList">
+
+        <TextView
+            android:id="@+id/tvCreateNewFgrn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/scanbale_corner"
+            android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+            android:backgroundTint="@color/dark_marun"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_xlarge"
+            android:text="@string/create_new_fgrn"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

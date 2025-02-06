@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/print_main_layout"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="@dimen/print_layout_height"
+    android:layout_margin="@dimen/margin_very_small">
+
+    <LinearLayout
+        android:id="@+id/header_ll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_black_line_border"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:padding="@dimen/margin_mic_small"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mlarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title1"
+            android:layout_marginStart="@dimen/margin_large"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="@dimen/margin_mic_small"
+            android:text="@string/quality_receipt"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mlarge" />
+
+        <TextView
+            android:id="@+id/tv_serial_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/tv_no"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingEnd="@dimen/margin_very_small"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_mlarge"
+            android:visibility="gone"
+            tools:ignore="RtlSymmetry"
+            tools:text="N0 002509" />
+
+        <TextView
+            android:id="@+id/tv_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_mlarge"
+            android:visibility="gone"
+            tools:text="- 20" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/table_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_ll">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/quality_vendor_name"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/quality_material_name"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/quality_transaction_number"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/quality_transaction_date"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/peru_quality_table_left5"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvVendorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/tvMaterialName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/tvTransactionNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/tvTransactionDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec_edtbox_top_empty"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="1"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvBatchNo"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/rec_edtbox_top_empty"-->
+<!--                android:fontFamily="@font/roboto_bold"-->
+<!--                android:gravity="left"-->
+<!--                android:minLines="1"-->
+<!--                android:padding="@dimen/margin_padding_size_small"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="@dimen/text_size_medium" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_olam_logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_large"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:padding="@dimen/margin_mic_small"
+                android:text="@string/peru_offloading_title1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvQuality"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_very_small"
+        app:layout_constraintEnd_toStartOf="@+id/llSign"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_header"
+        tools:listitem="@layout/item_quality" />
+
+    <LinearLayout
+        android:id="@+id/llSign"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/rvQuality"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/rvQuality"
+        app:layout_constraintTop_toBottomOf="@+id/rvQuality">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:minLines="2"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="@string/peru_quality_signature"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

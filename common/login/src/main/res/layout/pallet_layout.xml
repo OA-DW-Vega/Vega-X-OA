@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clPalletHead"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPallet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/pallet_weight_details"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/left_round_corner"
+        android:backgroundTint="@color/colorSecondaryGrey"
+        android:hint="@string/enter_weight"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/margin_small"
+        android:text=""
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="18sp"
+        android:textColor="@color/text_black"
+        app:layout_constraintEnd_toStartOf="@+id/tvPullWeight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/tvPallet"
+        app:layout_constraintTop_toBottomOf="@id/tvPallet" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWeightUOM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:text="KG"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_xmedium"
+        app:layout_constraintBottom_toBottomOf="@id/etWeight"
+        app:layout_constraintEnd_toEndOf="@+id/etWeight"
+        app:layout_constraintTop_toTopOf="@id/etWeight" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPalletWeight"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:background="@drawable/do_circle_blue"
+        android:backgroundTint="@color/grey_button"
+        android:padding="@dimen/margin_mic_small"
+        android:src="@drawable/ic_close_white_24dp"
+        android:textSize="@dimen/text_size_xmedium"
+        android:tint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/etWeight"
+        app:layout_constraintEnd_toEndOf="@+id/etWeight"
+        app:layout_constraintTop_toTopOf="@id/etWeight" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPullWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/right_round_corner"
+        android:backgroundTint="@color/dark_marun"
+        android:drawableStart="@drawable/ic_bluetooth_white"
+        android:drawableTint="@color/white"
+        android:gravity="center"
+        android:padding="@dimen/margin_small"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/pull_weight"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_xmedium"
+        app:layout_constraintBottom_toBottomOf="@id/etWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etWeight"
+        app:layout_constraintTop_toTopOf="@id/etWeight" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoPallet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/layout_border_top_left_corner"
+        android:gravity="center|start"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/no_of_pallet"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="@dimen/text_size_xmedium"
+        android:textStyle="bold"
+        android:textColor="@color/text_black"
+        app:layout_constraintEnd_toStartOf="@+id/tvPullWeight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/etWeight"
+        app:layout_constraintTop_toBottomOf="@id/etWeight" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etNoPalletValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/rectangle_grey_border_top_right_corner"
+        android:gravity="start|center"
+        android:inputType="number"
+        android:maxLength="9"
+        android:padding="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="@dimen/text_size_xmedium"
+        android:textColor="@color/text_black"
+        app:layout_constraintBottom_toBottomOf="@id/tvNoPallet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNoPallet"
+        app:layout_constraintTop_toTopOf="@id/tvNoPallet"
+        tools:text="10 Kg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNoPalletValue"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="@dimen/margin_very_small"
+        android:background="@drawable/do_circle_blue"
+        android:backgroundTint="@color/grey_lights"
+        android:padding="@dimen/margin_mic_small"
+        android:visibility="gone"
+        android:src="@drawable/ic_close_white_24dp"
+        android:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/etNoPalletValue"
+        app:layout_constraintEnd_toEndOf="@+id/etNoPalletValue"
+        app:layout_constraintTop_toTopOf="@id/etNoPalletValue" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAvgPalletWt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@drawable/layout_border_bottom_left_corner"
+        android:gravity="start|center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/average_pallet_wt"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="@dimen/text_size_xmedium"
+        android:textStyle="bold"
+        android:textColor="@color/text_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvAvgPalletWtValue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/etWeight"
+        app:layout_constraintTop_toBottomOf="@id/tvNoPallet" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAvgPalletWtValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/rectangle_grey_border_bottom_right_corner"
+        android:gravity="start|center"
+        android:padding="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="@dimen/text_size_xmedium"
+        android:text=""
+        android:textColor="@color/text_black"
+        app:layout_constraintBottom_toBottomOf="@id/tvAvgPalletWt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAvgPalletWt"
+        app:layout_constraintTop_toTopOf="@id/tvAvgPalletWt"
+        tools:text="10 Kg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ivAvgPallet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="@dimen/margin_very_small"
+        android:padding="@dimen/margin_mic_small"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:text="KG"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_xmedium"
+        app:layout_constraintBottom_toBottomOf="@id/tvAvgPalletWtValue"
+        app:layout_constraintEnd_toEndOf="@+id/tvAvgPalletWtValue"
+        app:layout_constraintTop_toTopOf="@id/tvAvgPalletWtValue" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

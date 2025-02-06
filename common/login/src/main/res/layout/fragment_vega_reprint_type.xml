@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    tools:ignore="MissingDefaultResource">
+    <TextView
+        android:id="@+id/tvReprintHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/reprint"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReprintHeading">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clOffloading_receipt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_grey_border"
+            android:padding="@dimen/margin_xlarge"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvOffloading_receipt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Offloading" />
+
+
+            <ImageView
+                android:id="@+id/ivRight"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/tvOffloading_receipt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintTop_toTopOf="@+id/tvOffloading_receipt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clOffloading_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_grey_border"
+            android:padding="@dimen/margin_xlarge"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvOffloading_ticket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Offloading" />
+
+
+            <ImageView
+                android:id="@+id/ivRight_ticket"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/tvOffloading_ticket"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintTop_toTopOf="@+id/tvOffloading_ticket" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clQualityApproval_recpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_grey_border"
+            android:padding="@dimen/margin_xlarge"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cIWithForwardPoReceiptLayout">
+
+            <TextView
+                android:id="@+id/tvQualityApproval_recpt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Quality Approval- Receipt" />
+
+            <ImageView
+                android:id="@+id/ivQA_recpt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/tvQualityApproval_recpt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintTop_toTopOf="@+id/tvQualityApproval_recpt" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clQualityApproval_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_grey_border"
+            android:padding="@dimen/margin_xlarge"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cIWithForwardPoReceiptLayout">
+
+            <TextView
+                android:id="@+id/tvQualityApproval_ticket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Quality Approval - Ticket" />
+
+            <ImageView
+                android:id="@+id/ivQA"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_right_arrow"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/tvQualityApproval_ticket"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintTop_toTopOf="@+id/tvQualityApproval_ticket" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

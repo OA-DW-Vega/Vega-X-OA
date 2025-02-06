@@ -1,0 +1,198 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">presentation</string>
+    <string name="loading">loading</string>
+    <string name="network_not_available">Network not available, check your data connection</string>
+    <string name="network_type">Current Network Type is :</string>
+    <string name="logo">logo</string>
+    <string name="tap_to_scan_lot">Tap to Scan</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+
+    <!--camera permission-->
+    <string name="permission_camera_rationale">Camera permission is needed to show the camera preview.</string>
+    <string name="permission_camera_denied">Camera permission was denied. Please consider granting it in order to access the camera!</string>
+    <string name="permission_camera_never_ask_again">Camera permission was denied with never ask again.</string>
+    <string name="close">close</string>
+
+    //Login Module String
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="version">Version :</string>
+    <string name="hyperlink"><a href="https://www.ofi.com/privacy.html">Privacy Policy</a></string>
+
+    //feature download dialog
+    <string name="install_dialog_title">Feature: %s</string>
+    <string name="install_dialog_step_downloading">Downloading…</string>
+    <string name="install_dialog_installing">Installing…</string>
+    <string name="install_dialog_failed">Failed to install, error: %s</string>
+    <string name="install_dialog_installed">Installed successfully</string>
+
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+
+    //Navigation
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_sync">Sync Master</string>
+    <string name="nav_sync_inventory">Sync Inventory</string>
+    <string name="nav_sync_vendor">Sync Vendor</string>
+    <string name="nav_data_sync">Data Sync</string>
+    <string name="nav_bale_data_sync">Bale Data Sync</string>
+    <string name="user_name">User Name</string>
+    <string name="user_desc">Role</string>
+    <string name="reception_type">Reception Type</string>
+    <string name="product">Product</string>
+    <string name="company_code">Company Code</string>
+    <string name="purchase_org">Purchase Org</string>
+    <string name="plant">Plant</string>
+    <string name="Recivinglocation">Receiving location</string>
+    <string name="warehouse_store_location">Warehouse/Store Location</string>
+    <string name="submit">Submit</string>
+    <string name="feature_not_avail">This Combination not available</string>
+    <string name="log_out">Log Out</string>
+    <string name="logout_alert">Are you sure you want to logout?</string>
+    <string name="cocoa_logout_alert">cache data will be lost, do you still want to logout</string>
+    <string name="offline_logout_alert">Can\'t able to logout user in offline</string>
+    <string name="offline_data_logout_alert">Offline data that needs to be synced will be erased. Are you sure you want to logout?</string>
+    <string name="confirm">Confirm</string>
+    <string name="okconfirm">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="grn">Transaction Details - MTNT</string>
+    <string name="grn1">GRN</string>
+    <string name="reconcilreport">Reconciliation Report</string>
+    <string name="approve"> Approve </string>
+    <string name="mtnt">MTNT</string>
+    <string name="dispatch">Dispatch</string>
+    <string name="container_management">Container</string>
+    <string name="processing">Processing</string>
+    <string name="gate_entry">Gate Entry</string>
+    <string name="gate_entry_approval">Gate Entry Approval</string>
+    <string name="secret_id">Secret ID</string>
+    <string name="inventroy">Inventory</string>
+    <string name="sweepings">Sweepings</string>
+    <string name="pch">Set the Price</string>
+    <string name="invoice">Invoice - PTBF</string>
+    <string name="transaction_details">Transaction Details</string>
+    <string name="processing_drying">Processing</string>
+    <string name="sales">Sales</string>
+    <string name="mtnr">MTNR</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_quick_pin">Change Quick Pin</string>
+    <string name="nav_transaction">Transaction History</string>
+    <string name="tran_master_sync">Do you want to proceed transaction master sync process?</string>
+    <string name="search">search</string>
+    <string name="error">Error</string>
+    <string name="alert">Alert!</string>
+    <string name="ok">OK</string>
+
+    <string name="loading_text">Please Wait...</string>
+    <string name="olam">Olam</string>
+    <string name="delete_msg">Are you sure? do you want delete this item</string>
+    <string name="delete_msg_mtnr">Are you sure you want delete this item?</string>
+    <string name="delete_rmin">FGRN is created for this RMIN</string>
+    <string name="delete_fgrn">Synced FGRNs are removed from the list</string>
+    <string name="delete_mtnt">Synced MTNTs are removed from the list</string>
+    <string name="delete_offloading">Synced Offloading data are removed from the list</string>
+    <string name="delete_mtnr">Synced Offloading MTNRs are removed from the list</string>
+    <string name="copy">Copy</string>
+    <string name="edit">View</string>
+    <string name="edit1">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="sync">Sync</string>
+    <string name="re_sync">ReSync</string>
+    <string name="enter_batchno">Batch Number</string>
+    <string name="yes">Yes</string>
+
+    <string name="pallet_weight_details">Pallet Weight Details</string>
+    <string name="pull_weight">PULL WEIGHT</string>
+    <string name="no_of_pallet">No of Pallet</string>
+    <string name="average_pallet_wt">Average Pallet Wt</string>
+    <string name="sweepings_weight_entry">Sweepings - Weight Entry</string>
+    <string name="dispatch_weight_entry">Dispatch - Weight Entry</string>
+    <string name="lot_no">Batch Number :</string>
+    <string name="grn_no">GRN No :</string>
+    <string name="fgrn_weight_entry">FGRN - Weight Entry</string>
+    <string name="rmin_weight_entry">RMIN - Weight Entry</string>
+    <string name="gross_weight">Gross weight</string>
+    <string name="enter_weight">Enter Weight</string>
+    <string name="packaging_material">Packaging Material</string>
+    <string name="bag_type">Bag Type</string>
+    <string name="bag_types">Bag Types</string>
+    <string name="no_of_bags">No of Bags</string>
+    <string name="select_type">Select Type</string>
+    <string name="enter_no_of_bags">Enter No of Bags</string>
+    <string name="net_weight">Net Weight</string>
+    <string name="add">Add</string>
+    <string name="select_bag_type">Select bag type</string>
+    <string name="select_bag_number">Enter bag number</string>
+    <string name="remarks">Remarks</string>
+    <string name="select_grade">Select Grade</string>
+    <string name="enter_remark">Please enter remarks</string>
+    <string name="search_wb_item">Search WB Item</string>
+    <string name="search_sample_id">Search Sample ID</string>
+    <string name="search_container_id">Search Container ID</string>
+    <string name="search_truck">Search By Truck</string>
+
+    <!--warehouse  movement-->
+    <string name="transfer_to_warehouse">Transfer to \n Warehouse</string>
+    <string name="pending">Pending</string>
+    <string name="history">History</string>
+    <string name="binnotavailable">Bin not available</string>
+    <string name="palletnotavailable">Pallet not found, Try refreshing masters</string>
+    <string name="palletvalidation">Pallets highlighted in green will be posted and pallets in Red will be parked in Pending tab</string>
+    <string name="acknowledgement">Acknowledgement</string>
+    <string name="sucess">Sucessfully Submitted</string>
+    <string name="bin_cannotbeused">BIN cannot be Used, Please contact Supervisor</string>
+    <string name="data_lost">Data will be lost,Do you want to Continue?</string>
+    <string name="accept_msg">Are you sure? do you want accept this item</string>
+    <string name="reject_msg">Are you sure? do you want reject this item</string>
+    <string name="scan">Scan</string>
+    <string name="print_document">Print Document</string>
+    <string name="print_type">Choose Printer Type </string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="wifi">Wifi</string>
+    <string name="print">Print Tally Sheet</string>
+    <string name="print_common">Print</string>
+    <string name="print_preview">Print Preview</string>
+    <string name="please_select_the_printer">Please select the Printer</string>
+    <string name="not_connected_with_device">Not connected with any device</string>
+    <string name="connected_to">Connected to </string>
+    <string name="print_grn_document">Print GRN</string>
+    <string name="print_wh_receipt">Print WH Receipt</string>
+    <string name="search_by_lot">Search by Lots</string>
+    <string name="please_select_the_weighing_scale">Please select the Weighing scale</string>
+    <string name="forwardpo">Transaction Details - ForwardPo</string>
+
+    //Ar Strings
+    <string name="pickup_stock">Pickup Stock</string>
+    <string name="deposit_stock">Deposit Stock</string>
+    <string name="create_map">Create Map</string>
+    <string name="lot_details">LOT Details</string>
+    <string name="nav_faq">FAQ</string>
+
+    <string name="transaction_mtnr">Transaction Details - MTNR</string>
+    <string name="search_item">Search Item</string>
+    <string name="print_key_empty">Print key is empty</string>
+    <string name="session_expired">Your Session Has Expired. Kindly enter the password and continue</string>
+    <string name="or_nlogut_and_login_again">or Logout and Login again</string>
+
+    <string name="dummy_quality">Dummy Sample</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset">Reset</string>
+    <string name="download_pdf">Download PDF</string>
+    <string name="fileName">Please give the file name</string>
+    <string name="file_location">File has been stored the below location</string>
+    <string name="open_folder">\nOpen Folder</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="permission_denied">\nPermission Denied</string>
+    <string name="selected_date_rage">Selected date range</string>
+    <string name="last_thirty_days">Last 30 days</string>
+    <string name="no">No</string>
+
+</resources>

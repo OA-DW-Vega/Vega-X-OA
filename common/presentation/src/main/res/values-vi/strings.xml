@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">presentation</string>
+    <string name="loading">loading</string>
+    <string name="network_not_available">Mạng không có sẵn, kiểm tra kết nối dữ liệu của bạn</string>
+
+    //Navigation
+    <string name="navigation_drawer_open">Mở bảng điều hướng</string>
+    <string name="navigation_drawer_close">Đóng bảng điều hướng</string>
+    <string name="nav_header_desc">Tiêu đề điều hướng</string>
+    <string name="nav_sync">Chủ đồng bộ</string>
+    <string name="user_name">Tên tài khoản</string>
+    <string name="user_desc">Vai trò</string>
+    <string name="log_out">THOÁT</string>
+    <string name="logout_alert">Bạn có chắc chắn muốn thoát ứng dụng?</string>
+    <string name="cocoa_logout_alert">cache data will be lost, do you still want to logout</string>
+    <string name="offline_data_logout_alert">Dữ liệu ngoại tuyến cần được đồng bộ hóa sẽ bị xóa. Bạn có chắc chắn muốn thoát ứng dụng?</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="cancel">Huỷ</string>
+    <string name="nav_settings">Cài đặt</string>
+    <string name="tran_master_sync">Bạn có muốn tiến hành quy trình đồng bộ hóa giao dịch tổng thể?</string>
+    <string name="search">tìm kiếm</string>
+
+    <string name="loading_text">Xin vui lòng chờ...</string>
+    <string name="search_item">Search Item</string>
+    <string name="print_key_empty">Print key is empty</string>
+    <string name="or_nlogut_and_login_again">or Logout and Login again</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset">Reset</string>
+</resources>

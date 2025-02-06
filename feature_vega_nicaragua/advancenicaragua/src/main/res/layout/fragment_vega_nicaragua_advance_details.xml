@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_height"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimaryHeadOfi"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/action_bar_height"
+                    android:background="@color/colorPrimaryOfi"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start"
+                    android:padding="@dimen/margin_small"
+                    android:text="@string/advancing"
+                    android:textColor="@color/warm_white"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/advanceInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/vendorName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="start"
+                    android:text="Vendor name"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_mic_small"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="start"
+                        android:text="@string/credit_limit"
+                        android:textColor="@color/transparent_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_mic_small"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="start"
+                        android:text="@string/exchange_rate_per"
+                        android:textColor="@color/transparent_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_mic_small"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="start"
+                        android:text="@string/available_limit"
+                        android:textColor="@color/transparent_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/tvCreditLimit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_mic_small"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="start"
+                        android:text="NA"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tvExchangeRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_mic_small"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="start"
+                        android:text="NA"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tvAvailableLimit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_mic_small"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="start"
+                        android:text="NA"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/requestAdvanceAmountLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/advanceInfoLayout"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/requestAdvanceAmountHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/request_advance_amount_cs"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/requestAdvanceAmount"
+                    style="@style/App_EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/margin_mic_small"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text=""
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tenureDaysLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/requestAdvanceAmountLayout"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/tenureInDaysHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/tenure_in_days"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tenureInDays"
+                    style="@style/App_EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text=""
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/promissoryNumberLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tenureDaysLayout"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/promissoryNumberHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/promissory_number"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/promissoryNumber"
+                    style="@style/App_EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/margin_mic_small"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:maxLength="16"
+                    android:text=""
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/maturityDateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/promissoryNumberLayout"
+                android:layout_margin="@dimen/margin_medium"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/maturityDaysHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/margin_mic_small"
+                    android:layout_marginTop="@dimen/margin_mic_small"
+                    android:layout_marginEnd="@dimen/margin_mic_small"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/maturity_days"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/maturityDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/maturityDaysHeader"
+                    android:layout_marginStart="@dimen/margin_mic_small"
+                    android:layout_marginTop="@dimen/margin_mic_small"
+                    android:layout_marginEnd="@dimen/margin_mic_small"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center_horizontal"
+                    android:text="3000"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/margin_medium" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@color/grey"
+        android:enabled="false"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium" />
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_mic_small"
+    android:background="@color/warm_white">
+
+    <TextView
+        android:id="@+id/tvReason"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_xmedium"
+        tools:text="Reason"
+        />
+
+    <TextView
+        android:id="@+id/tvReasonSloc"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_xmedium"
+        tools:text="Reason"
+        />
+
+    <TextView
+        android:id="@+id/tvReasonCount"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_xmedium"
+        tools:text="10"
+        />
+
+</LinearLayout>

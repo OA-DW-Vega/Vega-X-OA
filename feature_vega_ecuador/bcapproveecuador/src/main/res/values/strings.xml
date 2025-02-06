@@ -1,0 +1,108 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="bcapprove">BcApprove</string>
+    <string name="sortby">SortBy</string>
+    <string name="bcapprove_wb_list">Weighbridge List</string>
+    <string name="no_wb">No of Wb:</string>
+    <string name="weight">Weight</string>
+    <string name="weighbridgeid">WeighbridgeId</string>
+
+    <string name="destination_wh_man">Destination WH</string>
+    <string name="sto_number_man">STO Number</string>
+    <string name="start_loading">Start Loading</string>
+    <string name="add_lots_to_dispatch">Add LOTs to Dispatch</string>
+    <string name="or">- OR -</string>
+    <string name="select_lot_from_inventory">Select LOT from Inventory</string>
+    <string name="enter_lot_id">Enter LOT ID</string>
+    <string name="dispatch_summary">Dispatch Summary</string>
+    <string name="storage_location">Storage Location</string>
+
+    <string name="dispatch_weight">Weight to Dispatch</string>
+    <string name="unit_of_measure">QE</string>
+    <string name="select_entire_lot">Select Entire LOT</string>
+    <string name="next">NEXT</string>
+    <string name="select_dest_wh">Select Destination WH</string>
+    <string name="select_sto_no">Select STO Number</string>
+    <string name="add_lot_msg">Please add the LOT to End the loading</string>
+    <string name="less_weight_error">Please enter weight less than LOT Weight</string>
+    <string name="sto_weight_error">Dispatch weight is greater than STO weight</string>
+    <string name="conform_remove">Are you sure? do you want to remove the LOT?</string>
+    <string name="already_added">LOT Already added in dispatch</string>
+    <string name="lot_not_found">Batch does not exist</string>
+    <string name="lot_weight_not_added">Please enter the weight to dispatch</string>
+    <string name="prceed_error">Add a lot to proceed further</string>
+    <string name="start_msg">Do you want to START Loading Process</string>
+    <string name="end_load_msg">Do you want STOP Loading Process </string>
+    <string name="choose_lot">Choose One Lot</string>
+    <string name="end_loading">END LOADING</string>
+    <string name="stop_load">STOP LOADING</string>
+    <string name="proceed">Proceed</string>
+
+    <string name="update_remark_title">Please update the Remark</string>
+    <string name="go_back">Are you sure to go back</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+    <string name="material">Material Name</string>
+    <string name="batchno">Batch No</string>
+    <string name="po_no">Po No</string>
+    <string name="suppliername">Supplier Name</string>
+    <string name="sto_weight">STO Weight</string>
+
+    <string name="dispatch_mtnt_inventory">Dispatch - MTNT - Inventory</string>
+    <string name="select_warehouse">Select Warehouse</string>
+    <string name="inventory">Inventory</string>
+    <string name="no_data_found">No Data</string>
+    <string name="all">All</string>
+    <string name="lot_number">LOT No</string>
+    <string name="grade">Material</string>
+    <string name="date">Date</string>
+    <string name="empty_weight">Please enter the weight</string>
+
+    <string name="merge">Merge</string>
+    <string name="dispatch_merge_lot">Dispatch - Merge LOTs</string>
+    <string name="dispatch_merge_lot_preview">Dispatch - Merge LOTs - Preview</string>
+    <string name="lot_merge_not_found">No more lots to merge</string>
+    <string name="dispatch_lot_merge_error">Two different material cannot be merged.</string>
+    <string name="weight_to_dispatch">Weight to Dispatch</string>
+
+    <string name="dispatch_summary_title">Dispatch - MTNT - Summary</string>
+    <string name="remark">Remark</string>
+    <string name="enter_remark">Please enter the remark</string>
+    <string name="lots_summary">LOTs Summary</string>
+    <string name="confirm_dispatch">Confirm Approve</string>
+
+    <string name="success_dispatch">Dispatch Successful</string>
+    <string name="success_dispatch_offline">Dispatch Successful Offline</string>
+    <string name="delivery_no">Delivery No : </string>
+    <string name="dispatch_offline_summary">Dispatch Offline Summary</string>
+    <string name="resync">ReSync</string>
+    <string name="view_details">View Details</string>
+    <string name="delete_msg">Are you sure? do you want to delete this item?</string>
+    <string name="start_loading_error">Please START Loading Process</string>
+    <string name="cancel_dispatch">Do you want to cancel this dispatch?</string>
+    <string name="search_by_lots">Search by Lots</string>
+    <string name="dispatch_failed">Dispatch Failed</string>
+    <string name="plant_code">Plant</string>
+    <string name="secondary_refraction">Secondary Refraction</string>
+    <string name="moisture">Moisture</string>
+    <string name="price">Price</string>
+    <string name="bcapprovedetails">BCApprove Details:</string>
+    <string name="plant_popup">Select Plant</string>
+    <string name="supplier">Supplier</string>
+    <string name="grn_weight">Weight</string>
+    <string name="grn_no">GRN No</string>
+    <string name="grn_price">GRN Price</string>
+    <string name="quality_details">Quality Details</string>
+    <string name="price_details">Price Details</string>
+    <string name="lot_id">Lot ID</string>
+    <string name="value">Value</string>
+    <string name="price_vaidation">Paid price should not be empty</string>
+    <string name="final_price_per_unit">Final price per unit</string>
+    <string name="weighscale">Weighscale</string>
+    <string name="weighbridge">Weighbridge</string>
+    <string name="bc_approve_summary">BC Approve Summary</string>
+    <string name="discount">Discount</string>
+    <string name="final_price">Final Price</string>
+
+</resources>

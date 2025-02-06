@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="@dimen/print_layout_height">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="@dimen/print_layout_width"
+            android:layout_height="@dimen/print_layout_height"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvPrintOn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:minLines="2"
+                    android:text="Print on Friday 26th August 2022 at 23:23"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_smedium" />
+
+                <TextView
+                    android:id="@+id/tv_entry_sheet_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:minLines="2"
+                    android:text="ENTRY SHEET No 222789000138"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_title" />
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/black"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_height="1dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_material_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_grn_doc"
+                    android:text="CMR Main Bush Bag Coco Bean"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_title" />
+                <LinearLayout
+                    android:id="@+id/llFirstSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gilroy_medium"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:text="Campaign:"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+                            <TextView
+                                android:id="@+id/tvCampagin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:text="2021/2022"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:text="Insp.Lot.no:"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+                            <TextView
+                                android:id="@+id/tvInspectionLot"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:text="Batch No:"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+                            <TextView
+                                android:id="@+id/tvBatchNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:text="Date:"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+                            <TextView
+                                android:id="@+id/tvDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:minLines="2"
+                                android:padding="@dimen/margin_padding_grn_doc"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/text_size_title" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llSecondSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:visibility="visible"
+                android:background="@drawable/rectangle_black_border_print">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Exporter :"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvExporter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Supplier :"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvSupplier"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Transporter:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvTransporter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Driver:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvDriver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Truck:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvTruck"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="DV letter No:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvDvLetterNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Starting Date:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvStartingDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Origin:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvOrigin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Region:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvRegion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Std Moisture:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvMoisture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_very_small"
+                    android:textSize="@dimen/text_size_smedium"
+                    android:text="@string/entry_sheet"/>
+
+                <LinearLayout
+                    android:id="@+id/llThirdSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9"
+                    android:background="@drawable/rectangle_black_border_print">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Nbr of pal"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Tare pal."
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Gross Weight"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Jute Bags"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Nylon Bags"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Packing weight"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Weight after refraction"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Refracted Weight"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="Net Weight after refraction"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/black"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:id="@+id/llThirdSectionValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9"
+                    android:background="@drawable/rectangle_black_border_print">
+
+                    <TextView
+                        android:id="@+id/tv_no_pallet"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="2"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:id="@+id/tv_tare_pal"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="144"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:id="@+id/tv_gross_wt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="2142"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:id="@+id/tv_jute_bag"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="13"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:id="@+id/tv_nylon_bag"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="8"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:id="@+id/tv_packing_wt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="15"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:id="@+id/tv_wt_after_refraction"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="1983"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <TextView
+                        android:id="@+id/tv_refracted_wt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="80"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+                    <TextView
+                        android:id="@+id/tv_net_wt_after_refraction"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="left"
+                        android:minLines="1"
+                        android:padding="@dimen/margin_padding_grn_doc"
+                        android:text="1903"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_title" />
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/black"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_grn_doc"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="DUPLICATA"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_title" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llFourthSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_regular"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Quality Analysis No:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvQualityAnalysisNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_regular"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Classement:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvClassement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_regular"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Mold :"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvMold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_regular"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Observation text :"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvObservation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_regular"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Weight retained:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvWeightRetained"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Moisture Rate:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvMoistureRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:text="Defect:"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <TextView
+                            android:id="@+id/tvDefect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:padding="@dimen/margin_padding_grn_doc"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llSixthSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_very_small"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvWareHouseIncharge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:paddingBottom="@dimen/margin_very_small"
+                            android:text="WareHouse Incharge"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:background="@color/black"
+                            android:layout_below="@+id/tvWareHouseIncharge"
+                            android:layout_alignRight="@+id/tvWareHouseIncharge"
+                            android:layout_alignLeft="@+id/tvWareHouseIncharge"
+                            android:layout_height="1dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_very_small"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvController"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:paddingBottom="@dimen/margin_very_small"
+                            android:text="Controller"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:background="@color/black"
+                            android:layout_below="@+id/tvController"
+                            android:layout_alignRight="@+id/tvController"
+                            android:layout_alignLeft="@+id/tvController"
+                            android:layout_height="1dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_very_small"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvClient"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:gravity="left"
+                            android:minLines="1"
+                            android:paddingBottom="@dimen/margin_very_small"
+                            android:text="Driver/Client"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_title" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:background="@color/black"
+                            android:layout_below="@+id/tvClient"
+                            android:layout_alignRight="@+id/tvClient"
+                            android:layout_alignLeft="@+id/tvClient"
+                            android:layout_height="1dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

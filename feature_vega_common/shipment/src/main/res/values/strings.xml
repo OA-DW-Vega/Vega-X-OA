@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Shipment Allocation - Approve/Reject</string>
+    <string name="tv_filter">Sort</string>
+    <string name="total_allocation">Total Allocations:</string>
+    <string name="filter">Filter</string>
+    <string name="tv_sub_title">Allocations</string>
+    <string name="allocation_id">Allocation ID</string>
+    <string name="so">SO#</string>
+    <string name="warehouse">Warehouse</string>
+    <string name="material">Material</string>
+    <string name="lots"># of Lots</string>
+    <string name="total_weight">Total Weight</string>
+    <string name="proceed">Proceed</string>
+    <string name="total_lots">Total Lots :</string>
+    <string name="sort_by">Sort by</string>
+    <string name="allocation_weight">Allocated Weight</string>
+    <string name="tv_inventory">Inventory</string>
+    <string name="tvSelectAll">Select All</string>
+    <string name="lot_id">Lot Id</string>
+    <string name="weight">Weight</string>
+    <string name="st_location">St Location</string>
+    <string name="ship_allocat_preview">Shipment Allocation- Preview</string>
+    <string name="so_details">SO details</string>
+    <string name="saleOrder">Sale Order</string>
+    <string name="inventory_details">Inventory details</string>
+    <string name="quality_parameter">Quality parameters</string>
+    <string name="total_open_quantity">Total Open Quantity</string>
+    <string name="balance_quantity">Balance Quantity</string>
+    <string name="allocation_summary">Allocation Summary</string>
+</resources>

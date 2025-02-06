@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="4dp"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/dispatch_merge_lot"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="91">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSelectLots"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F1F0EE"
+            android:paddingStart="@dimen/margin_padding_size_medium"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_padding_size_medium"
+            tools:listitem="@layout/item_ecuador_dispatch_lot_list_detail" />
+
+        <TextView
+            android:id="@+id/tvNoData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/lot_merge_not_found"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btMerge"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimaryOfi"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/merge"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnProceed"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/grey"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/proceed"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+    </FrameLayout>
+</LinearLayout>

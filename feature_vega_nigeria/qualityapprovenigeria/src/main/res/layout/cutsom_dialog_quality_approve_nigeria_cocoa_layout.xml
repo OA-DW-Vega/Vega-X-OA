@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llGrn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_xlarge"
+        android:paddingBottom="@dimen/margin_xlarge"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/margin_medium"
+            android:text="@string/do_you_want_proceed_grn"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <TextView
+            android:id="@+id/tvConfirmGrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/scanbale_corner"
+            android:backgroundTint="@color/green"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="@string/confirm_grn"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llApproval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_xlarge"
+        android:paddingBottom="@dimen/margin_xlarge"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvGrnNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/margin_medium"
+            android:text=""
+            android:textSize="@dimen/text_size_medium" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="center"
+            android:padding="@dimen/margin_medium"
+            android:text="@string/approve_confirm_message"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium" />
+
+
+        <TextView
+            android:id="@+id/tvConfirmApproval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/scanbale_corner"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/gilroy_semibold"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="@string/approve_confirm_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/margin_padding_size_small"
+        android:background="@drawable/card_round_corner_grey"
+        android:padding="@dimen/margin_padding_size_small"
+        android:src="@drawable/ic_close_white_24dp" />
+
+</RelativeLayout>

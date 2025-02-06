@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_border_black"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:paddingTop="@dimen/margin_medium"
+    android:paddingBottom="@dimen/margin_medium">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/rbMtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:checked="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mtn_no"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvMtnNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                tools:text="BK 1536 MI"
+                android:fontFamily="@font/gilroy_regular"
+                android:textStyle="bold"
+                android:textColor="@color/text_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_min"
+            android:layout_marginBottom="@dimen/margin_min">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/supply_plant_name"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvSupplyPlantId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                tools:text="4415"
+                android:fontFamily="@font/gilroy_regular"
+                android:textStyle="bold"
+                android:textColor="@color/text_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_min"
+            android:layout_marginBottom="@dimen/margin_min"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/truck_no"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvTruckNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                tools:text="18GRD00028"
+                android:fontFamily="@font/gilroy_regular"
+                android:textStyle="bold"
+                android:textColor="@color/text_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_of_bales_colon"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvNoOfBales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                tools:text="100"
+                android:fontFamily="@font/gilroy_regular"
+                android:textStyle="bold"
+                android:textColor="@color/text_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grades: "
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/grey_button" />
+
+            <TextView
+                android:id="@+id/tvGrades"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                tools:text="MICK 1/8" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

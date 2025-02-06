@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMaterial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/default_lot" />
+
+
+    <FrameLayout
+        android:id="@+id/flLotId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/border_light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMaterial">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spLot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/border_light_grey"
+            android:dropDownWidth="match_parent"
+            android:dropDownHeight="150dp"
+            android:gravity="center_vertical"
+            android:minHeight="60dp"
+            android:overlapAnchor="false"
+            android:padding="@dimen/margin_mic_small"
+            android:popupBackground="@color/white"
+            android:spinnerMode="dropdown" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@null"
+            android:padding="5dp"
+            android:src="@drawable/ic_coffee_down_arrow" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

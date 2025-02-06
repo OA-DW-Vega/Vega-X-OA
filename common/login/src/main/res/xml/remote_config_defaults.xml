@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>base_apk_path</key>
+        <value>040/809/261/original/9d4ff839db67999b09721f143d4ea6c0/base-master.apk</value>
+    </entry>
+    <entry>
+        <key>cashew_receiving_apk_path</key>
+        <value>040/809/293/original/23417a1a65117096dd82f5ec854f85e1/portwarehouse-master.apk
+        </value>
+    </entry>
+    <entry>
+        <key>cashew_offloading_apk_path</key>
+        <value>040/809/276/original/225427d46cbd55b0d5299e8bbfd30ca9/cotton-master.apk</value>
+    </entry>
+</defaultsMap><!-- END xml_defaults -->

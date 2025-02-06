@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nFilter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/clLocation"
+                app:layout_constraintHorizontal_bias="0.5">
+
+                <CheckBox
+                    android:id="@+id/cbMaterial"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMaterial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/material"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMaterial"
+                    app:layout_constraintStart_toEndOf="@+id/cbMaterial"
+                    app:layout_constraintTop_toTopOf="@+id/cbMaterial" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMaterial"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvMaterial"
+                    app:layout_constraintTop_toTopOf="@+id/cbMaterial" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMaterial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbMaterial"
+                    app:layout_constraintTop_toBottomOf="@+id/cbMaterial" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLocation"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clMaterial">
+
+                <CheckBox
+                    android:id="@+id/cbLocation"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/st_location"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbLocation"
+                    app:layout_constraintStart_toEndOf="@+id/cbLocation"
+                    app:layout_constraintTop_toTopOf="@+id/cbLocation" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbLocation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLocation"
+                    app:layout_constraintTop_toTopOf="@+id/cbLocation" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/cbLocation" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clMoisture"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clLocation">
+
+                <CheckBox
+                    android:id="@+id/cbMoisture"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMoisture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/moisture"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMoisture"
+                    app:layout_constraintStart_toEndOf="@+id/cbMoisture"
+                    app:layout_constraintTop_toTopOf="@+id/cbMoisture" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMoisture"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvMoisture"
+                    app:layout_constraintTop_toTopOf="@+id/cbMoisture" />
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/rvMoisture"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/cbMoisture"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/cbMoisture" />-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="12dp"
+                    android:padding="@dimen/margin_padding_size_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbMoisture"
+                    app:layout_constraintTop_toBottomOf="@+id/cbMoisture"
+                    >
+                    <EditText
+                        android:id="@+id/tvMinFilter"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Minimum"
+                        tools:text="LBA_00001" />
+                    <EditText
+                        android:id="@+id/tvMaxFilter"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Maximum"
+                        tools:text="LBA_00001" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBeanCount"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clMoisture">
+
+                <CheckBox
+                    android:id="@+id/cbBeanCount"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBeanCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/discounted_bean_weight"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbBeanCount"
+                    app:layout_constraintStart_toEndOf="@+id/cbBeanCount"
+                    app:layout_constraintTop_toTopOf="@+id/cbBeanCount" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbBeanCount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvBeanCount"
+                    app:layout_constraintTop_toTopOf="@+id/cbBeanCount" />
+
+<!--
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBeanCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbBeanCount"
+                    app:layout_constraintTop_toBottomOf="@+id/cbBeanCount" />
+-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="12dp"
+                    android:padding="@dimen/margin_padding_size_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbBeanCount"
+                    app:layout_constraintTop_toBottomOf="@+id/cbBeanCount"
+                    >
+                    <EditText
+                        android:id="@+id/tvMinFilterBeenWeight"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Minimum"
+                        tools:text="LBA_00001" />
+                    <EditText
+                        android:id="@+id/tvMaxFilterBeenWeight"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Maximum"
+                        tools:text="LBA_00001" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clFFA"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clBeanCount">
+
+                <CheckBox
+                    android:id="@+id/cbMould"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFFA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/mould"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMould"
+                    app:layout_constraintStart_toEndOf="@+id/cbMould"
+                    app:layout_constraintTop_toTopOf="@+id/cbMould" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbMould"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvFFA"
+                    app:layout_constraintTop_toTopOf="@+id/cbMould" />
+
+<!--
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFFA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbFFA"
+                    app:layout_constraintTop_toBottomOf="@+id/cbFFA" />
+-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="12dp"
+                    android:padding="@dimen/margin_padding_size_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbMould"
+                    app:layout_constraintTop_toBottomOf="@+id/cbMould"
+                    >
+                    <EditText
+                        android:id="@+id/tvMinFilterMould"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Minimum"
+                        tools:text="LBA_00001" />
+                    <EditText
+                        android:id="@+id/tvMaxFilterMould"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Maximum"
+                        tools:text="LBA_00001" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clFAT"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/clMaterial"
+                app:layout_constraintTop_toBottomOf="@+id/clFFA">
+
+                <CheckBox
+                    android:id="@+id/cbAdmixture"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFAT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/admixture"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbAdmixture"
+                    app:layout_constraintStart_toEndOf="@+id/cbAdmixture"
+                    app:layout_constraintTop_toTopOf="@+id/cbAdmixture" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbAdmixture"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvFAT"
+                    app:layout_constraintTop_toTopOf="@+id/cbAdmixture" />
+
+ <!--               <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFAT"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbFAT"
+                    app:layout_constraintTop_toBottomOf="@+id/cbFAT" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="12dp"
+                    android:padding="@dimen/margin_padding_size_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cbAdmixture"
+                    app:layout_constraintTop_toBottomOf="@+id/cbAdmixture"
+                    >
+                    <EditText
+                        android:id="@+id/tvMinFilterAdmixture"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Minimum"
+                        tools:text="LBA_00001" />
+                    <EditText
+                        android:id="@+id/tvMaxFilterAdmixture"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_text"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:maxHeight="58dp"
+                        android:minHeight="50dp"
+                        android:layout_margin="8dp"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Maximum"
+                        tools:text="LBA_00001" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btFilter"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/apply"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

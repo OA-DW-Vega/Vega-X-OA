@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="4dp"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/split_lot"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_smedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rectangle_border"
+        android:backgroundTint="@color/colorPrimaryOfi1"
+        android:padding="@dimen/margin_padding_size_small"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+        <TextView
+            android:id="@+id/tvLotNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            tools:text="@string/lot_id"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintEnd_toStartOf="@+id/tvLotWeight"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLotWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            tools:text="1000 KG"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tvLotNumber"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAddMinus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clSubTitle">
+
+        <TextView
+            android:id="@+id/tvNoofSplit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:text="@string/please_select_the_no_of_splits_do_you_want"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_smedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMinus"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_xxlarge"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/dark_grey"
+            app:layout_constraintEnd_toStartOf="@+id/tvSplitValue"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoofSplit"
+            app:srcCompat="@drawable/ic_minus_24"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvSplitValue"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/custom_edit_text"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoofSplit" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/margin_xxlarge"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/card_round_corner_grey"
+            android:backgroundTint="@color/dark_grey"
+            app:layout_constraintStart_toEndOf="@+id/tvSplitValue"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoofSplit"
+            app:srcCompat="@drawable/ic_add_white_24dp" />
+
+        <View
+            android:id="@+id/vLine"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:layout_constraintBottom_toTopOf="@+id/etWeight1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAdd" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etWeight1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_padding_size_small"
+            android:background="@drawable/custom_edit_text"
+            android:gravity="center"
+            android:hint="weight1"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/margin_padding_size_small"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintEnd_toStartOf="@+id/etWeight2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vLine" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etWeight2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_padding_size_small"
+            android:background="@drawable/custom_edit_text"
+            android:gravity="center"
+            android:hint="weight2"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/margin_padding_size_small"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintEnd_toStartOf="@+id/etWeight3"
+            app:layout_constraintStart_toEndOf="@+id/etWeight1"
+            app:layout_constraintTop_toBottomOf="@+id/vLine" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etWeight3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_padding_size_small"
+            android:background="@drawable/custom_edit_text"
+            android:gravity="center"
+            android:hint="weight3"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/margin_padding_size_small"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintEnd_toStartOf="@+id/etWeight4"
+            app:layout_constraintStart_toEndOf="@+id/etWeight2"
+            app:layout_constraintTop_toBottomOf="@+id/vLine" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etWeight4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_padding_size_small"
+            android:background="@drawable/custom_edit_text"
+            android:gravity="center"
+            android:hint="weight4"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/margin_padding_size_small"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etWeight3"
+            app:layout_constraintTop_toBottomOf="@+id/vLine" />
+
+        <TextView
+            android:id="@+id/tvSplit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/scanbale_corner"
+            android:backgroundTint="@color/grey_border"
+            android:enabled="false"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_padding_size_small"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_padding_size_small"
+            android:text="@string/split"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etWeight1" />
+
+        <TextView
+            android:id="@+id/tvprintsplitlot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/scanbale_corner"
+            android:backgroundTint="@color/grey_border"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingStart="@dimen/margin_medium"
+            android:enabled="false"
+            android:paddingTop="@dimen/margin_padding_size_small"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_padding_size_small"
+            android:visibility="visible"
+            android:text="@string/print_receipt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/tvSplit"
+            app:layout_constraintTop_toBottomOf="@+id/etWeight1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/vLine2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/margin_padding_size_small"
+        android:background="@drawable/dash_line"
+        app:layout_constraintTop_toBottomOf="@+id/clAddMinus" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSplit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintBottom_toTopOf="@+id/tvProceed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vLine2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSplitLot"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_common_split_lot" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:padding="@dimen/margin_very_small"
+        android:text="@string/back_to_lot_list"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

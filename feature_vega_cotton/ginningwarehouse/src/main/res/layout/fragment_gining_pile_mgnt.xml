@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_header"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center|start"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_small"
+        android:text="@string/add_bale_to_pile"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_smedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sp_pile"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/border"
+                android:gravity="start|center"
+                android:hint="@string/select_pile_id"
+                android:paddingStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/mvDropDown"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="36dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_arrow_down_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@id/sp_pile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sp_pile" />
+            <!--</FrameLayout>-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_add_bales"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sp_pile">
+
+                <TextView
+                    android:id="@+id/tvAddBale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/add_bales"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/vi_or1"
+                    android:layout_width="50dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_or"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clScan" />
+
+                <TextView
+                    android:id="@+id/tv_or"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/or"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_small"
+                    app:layout_constraintBottom_toBottomOf="@id/vi_or1"
+                    app:layout_constraintEnd_toStartOf="@+id/vi_or2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/vi_or1"
+                    app:layout_constraintTop_toTopOf="@id/vi_or1" />
+
+                <View
+                    android:id="@+id/vi_or2"
+                    android:layout_width="50dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    app:layout_constraintBottom_toBottomOf="@id/vi_or1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tv_or"
+                    app:layout_constraintTop_toTopOf="@id/vi_or1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clScan"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/dark_marun"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddBale">
+
+                    <TextView
+                        android:id="@+id/btnScan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="@string/scan_bale_id"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/gilroy_semibold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_scan"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:src="@drawable/qr_code"
+                        app:layout_constraintBottom_toBottomOf="@id/btnScan"
+                        app:layout_constraintEnd_toStartOf="@id/btnScan"
+                        app:layout_constraintTop_toTopOf="@id/btnScan" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <EditText
+                    android:id="@+id/etEnterContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/border"
+                    android:digits="0123456789"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:hint="@string/enter_bale_id"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="8dp"
+                    android:singleLine="false"
+                    android:textColorHint="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@id/btAdd"
+                    app:layout_constraintStart_toStartOf="@id/clScan"
+                    app:layout_constraintTop_toBottomOf="@id/vi_or1"
+                    tools:ignore="autofillHints" />
+
+                <Button
+                    android:id="@+id/btAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@color/colorSecondaryGrey"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/add"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/etEnterContainer"
+                    app:layout_constraintEnd_toEndOf="@id/clScan"
+                    app:layout_constraintTop_toTopOf="@id/etEnterContainer" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/pile_management_summary"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_add_bales" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBales"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="100dp"
+                android:nestedScrollingEnabled="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSummary"
+                tools:listitem="@layout/item_gining_pile_summary" />
+
+            <TextView
+                android:id="@+id/tvNoSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/no_summary"
+                android:textSize="16sp"
+                android:fontFamily="@font/gilroy_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSummary" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/proceed"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

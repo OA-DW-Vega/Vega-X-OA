@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/layout_height"
+            android:layout_height="@dimen/layout_height"
+            android:contentDescription="@string/offline_successfully"
+            android:src="@drawable/ic_success_tick" />
+
+        <TextView
+            android:id="@+id/tvSucessTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center"
+            android:fontFamily="@font/gilroy_regular"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            tools:text="Successfully Sealed" />
+
+        <LinearLayout
+            android:id="@+id/llMaterialDoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/material_doc"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMaterialDoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="4329875732" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvIdNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center"
+            android:maxWidth="@dimen/max_width"
+            android:fontFamily="@font/gilroy_regular"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="Successfully Sealed" />
+
+        <Button
+            android:id="@+id/btnViewSealed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/scanbale_port_corner"
+            android:backgroundTint="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_padding_size_xxlarge"
+            android:paddingTop="@dimen/margin_padding_size_medium"
+            android:paddingEnd="@dimen/margin_padding_size_xxlarge"
+            android:paddingBottom="@dimen/margin_padding_size_medium"
+            android:fontFamily="@font/gilroy_semibold"
+            android:text="@string/view_sealed_container"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnViewSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/scanbale_port_corner"
+            android:backgroundTint="@color/colorPrimaryOfi"
+            android:paddingStart="@dimen/margin_padding_size_xxlarge"
+            android:paddingTop="@dimen/margin_padding_size_medium"
+            android:paddingEnd="@dimen/margin_padding_size_xxlarge"
+            android:paddingBottom="@dimen/margin_padding_size_medium"
+            android:fontFamily="@font/gilroy_semibold"
+            android:text="@string/view_offline_summary"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

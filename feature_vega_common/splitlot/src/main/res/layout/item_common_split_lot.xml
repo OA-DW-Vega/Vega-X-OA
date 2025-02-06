@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_very_small"
+        android:layout_marginBottom="@dimen/margin_very_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSaveQuality"
+                android:layout_width="80dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="2dp"
+                android:background="@color/grey_light"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_small"
+                android:text="@string/save_n_quality"
+                android:textColor="@color/text_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLotLbl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/lot_no"
+                android:textColor="@color/text_black"
+                app:layout_constraintEnd_toStartOf="@id/tvWeight"
+                app:layout_constraintHorizontal_weight=".7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvScaleLotValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:gravity="start"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLotLbl"
+                tools:text="18GBRD140" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/weight"
+                android:textColor="@color/text_black"
+                app:layout_constraintEnd_toStartOf="@+id/tvSaveQuality"
+                app:layout_constraintHorizontal_weight=".5"
+                app:layout_constraintStart_toEndOf="@+id/tvScaleLotValue"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvScaleWeightValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvWeight"
+                app:layout_constraintTop_toBottomOf="@id/tvWeight"
+                tools:text="2400 MT" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTicket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/ticket"
+                android:textColor="@color/text_black"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="@id/tvScaleLotValue"
+                app:layout_constraintTop_toTopOf="@id/tvQcStatus" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTicketValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvQcStatusValue"
+                app:layout_constraintStart_toStartOf="@id/tvScaleLotValue"
+                app:layout_constraintTop_toBottomOf="@id/tvTicket"
+                tools:text="Ticket" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQcStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:text="@string/qc_status"
+                android:textColor="@color/text_black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@id/tvSaveQuality"
+                app:layout_constraintHorizontal_weight="1.5"
+                app:layout_constraintStart_toStartOf="@+id/tvWeight"
+                app:layout_constraintTop_toBottomOf="@id/tvScaleWeightValue" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQcStatusValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="start|center"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvQcStatus"
+                app:layout_constraintTop_toBottomOf="@id/tvQcStatus"
+                tools:text="done" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQualityGrade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:text="@string/quality_grade"
+                android:textColor="@color/text_black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/tvBagCount"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="@+id/tvTicketValue"
+                app:layout_constraintTop_toBottomOf="@id/tvTicketValue" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQualityGradeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@drawable/custom_edit_text"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center_vertical"
+                android:hint="@string/quality_grade"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintEnd_toStartOf="@+id/tvBagCountValue"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="@+id/tvTicketValue"
+                app:layout_constraintTop_toBottomOf="@id/tvQualityGrade" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBagCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:text="@string/no_of_bag"
+                android:textColor="@color/text_black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/tvSaveQuality"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvQualityGrade"
+                app:layout_constraintTop_toBottomOf="@id/tvQcStatusValue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvBagCountValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:background="@drawable/custom_edit_text"
+                android:gravity="center"
+                android:inputType="number"
+                android:padding="@dimen/margin_padding_size_small"
+                app:layout_constraintEnd_toStartOf="@+id/tvSaveQuality"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/tvQualityGradeValue"
+                app:layout_constraintTop_toBottomOf="@+id/tvBagCount" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvdano"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:text="@string/dano"
+                android:textColor="@color/text_black"
+                app:layout_constraintEnd_toStartOf="@+id/tvSaveQuality"
+                app:layout_constraintHorizontal_weight="2"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/tvTicketValue"
+                app:layout_constraintTop_toBottomOf="@id/tvQualityGradeValue"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvdanoValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_padding_size_small"
+                android:background="@drawable/custom_edit_text"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center_vertical"
+                android:hint="@string/dano"
+                android:visibility="visible"
+                android:padding="@dimen/margin_padding_size_small"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvBagCount"
+                app:layout_constraintStart_toStartOf="@+id/tvTicketValue"
+                app:layout_constraintTop_toBottomOf="@id/tvdano" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

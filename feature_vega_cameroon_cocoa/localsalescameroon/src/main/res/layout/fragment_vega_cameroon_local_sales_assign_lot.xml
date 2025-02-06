@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/warm_white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryHeadOfi"
+            android:fontFamily="@font/gilroy_regular"
+            android:padding="@dimen/margin_small"
+            android:text="@string/assign_lot"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSummary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="Default Storage Location"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/flContainer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/margin_large"
+                android:background="@drawable/border_light_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectLocation">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spStLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/border_light_grey"
+                    android:dropDownWidth="match_parent"
+                    android:dropDownHeight="150dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:overlapAnchor="false"
+                    android:padding="@dimen/margin_mic_small"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btAdd"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@null"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_down_arrow"
+                    />
+            </FrameLayout>
+
+            <!--<androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spStLocation"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:background="@drawable/custom_edit_text"
+                android:backgroundTint="#DEDAD4"
+                android:dropDownWidth="match_parent"
+                android:dropDownHeight="150dp"
+                android:gravity="center_vertical"
+                android:minHeight="60dp"
+                android:overlapAnchor="false"
+                android:padding="@dimen/margin_mic_small"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvSelectLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectLocation" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStLocation"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:background="@drawable/custom_edit_text"
+                android:backgroundTint="#DEDAD4"
+                android:dropDownWidth="match_parent"
+                android:dropDownHeight="150dp"
+                android:gravity="center_vertical"
+                android:minHeight="60dp"
+                android:overlapAnchor="false"
+                android:padding="@dimen/margin_small"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dropdown"
+                android:text="@string/all"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvSelectLocation"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectLocation" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:padding="@dimen/margin_mic_small"
+                android:src="@drawable/ic_down_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/tvStLocation"
+                app:layout_constraintEnd_toEndOf="@id/tvStLocation"
+                app:layout_constraintTop_toTopOf="@id/tvStLocation" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tvDispatch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            android:text="Assign Lot"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clSummary" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLots"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/btAssignLot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDispatch"
+            tools:listitem="@layout/item_cameroon_localsales_assign_lot" />
+
+
+        <Button
+            android:id="@+id/btAssignLot"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimaryOfi"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Assign LOT"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

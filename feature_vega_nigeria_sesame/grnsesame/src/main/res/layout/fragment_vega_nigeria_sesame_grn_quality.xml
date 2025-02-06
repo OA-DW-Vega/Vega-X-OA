@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="92"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryHeadOfi"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/margin_medium"
+                android:text="@string/weighted_average"
+                android:textColor="@color/warm_white"
+                android:textSize="@dimen/text_size_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondaryGrey"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvLotNoLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/margin_medium"
+                android:text="@string/batch_no"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:fontFamily="@font/gilroy_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvhead" />
+
+            <TextView
+                android:id="@+id/tvLotNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/margin_medium"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:fontFamily="@font/gilroy_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLotNoLbl"
+                app:layout_constraintTop_toBottomOf="@+id/tvhead"
+                tools:text="lots12345" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/light_grey"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_mic_small">
+
+            <TextView
+                android:id="@+id/tvQualityHead"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="2"
+                android:background="@color/grey_light"
+                android:fontFamily="@font/gilroy_regular"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_very_small"
+                android:paddingBottom="@dimen/margin_very_small"
+                android:text="@string/quality"
+                android:textSize="@dimen/text_size_smedium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvValueHead"
+                app:layout_constraintHorizontal_weight="1.8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLotNo" />
+
+            <TextView
+                android:id="@+id/tvValueHead"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="2"
+                android:background="@color/grey_light"
+                android:fontFamily="@font/gilroy_regular"
+                android:padding="@dimen/margin_very_small"
+                android:text="@string/value"
+                android:textSize="@dimen/text_size_smedium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tvQualityHead"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1.2"
+                app:layout_constraintStart_toEndOf="@+id/tvQualityHead"
+                app:layout_constraintTop_toBottomOf="@+id/tvLotNo"
+                app:layout_constraintTop_toTopOf="@+id/tvQualityHead" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQuality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvQualityHead"
+            tools:listitem="@layout/item_vega_nigeria_sesame_grn_quality_details" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryOfi"
+            android:gravity="center"
+            android:padding="@dimen/margin_medium"
+            android:text="@string/ok"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+
+</LinearLayout>

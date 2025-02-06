@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimaryHeadOfi</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!--<item name="fontFamily">@font/gilroy_regular</item>-->
+        <item name="md_font_title">@font/gilroy_semibold</item>
+        <item name="md_color_title">@color/text_black</item>
+        <item name="md_color_content">@color/text_black</item>
+        <item name="md_font_body">@font/gilroy_semibold</item>
+        <item name="md_font_button">@font/gilroy_semibold</item>
+        <item name="md_corner_radius">@dimen/margin_zero</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

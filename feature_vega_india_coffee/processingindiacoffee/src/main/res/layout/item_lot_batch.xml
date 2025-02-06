@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/clItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_very_small"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RadioButton
+        android:id="@+id/rb_lot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"/>
+    <TextView
+        android:id="@+id/tv_lot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_regular"
+        android:layout_toRightOf="@+id/rb_lot"
+        android:layout_alignTop="@+id/rb_lot"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        tools:text="Sample" />
+    <TextView
+        android:id="@+id/tv_ticket_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@+id/tv_lot"
+        android:layout_toRightOf="@+id/rb_lot"
+        android:textSize="@dimen/text_size_xmedium"
+        tools:text="Sample" />
+
+    <TextView
+        android:id="@+id/tv_view_ticket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="@string/view_ticket"
+        android:fontFamily="@font/gilroy_semibold"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:textSize="@dimen/text_size_xmedium"
+        android:padding="@dimen/margin_very_small"
+        android:textColor="@color/colorPrimaryOfi"/>
+
+
+
+</RelativeLayout>

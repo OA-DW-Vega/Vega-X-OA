@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/margin_small"
+        android:text="@string/stock_audit_bag_count"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnProceed"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvLotValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryOfi1"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="@dimen/margin_small"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLotDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvLotValue">
+
+                <TextView
+                    android:id="@+id/tvLotInfoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:text="@string/lot_information"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMaterialLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:text="@string/material"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/tvLotInfoLabel" />
+
+                <TextView
+                    android:id="@+id/tvMaterialValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLotInfoLabel" />
+
+                <TextView
+                    android:id="@+id/tvSystemNetWtLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:text="@string/system_net_wt"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/tvMaterialLabel" />
+
+                <TextView
+                    android:id="@+id/tvSystemNetWtValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvMaterialLabel" />
+
+                <TextView
+                    android:id="@+id/tvBagTypeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:text="@string/bag_type"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/tvSystemNetWtLabel" />
+
+                <TextView
+                    android:id="@+id/tvBagTypeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSystemNetWtLabel" />
+
+                <TextView
+                    android:id="@+id/tvNoOfBagsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:text="@string/no_of_bags"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagTypeLabel" />
+
+                <TextView
+                    android:id="@+id/tvNoOfBagsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagTypeLabel" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBagCountHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_light_grey_with_white_background"
+                android:drawableEnd="@drawable/ic_arrow_down_black_24dp"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/bag_count"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/clLotDetails" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBagCount1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:padding="@dimen/margin_small"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvBagCountHeader">
+
+                <TextView
+                    android:id="@+id/tvBagType1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFullBagCount1Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/full_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHalfBagCount1Label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagType1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHalfBagCount1Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/half_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFullBagCount1Label"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagType1" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etFullBag1Count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:hint=""
+                    android:text="0"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHalfBagCount1Label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFullBagCount1Label" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etHalfBag1Count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:hint=""
+                    android:text="0"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFullBagCount1Label"
+                    app:layout_constraintTop_toBottomOf="@id/tvHalfBagCount1Label" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBagCount2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:padding="@dimen/margin_small"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/clBagCount1">
+
+                <TextView
+                    android:id="@+id/tvBagType2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFullBagCount2Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/full_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHalfBagCount2Label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagType2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHalfBagCount2Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/half_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFullBagCount2Label"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagType2" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etFullBag2Count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:hint=""
+                    android:text="0"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHalfBagCount2Label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFullBagCount2Label" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etHalfBag2Count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:hint=""
+                    android:text="0"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFullBagCount2Label"
+                    app:layout_constraintTop_toBottomOf="@id/tvHalfBagCount2Label" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBagCount3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:padding="@dimen/margin_small"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/clBagCount2">
+
+                <TextView
+                    android:id="@+id/tvBagType3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:padding="@dimen/margin_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFullBagCount3Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/full_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHalfBagCount3Label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagType3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHalfBagCount3Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/half_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFullBagCount3Label"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagType3" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etFullBag3Count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:hint=""
+                    android:text="0"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHalfBagCount3Label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFullBagCount3Label" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etHalfBag3Count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:hint=""
+                    android:text="0"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvFullBagCount3Label"
+                    app:layout_constraintTop_toBottomOf="@id/tvHalfBagCount3Label" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBagDetailsHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/border_light_grey_with_white_background"
+                android:drawableEnd="@drawable/ic_arrow_down_black_24dp"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_medium"
+                android:text="Bag Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/clBagCount3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBagDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_medium"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvBagDetailsHeader">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBagDamagedLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/bag_damaged"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvBagDamagedValue"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBagDamagedValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvBagDamagedLabel" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvDamagedBagCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/enter_details"
+                    android:inputType="number"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvDamagedBagCountLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagDamagedLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDamagedBagCountLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/damaged_bags"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@id/tvDamagedBagCount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBagDamagedLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSpillageLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/spillage"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSpillageValue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDamagedBagCount" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSpillageValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvSpillageLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvDamagedBagCount" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeightLossHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/border_light_grey_with_white_background"
+                android:drawableEnd="@drawable/ic_arrow_down_black_24dp"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/weight_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/clBagDetails" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clWeightLoss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_medium"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvWeightLossHeader">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSystemWTLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/system_weight"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSystemWtValue"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSystemWtValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvSystemWTLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWLfullBagCountLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/full_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSystemWtValue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSystemWTLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWLfullBagCountValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvSystemWTLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvSystemWTLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWLHalfBagCountLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/half_bag_count"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSystemWtValue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvWLfullBagCountLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWLHalfBagCountValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvSystemWTLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvWLfullBagCountLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWeightLossLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:text="@string/weight_gain_loss"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSystemWtValue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvWLHalfBagCountLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWeightLossValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_light_grey_with_white_background"
+                    android:fontFamily="@font/gt_walsheim_pro_bold"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvSystemWTLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvWLHalfBagCountLabel" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFinalWeightLossValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/border_light_grey"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/final_weight_loss_gain"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/clWeightLoss" />
+
+            <TextView
+                android:id="@+id/tvRemarkLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:text="@string/remarks"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/etRemarks"
+                app:layout_constraintTop_toBottomOf="@id/tvFinalWeightLossValue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etRemarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@drawable/border_light_grey_with_white_background"
+                android:fontFamily="@font/gt_walsheim_pro_bold"
+                android:hint="@string/enter_remarks"
+                android:padding="@dimen/margin_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintStart_toStartOf="@id/tvRemarkLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvRemarkLabel" />
+
+            <View
+                android:id="@+id/dot_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_very_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:background="@drawable/dotted"
+                app:layout_constraintTop_toBottomOf="@id/etRemarks" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clUploadPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:padding="@dimen/margin_large"
+                app:layout_constraintTop_toBottomOf="@id/dot_view">
+
+                <TextView
+                    android:id="@+id/tvUploadPhotoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/attach_photo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ivCamera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:background="@drawable/scanbale_corner"
+                    android:backgroundTint="@color/dark_marun"
+                    android:drawableStart="@drawable/ic_photo_camera_black_24dp"
+                    android:drawablePadding="@dimen/margin_padding_size_small"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingStart="@dimen/margin_xlarge"
+                    android:paddingEnd="@dimen/margin_xlarge"
+                    android:text="@string/upload_ticket_photo"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/tvUploadPhotoLabel" />
+
+                <TextView
+                    android:id="@+id/tvPhotoAcceptedFormats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gt_walsheim_pro_regular"
+                    android:text="@string/accepted_file_formats"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/ivCamera" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

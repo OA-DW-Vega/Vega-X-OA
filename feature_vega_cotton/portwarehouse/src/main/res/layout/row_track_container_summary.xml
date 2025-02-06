@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_large"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:layout_marginEnd="@dimen/margin_large"
+    android:layout_marginBottom="@dimen/margin_medium"
+    app:cardCornerRadius="@dimen/margin_mic_small"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    app:cardElevation="@dimen/margin_mic_small">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_large">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/container_no_colon"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/grey_button" />
+
+                <TextView
+                    android:id="@+id/tvContainerNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_mic_small"
+                    android:paddingEnd="@dimen/margin_mic_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    tools:text="CONT0000028" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/container_type_colon"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/grey_button" />
+
+                <TextView
+                    android:id="@+id/tvContainerType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_mic_small"
+                    android:paddingEnd="@dimen/margin_mic_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    tools:text="Contex_Balcom" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/added_on"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/grey_button" />
+
+                <TextView
+                    android:id="@+id/tvAddedOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_mic_small"
+                    android:paddingEnd="@dimen/margin_mic_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    tools:text="BK 1536 MI" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>

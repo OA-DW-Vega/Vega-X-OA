@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //OGA Background and Components Colors
+
+    <color name="colorPrimaryOga">#860063</color>
+    <color name="colorPrimaryOga1">#f78c2a</color>
+    <color name="colorPrimaryOga2">#222222</color>
+    <color name="colorPrimaryOga3">#ffffff</color>
+
+    <color name="colorPrimaryOfi">#2E2D2C</color>
+    <color name="colorPrimaryHeadOfi">#FF7000</color>
+    <color name="colorSecondaryOfi">#00B2E7</color>
+    <color name="colorSecondary">#FF7000</color>
+    <color name="colorSecondaryGrey">#E9E9E9</color>
+    <color name="colorPrimaryOfi1">#2E2D2C</color>
+    <color name="colorPrimaryOfi2">#222222</color>
+    <color name="colorPrimaryOfi3">#ffffff</color>
+    <color name="dark_marun">#2E2D2C</color>
+    <color name="dark_grey">#4A4949</color>
+    <color name="dark_colorPrimaryOfi">#00A865</color>
+
+</resources>

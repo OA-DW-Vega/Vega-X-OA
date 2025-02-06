@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_light">
+
+
+    <LinearLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/ll_recevingWH"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_border"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="2">
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_padding_size_medium">
+
+            <TextView
+                    android:id="@+id/tvReceiving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start"
+                    android:text="@string/supplier"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+        <TextView
+                android:id="@+id/tvReceivingWH"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_grey_border"
+                android:fontFamily="@font/gilroy_regular"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:ignore="LabelFor" />
+
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+            android:id="@+id/tvAddBale"
+            app:layout_constraintTop_toBottomOf="@+id/ll_recevingWH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/gilroy_semibold"
+            android:text="@string/add_lot_for_grn"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+             />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clScan"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/scanbale_corner"
+            android:backgroundTint="@color/dark_green_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddBale">
+
+        <TextView
+                android:id="@+id/btnScan"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="@string/scan_lot_id"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_scan"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="@string/local_sales"
+                android:src="@drawable/qr_code"
+                app:layout_constraintBottom_toBottomOf="@id/btnScan"
+                app:layout_constraintEnd_toStartOf="@id/btnScan"
+                app:layout_constraintTop_toTopOf="@id/btnScan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEnterContainer"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/gilroy_regular"
+            android:hint="@string/enter_lot_id"
+            android:padding="8dp"
+            android:singleLine="false"
+            android:textColorHint="@color/grey"
+            app:layout_constraintEnd_toStartOf="@id/btAdd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_or" />
+
+    <TextView
+            android:id="@+id/tv_or"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="center"
+            android:text="@string/or"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clScan" />
+
+    <Button
+            android:id="@+id/btAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/grey"
+            android:fontFamily="@font/gilroy_semibold"
+            android:text="@string/add"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/etEnterContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etEnterContainer" />
+
+    <TextView
+            android:id="@+id/tv_or_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="center"
+            android:text="@string/or"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etEnterContainer" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnAddLot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/scanbale_corner"
+            android:backgroundTint="#00869D"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="Add Lot from Inventory"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintTop_toBottomOf="@id/tv_or_edit" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clLotSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAddLot">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/lot_summary"
+                android:textColor="@color/text_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clLotSummary"
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/item_ghana_cocoa_weighscale_lot_card_layout_grn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

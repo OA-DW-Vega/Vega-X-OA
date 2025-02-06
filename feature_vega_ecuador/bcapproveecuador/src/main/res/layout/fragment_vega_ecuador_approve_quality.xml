@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/tvhead"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:gravity="center|start"
+        android:paddingStart="@dimen/margin_medium"
+        android:text="@string/bcapprove"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLotNoLbl"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_gravity="center"
+        android:background="@color/orange_light"
+        android:gravity="center|start"
+        android:paddingStart="@dimen/margin_medium"
+        android:text="@string/batch_no"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvhead" />
+
+    <TextView
+        android:id="@+id/tvLotNo"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_gravity="center"
+        android:background="@color/orange_light"
+        android:gravity="center|start"
+        android:paddingStart="@dimen/margin_medium"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLotNoLbl"
+        app:layout_constraintTop_toBottomOf="@+id/tvhead"
+        tools:text="lots12345" />
+
+    <TextView
+        android:id="@+id/tvQualityHead"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_light"
+        android:fontFamily="@font/gilroy_regular"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingTop="@dimen/margin_very_small"
+        android:paddingBottom="@dimen/margin_very_small"
+        android:text="@string/quality"
+        android:textSize="@dimen/text_size_smedium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvValueHead"
+        app:layout_constraintHorizontal_weight="1.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLotNo" />
+
+    <TextView
+        android:id="@+id/tvValueHead"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_light"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_very_small"
+        android:text="@string/value"
+        android:textSize="@dimen/text_size_smedium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvQualityHead"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1.2"
+        app:layout_constraintStart_toEndOf="@+id/tvQualityHead"
+        app:layout_constraintTop_toBottomOf="@+id/tvLotNo"
+        app:layout_constraintTop_toTopOf="@+id/tvQualityHead" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQualityHead">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQuality"
+            android:nestedScrollingEnabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_vega_ecuador_approve_quality_details" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvOk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/ok"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

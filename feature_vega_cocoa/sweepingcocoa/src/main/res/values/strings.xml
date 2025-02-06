@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="material">Material</string>
+    <string name="stock">Stock</string>
+    <string name="storage_location">St Location</string>
+    <string name="weight_summary">Weight Summary</string>
+    <string name="add_weight">Add WEIGHT</string>
+    <string name="gross_weight">Gross weight</string>
+    <string name="enter_weight">Enter Weight</string>
+    <string name="packaging_material">Packaging Material</string>
+    <string name="bag_type">Bag Type</string>
+    <string name="no_of_bags">No of Bags</string>
+    <string name="select_type">Select Type</string>
+    <string name="enter_no_of_bags">Enter No of Bags</string>
+    <string name="net_weight">Net Weight</string>
+    <string name="add">Add</string>
+    <string name="lots_summary">LOTs Summary</string>
+    <string name="pallet_tare_weight">Pallet Tare Weight</string>
+    <string name="bag_tare_weight">Bag Tare Weight</string>
+    <string name="total_weight">Total Weight</string>
+    <string name="sweepings_summary">Sweepings - Summary</string>
+    <string name="sweepings">Sweepings</string>
+    <string name="sweepings_weight_entry">Sweepings - Weight Entry</string>
+    <string name="lot_no">LOT No :</string>
+    <string name="proceed">Proceed</string>
+    <string name="tare_weight">Tare Weight</string>
+    <string name="conform_sweeping">Do you want to issue the goods for processing?</string>
+    <string name="no_weight_added">No weight added</string>
+    <string name="lot_success">Lot Successfully Stored</string>
+    <string name="stored_locally">Stored Locally</string>
+    <string name="s_no">S.No</string>
+    <string name="bag">Bag</string>
+    <string name="gross_n_weight">Gross \n weight</string>
+    <string name="tare_n_bag_pallet">Tare \n (Bag + pallet)</string>
+    <string name="net_n_weight">Net \n weight</string>
+    <string name="confirm">Confrim</string>
+    <string name="cancel">Cancel</string>
+</resources>

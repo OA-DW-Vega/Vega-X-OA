@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/po_no"
+            android:textColor="@color/text_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBomValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            app:layout_constraintBottom_toBottomOf="@id/tvBom"
+            app:layout_constraintStart_toEndOf="@id/tvBom"
+            app:layout_constraintTop_toTopOf="@id/tvBom"
+            tools:text="001" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/material_po"
+            android:textColor="@color/text_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBom" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMaterialValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            app:layout_constraintBottom_toBottomOf="@id/tvMaterial"
+            app:layout_constraintStart_toEndOf="@id/tvMaterial"
+            app:layout_constraintTop_toTopOf="@id/tvMaterial"
+            tools:text="CA Asalan CAFE" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInputGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/weight_in_process"
+            android:textColor="@color/text_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMaterial" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInputGradeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            app:layout_constraintBottom_toBottomOf="@id/tvInputGrade"
+            app:layout_constraintStart_toEndOf="@id/tvInputGrade"
+            app:layout_constraintTop_toTopOf="@id/tvInputGrade"
+            tools:text="CA Asalan CAFE" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOutputGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/dry_start_date"
+            android:textColor="@color/text_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInputGrade" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOutputValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/text_black"
+            app:layout_constraintBottom_toBottomOf="@id/tvOutputGrade"
+            app:layout_constraintStart_toEndOf="@id/tvOutputGrade"
+            app:layout_constraintTop_toTopOf="@id/tvOutputGrade"
+            tools:text="CA Asalan CAFE" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNext"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/grey"
+            android:rotation="270"
+            android:src="@drawable/ic_cameroon_down_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="bottom"
+        android:background="@color/light_grey" />
+</androidx.cardview.widget.CardView>

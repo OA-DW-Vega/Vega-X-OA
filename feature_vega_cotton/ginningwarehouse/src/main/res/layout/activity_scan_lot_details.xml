@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/cinsignment_details"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:fontFamily="@font/gilroy_semibold"
+        android:textSize="@dimen/text_size_smedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar" />
+
+    <TextView
+        android:id="@+id/tvViewIncomingLot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:background="@drawable/ginning_scanbale_corner"
+        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24px"
+        android:drawablePadding="@dimen/margin_medium"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/view_list_of_incoming_lots"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cLotId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvViewIncomingLot">
+
+        <TextView
+            android:id="@+id/tvLotNo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/table_border_color"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:text="@string/lot_no"
+            android:fontFamily="@font/gilroy_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLotNoValue"
+            app:layout_constraintEnd_toStartOf="@+id/tvLotNoValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvLotNoValue" />
+
+        <TextView
+            android:id="@+id/tvLotNoValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bale_detail_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:fontFamily="@font/gilroy_regular"
+            android:textStyle="bold"
+            android:textColor="@color/text_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvLotNo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/lot_no" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cTruckNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cLotId">
+
+        <TextView
+            android:id="@+id/tvTruckNo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/table_border_color"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="@string/truck_no"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTruckNoValue"
+            app:layout_constraintEnd_toStartOf="@+id/tvTruckNoValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTruckNoValue" />
+
+        <TextView
+            android:id="@+id/tvTruckNoValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bale_detail_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:fontFamily="@font/gilroy_regular"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvTruckNo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/truck_no" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cContainerNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cTruckNo">
+
+        <TextView
+            android:id="@+id/tvContainerNo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/table_border_color"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:text="@string/container_no"
+            android:fontFamily="@font/gilroy_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/tvContainerNoValue"
+            app:layout_constraintEnd_toStartOf="@+id/tvContainerNoValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvContainerNoValue" />
+
+        <TextView
+            android:id="@+id/tvContainerNoValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bale_detail_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:fontFamily="@font/gilroy_regular"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvContainerNo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/container_no" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cReceivedOn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cContainerNo">
+
+        <TextView
+            android:id="@+id/tvReceivedOno"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/table_border_color"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:text="@string/received_on"
+            android:fontFamily="@font/gilroy_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/tvReceivedOnValue"
+            app:layout_constraintEnd_toStartOf="@+id/tvReceivedOnValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvReceivedOnValue" />
+
+        <TextView
+            android:id="@+id/tvReceivedOnValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bale_detail_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_medium"
+            android:fontFamily="@font/gilroy_regular"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvReceivedOno"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/received_on" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvAddToGinning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/add_to_ginning"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

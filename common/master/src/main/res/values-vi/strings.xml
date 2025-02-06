@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">master</string>
+    <string name="syncing">Đồng bộ hoá...</string>
+    <string name="master_data_downloading">Tải xuống dữ liệu chủ...</string>
+    <string name="master_data_download_success">Dữ liệu chủ được tải xuống thành công</string>
+    <string name="data_downloading">Tải xuống dữ liệu...</string>
+    <string name="data_download_success">Dữ liệu được tải xuống thành công</string>
+    <string name="session_out_offline_data">Don\'t worry, If you have any offline data will also be preserved</string>
+    <string name="battery_issue">Battery should be at an acceptable level(20%) and should not be at battery saver mode. Please charge the device and sync master data again</string>
+    <string name="farmer_data_downloaded_successfully">Farmer data downloaded successfully</string>
+    <string name="farmer_data_failed">Farmer data failed</string>
+    <string name="farmer_data_cancelled">Farmer data cancelled</string>
+    <string name="no_qrcode_found">No qrcode found</string>
+    <string name="source_lot_downloaded_successfully">Source Lot Downloaded Successfully</string>
+    <string name="source_lot_data_downloaded_failed">Source lot data downloaded failed</string>
+    <string name="source_lot_data_downloaded_cancelled">Source lot data downloaded cancelled</string>
+    <string name="trans_id_data_downloaded_successfully">Transaction Id Data downloaded successfully</string>
+    <string name="trans_id_data_downloaded_failed">Transaction Id Data Downloaded Failed</string>
+    <string name="trans_id_data_downloaded_cancelled">Transaction Id Data Downloaded Cancelled</string>
+    <string-array name="user_info">
+        <item>Phiên bản Android: Ứng dụng sẽ hoạt động tốt hơn với Android v8 trở lên.</item>
+        <item>Phiên bản ứng dụng: Khi nâng cấp phiên bản ứng dụng, mọi dữ liệu ngoại tuyến cũng sẽ được giữ nguyên.</item>
+        <item>Liên hệ: Để được hỗ trợ, hãy liên hệ tới digitalsupport@olamnet.com</item>
+    </string-array>
+</resources>

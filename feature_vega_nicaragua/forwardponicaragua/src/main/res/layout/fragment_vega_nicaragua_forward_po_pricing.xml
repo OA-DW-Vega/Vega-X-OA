@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="start"
+        android:padding="@dimen/margin_small"
+        android:text="@string/forward_po_creation_preview"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:layout_below="@+id/title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="300dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/totalPriceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_height"
+                android:layout_below="@+id/title"
+                android:background="@color/colorPrimaryOfi1"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_small"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/total_price"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="@dimen/nav_header_height"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="right"
+                    android:inputType="text"
+                    android:text="C$ 0.00"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/exchangeRateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_mic_small"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvExchangeRateHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/exchange_rate"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tvExchangeRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="right"
+                    android:text="0%"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/exchangeRateLayout"
+                android:fontFamily="@font/gilroy_semibold"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="0dp"
+                android:text="@string/weight"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <FrameLayout
+                android:id="@+id/weightLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvWeight"
+                android:layout_margin="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_mic_small">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEnterWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="@drawable/shape_coffee_rect_white_bg"
+                        android:gravity="start|center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="@dimen/margin_medium"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvWeightUOM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_medium"
+                        android:gravity="center"
+                        android:paddingEnd="@dimen/margin_medium"
+                        android:text="KG"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_xmedium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/etEnterWeight" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvPricePerUnit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/weightLayout"
+                android:fontFamily="@font/gilroy_semibold"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="0dp"
+                android:text="@string/price_per_unit"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <FrameLayout
+                android:id="@+id/priceperunitlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPricePerUnit"
+                android:layout_margin="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_mic_small">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEnterPricePerUnit"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="@drawable/shape_coffee_rect_white_bg"
+                        android:gravity="start|center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="@dimen/margin_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvsPricePerUnitUOM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_medium"
+                        android:gravity="center"
+                        android:paddingEnd="@dimen/margin_medium"
+                        android:text="C$"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_xmedium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/etEnterPricePerUnit" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvDeliveryterm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceperunitlayout"
+                android:fontFamily="@font/gilroy_semibold"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="0dp"
+                android:text="@string/deliveryterm"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_below="@+id/tvDeliveryterm"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_very_small"
+                android:background="@drawable/shape_coffee_rect_white_bg"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:fontFamily="@font/gilroy_regular"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPricePerQQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDate"
+                android:fontFamily="@font/gilroy_semibold"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="0dp"
+                android:text="@string/price_per_QQ"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <FrameLayout
+                android:id="@+id/priceperQQlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPricePerQQ"
+                android:layout_margin="@dimen/margin_mic_small"
+                android:padding="@dimen/margin_mic_small">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEnterPricePerQQ"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="@drawable/shape_coffee_rect_white_bg"
+                        android:gravity="start|center"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/margin_medium"
+                        android:paddingLeft="@dimen/margin_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvsPricePerQQUOM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_medium"
+                        android:gravity="center"
+                        android:paddingEnd="@dimen/margin_medium"
+                        android:text="C$"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_xmedium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/etEnterPricePerQQ" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/save_and_continue"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+    <!-- <Button
+         android:id="@+id/btnProceed"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:layout_alignParentBottom="true"
+         android:background="@color/green"
+         android:paddingTop="@dimen/margin_medium"
+         android:text="@string/save_and_continue"
+         android:textColor="@color/white"
+         android:textSize="@dimen/text_size_medium" />-->
+
+</LinearLayout>

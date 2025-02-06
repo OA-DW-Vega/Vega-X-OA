@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_border_black"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_padding_size_small">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_padding_size_medium"
+        android:paddingEnd="@dimen/margin_padding_size_medium">
+
+        <TextView
+            android:id="@+id/tvMaterial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="start"
+            android:text="@string/material"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStoWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="start"
+            android:text="@string/sto_weight"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_padding_size_medium"
+        android:paddingEnd="@dimen/margin_padding_size_medium">
+
+        <TextView
+            android:id="@+id/tvMaterialValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="start"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStoWeightValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="start"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

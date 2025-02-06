@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                android:layout_width="@dimen/layout_height"
+                android:layout_height="@dimen/layout_height"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="success.json" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:gravity="center"
+                android:fontFamily="@font/gilroy_regular"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/text_black"
+                tools:text="Successfully Sealed" />
+
+            <TextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:gravity="center"
+                android:maxWidth="@dimen/max_width"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/grey_border"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="Successfully Sealed" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="@color/colorPrimaryOfi"
+            android:text="@string/ok"
+            android:textAllCaps="false"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium" />
+
+
+    </LinearLayout>
+</LinearLayout>

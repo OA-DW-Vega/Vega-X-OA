@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/reconciliation_report"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNetAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi1"
+        android:fontFamily="@font/gilroy_regular"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/total_net_amount"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tvNetAmountValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi1"
+        android:fontFamily="@font/gilroy_regular"
+        android:paddingStart="2dp"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_small"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvNetAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvNetAmount"
+        tools:text="c$23232" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btnProceed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNetAmount">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_medium">
+
+            <TextView
+                android:id="@+id/tvDest"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/opening_cash"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvWhValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvWhValue"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_nic_rect_white_bg"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvDest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvDest"
+                app:layout_constraintTop_toTopOf="@id/tvDest"
+                tools:text="1000" />
+
+
+            <TextView
+                android:id="@+id/tvsto"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/remittances"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvWhValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDest" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvstoValue"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_nic_rect_white_bg"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvsto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvsto"
+                app:layout_constraintTop_toTopOf="@id/tvsto" />
+
+            <TextView
+                android:id="@+id/tvUrgentAdvance"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/urgent_advance"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/tvstoValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvsto" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvUrgentAdvanceValue"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:background="@drawable/shape_nic_rect_white_bg"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvUrgentAdvance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvUrgentAdvance"
+                app:layout_constraintTop_toTopOf="@id/tvUrgentAdvance" />
+
+            <TextView
+                android:id="@+id/tvPtbfAdvance"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/ptbf_advance"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:visibility="gone"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvUrgentAdvanceValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUrgentAdvance" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvPtbfAdvanceValue"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_nic_rect_white_bg"
+                android:gravity="center"
+                android:visibility="gone"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvPtbfAdvance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvPtbfAdvance"
+                app:layout_constraintTop_toTopOf="@id/tvPtbfAdvance" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                app:layout_constraintTop_toBottomOf="@id/tvPtbfAdvance"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_invoice_layout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBoottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/scanbale_corner"
+                android:backgroundTint="@color/lightGrey"
+                android:paddingBottom="@dimen/margin_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvList">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvcashMove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_size_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/cash_movements"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrevBal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_size_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/previous_cash_balance"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvcashMove" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrevBalValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPrevBal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvPrevBal"
+                    tools:text="1000.00" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_size_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/remittance"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPrevBal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRemValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@id/tvRem"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvRem"
+                    tools:text="1000.00" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAdvance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_size_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/advances"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRem" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAdvanceValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@id/tvAdvance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvAdvance"
+                    tools:text="1000.00" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNetPaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_size_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/net_paid_invoice_liquidations"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAdvance" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNetPaidValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@id/tvNetPaid"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvNetPaid"
+                    tools:text="1000.00" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCashBal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_size_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/cash_balance"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNetPaid" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCashBalValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCashBal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvCashBal"
+                    tools:text="1000.00" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/proceed"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintTop_toBottomOf="@+id/nsView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnSave" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi1"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toBottomOf="@id/btnProceed"
+        app:layout_constraintEnd_toStartOf="@+id/btnProceed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnProceed" />
+</androidx.constraintlayout.widget.ConstraintLayout>

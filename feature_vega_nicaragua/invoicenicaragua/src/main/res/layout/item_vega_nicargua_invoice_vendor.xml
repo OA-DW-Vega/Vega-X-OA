@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:cardCornerRadius="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_small"
+        android:paddingStart="@dimen/margin_small">
+
+        <TextView
+            android:id="@+id/vendorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/vendor_name"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/margin_mic_small"
+            android:layout_toLeftOf="@id/next"
+            tools:ignore="RelativeOverlap,RtlSymmetry"
+            />
+        <TextView
+            android:id="@+id/vendorId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/margin_mic_small"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/vendor_id"
+            android:textColor="@color/transparent_black"
+            android:textSize="@dimen/text_size_very_small"
+            android:layout_below="@+id/vendorName"
+            android:layout_toLeftOf="@id/next"
+            tools:ignore="RelativeOverlap,RtlSymmetry"
+            android:layout_alignParentLeft="true"
+            />
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_medium"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_small"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_small"
+            tools:ignore="RelativeOverlap,RtlSymmetry"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

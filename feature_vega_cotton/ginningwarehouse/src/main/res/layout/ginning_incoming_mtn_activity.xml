@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/llOfflineSummary"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_width"
+        android:layout_below="@+id/tool_bar"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/colorSecondaryOfi"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_padding_size_zero"
+            android:text="@string/view_offline_summary"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textSize="@dimen/text_size_smedium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/btnProceed"
+        android:layout_below="@+id/llOfflineSummary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/blue_background"
+            android:backgroundTint="@color/colorPrimaryHeadOfi"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_large"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="@string/incoming_mtn"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gilroy_regular"
+            android:textSize="@dimen/text_size_smedium" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvIncomingMtnEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_regular"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="@string/mtns_empty"
+                android:visibility="invisible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/incomingRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_ginning_incoming_mtn" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorSecondaryGrey"
+        android:enabled="false"
+        android:textAllCaps="false"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/store_in_inventory"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:visibility="visible" />
+</RelativeLayout>

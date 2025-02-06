@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--tools:context=".ui.container.CheckForDispatchActivity">-->
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/blue_port_background"
+        android:backgroundTint="@color/colorPrimaryHeadOfi"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/check_for_dispatch"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_smedium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/container_grey_stroke_port"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSecondaryGrey"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:orientation="horizontal">
+
+                <com.olam.warehouse.vegax.portwarehouse.ui.custom.ReselectSpinner
+                    android:id="@+id/spOt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@android:color/black"
+                    android:dropDownWidth="1000dp"
+                    android:dropDownHeight="150dp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:hint="@string/select_ot_number"
+                    android:padding="@dimen/margin_mic_small"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/warm_white"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/no_of_required_container"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:id="@+id/tvNumberOfRequiredContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/warm_white"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:text="100" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/container_grey_stroke_port"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:background="@color/colorSecondaryGrey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/inventory_of_container"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_black" />
+
+                <TextView
+                    android:id="@+id/tvInventoryOfContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:background="@color/white"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:text="100" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/text_black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@color/colorSecondaryGrey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/additional_container"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_black" />
+
+                <TextView
+                    android:id="@+id/tvAdditionalContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:background="@color/white"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:text="100" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_medium">
+
+            <LinearLayout
+                android:id="@+id/llRequireAdditionalContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:background="@drawable/add_container_red_port"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/margin_medium"
+                        android:paddingEnd="@dimen/margin_medium"
+                        android:src="@drawable/ic_logout_port" />
+
+                    <TextView
+                        android:id="@+id/tvRequireAdditionalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/crimson_red"
+                        android:textSize="@dimen/text_size_medium"
+                        android:fontFamily="@font/gilroy_regular"
+                        tools:text="Additional Container Required is 50" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llNoAdditionalContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:background="@drawable/add_container_green_port"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/margin_medium"
+                        android:paddingEnd="@dimen/margin_medium"
+                        android:src="@drawable/ic_logout_port" />
+
+                    <TextView
+                        android:id="@+id/tvNoAdditionalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_green"
+                        android:textSize="@dimen/text_size_medium"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:text="Additional Container Required is 0" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

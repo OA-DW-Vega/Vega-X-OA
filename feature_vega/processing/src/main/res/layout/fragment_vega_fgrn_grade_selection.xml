@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_width"
+        android:background="@color/colorPrimaryOfi"
+        android:gravity="center|start"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="0dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="@string/select_grades"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/layout_width"
+            android:background="@color/orange_light"
+            android:gravity="center|start"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="0dp"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="@string/po_number_label"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="PO Number -" />
+
+        <TextView
+            android:id="@+id/tvPono"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/layout_width"
+            android:layout_weight="1"
+            android:background="@color/orange_light"
+            android:gravity="center|start"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="0dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="123456789" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_weight="8.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFgrnGrade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/action_bar_height"
+                android:paddingStart="@dimen/margin_mic_small"
+                android:paddingEnd="@dimen/margin_mic_small"
+                tools:listitem="@layout/item_vega_fgrn_grade_selection" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</LinearLayout>
+

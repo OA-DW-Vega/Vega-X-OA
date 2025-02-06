@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:gravity="center|start"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Add to Pile Review"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gilroy_semibold"
+        android:textSize="@dimen/text_size_smedium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBaleHeader"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorSecondaryGrey"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center|start"
+        android:paddingStart="16dp"
+        android:text="Pile ID:"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvPileId"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorSecondaryGrey"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center|start"
+        android:paddingStart="4dp"
+        android:text="BALERD140"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvBaleHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvBaleHeader"
+        app:layout_constraintTop_toTopOf="@id/tvBaleHeader" />
+
+    <TextView
+        android:id="@+id/tvNetWeight"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:background="@drawable/table_border_color"
+        android:text="Total Net Weight"
+        android:textColor="@color/text_black"
+        app:layout_constraintEnd_toStartOf="@+id/tvNetWeightValue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBaleHeader" />
+
+    <TextView
+        android:id="@+id/tvNetWeightValue"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bale_detail_border"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:text="15000 Mt"
+        android:textColor="@color/text_black"
+        app:layout_constraintBottom_toBottomOf="@id/tvNetWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvNetWeight"
+        app:layout_constraintTop_toTopOf="@id/tvNetWeight" />
+
+    <TextView
+        android:id="@+id/tvBaleAdded"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/table_border_color"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:text="Total Bale Added"
+        android:textColor="@color/text_black"
+        app:layout_constraintEnd_toStartOf="@+id/tvBaleAddedValue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNetWeight" />
+
+    <TextView
+        android:id="@+id/tvBaleAddedValue"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bale_detail_border"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:text="250"
+        android:textColor="@color/text_black"
+        app:layout_constraintBottom_toBottomOf="@id/tvBaleAdded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvBaleAdded"
+        app:layout_constraintTop_toTopOf="@id/tvBaleAdded" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBaleAdded"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_very_small"
+        app:layout_constraintBottom_toBottomOf="@id/btnProceed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBaleAdded"
+        tools:listitem="@layout/item_gining_pile_summary" />
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="Proceed"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

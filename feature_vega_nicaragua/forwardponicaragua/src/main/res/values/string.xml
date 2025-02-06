@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="forward_po">Forward PO</string>
+    <string name="forward_po_creation">Forward PO Creation</string>
+    <string name="forward_po_creation_transaction_details">Forward PO Creation - Transaction Details</string>
+    <string name="forward_po_creation_yield_details">Forward PO Creation - Yield (Per %)</string>
+    <string name="forward_po_creation_price_details">Forward PO Creation - Pricing</string>
+    <string name="forward_po_creation_preview">Forward PO Creation - Summary</string>
+    <string name="search_vendor_name">Search Vendor Name</string>
+    <string name="vendor_name">Vendor Name</string>
+    <string name="vendor_id">Vendor ID</string>
+    <string name="proceed">PROCEED</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="certificate">Certificate</string>
+    <string name="material">Material</string>
+    <string name="quality_grade">Quality Grade</string>
+    <string name="select_material">Select Material</string>
+    <string name="select_grade">Select Quality Grade</string>
+    <string name="select_certificate">Select Certificate</string>
+    <string name="fixed">fixed</string>
+    <string name="weight">Weight</string>
+    <string name="price_per_unit">Price Per Unit</string>
+    <string name="price_per_QQ">Price Per QQ POA</string>
+    <string name="save_and_continue">Save &amp; Continue</string>
+    <string name="transaction_information">Transaction Information</string>
+    <string name="yield_per">Yield(Per %)</string>
+    <string name="pricing_information">Pricing Information</string>
+    <string name="weight_kg">Weight(Kg)</string>
+    <string name="price_per_unit_cs">Price per Unit(C$)</string>
+    <string name="next">NEXT</string>
+    <string name="c_doller">C$</string>
+    <string name="weight_error_info">Please Enter Weight</string>
+    <string name="price_per_unit_error_info">Please Enter Price Per Unit</string>
+    <string name="total_price">Total Price</string>
+    <string name="yield_info_not_found">Yield Info Not Found</string>
+    <string name="required_details_err">Please enter required details</string>
+    <string name="forward_po_success">Forward PO \n Successfully Created</string>
+    <string name="transaction_fail_msg">Transaction Failed</string>
+    <string name="transaction_retry">Please retry from Transaction Pending list</string>
+    <string name="forward_po_proceed">Do you wish to proceed with Forward PO?</string>
+    <string name="forward_po_offline_success">Forward PO Successfully Created in Offline</string>
+    <string name="cancel">Cancel</string>
+    <string name="forward_po_transaction_details">Forward PO- Transaction Details</string>
+    <string name="vendor">Vendor</string>
+    <string name="sync">Sync</string>
+    <string name="sort_by_date">Sort by Date</string>
+    <string name="date">Date</string>
+    <string name="batch_no">Batch No</string>
+    <string name="sap_error_message">SAP Error Message</string>
+    <string name="sync_all">Do you want to sync all offline data to cloud?</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="read_more">Read More</string>
+    <string name="pending">Pending</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="po_number"> PO NO</string>
+    <string name="ok">OK</string>
+    <string name="exchange_rate">Exchange Rate</string>
+    <string name="month_close_error">Please post the transactions to SAP after the posting period has been opened</string>
+    <string name="confirm_print">Confirm Print</string>
+    <string name="vendor_address">Vendor Address</string>
+    <string name="deliveryterm">Delivery Date</string>
+    <string name="deliveryterm_error_info">Please Enter Valid Delivery date</string>
+    <string name="price_per_QQ_error_info">Please Enter Price Per QQ POA</string>
+
+</resources>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:clickable="true"
+    android:fillViewport="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_small"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingEnd="@dimen/margin_large"
+        android:text="@string/mtnr"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btProceed"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_border_black"
+                android:padding="@dimen/margin_small"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:text="@string/sending_wh"
+                    app:layout_constraintEnd_toStartOf="@+id/tvStoNumber"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStoNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:text="@string/obd_number"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDest"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvDest"
+                    app:layout_constraintTop_toTopOf="@id/tvDest" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDestValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toStartOf="@+id/tvStoNumberValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDest"
+                    tools:text="WH4171" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStoNumberValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDestValue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvDestValue"
+                    app:layout_constraintTop_toTopOf="@id/tvDestValue"
+                    tools:text="SO00121232" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReceivingWH"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:text="@string/receiving_wh"
+                    app:layout_constraintEnd_toStartOf="@+id/tvTruckNo"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDestValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTruckNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:text="@string/truck_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvReceivingWH"
+                    app:layout_constraintTop_toBottomOf="@id/tvDestValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReceivingWHValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toStartOf="@+id/tvTruckNoValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvReceivingWH"
+                    tools:text="SAmple Name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDriverName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:text="@string/driver_name"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDate"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvReceivingWHValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDriverNameValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDateValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDriverName"
+                    tools:text="SAmple Name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTruckNoValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvReceivingWHValue"
+                    app:layout_constraintTop_toBottomOf="@id/tvReceivingWH"
+                    tools:text="TN32 B 65776" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:text="@string/date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvDriverName"
+                    app:layout_constraintTop_toBottomOf="@id/tvTruckNoValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDateValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvDriverNameValue"
+                    app:layout_constraintTop_toBottomOf="@id/tvDate"
+                    tools:text="TN32 B 65776" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEudrStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:text="@string/eudr_status"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDate"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDateValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEudrStatusValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:visibility="gone"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDateValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEudrStatus"
+                    tools:text="SAmple Name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSourceLotId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:visibility="gone"
+                    android:text="@string/source_lot_id"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvEudrStatus"
+                    app:layout_constraintTop_toBottomOf="@id/tvDateValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSourceLotIdValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:visibility="gone"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvEudrStatusValue"
+                    app:layout_constraintTop_toBottomOf="@id/tvSourceLotId"
+                    tools:text="lkhladf65776" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOperator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:visibility="gone"
+                    android:text="@string/operator_name"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDate"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEudrStatusValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOperatorValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/margin_small"
+                    android:paddingEnd="4dp"
+                    android:visibility="gone"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvOperator"
+                    tools:text="SAmple Name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvRemark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/remark"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clHeader" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_remark"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/margin_medium"
+                app:cardElevation="4dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvRemark"
+                app:layout_constraintTop_toBottomOf="@id/tvRemark">
+
+                <TextView
+                    android:id="@+id/tvRemarkValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="start|center"
+                    android:textColor="@color/text_black"
+                    tools:text="Sample remark text value" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="2dp"
+                    android:src="@drawable/ic_edit" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvDispatch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/lot_summary"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clHeader" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLots"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_mic_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDispatch"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_mtnr_summary_lot_card_layout" />
+
+            <TextView
+                android:id="@+id/tvSnapShot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/ticket_snapshot"
+                android:textColor="@color/warmgrey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvLots" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/photoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_xlarge"
+                android:paddingEnd="@dimen/margin_medium"
+                android:visibility="gone"
+                app:layout_constraintHorizontal_bias="0.513"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSnapShot"
+                app:srcCompat="@android:color/darker_gray" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btProceed"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

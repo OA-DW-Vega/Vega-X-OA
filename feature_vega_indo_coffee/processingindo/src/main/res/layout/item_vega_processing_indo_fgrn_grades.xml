@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/grades"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border">
+
+
+    <CheckBox
+        android:id="@+id/cbGrades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:button="@null"
+        android:clickable="false"
+        android:drawableStart="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/gilroy_semibold"
+        android:drawablePadding="@dimen/margin_medium"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_medium"
+        android:textSize="@dimen/text_size_xmedium"
+        android:textStyle="bold"
+        tools:text="CA Grade 1" />
+
+</LinearLayout>

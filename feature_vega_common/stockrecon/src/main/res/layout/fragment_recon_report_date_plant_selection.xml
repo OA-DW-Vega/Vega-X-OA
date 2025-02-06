@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/reconciliation_report"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/warehouseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/warehouse_plant"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvPlant"
+        app:layout_constraintLeft_toLeftOf="@+id/tvPlant"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvPlant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/margin_large"
+        android:background="@drawable/custom_edit_text"
+        android:drawableEnd="@drawable/ic_add_icon_new"
+        android:hint="@string/select_warehouse"
+        android:padding="@dimen/margin_padding_size_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/warehouseLabel" />
+
+    <TextView
+        android:id="@+id/tvDateRangeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/select_date_range"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPlant" />
+
+    <LinearLayout
+        android:id="@+id/llDateRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_very_small"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/tvDateRangeLabel">
+
+        <TextView
+            android:id="@+id/tvFromDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_weight="1"
+            android:background="@drawable/custom_edit_text"
+            android:fontFamily="@font/gilroy_regular"
+            android:padding="@dimen/margin_padding_size_medium"
+            android:hint="@string/from_date"
+            android:drawableRight="@drawable/ic_calendar"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_small"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvToDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_weight="1"
+            android:background="@drawable/custom_edit_text"
+            android:fontFamily="@font/gilroy_regular"
+            android:padding="@dimen/margin_padding_size_medium"
+            android:hint="@string/to_date"
+            android:drawableRight="@drawable/ic_calendar"
+            android:layout_marginRight="@dimen/margin_large"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dot_view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_very_small"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/dotted"
+        app:layout_constraintTop_toBottomOf="@id/llDateRange" />
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

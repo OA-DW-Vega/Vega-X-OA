@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/audit_type"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBagCount"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvBagCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_very_small"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:text="@string/bag_count"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/ivBagCount"
+        app:layout_constraintRight_toRightOf="@id/ivBagCount"
+        app:layout_constraintTop_toBottomOf="@+id/ivBagCount" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivWeightCapture"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="@dimen/margin_large"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@id/ivBagCount"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvWeightCapture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_very_small"
+        android:fontFamily="@font/gt_walsheim_pro_bold"
+        android:text="@string/weight_capture"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@id/ivWeightCapture"
+        app:layout_constraintRight_toRightOf="@id/ivWeightCapture"
+        app:layout_constraintTop_toBottomOf="@+id/ivBagCount" />
+
+    <View
+        android:id="@+id/dot_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_very_small"
+        android:layout_marginTop="@dimen/margin_large"
+        android:background="@drawable/dotted"
+        app:layout_constraintTop_toBottomOf="@id/tvBagCount" />
+
+    <TextView
+        android:id="@+id/warehouseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/warehouse_plant"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/tvPlant"
+        app:layout_constraintTop_toBottomOf="@id/dot_view" />
+
+    <TextView
+        android:id="@+id/tvPlant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_very_small"
+        android:layout_marginRight="@dimen/margin_large"
+        android:background="@drawable/custom_edit_text"
+        android:drawableEnd="@drawable/ic_add_icon_new"
+        android:padding="@dimen/margin_padding_size_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/warehouseLabel" />
+
+    <TextView
+        android:id="@+id/locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/location"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/tvLocation"
+        app:layout_constraintTop_toBottomOf="@id/tvPlant" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_very_small"
+        android:layout_marginRight="@dimen/margin_large"
+        android:background="@drawable/custom_edit_text"
+        android:drawableEnd="@drawable/ic_add_icon_new"
+        android:padding="@dimen/margin_padding_size_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/locationLabel" />
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">presentation</string>
+    <string name="loading">loading</string>
+    <string name="network_not_available">Red no disponible, verifique su conexión de datos</string>
+
+    //Navigation
+    <string name="navigation_drawer_open">Abrir ventana de navegación</string>
+    <string name="navigation_drawer_close">Cerra ventana de navegación</string>
+    <string name="nav_header_desc">Encabezado de navegación</string>
+    <string name="nav_sync">Sincronizar con el maestro</string>
+    <string name="user_name">Nombre de Usuario</string>
+    <string name="user_desc">Rol</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="logout_alert">¿Estás seguro de querer cerrar sesión?</string>
+    <string name="cocoa_logout_alert">cache data will be lost, do you still want to logout</string>
+    <string name="offline_data_logout_alert">Los datos sin conexión que deben sincronizarse se borrarán. ¿Estás seguro de querer cerrar sesión?</string>
+    <string name="confirm">Confirmar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="nav_settings">Configuraciones</string>
+    <string name="tran_master_sync">¿Desea continuar el proceso de sincronización del maestro de transacciones?</string>
+    <string name="search">buscar</string>
+    <string name="inventroy">Inventario</string>
+    <string name="reconcilreport">Reporte de conciliación</string>
+    <string name="invoice">Liquidación - PTBF</string>
+
+    <string name="loading_text">Por favor espera...</string>
+    <string name="delete_msg">¿Estás seguro? quieres borrar este artículo</string>
+    <string name="edit1">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="gross_weight">Peso bruto</string>
+    <string name="enter_weight">Ingresar peso</string>
+    <string name="pull_weight">Extraer peso</string>
+    <string name="packaging_material">Material de empaque</string>
+    <string name="bag_type">Tipo de saco</string>
+    <string name="bag_types">Tipos de saco</string>
+    <string name="no_of_bags">Número de sacos</string>
+    <string name="select_type">Seleccionar tipo</string>
+    <string name="enter_no_of_bags">Ingrese número de sacos</string>
+    <string name="net_weight">Peso neto</string>
+    <string name="add">Añadir</string>
+    <string name="select_bag_type">Seleccionar tipo de saco</string>
+    <string name="remarks">Comentarios</string>
+    <string name="select_grade">Seleccionar Grado</string>
+    <string name="enter_remark">Por favor ingrese comentarios</string>
+    <string name="plant">Planta</string>
+    <string name="nav_sync_inventory">Inventario de sincronización</string>
+    <string name="search_wb_item">Buscar artículo de WB</string>
+    <string name="sync">Sincronizar</string>
+    <string name="print">Imprimir hoja de recuento</string>
+    <string name="print_preview">Vista previa de impresión</string>
+    <string name="please_select_the_printer">Seleccione la impresora</string>
+    <string name="not_connected_with_device">No conectado con ningún dispositivo</string>
+    <string name="connected_to">Conectado a </string>
+    <string name="alert">Alerta!</string>
+    <string name="pending">Pendiente</string>
+
+    <string name="offline">Fuera de Línea</string>
+    <string name="online">En línea</string>
+    <string name="nav_sync_vendor">Sincronizar Proveedor</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="please_select_the_weighing_scale">seleccione báscula de pesaje</string>
+    <string name="search_item">Search Item</string>
+    <string name="print_key_empty">Print key is empty</string>
+    <string name="session_expired">Your Session Has Expired. Kindly enter the password and continue</string>
+    <string name="or_nlogut_and_login_again">or Logout and Login again</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset">Reset</string>
+</resources>

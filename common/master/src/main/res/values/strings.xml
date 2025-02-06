@@ -1,0 +1,29 @@
+<resources  xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">master</string>
+    <string name="syncing">Syncing...</string>
+    <string name="master_data_downloading">Master data downloading...</string>
+    <string name="master_data_download_success">Master data downloaded successfully</string>
+    <string name="data_downloading">Data downloading...</string>
+    <string name="data_download_success">Data downloaded successfully</string>
+    <string name="data_sync">Data Sync</string>
+    <string name="bale_sync">Bale Data Sync</string>
+    <string name="data_synced_successfully">Data synced successfully</string>
+    <string name="session_out_offline_data">Don\'t worry, If you have any offline data will also be preserved</string>
+    <string name="battery_issue">Battery should be at an acceptable level(20%) and should not be at battery saver mode. Please charge the device and sync master data again</string>
+    <string name="farmer_data_downloaded_successfully">Farmer data downloaded successfully</string>
+    <string name="farmer_data_failed">Farmer data failed</string>
+    <string name="farmer_data_cancelled">Farmer data cancelled</string>
+    <string name="no_qrcode_found">No qrcode found</string>
+    <string name="source_lot_downloaded_successfully">Source Lot Downloaded Successfully</string>
+    <string name="source_lot_data_downloaded_failed">Source lot data downloaded failed</string>
+    <string name="source_lot_data_downloaded_cancelled">Source lot data downloaded cancelled</string>
+    <string name="trans_id_data_downloaded_successfully">Transaction Id Data downloaded successfully</string>
+    <string name="trans_id_data_downloaded_failed">Transaction Id Data Downloaded Failed</string>
+    <string name="trans_id_data_downloaded_cancelled">Transaction Id Data Downloaded Cancelled</string>
+
+    <string-array name="user_info">
+        <item>Android version: Application will work better with Android v8 and above.</item>
+        <item>App Version: On upgrading app version, any offline data will also be preserved.</item>
+        <item>Contact: For any support, reach out to digitalsupport@olamnet.com</item>
+    </string-array>
+</resources>

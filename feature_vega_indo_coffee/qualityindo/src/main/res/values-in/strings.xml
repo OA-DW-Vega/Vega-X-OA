@@ -1,0 +1,62 @@
+<resources>
+
+    <string name="quality_analysis">Analisis Kualitas</string>
+    <string name="mtnr">MTN-R</string>
+    <string name="post_processing_quality">Kualitas setelah pemrosesan</string>
+    <string name="search">Cari</string>
+    <string name="quality_offline_list">View Offline Quality List</string>
+    <string name="back_navigation">navigation</string>
+    <string name="no_data">Tidak ada data</string>
+    <string name="test_str">18GRD00028</string>
+    <string name="qty_assesment">Penilaian Kualitas-</string>
+    <string name="batch_no">nomor batch</string>
+    <string name="percentage">%</string>
+    <string name="confirm_Quty_message">Terima Kualitas</string>
+    <string name="confirm_Grn_message">Konfirmasi GRN</string>
+    <string name="sort_by_im">Diurutkan<font fgcolor='#FFFFFF'>*</font></string>
+    <string name="no_of_bags">Jumlah Karung</string>
+    <string name="reject">Tolak</string>
+    <string name="accept">Terima</string>
+    <string name="confirm_reject_message">Apakah Anda ingin menolak data penilaian yang berkualitas ?</string>
+    <string name="enter_all_mandatory_fields">Silahkan isi semua kolom yang wajib</string>
+    <string name="quality_success">Kualitas disetujui berhasil</string>
+    <string name="quality_reject_success">Kualitas berhasil ditolak</string>
+    <string name="new_lot_id_created">ID lot baru telah berhasil dibuat\n</string>
+    <string name="lot_list">Daftar Lot</string>
+    <string name="end_pile_lot">End Pile/Lot</string>
+    <string name="create_grn">membuat GRN</string>
+    <string name="qc_status">Status Qc</string>
+    <string name="qc_done">Selesai</string>
+    <string name="qc_not_done">Tunda</string>
+    <string name="batch_error">Silahkan Masukkan nomor batch</string>
+    <string name="transaction_details_quality">Detaik Transaksi - Kualitas</string>
+
+    <string name="receiving_location">Lokasi Penerima</string>
+    <string name="proceed">Memproses</string>
+    <string name="weight">Berat</string>
+    <string name="st_location">Lokasi Penyimpanan</string>
+    <string name="material">Bahan</string>
+    <string name="add_weight">Tambah Berat</string>
+    <string name="lot_no">Nomor Lot</string>
+    <string name="supplier">Pemasok</string>
+    <string name="no_data_found">Tidak ada data</string>
+    <string name="truck_no">Nomor truk</string>
+    <string name="weigh_bridge_id">ID Jembatan timbang</string>
+    <string name="date">Tanggal</string>
+    <string name="grade">Grade</string>
+    <string name="add">tambah</string>
+    <string name="cancel">Membatalkan</string>
+    <string name="select_dispatch">Pilih pengiriman</string>
+    <string name="transaction_history">Riwayat Transaksi</string>
+    <string name="search_vendor_name">Cari Nama Vendor</string>
+    <string name="sort_by_date">Urutkan berdasarkan tanggal</string>
+    <string name="sap_error_message">Pesan kesalahan SAP</string>
+    <string name="read_more">Baca Selengkapnya…</string>
+    <string name="vendor">Vendor</string>
+    <string name="procure_type">Jenis Pengadaan</string>
+    <string name="sync_all">Apakah anda ingin menyinkronkan semua data offline ke cloud ?</string>
+    <string name="quality">Kualitas</string>
+    <string name="grn">Grn</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="quality_completed_successfully">Kualitas Selesai Berhasil</string>
+</resources>

@@ -1,0 +1,70 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="search">search</string>
+    <string name="quality_analysis">Quality Analysis</string>
+    <string name="quality_assessment">Quality Assessment</string>
+    <string name="mtn_r">MTN-R</string>
+    <string name="supplier">Supplier</string>
+    <string name="weigh_bridge_id">WeighBridge ID</string>
+    <string name="quality_offline_list">View Offline Quality List</string>
+    <string name="back_navigation">navigation</string>
+    <string name="weigh_bridge_count">Total WB 00</string>
+    <string name="weight">Weight</string>
+    <string name="date">Date</string>
+    <string name="no_data">No Data Found</string>
+    <string name="type">Type</string>
+    <string name="material">Material</string>
+    <string name="spot_purchase">Spot Purchase</string>
+    <string name="fixed_purchase">Fixed Purchase</string>
+
+    <string name="qty_assesment">Quality Assessment -</string>
+    <string name="wb_id">WB ID: </string>
+    <string name="batch_no">Batch No</string>
+    <string name="percentage">%</string>
+    <string name="reject">Reject</string>
+    <string name="accept">Accept</string>
+    <string name="proceed">Proceed</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_quality_message">Accept Quality</string>
+    <string name="confirm_reject_message">Do you want reject quality assessment data?</string>
+    <string name="enter_all_mandatory_fields">Please enter all the mandatory field</string>
+
+    <string name="quality_success">Quality Successful</string>
+    <string name="quality_success_offline">Offline Quality Successful</string>
+    <string name="quality_reject">Consignment has been rejected.</string>
+    <string name="quality_reject_offline">Offline Consignment has been Rejected.</string>
+    <string name="new_lot_id_created">New LOT ID has been successfully created \n</string>
+    <string name="new_lot_id_created_mtnr">Quality has been updated successfully for the LOT ID \n</string>
+    <string name="quality_offline_summary">Quality Offline Summary</string>
+    <string name="view_details">View Details</string>
+    <string name="grade">Grade</string>
+    <string name="quality_params_not_available">Quality params not available for this material</string>
+    <string name="select">Select</string>
+
+    <string name="lot_list">Lot List</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="add_weight">Add Weight</string>
+    <string name="st_location">St Location</string>
+    <string name="weight_to_dispatch">Weight To Dispatch</string>
+    <string name="end_pile_lot">End Pile/Lot</string>
+
+    <string name="mtnr">MTN-R</string>
+    <string name="post_processing_quality">Post Processing Quality</string>
+
+    <string name="test_str">18GRD00028</string>
+
+    <string name="confirm_Quty_message">Accept Quality</string>
+    <string name="confirm_Grn_message">Confirm GRN</string>
+    <string name="sort_by_im">Sort By <font fgcolor='#FFFFFF'>*</font></string>
+    <string name="truck_no">Truck No</string>
+    <string name="no_of_bags">No of Bags</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="create_grn">Create GRN</string>
+    <string name="qc_status">QC Status</string>
+    <string name="qc_done">Done</string>
+    <string name="qc_not_done">Pending</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="received_weight">Received Weight</string>
+    <string name="quality_any_lot">Quality Of any Lot</string>
+</resources>

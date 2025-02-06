@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txt_bale_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:gravity="start"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="15sp"
+        android:textColor="@color/text_black"
+        android:textStyle="bold"
+        tools:text="18GRD00028" />
+
+    <TextView
+        android:id="@+id/txt_grade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:gravity="start"
+        android:fontFamily="@font/gilroy_regular"
+        android:textColor="@color/text_black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="A" />
+
+    <TextView
+        android:id="@+id/txt_weight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:textColor="@color/text_black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="250 Kg" />
+
+    <LinearLayout
+        android:id="@+id/llClose"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:gravity="end">
+
+        <ImageView
+            android:id="@+id/closeicon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:src="@drawable/cross_port" />
+    </LinearLayout>
+
+
+</LinearLayout>

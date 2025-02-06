@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/print_main_layout"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TableLayout
+        android:id="@+id/table_info1"
+        android:layout_width="1400dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_print_border"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rvApproveQuality"
+        app:layout_constraintTop_toTopOf="parent">
+        <TableRow
+            android:gravity="center"
+            android:background="@color/colorPrimaryHeadOfi">
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryHeadOfi"
+                android:fontFamily="@font/gilroy_semibold"
+                android:padding="8dp"
+                android:text="Quality Analysis"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_xlarge"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </TableRow>
+
+        <TableRow >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="start"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/quality"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/tvOpeningCash"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="start"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="Value"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvApproveQuality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/table_info1"
+        tools:listitem="@layout/item_any_lot_quality_param" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

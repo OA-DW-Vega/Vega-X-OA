@@ -1,0 +1,211 @@
+package com.olam.warehouse.vegax.offloading.ui.truck
+
+import android.content.Context
+import android.os.Bundle
+import android.view.*
+import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.Observer
+import com.olam.warehouse.login.utils.showErrorDialogWithFAQLink
+import com.olam.warehouse.master.vega.entity.VegaOffloadingTrucks
+import com.olam.warehouse.presentation.adapter.setUpAdapter
+import com.olam.warehouse.presentation.data.remote.Resource
+import com.olam.warehouse.presentation.ui.BaseFragment
+import com.olam.warehouse.presentation.utils.AppUtils.isOnline
+import com.olam.warehouse.presentation.utils.DateUtils
+import com.olam.warehouse.presentation.utils.UIUtils.getActionBtnChangedView
+import com.olam.warehouse.presentation.utils.extension.gone
+import com.olam.warehouse.presentation.utils.extension.putArgs
+import com.olam.warehouse.presentation.utils.extension.visible
+import com.olam.warehouse.vegax.App
+import com.olam.warehouse.vegax.offloading.R
+import com.olam.warehouse.vegax.offloading.databinding.FragmentVegaOffloadingTruckListBinding
+import com.olam.warehouse.vegax.offloading.databinding.ItemVegaOffloadingTruckListBinding
+import com.olam.warehouse.vegax.offloading.ui.VegaOffloadingViewModel
+import com.olam.warehouse.vegax.offloading.utils.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.matomo.sdk.Tracker
+import org.matomo.sdk.extra.TrackHelper
+
+class VegaOffloadingTruckListFragment : BaseFragment() {
+
+    private lateinit var binding: FragmentVegaOffloadingTruckListBinding
+    private var callBack: CallBack? = null
+    private var offloadingData = VegaOffloadingTrucks()
+    private var offloading = mutableListOf<VegaOffloadingTrucks>()
+    private val mSearchList = mutableListOf<VegaOffloadingTrucks>()
+
+    override val layoutResourceId = R.layout.fragment_vega_offloading_truck_list
+    private val vm: VegaOffloadingViewModel by viewModel()
+    private var vegaWbIds = listOf<VegaOffloadingTrucks>()
+
+    interface CallBack {
+        fun replaceFragment(paramsListFrag: String, item: VegaOffloadingTrucks)
+    }
+
+    companion object {
+        fun newInstance(offloadingData: VegaOffloadingTrucks) = VegaOffloadingTruckListFragment().putArgs {
+            putParcelable(OFFLOADING_DATA, offloadingData)
+        }
+
+        const val SEARCH_HINT_TEXT = "Search WB Item"
+    }
+  
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as CallBack
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setHasOptionsMenu(true)
+        binding = FragmentVegaOffloadingTruckListBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUI()
+        val tracker: Tracker? = App.getTracker()
+        val wType = offloadingData.weighBridgeType
+        TrackHelper.track().screen("offloading/ui/truck/VegaOffloadingTruckListFragment - $wType").title("Offloading")
+            .with(tracker)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        activity?.menuInflater?.inflate(com.olam.warehouse.presentation.R.menu.search_menu, menu)
+        //search = menu.findItem(com.olam.warehouse.presentation.R.id.search)
+        //searchView = search?.actionView as SearchView?
+        try {
+            val search = menu.findItem(com.olam.warehouse.presentation.R.id.search)
+            val searchView: SearchView =
+                search?.actionView as SearchView
+            searchView.setBackgroundColor(getColor(com.olam.warehouse.presentation.R.color.colorPrimaryOfi))
+            searchView.queryHint = SEARCH_HINT_TEXT
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    newText.let {
+                        if (newText?.isEmpty() == true) {
+                            setUpAdapter(offloading)
+                        } else {
+                            mSearchList.clear()
+                            offloading.forEach { qtyWb ->
+                                newText?.let { text ->
+                                    if (qtyWb.weighBridgeId.contains(text)) {
+                                        mSearchList.add(qtyWb)
+                                    }
+                                }
+                            }
+                            setUpAdapter(mSearchList)
+                        }
+                    }
+                    return true
+                }
+            })
+        } catch (e: ClassCastException) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun initUI() {
+        context?.let {
+            getActionBtnChangedView(binding.llSortBy, it, false)
+        }
+        offloadingData = arguments?.getParcelable(OFFLOADING_DATA)!!
+        vm.trucks.observe(viewLifecycleOwner, Observer { updateUIWithOnlineData(it) })
+        binding.tvType.text =
+            getString(R.string.offloading_truck_list).plus(
+                if (offloadingData.weighBridgeType.equals(
+                        PROCURE
+                    )
+                ) SUPPLIER else MTNR
+            )
+        if (isOnline()) vm.getTruckList()
+
+        binding.ivSortDownUp.setOnClickListener {
+            if (vegaWbIds.isNotEmpty()) {
+                vegaWbIds.let { offloading = it as MutableList<VegaOffloadingTrucks> }
+                offloading = offloading.asReversed()
+                vegaWbIds = offloading
+                setUpAdapter(vegaWbIds)
+            }
+
+
+        }
+    }
+
+    private fun updateUIWithOnlineData(response: Resource<List<VegaOffloadingTrucks>>) {
+        when (response.status) {
+            Resource.Status.SUCCESS -> {
+                hideLoading()
+                response.data?.let { it1 ->
+                    if (it1.isNotEmpty()) {
+                        vegaWbIds = listOf<VegaOffloadingTrucks>()
+                        vegaWbIds = if (offloadingData.weighBridgeType == PROCURE)
+                            it1.filter { wb -> wb.direction == DIRECTIONIN }
+                                .filter { wb -> wb.weighBridgeType == PROCURE }
+                                .filter { wb -> wb.qcStatus.isNullOrEmpty() }
+                                .filter { wb -> !wb.grossWeight.equals("0.000") }
+                        else
+                            it1.filter { wb -> wb.direction == DIRECTIONIN }
+                                .filter { wb -> wb.weighBridgeType == STO }
+                                .filter { wb -> wb.qcStatus.isNullOrEmpty() }
+                                .filter { wb -> !wb.grossWeight.equals("0.000") }
+                        offloading = vegaWbIds as MutableList<VegaOffloadingTrucks>
+                        setUpAdapter(vegaWbIds)
+                        binding.tvNoData.gone()
+                        binding.rvWeighbridge.visible()
+
+                    }else{
+                        binding.tvNoData.visible()
+                        binding.rvWeighbridge.gone()
+                    }
+                }
+            }
+            Resource.Status.LOADING -> showLoading()
+            Resource.Status.ERROR -> {
+                hideLoading()
+                showErrorDialogWithFAQLink(requireContext(), response.error.toString())
+            }
+        }
+    }
+
+    private fun setUpAdapter(data: List<VegaOffloadingTrucks>?) {
+        val offloading1 = data as MutableList<VegaOffloadingTrucks>
+        binding.rvWeighbridge.setUpAdapter(
+            offloading1.asReversed(),
+            R.layout.item_vega_offloading_truck_list,
+            ItemVegaOffloadingTruckListBinding::inflate,
+            { it, pos, bindingItem ->
+                bindingItem.tvTruckNo.text =
+                    if (it.vehicleNumber.isNullOrEmpty()) "-" else it.vehicleNumber
+                if (it.weighBridgeType == PROCURE) {
+                    bindingItem.tvdifference.text = SUPPLIER
+                    bindingItem.tvSupplierName.text = it.supplierName ?: it.supplierCode
+                } else {
+                    bindingItem.tvdifference.visibility = View.GONE
+                    bindingItem.tvSupplierName.visibility = View.GONE
+                    bindingItem.tvdifference.text = WAREHOUSE
+                    bindingItem.tvSupplierName.text = "-"
+                }
+                bindingItem.tvWeight.text = it.netWeight.plus(it.unitsOfMeasure)
+                bindingItem.tvWeighBridgeId.text = it.weighBridgeId
+                val times = it.erdat?.split('(', ')')
+                bindingItem.tvDate.text = times?.get(1)?.let { it1 ->
+                    DateUtils.getUTCDateTime(
+                        it1,
+                        App.getAppContext()
+                    )
+                }
+            }, {
+                val item = this
+                item.weighBridgeType = offloadingData.weighBridgeType
+                callBack?.replaceFragment(PARAMS_LIST_FRAG, item)
+
+            })
+    }
+
+}

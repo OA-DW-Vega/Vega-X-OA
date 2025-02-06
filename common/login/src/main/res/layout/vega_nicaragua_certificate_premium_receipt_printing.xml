@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/print_main_layout"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="@dimen/print_layout_height"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/ivOlamLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_olam_logo"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/table_info1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="fitCenter"
+        android:id="@+id/certificationLogo"
+        android:visibility="gone"
+        android:src="@drawable/rfa_logo"
+        app:layout_constraintBottom_toTopOf="@+id/table_info1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/print_title_1"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_2"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title1" />
+
+    <TextView
+        android:id="@+id/title3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_3"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+    <TextView
+        android:id="@+id/title4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_4"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title3" />
+
+    <TextView
+        android:id="@+id/title5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_7"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title4" />
+    <TableLayout
+        android:id="@+id/table_info1"
+        android:layout_width="@dimen/print_table_width"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="@dimen/margin_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title5">
+
+
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:minLines="2"
+                android:text="@string/s_buying_unit"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/buyingUnit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_sap_vendor_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/sapVendorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:minLines="2"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_date_and_hour"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/dateAndHour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_identification_number"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/identificationNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_certificate"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/certification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_type_of_purchase"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/typeOfPurchase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_quality"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/qualityGrade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+        </TableRow>
+        <TableRow android:weightSum="4"
+            android:layout_marginBottom="@dimen/margin_large">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_paid_certification"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/paidCertification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_net_weight"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/netWeightPerKG"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+    </TableLayout>
+
+
+    <TextView
+        android:layout_width="@dimen/print_table_width"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="left"
+        android:id="@+id/note"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="@string/s_certificate_premium_note"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_info1"/>
+
+    <TableLayout
+        android:id="@+id/table_info_batch_list"
+        android:layout_width="@dimen/print_table_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/note">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_batch_numbers_invoiced"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:id="@+id/batchList"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+        </TableRow>
+    </TableLayout>
+    <View
+        android:id="@+id/line1"
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:background="@color/black"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_info_batch_list" />
+
+    <TextView
+        android:id="@+id/olam_signature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="@string/print_title_1"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:background="@color/black"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_info_batch_list" />
+
+    <TextView
+        android:id="@+id/farm_signature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="@string/farm_signature"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+
+    <!--copy -->
+    <TextView
+        android:id="@+id/copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="--------------------------------------------------------------------------------------------------------------------------------------------copy"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farm_signature" />
+    <ImageView
+        android:id="@+id/ivOlamLogoCopy"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_olam_logo"
+        android:layout_marginTop="75dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/table_info1Copy"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/copy" />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="fitCenter"
+        android:id="@+id/certificationLogoCopy"
+        android:visibility="gone"
+        android:src="@drawable/rfa_logo"
+        app:layout_constraintBottom_toTopOf="@+id/table_info1Copy"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/copy" />
+    <TextView
+        android:id="@+id/title1Copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginTop="75dp"
+        android:gravity="center"
+        android:text="@string/print_title_1"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/copy" />
+
+    <TextView
+        android:id="@+id/title2Copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_2"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title1Copy" />
+
+    <TextView
+        android:id="@+id/title3Copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_3"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title2Copy" />
+
+    <TextView
+        android:id="@+id/title4Copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_4"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title3Copy" />
+
+    <TextView
+        android:id="@+id/title5Copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/print_title_7"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title4Copy" />
+    <TableLayout
+        android:id="@+id/table_info1Copy"
+        android:layout_width="@dimen/print_table_width"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="@dimen/margin_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title5Copy">
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:minLines="2"
+                android:text="@string/s_buying_unit"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/buyingUnitCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_sap_vendor_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/sapVendorNameCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:minLines="2"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_date_and_hour"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/dateAndHourCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_identification_number"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/identificationNumCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_certificate"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/certificationCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_type_of_purchase"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/typeOfPurchaseCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+        <TableRow android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_quality"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/qualityGradeCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+        </TableRow>
+        <TableRow android:weightSum="4"
+            android:layout_marginBottom="@dimen/margin_large">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_paid_certification"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/paidCertificationCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_net_weight"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/netWeightPerKGCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+    </TableLayout>
+    <TextView
+        android:layout_width="@dimen/print_table_width"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="left"
+        android:id="@+id/noteCopy"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="@string/s_certificate_premium_note"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_info1Copy"/>
+    <TableLayout
+        android:id="@+id/table_info_batch_listCopy"
+        android:layout_width="@dimen/print_table_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteCopy">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/s_batch_numbers_invoiced"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:id="@+id/batchListCopy"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+    </TableLayout>
+    <View
+        android:id="@+id/line1Copy"
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:background="@color/black"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_info_batch_listCopy" />
+
+    <TextView
+        android:id="@+id/olam_signatureCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="@string/print_title_1"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1Copy" />
+
+    <View
+        android:id="@+id/line2Copy"
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:background="@color/black"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_info_batch_listCopy" />
+
+    <TextView
+        android:id="@+id/farm_signatureCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="@string/farm_signature"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line2Copy" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

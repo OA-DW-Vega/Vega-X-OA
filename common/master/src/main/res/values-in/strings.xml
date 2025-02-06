@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">master</string>
+    <string name="syncing">Sinkronisasi...</string>
+    <string name="master_data_downloading">Pengunduhan data master...</string>
+    <string name="master_data_download_success">Data master berhasil diunduh</string>
+    <string name="data_downloading">Pengunduhan data...</string>
+    <string name="data_download_success">Data berhasil diunduh</string>
+    <string name="session_out_offline_data">Don\'t worry, If you have any offline data will also be preserved</string>
+    <string name="battery_issue">Battery should be at an acceptable level(20%) and should not be at battery saver mode. Please charge the device and sync master data again</string>
+    <string name="farmer_data_downloaded_successfully">Farmer data downloaded successfully</string>
+    <string name="farmer_data_failed">Farmer data failed</string>
+    <string name="farmer_data_cancelled">Farmer data cancelled</string>
+    <string name="no_qrcode_found">No qrcode found</string>
+    <string name="source_lot_downloaded_successfully">Source Lot Downloaded Successfully</string>
+    <string name="source_lot_data_downloaded_failed">Source lot data downloaded failed</string>
+    <string name="source_lot_data_downloaded_cancelled">Source lot data downloaded cancelled</string>
+    <string name="trans_id_data_downloaded_successfully">Transaction Id Data downloaded successfully</string>
+    <string name="trans_id_data_downloaded_failed">Transaction Id Data Downloaded Failed</string>
+    <string name="trans_id_data_downloaded_cancelled">Transaction Id Data Downloaded Cancelled</string>
+    <string-array name="user_info">
+        <item>Versi Android: Aplikasi akan bekerja lebih baik dengan Android v8 dan di atasnya.</item>
+        <item>Versi Aplikasi: Saat memutakhirkan versi aplikasi, semua data offline juga akan dipertahankan.</item>
+        <item>Kontak: Untuk dukungan apa pun, hubungi digitalsupport@olamnet.com</item>
+    </string-array>
+</resources>

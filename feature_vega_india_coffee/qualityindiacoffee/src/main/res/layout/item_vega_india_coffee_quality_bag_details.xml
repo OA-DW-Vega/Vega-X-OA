@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_min"
+    android:background="@drawable/bottom_border_black"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/margin_padding_size_medium"
+    android:paddingTop="@dimen/margin_padding_size_medium"
+    android:paddingEnd="@dimen/text_size_medium"
+    android:paddingBottom="@dimen/margin_padding_size_medium">
+
+    <TextView
+        android:id="@+id/tvBag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1.5"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:textColor="@color/text_black"
+        tools:text="1234567891" />
+
+    <TextView
+        android:id="@+id/tvBagWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:textColor="@color/text_black"
+        tools:text="250 kg" />
+
+    <LinearLayout
+        android:id="@+id/lEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/closeaction"
+            android:gravity="center"
+            android:padding="3dp"
+            android:src="@drawable/ic_edit"
+            android:textColor="@color/text_black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lDelete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/circle_shape"
+            android:contentDescription="@string/closeaction"
+            android:gravity="center"
+            android:padding="3dp"
+            android:src="@drawable/ic_close_white_24dp"
+            android:textColor="@color/text_black" />
+    </LinearLayout>
+
+
+</LinearLayout>

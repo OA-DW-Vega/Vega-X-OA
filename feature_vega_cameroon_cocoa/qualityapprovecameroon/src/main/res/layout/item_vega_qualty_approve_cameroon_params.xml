@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/tvQualityNameApprove"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="2"
+        android:gravity="start|center"
+        android:textColor="@color/text_black"
+        android:fontFamily="@font/gilroy_semibold"
+        android:textSize="@dimen/text_size_medium"
+        tools:text="@string/quality" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvUnitApprove"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="start|center"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="10 %" />
+    <LinearLayout
+        android:id="@+id/llEdit"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:background="@drawable/custom_edit_text"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/edQualityValue"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight=".8"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor"
+            tools:text="123" />
+
+        <TextView
+            android:id="@+id/tvUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:gravity="center"
+            android:text="@string/percentage"
+            android:textSize="@dimen/text_size_medium" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llDropDown"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:background="@drawable/custom_edit_text"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spItem"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/black"
+            android:dropDownWidth="match_parent"
+            android:dropDownHeight="150dp"
+            android:overlapAnchor="false"
+            android:padding="@dimen/margin_mic_small"
+            android:popupBackground="@color/white"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+
+</LinearLayout>

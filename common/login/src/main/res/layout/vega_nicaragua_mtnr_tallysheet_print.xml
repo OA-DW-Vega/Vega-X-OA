@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="@dimen/print_layout_height"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/margin_xxlarge"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/print_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivOlamLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_olam_logo"
+            app:layout_constraintBottom_toTopOf="@+id/table_info1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/mtnr_certificationLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="@dimen/margin_xxlarge"
+            android:scaleType="fitCenter"
+            android:src="@drawable/utz_logo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/table_info1"
+            app:layout_constraintRight_toLeftOf="@+id/title3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/print_title_1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/print_title_3"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title1" />
+
+        <TextView
+            android:id="@+id/title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/print_title_4"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintBottom_toTopOf="@id/table_info1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title3" />
+
+        <TextView
+            android:id="@+id/tvmtnrDeliverynumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+             android:gravity="right"
+            android:text="hgdcjgbjdhsgbjs"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title3"/>
+
+
+        <TextView
+            android:id="@+id/tvmtnrDocSequence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="right"
+            android:text=""
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvmtnrDeliverynumber" />
+
+
+        <TableLayout
+            android:id="@+id/table_info1"
+            android:layout_width="@dimen/print_table_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivOlamLogo">
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/print_title_9"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_origen"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/origenValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_recibido"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/recibidoValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_fecha_y_hora"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/dateandHourValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_conductor"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/conductorValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_vehiculo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/vehicleNoValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_placa"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/locationValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_transportista"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/truckNoValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_certificacion"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/certificationValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/vendor_name1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/vendorValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="NA"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/table_info2"
+            android:layout_width="@dimen/print_table_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mic_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_info1">
+
+            <TableRow android:weightSum="15">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/s_quality_grade"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/s_material_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_sacos"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_bruto"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_tara"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_neto"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/print_batch_no"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_ticket"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/quality_table1"
+                android:visibility="visible"
+                android:weightSum="15">
+
+                <TextView
+                    android:id="@+id/tvQualityGradeValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvMaterialname"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvBagValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvGrossWeightValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvTareWeightValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvNetWeightValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvGrossQQsValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvTicketValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+        </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvtablelayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:maxHeight="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_info2"
+            tools:listitem="@layout/item_vega_nicaragua_tablelayout" />
+
+
+        <TableLayout
+            android:id="@+id/table_info3Copy"
+            android:layout_width="@dimen/print_table_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mic_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:maxHeight="1dp"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvtablelayout">
+
+            <TableRow android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_obs"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvRemarksCopy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+
+            <TableRow
+                android:padding="@dimen/margin_medium"
+                android:weightSum="4" />
+
+            <TableRow android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_merma"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvSLossCopy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+        </TableLayout>
+        <!-- <TextView
+             android:id="@+id/tvObservations"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="@dimen/margin_medium"
+             android:fontFamily="@font/roboto_bold"
+             android:gravity="left"
+             android:text="@string/mtnr_tallysheet_obs"
+             android:textColor="@color/black"
+             android:textSize="@dimen/text_size_medium"
+             android:padding="@dimen/margin_padding_size_small"
+             android:layout_marginTop="@dimen/margin_padding_size_medium"
+             app:layout_constraintTop_toBottomOf="@+id/table_info2"
+             app:layout_constraintStart_toStartOf="parent"/>
+
+             <View
+                 android:id="@+id/tvObservationsValue"
+                android:layout_width="0dp"
+                 android:layout_height="3dp"
+                 android:layout_marginTop="@dimen/margin_padding_size_medium"
+                 android:layout_weight="10"
+                 android:background="@color/black"
+                 app:layout_constraintStart_toEndOf="@id/tvObservations"
+                 app:layout_constraintEnd_toEndOf="@id/table_info2"
+                 app:layout_constraintBottom_toBottomOf="@+id/tvObservations"
+                 android:padding="@dimen/margin_padding_size_small" />
+
+         <TextView
+             android:id="@+id/tvMerma"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/roboto_bold"
+             android:gravity="left"
+             android:padding="@dimen/margin_padding_size_small"
+             android:text="@string/mtnr_tallysheet_merma"
+             android:textColor="@color/black"
+             android:textSize="@dimen/text_size_medium"
+             android:layout_marginTop="@dimen/margin_padding_size_medium"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvObservations" />
+
+         <View
+             android:id="@+id/decreaseValue"
+             android:layout_width="400dp"
+             android:layout_height="3dp"
+             android:layout_marginTop="@dimen/margin_padding_size_medium"
+             android:gravity="left"
+             android:padding="@dimen/margin_padding_size_small"
+             android:background="@color/black"
+             android:layout_marginLeft="@dimen/margin_padding_size_small"
+             app:layout_constraintStart_toEndOf="@id/tvMerma"
+             app:layout_constraintBottom_toBottomOf="@+id/tvMerma" />-->
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="500dp"
+            android:layout_height="3dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="@dimen/layout_width"
+            android:background="@color/black"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_info3Copy" />
+
+        <TextView
+            android:id="@+id/clasificador_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="@string/mtnr_tallysheet_clasificador"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="500dp"
+            android:layout_height="3dp"
+            android:background="@color/black"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/line1"
+            app:layout_constraintEnd_toEndOf="@+id/table_info3Copy"
+            app:layout_constraintTop_toTopOf="@+id/line1" />
+
+        <TextView
+            android:id="@+id/conductor_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="@string/mtnr_tallysheet_conductor_sign"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintEnd_toEndOf="@id/line2"
+            app:layout_constraintHorizontal_bias="0.573"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@id/line2"
+            app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/iv_border"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="@dimen/margin_padding_size_small"
+        android:text="---------------------------------------------------------------------------------------------------------------------------------------------copiar"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/print_main_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/print_main_layout_rp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_border">
+
+        <ImageView
+            android:id="@+id/ivOlamLogo_rp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_olam_logo"
+            app:layout_constraintBottom_toTopOf="@+id/table_info1_rp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/mtnr_certificationLogo_rp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="@dimen/margin_xxlarge"
+            android:scaleType="fitCenter"
+            android:src="@drawable/utz_logo"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/table_info1_rp"
+            app:layout_constraintRight_toLeftOf="@+id/title3_rp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title1_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/print_title_1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title3_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_small"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/print_title_3"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title1_rp" />
+
+        <TextView
+            android:id="@+id/title4_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/print_title_4"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintBottom_toTopOf="@id/table_info1_rp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title3_rp" />
+        <TextView
+            android:id="@+id/tvmtnrDeliverynumber_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="right"
+            android:text=""
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title3_rp" />
+
+        <TextView
+            android:id="@+id/tvmtnrDocSequence_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="right"
+            android:text=""
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvmtnrDeliverynumber_rp" />
+
+
+        <TableLayout
+            android:id="@+id/table_info1_rp"
+            android:layout_width="@dimen/print_table_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivOlamLogo_rp">
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/print_title_9"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_origen"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/origenValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_recibido"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/recibidoValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_fecha_y_hora"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/dateandHourValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_conductor"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/conductorValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_vehiculo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/vehicleNoValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_placa"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/locationValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_transportista"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/truckNoValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+            <TableRow android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_certificacion"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/certificationValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/vendor_name1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/vendorValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="NA"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/table_info2_rp"
+            android:layout_width="@dimen/print_table_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mic_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_info1_rp">
+
+            <TableRow android:weightSum="15">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/s_quality_grade"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/s_material_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_sacos"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_bruto"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_tara"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_neto"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/print_batch_no"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_ticket"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/quality_table1_rp"
+                android:visibility="visible"
+                android:weightSum="15">
+
+                <TextView
+                    android:id="@+id/tvQualityGradeValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvMaterialname_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvBagValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvGrossWeightValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvTareWeightValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvNetWeightValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:minLines="1"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvGrossQQsValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvTicketValue_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text=""
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+
+        </TableLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvtablelayout_rp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:maxHeight="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_info2_rp"
+            tools:listitem="@layout/item_vega_nicaragua_tablelayout" />
+
+
+        <TableLayout
+            android:id="@+id/table_info3Copy_rp"
+            android:layout_width="@dimen/print_table_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mic_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvtablelayout_rp">
+
+            <TableRow android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_obs"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvRemarksCopy_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+
+            <TableRow
+                android:padding="@dimen/margin_medium"
+                android:weightSum="4" />
+
+            <TableRow android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_print_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:text="@string/mtnr_tallysheet_merma"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tvSLossCopy_rp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/rectangle_black_line_border"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_padding_size_small"
+                    android:textColor="@color/transparent_black"
+                    android:textSize="@dimen/text_size_large" />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:id="@+id/line1_rp"
+            android:layout_width="500dp"
+            android:layout_height="3dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="@dimen/layout_width"
+            android:background="@color/black"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_info3Copy_rp" />
+
+        <TextView
+            android:id="@+id/clasificador_sign_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="@string/mtnr_tallysheet_clasificador"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1_rp" />
+
+        <View
+            android:id="@+id/line2_rp"
+            android:layout_width="500dp"
+            android:layout_height="3dp"
+            android:background="@color/black"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/line1_rp"
+            app:layout_constraintEnd_toEndOf="@+id/table_info3Copy_rp"
+            app:layout_constraintTop_toTopOf="@+id/line1_rp" />
+
+        <TextView
+            android:id="@+id/conductor_signature_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_mic_small"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="@string/mtnr_tallysheet_conductor_sign"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintEnd_toEndOf="@id/line2_rp"
+            app:layout_constraintHorizontal_bias="0.573"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@id/line2_rp"
+            app:layout_constraintTop_toBottomOf="@+id/line2_rp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

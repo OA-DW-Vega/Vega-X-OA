@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/grn_t"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnProceed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_medium">
+
+            <TextView
+                android:id="@+id/tvTruckDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:fontFamily="@font/gilroy_regular"
+                android:paddingStart="@dimen/margin_large"
+                android:paddingEnd="@dimen/margin_small"
+                android:text="@string/grn_t_details"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_smedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clConsign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvTruckDetails">
+
+                <LinearLayout
+                    android:id="@+id/ll_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvSupplier"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvSupplier_text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvSupplierValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:drawableEnd="@drawable/ic_add_icon_new"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvUpcountryPlant"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvUpcountryPlant_text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvUpcountryPlantValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:inputType="number"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/linearOne"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvMaterial"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvMaterial_text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMaterialValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:drawableEnd="@drawable/ic_add_icon_new"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvNetweight"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvNetweight_text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/tvNetweightValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvGRNPrice"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvGRNPrice_text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/tvGRNPriceValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvReceivingPlant"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvReceivingPlant_text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvReceivingPlantValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:drawableEnd="@drawable/ic_add_icon_new"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvReceivingcustom"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvReceivingCutom_text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvReceivingCustomValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:drawableEnd="@drawable/ic_add_icon_new"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvProcurementType"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:minHeight="60dp"
+                            android:text="@string/tvProcurementType_Text"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvProcurementTypeValue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_ghana_rect_white_bg"
+                            android:drawableEnd="@drawable/ic_add_icon_new"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            tools:text="Sample" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/next_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

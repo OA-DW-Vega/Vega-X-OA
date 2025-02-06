@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/warm_white"
+android:clickable="true"
+android:focusable="true">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="4dp"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/title"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sort"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/layout_border_with_down"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="@string/total_allocation"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/tv_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tv_filter"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#D2CECC"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:text="@string/filter"
+        android:textColor="#6C5D56"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_sort"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFilter"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/margin_xlarge"
+        android:contentDescription="@string/tv_filter"
+        android:src="@drawable/ic_filter_list_black_24dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/tv_filter"
+        app:layout_constraintEnd_toEndOf="@id/tv_filter"
+        app:layout_constraintTop_toTopOf="@id/tv_filter" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="4dp"
+        android:text="@string/tv_sub_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sort" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInventoryBalance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_app_reject_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+        android:layout_margin="@dimen/margin_small"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="material">Matériel</string>
+    <string name="stock">Stock</string>
+    <string name="storage_location">Location</string>
+    <string name="weight_summary">Résumé du poids</string>
+    <string name="add_weight">Ajouter du poids</string>
+    <string name="gross_weight">Poids brut</string>
+    <string name="enter_weight">Entrez le poids</string>
+    <string name="packaging_material">Matériel d emballage</string>
+    <string name="bag_type">Type de sac</string>
+    <string name="no_of_bags">Nombre de sacs</string>
+    <string name="select_type">Sélectionner le genre</string>
+    <string name="enter_no_of_bags">Entrez le nombre de sacs</string>
+    <string name="net_weight">Poids net</string>
+    <string name="add">Ajouter</string>
+    <string name="lots_summary">Résumé des lots</string>
+    <string name="pallet_tare_weight">Poids vide de la palette</string>
+    <string name="bag_tare_weight">Poids vide du sac</string>
+    <string name="total_weight">poids total</string>
+    <string name="sweepings_summary">Balayures - Résumé</string>
+    <string name="sweepings">Balayures</string>
+    <string name="sweepings_weight_entry">Balayures - Entrée de poids</string>
+    <string name="lot_no">N° de lot:</string>
+    <string name="proceed">Procéder</string>
+    <string name="tare_weight">Poids vide</string>
+    <string name="conform_sweeping">Voulez-vous sortir les marchandises pour traitement?</string>
+    <string name="no_weight_added">Aucun poids ajouté</string>
+    <string name="lot_success">Lot enregistré avec succès</string>
+    <string name="stored_locally">Stocké localement</string>
+    <string name="s_no">S.No</string>
+    <string name="bag">Sac</string>
+    <string name="gross_n_weight">Poids \n brut</string>
+    <string name="tare_n_bag_pallet">Tare \n (Sac + palette)</string>
+    <string name="net_n_weight">Poids \n net </string>
+    <string name="confirm">Confirmer</string>
+    <string name="cancel">Annuler</string>
+</resources>

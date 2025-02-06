@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#698714</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="text_black">#2E2D2C</color>
+    <color name="red">#CB410B</color>
+    <color name="red1">#FF0000</color>
+    <color name="marun">#984509</color>
+    <color name="light_marun">#AC6241</color>
+    <color name="grey_button">#6e6e6e</color>
+    <color name="lightGrey">#F0F1EE</color>
+    <color name="litGrey">#F3F7F2</color>
+
+
+    <color name="grey_border">#BFBFBF</color>
+    <color name="grey_light">#dedad4</color>
+    <color name="grey_lights">#DAD6D3</color>
+    <color name="light_pink">#D81B60</color>
+    <color name="pink_light">#FFD3BF</color>
+    <color name="grey_lit">#E6E6E6</color>
+    <color name="grey_lits">#F2F2F2</color>
+
+
+    <color name="blue">#253646</color>
+    <color name="dark_green_1">#0B4B52</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="grey">#808080</color>
+    <color name="box_grey">#E8E4E1</color>
+    <color name="green">#a0c800</color>
+    <color name="dark_green">#407921</color>
+    <color name="pale_green">#DFFAD0</color>
+    <color name="orange">#f78c2a</color>
+    <color name="orange_light">#FD8104</color>
+    <color name="grey_dark">#8A795D</color>
+    <color name="pale_red_border">#FCC2C2</color>
+    <color name="red_ff">#FF0000</color>
+    <color name="pale_red">#FFE0E0</color>
+    <color name="crimson_red">#DB5D5D</color>
+    <color name="light_grey_2">#B0C4DE</color>
+    <color name="blue_light">#00ACC6</color>
+    <color name="blue_mic_dark">#00869D</color>
+    <color name="transparent_black">#99000000</color>
+    <color name="dark_Grey">#EEECE9</color>
+    <color name="grey_reweigh">#D1B089</color>
+    <color name="warm_grey">#dbd7d6</color>
+    <color name="warmgrey">#9E948E</color>
+    <color name="warm_white">#F5F5F5</color>
+    <color name="container_header">#F4F4F4</color>
+    <color name="background">#293542</color>
+    <color name="blue_dark">#003366</color>
+    <color name="orange_dark">#FD4E00</color>
+    <color name="light_grey_3">#DEDAD4</color>
+    <color name="dark_marun1">#6C5D56</color>
+    <color name="card_pink_bg">#AB2E86</color>
+    <color name="blue_light_grey">#FFCBD1D5</color>
+    <color name="light_grey_1">#F6F6F6</color>
+    <color name="dark_grey_1">#E2E2E2</color>
+    <color name="light_blue_grey_1">#F3F3F3</color>
+    <color name="light_green">#A0C800</color>
+    <color name="receipt_blue">#A2B9E2</color>
+    <color name="mid_grey">#999999</color>
+    <color name="bg_grey">#F8F8F8</color>
+    <color name="dark_red">#FF3000</color>
+    <color name="dark_grey_ofi">#4A4949</color>
+
+
+</resources>

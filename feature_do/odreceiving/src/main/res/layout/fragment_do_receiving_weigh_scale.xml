@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:background="@null"
+        tools:ignore="UselessParent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue"
+                    android:baselineAligned="false"
+                    android:padding="@dimen/margin_small">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/supplier_weigh_scale"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/headerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryOfi1"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:padding="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/tvSupplier"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:text="YAHAYA JUNAIDU" />
+
+                    <TextView
+                        android:id="@+id/tvTotal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:gravity="end"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:text="4 bags of 400kg" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtSelectBagType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:text="@string/select_bag_type"
+                    android:textColor="@color/text_black" />
+
+                <LinearLayout
+                    android:id="@+id/bagTypeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:background="@color/light_grey"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spMaterial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/black"
+                        android:dropDownWidth="1000dp"
+                        android:dropDownHeight="150dp"
+                        android:hint="@string/select_bag_type"
+                        android:padding="@dimen/margin_mic_small"
+                        android:popupBackground="@color/white"
+                        android:spinnerMode="dropdown" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtStorageLoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:text="@string/select_storage_loc"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/cusStorageLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:clickable="true"
+                    android:background="@color/light_grey"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/tvStoValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableEnd="@drawable/ic_add_icon_new"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="center_vertical"
+                        android:focusableInTouchMode="false"
+                        android:background="@color/light_grey"
+                        android:drawablePadding="10dp"
+                        android:hint="@string/select_storage_loc"
+                        android:padding="@dimen/margin_padding_size_small"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:baselineAligned="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0">
+
+                        <TextView
+                            android:id="@+id/tvLotTransactionIdLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/transaction_lot_id"
+                            android:padding="5dp"
+                            android:layout_margin="1dp"/>
+
+                        <TextView
+                            android:id="@+id/tvLotTransactionIdValue"
+                            android:layout_width="0dp"
+                            android:padding="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="0.5" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0">
+
+                        <TextView
+                            android:id="@+id/tvProductLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:padding="5dp"
+                            android:text="@string/product"
+                            android:layout_margin="1dp"/>
+
+                        <TextView
+                            android:id="@+id/tvProductValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:layout_margin="1dp"
+                            android:layout_weight="0.5" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0">
+
+                        <TextView
+                            android:id="@+id/tvSupplierLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:layout_weight="0.5"
+                            android:text="@string/supplier_name_id"
+                            android:layout_margin="1dp"/>
+
+                        <TextView
+                            android:id="@+id/tvSupplierValue"
+                            android:layout_width="0dp"
+                            android:padding="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="0.5" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0">
+
+                        <TextView
+                            android:id="@+id/tvWeightLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="5dp"
+                            android:text="@string/weight"
+                            android:layout_margin="1dp"/>
+
+                        <TextView
+                            android:id="@+id/tvWeightValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="5dp"
+                            android:layout_weight="0.5" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvWeightEmptyBagLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="5dp"
+                            android:text="@string/empty_bag_weight"
+                            android:layout_margin="1dp"/>
+
+                        <TextView
+                            android:id="@+id/tvWeightEmptyBagValue"
+                            android:layout_width="0dp"
+                            android:padding="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="0.5" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0">
+
+                        <TextView
+                            android:id="@+id/tvDateLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:layout_weight="0.5"
+                            android:text="@string/date"
+                            android:layout_margin="1dp"/>
+
+                        <TextView
+                            android:id="@+id/tvDateValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:layout_margin="1dp"
+                            android:layout_weight="0.5" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lightGrey"
+                    android:baselineAligned="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llScanBale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_large"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginEnd="@dimen/margin_large"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:background="@drawable/scanbale_corner"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <Button
+                            android:id="@+id/btn_scanBale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/blue"
+                            android:drawableStart="@drawable/qr_code"
+                            android:drawablePadding="@dimen/margin_padding_size_small"
+                            android:text="@string/pull_weight"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="@dimen/layout_width"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/grey_dark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/or"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <View
+                            android:layout_width="@dimen/layout_width"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center"
+                            android:background="@color/grey_dark" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_large"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginEnd="@dimen/margin_large"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_border"
+                                android:padding="@dimen/margin_padding_size_medium">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="start"
+                                    android:text="@string/no_of_bags"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/etNoOfBags"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:background="@drawable/rectangle_grey_border"
+                                    android:inputType="number"
+                                    android:maxLength="7"
+                                    android:layout_toStartOf="@+id/btnScanBag"
+                                    android:padding="@dimen/margin_padding_size_medium"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:textStyle="bold"
+                                    android:text=""
+                                    tools:ignore="Autofill,LabelFor" />
+
+                                <Button
+                                    android:id="@+id/btnScanBag"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/scan_qr_code"
+                                    android:layout_alignParentEnd="true"
+                                    android:textAllCaps="false"
+                                    android:maxLines="2"
+                                    android:visibility="visible"
+                                    android:background="@color/blue"
+                                    android:textColor="@android:color/white"/>
+
+                            </RelativeLayout>
+
+                            <!--<LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:weightSum="1.0">
+
+                                <EditText
+                                    android:id="@+id/etNoOfBags"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_weight="0.45"
+                                    android:background="@drawable/rectangle_grey_border"
+                                    android:inputType="number"
+                                    android:maxLength="7"
+                                    android:padding="@dimen/margin_padding_size_medium"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:textStyle="bold"
+                                    tools:ignore="Autofill,LabelFor" />
+
+                                <Button
+                                    android:id="@+id/btnScanBag"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.55"
+                                    android:text="Scan Qr code"
+                                    android:textAllCaps="false"
+                                    android:maxLines="2"
+                                    android:visibility="gone"
+                                    android:background="@color/blue"
+                                    android:textColor="@android:color/white"/>
+
+                            </LinearLayout>-->
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_border"
+                                android:padding="@dimen/margin_padding_size_medium">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="start"
+                                    android:text="@string/total_weight"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_toStartOf="@+id/btnPullBagWeight"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1.0">
+
+                                    <EditText
+                                        android:id="@+id/etTotalWeight"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.75"
+                                        android:layout_gravity="start"
+                                        android:background="@drawable/rectangle_grey_border"
+                                        android:inputType="numberDecimal"
+                                        android:maxLength="7"
+                                        android:padding="@dimen/margin_padding_size_medium"
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_medium"
+                                        android:textStyle="bold"
+                                        android:text=""
+                                        tools:ignore="Autofill,LabelFor" />
+
+                                    <TextView
+                                        android:id="@+id/tvUom"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="0.25"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginEnd="2dp"
+                                        android:gravity="center"
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_medium"
+                                        android:textStyle="bold"
+                                        tools:text="KG" />
+
+                                </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/btnPullBagWeight"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@color/blue"
+                                    android:maxLines="2"
+                                    android:text="@string/pull_weight_caps"
+                                    android:textAllCaps="false"
+                                    android:textColor="@android:color/white"
+                                    android:visibility="visible" />
+
+                            </RelativeLayout>
+
+                            <!--<LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:weightSum="1.0">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.6"
+                                    android:weightSum="5.0"
+                                    android:orientation="horizontal">
+
+                                    <EditText
+                                        android:id="@+id/etTotalWeight"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="4.0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="start"
+                                        android:background="@drawable/rectangle_grey_border"
+                                        android:inputType="numberDecimal"
+                                        android:maxLength="7"
+                                        android:padding="@dimen/margin_padding_size_medium"
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_medium"
+                                        android:textStyle="bold"
+                                        android:text=""
+                                        tools:ignore="Autofill,LabelFor" />
+
+                                    <TextView
+                                        android:id="@+id/tvUom"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1.0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textColor="@color/text_black"
+                                        android:textSize="@dimen/text_size_medium"
+                                        android:textStyle="bold"
+                                        tools:text="KG" />
+
+                                </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/btnPullBagWeight"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="0.4"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/pull_weight_caps"
+                                    android:textAllCaps="false"
+                                    android:maxLines="2"
+                                    android:visibility="visible"
+                                    android:background="@color/blue"
+                                    android:textColor="@android:color/white"/>
+                            </LinearLayout>-->
+
+
+
+                            <!--<LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/rectangle_grey_border">
+
+                                <EditText
+                                    android:id="@+id/etTotalWeight"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_weight="2"
+                                    android:background="@android:color/transparent"
+                                    android:inputType="numberDecimal"
+                                    android:labelFor="@id/etTotalWeight"
+                                    android:maxLength="7"
+                                    android:padding="@dimen/margin_padding_size_medium"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:textStyle="bold"
+                                    tools:ignore="Autofill" />
+
+                                <TextView
+                                    android:id="@+id/tvUom"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:textStyle="bold"
+                                    tools:text="KG" />
+                            </LinearLayout>-->
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnAdd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/dark_marun"
+                            android:text="@string/add"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:background="@color/light_grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:baselineAligned="false"
+                    android:padding="@dimen/margin_small">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:text="@string/weigh_details"
+                            android:gravity="start"
+                            android:textColor="@color/text_black" />
+
+                        <TextView
+                            android:id="@+id/tvLotTxn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:gravity="end"
+                            android:text="@string/lot_transaction_bag_details_underlined"
+                            android:visibility="gone"
+                            android:textColor="@color/text_black" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:background="@color/light_grey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.7"
+                            android:background="@drawable/rectangle_border"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/margin_small"
+                            android:paddingBottom="@dimen/margin_small"
+                            android:text="@string/no_of_bags"
+                            android:textColor="@color/text_black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:background="@drawable/rectangle_border"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/margin_small"
+                            android:paddingBottom="@dimen/margin_small"
+                            android:text="@string/weight"
+                            android:textColor="@color/text_black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/rectangle_border"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/margin_small"
+                            android:paddingBottom="@dimen/margin_small"
+                            android:text="@string/edit"
+                            android:textColor="@color/text_black"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/rectangle_border"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/margin_small"
+                            android:paddingBottom="@dimen/margin_small"
+                            android:text="@string/delete"
+                            android:textColor="@color/text_black" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:dividerHeight="1dp"
+                        android:scrollbars="vertical"
+                        android:visibility="visible"
+                        tools:listitem="@layout/item_do_weigh_scale" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/green"
+                android:text="@string/confirm"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

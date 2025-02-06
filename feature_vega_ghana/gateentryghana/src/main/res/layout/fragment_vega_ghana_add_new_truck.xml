@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_small"
+        android:text="@string/waiting_trucks_add_new_truck"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium">
+
+            <TextView
+                android:id="@+id/tvProductLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/product"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:fontFamily="@font/gilroy_regular"
+                android:hint="@string/select_product"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/grey_lit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSupplierLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/supplier_name"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSupplier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:background="@drawable/custom_edit_text"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:hint="@string/select_supplier"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/grey_lit"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+
+                <TextView
+                    android:id="@+id/tvSupplierZoneLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/supplier_zone"
+                    android:visibility="gone"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSupplierZone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    android:background="@drawable/custom_edit_text"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:hint="@string/supplier_zone"
+                    android:visibility="gone"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/grey_lit"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMtnr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvDispatchWHLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/dispatch_wh"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDispatchWarehouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    android:background="@drawable/custom_edit_text"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvObdLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/mtn_obd_number"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvObdNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_very_small"
+                    android:background="@drawable/custom_edit_text"
+                    android:drawableEnd="@drawable/ic_add_icon_new"
+                    android:hint="@string/select_obd_number"
+                    android:padding="@dimen/margin_padding_size_medium"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/grey_lit"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvLocationLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/receiving_location"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvReceivingLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:fontFamily="@font/gilroy_regular"
+                android:hint="@string/receiving_location"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/grey_lit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDateLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/arrival_date"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:drawableEnd="@drawable/ic_add_icon_new"
+                android:fontFamily="@font/gilroy_regular"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="03 March 2020" />
+
+            <TextView
+                android:id="@+id/tvDriverNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/driver_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tvDriverName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                android:fontFamily="@font/gilroy_regular"
+                android:hint="@string/driver_name"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/grey_lit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/tvTruckNoLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/truck_no"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tvTruckNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+                android:fontFamily="@font/gilroy_regular"
+                android:hint="@string/enter_truck_number"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/grey_lit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/tvDriverNoLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/driver_no"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tvPhoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/custom_edit_text"
+                android:digits="0123456789"
+                android:fontFamily="@font/gilroy_regular"
+                android:hint="@string/enter_driver_number"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/grey_lit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/tvWeightLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_large"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/weight"
+                android:textColor="@color/text_black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_entercontainerID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_height"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/custom_edit_text"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/etWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_weight="4"
+                    android:background="@android:color/transparent"
+                    android:digits="0123456789"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:hint="@string/weight"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColorHint="@color/grey_lit"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:ignore="Autofill" />
+
+                <TextView
+                    android:id="@+id/tvUom"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="center"
+                    tools:text="KG" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/confirm"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="fgrn">FGRN</string>
+    <string name="rmin">RMIN</string>
+    <string name="drying">Séchage</string>
+    <string name="proceed">Procéder</string>
+    <string name="select_stage_to_process">Sélectionnez l\'étape</string>
+    <string name="select_material">Sélectionnez le matériel à traiter</string>
+    <string name="output_grade">Classe de sortie : </string>
+    <string name="input_grade">Classe d\'entrée :</string>
+    <string name="b_o_m">B.O.M :</string>
+    <string name="information">Information</string>
+    <string name="confirm">Confirmer</string>
+    <string name="add_lots_to_processing">Ajouter des lots au Usinage</string>
+    <string name="material">Matériel</string>
+    <string name="stage">Étape</string>
+    <string name="weight_to_process">Poids à traiter</string>
+    <string name="rmin_lots_to_process">RMIN - Lots à traiter</string>
+    <string name="select_warehouse">Sélectionner un entrepôt</string>
+    <string name="add_lots_to_rmin">Ajouter des lots à Rmin</string>
+    <string name="rmin_shift_selection">RMIN - Sélection Quart</string>
+    <string name="select_shift">Sélectionnez Quart</string>
+    <string name="shift_a">QUART A</string>
+    <string name="shift_b">QUART B</string>
+    <string name="shift_c">QUART C</string>
+    <string name="rmin_select_process">RMIN - Sélectionnez le processus</string>
+    <string name="select_grade">--Sélectionnez la classe--</string>
+    <string name="select_stage">--Sélectionnez l\'étape--</string>
+    <string name="select_storage_location">--Sélectionnez l\'emplacement de stockage--</string>
+    <string name="select_auto_po">Sélectionnez PO automatique</string>
+    <string name="or">- OU -</string>
+    <string name="or1">--- OU ---</string>
+    <string name="select_existing_po">Sélectionner un bon de commande existant</string>
+    <string name="process_not_avail">L\'ordre de process n\'est pas disponible</string>
+    <string name="pono">Numéro de bin :</string>
+    <string name="weight_in_process">Poids en cours de Usinage :</string>
+    <string name="dry_start_date">Date de début de séchage :</string>
+    <string name="rmin_summary">RMIN - Résumé</string>
+    <string name="lot_information">Informations sur le lot</string>
+    <string name="shift">Quart</string>
+    <string name="type_of_processing">Remarks</string>
+    <string name="lots_summary">Résumé des lots</string>
+    <string name="conform_remove">Voulez-vous vraiment supprimer le Lot?</string>
+    <string name="less_weight_error">Veuillez saisir un poids de lot valide</string>
+    <string name="select_bom">RMIN - Sélectionnez B.O.M</string>
+    <string name="select_po">RMIN - Détails du bon de commande</string>
+    <string name="conform_processing">Confirmer le Usinage du Rmin</string>
+    <string name="rmin_saved">RMIN terminé avec succès</string>
+    <string name="select_remark">Sélectionnez la remarque</string>
+    <string name="weight_to_process_man">Poids à traiter<font color='#CB410B'>*</font></string>
+    <string name="empty_weight">Veuillez saisir le poids</string>
+    <string name="po_details">RMIN - Détails du bon de commande</string>
+    <string name="fgrn_post_confirm">Voulez-vous continuer \n Confirmer FGRN?</string>
+    <string name="fgrn_success">FGRN terminé avec succès</string>
+    <string name="for_the_po">pour le bon de commande : </string>
+    <string name="po_number">Numéro de bin</string>
+    <string name="weight_in_processing">Poids en cours de Usinage</string>
+
+
+    <string-array name="remarks">
+        <item>Sélectionnez la remarque</item>
+        <item>Remballage</item>
+        <item>Séchage +  remballage</item>
+        <item>Nettoyage + séchage + remballage</item>
+    </string-array>
+
+    //Fgrn
+
+    <string name="sort_by">Trier par</string>
+    <string name="fgrn_po_details">FGRN - Détails du bon de commande (PO)</string>
+    <string name="no_data_found">Aucune donnée disponible</string>
+    <string name="po_numaber">Numéro de bin</string>
+    <string name="fgrn_pending_po">FGRN PO en attente</string>
+    <string name="create_new_fgrn">Créer un nouveau FGRN</string>
+    <string name="total_pos_0">Total des bons de commande (PO)</string>
+    <string name="select_grades">Sélectionnez les grades</string>
+    <string name="weight_summary">Résumé du poids</string>
+    <string name="add_weight">Ajouter du poids</string>
+    <string name="no_weight_added">Aucun poids ajouté</string>
+    <string name="fgrn_drying">FGRN</string>
+    <string name="st_location">Location</string>
+    <string name="lot_id">ID du lot</string>
+    <string name="weight">Poids</string>
+    <string name="eligible_weight">Poids éligible</string>
+    <string name="tare_weight">Poids vide</string>
+    <string name="assign_lot">Attribuer un lot</string>
+    <string name="save">sauvegarder</string>
+    <string name="fgrn_assign_lot">FGRN - Attribuer un lot</string>
+    <string name="create_lot">Créer un lot</string>
+    <string name="default_storage_location">Emplacement de stockage par défaut</string>
+    <string name="create_new_lot">Créer un nouveau lot</string>
+    <string name="lot_details">Détails du lot</string>
+    <string name="fgrn_shift_selection">FGRN - Sélection Quart</string>
+    <string name="fgrn_summary">FGRN - Résumé</string>
+    <string name="processing_summary">Résumé du Usinage</string>
+    <string name="filter">Filtre</string>
+    <string name="temp_fgrn_no">Temp FGRN N°</string>
+    <string name="date">Date</string>
+    <string name="please_check_atleast_one_grade">Veuillez choisir au moins une classe</string>
+    <string name="next">Suivant</string>
+    <string name="select_from_inventory">Sélectionnez dans l\'inventaire</string>
+    <string name="wh_location">Localisation du magasin</string>
+    <string name="apply">Appliquer</string>
+    <string name="weight_range">Échelle de poids</string>
+    <string name="exceed_weight">Le poids ajouté est supérieur au poids éligible</string>
+    <string name="ok">OK</string>
+    <string name="please_assign_lot">Veuillez attribuer un lot</string>
+    <string name="above_30_mt">Au-dessus de 30 MT</string>
+    <string name="please_add_lot">Veuillez ajouter un lot</string>
+    <string name="choose_remarks">Veuillez choisir des remarques</string>
+    <string name="choose_shift">Veuillez sélectionner le décalage</string>
+    <string name="new_lot">Nouveau lot</string>
+    <string name="bag">Sac</string>
+    <string name="enter_operator_name">Entrez le nom de l\'opérateur</string>
+    <string name="operator_name">Nom de l\'opérateur</string>
+    <string name="add_lots_to_rmins">RMIN - Ajouter des LOTs à RMIN</string>
+    <string name="grade">Classe</string>
+    <string name="select_entire_lot">Sélectionnez le lot entier</string>
+    <string name="all">TOUTE</string>
+    <string name="lot_selected">LOT sélectionné : </string>
+    <string name="pending_fgrn_po_details">Détails du bon de commande FGRN en attente</string>
+    <string name="gross_n_weight">Brut \n Poids</string>
+    <string name="net_n_weight">Net \n Poids</string>
+    <string name="default_lot">Lot par défaut</string>
+    <string name="choose_batch">Choisissez le numéro de lot</string>
+    <string name="bag_consumption">Consommation de sac</string>
+    <string name="batch_number">Numéro de lot</string>
+    <string name="pile_management">Gestion des piles</string>
+    <string name="vendor">Vendeur</string>
+    <string name="add_lots_to_dispatch">AJOUTER DES LOTS à expédier</string>
+    <string name="scan_lot_id">Scanner l’ID du Lot</string>
+    <string name="enter_lot_id">Entrez l’ID du LOT</string>
+    <string name="dispatch_summary">Résumé du transfert</string>
+    <string name="storage_location">Magasin</string>
+    <string name="weight_to_transfer">Poids à transférer</string>
+    <string name="select_weighment_type">Select Weighment Type</string>
+    <string name="cancel">Annuler</string>
+</resources>

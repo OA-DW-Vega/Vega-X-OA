@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryHeadOfi">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="start"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_large"
+            android:text="@string/select_dispatch_type"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textSize="@dimen/text_size_smedium"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center_vertical"
+            android:paddingLeft="@dimen/margin_large"
+            android:paddingRight="@dimen/margin_large"
+            android:src="@drawable/ic_close_white_24dp_port" />
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/rgSelectDispatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RadioButton
+            android:id="@+id/rbNormal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:checked="true"
+            android:fontFamily="@font/gilroy_regular"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_small"
+            android:text="@string/normal_dispatch"
+            android:textSize="@dimen/text_size_medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey" />
+
+        <RadioButton
+            android:id="@+id/rbDirect"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin_medium"
+
+            android:paddingStart="@dimen/margin_small"
+            android:fontFamily="@font/gilroy_regular"
+            android:paddingEnd="@dimen/margin_small"
+            android:text="@string/direct_dispatch"
+            android:textSize="@dimen/text_size_medium" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnDispatchProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSecondaryGrey"
+        android:enabled="false"
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:text="@string/proceed"
+        android:textAllCaps="false"
+        android:fontFamily="@font/gilroy_semibold"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+</LinearLayout>

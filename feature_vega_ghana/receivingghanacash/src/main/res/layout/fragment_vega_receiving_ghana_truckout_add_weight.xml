@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_small"
+        android:text="@string/truck_out_truck_weight"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTruckID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_very_small"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        tools:text="Truck Id:123123875348573" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/lot_information"
+                android:textColor="@color/text_black"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_medium">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/cbSelectStocks"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_padding_size_small">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/truck_number"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            tools:ignore="RelativeOverlap,RtlSymmetry" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/weigh_bridge_id_is"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            tools:ignore="RelativeOverlap,RtlSymmetry" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvTruckNo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="19393024892" />
+
+                        <TextView
+                            android:id="@+id/tvWeighBridgeId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="19393024892" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_mic_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvdifference"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/weight"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/date"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvSupplierName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="LBA" />
+
+                        <TextView
+                            android:id="@+id/tvWeight"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="1000" />
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_xmedium"
+                            android:textStyle="bold"
+                            tools:text="10/10/2020" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="@drawable/dash_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTruckOutLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_large"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/truck_tar_weight"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_entercontainerID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/action_bar_height"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@drawable/custom_edit_text"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/etTruckTarWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_small"
+                        android:layout_weight="4"
+                        android:background="@android:color/transparent"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:hint="@string/enter_truck_weight"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:ignore="Autofill" />
+
+                    <TextView
+                        android:id="@+id/tvUom"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        tools:text="KG" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="@drawable/dash_line" />
+
+            <LinearLayout
+                android:id="@+id/llBagDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tvBagDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="@string/bag_details"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_border"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:text="@string/bag_type"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_border"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:text="@string/no_of_bags"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvBagType1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:drawableEnd="@drawable/ic_add_icon_new"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start"
+                        android:hint="@string/select_type"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/etBagCount1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:autofillHints="no"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:hint="@string/enter_no_of_bags"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvBagType2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:drawableEnd="@drawable/ic_add_icon_new"
+                        android:gravity="start"
+                        android:hint="@string/select_type"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/etBagCount2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:autofillHints="no"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:hint="@string/enter_no_of_bags"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvBagType3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:drawableEnd="@drawable/ic_add_icon_new"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start"
+                        android:hint="@string/select_type"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/etBagCount3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:autofillHints="no"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:hint="@string/enter_no_of_bags"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_padding_size_small"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    tools:text="Total Number Of Bags :300" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:background="@drawable/dash_line" />
+
+                <!--<LinearLayout
+                    android:id="@+id/llCamera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:background="@color/colorPrimaryOfi"
+                    android:gravity="center">
+
+
+                </LinearLayout>-->
+                <LinearLayout
+                    android:id="@+id/ll_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="@dimen/margin_xlarge"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:background="@drawable/scanbale_corner"
+                    android:backgroundTint="@color/dark_marun"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ivCamere"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/scanbale_corner"
+                        android:backgroundTint="@color/dark_marun"
+                        android:drawableStart="@drawable/ic_photo_camera_black_24dp"
+                        android:drawablePadding="@dimen/margin_padding_size_small"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/margin_xlarge"
+                        android:paddingEnd="@dimen/margin_xlarge"
+                        android:text="@string/upload_ticket_photo"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/photoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:paddingStart="@dimen/margin_xlarge"
+                    android:paddingEnd="@dimen/margin_xlarge"
+                    android:visibility="gone"
+                    app:layout_constraintHorizontal_bias="0.513"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:color/darker_gray" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</LinearLayout>

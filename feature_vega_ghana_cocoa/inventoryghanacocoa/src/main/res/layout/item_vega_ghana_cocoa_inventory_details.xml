@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvLotDetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_padding_size_small"
+    android:background="@color/white"
+    app:cardCornerRadius="4dp">
+
+    <TextView
+        android:id="@+id/divideView"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:background="@color/green" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/cbSelectStocks"
+        android:padding="@dimen/margin_padding_size_small">
+
+        <TextView
+            android:id="@+id/tv_lot_name_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_mic_small"
+            android:layout_marginTop="@dimen/margin_mic_small"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="@string/lot_name"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_lot_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_material_name"
+            app:layout_constraintStart_toStartOf="@id/tv_lot_name_lbl"
+            app:layout_constraintTop_toBottomOf="@id/tv_lot_name_lbl"
+            tools:ignore="RelativeOverlap,RtlSymmetry"
+            tools:text="Inventory_01" />
+
+        <TextView
+            android:id="@+id/tv_material_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_mic_small"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="@string/material_name"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_lot_name_lbl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_lot_name_lbl" />
+
+        <TextView
+            android:id="@+id/tv_material_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_lot_name"
+            app:layout_constraintEnd_toEndOf="@id/tv_material_lbl"
+            app:layout_constraintTop_toTopOf="@id/tv_lot_name"
+            tools:text="sample text for my material data " />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cvQtyDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lot_name">
+
+            <TextView
+                android:id="@+id/tv_impurity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_mic_small"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/date_creation"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_admixture_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@id/tv_weight_data"
+                app:layout_constraintStart_toStartOf="@id/tv_impurity"
+                app:layout_constraintTop_toBottomOf="@id/tv_impurity"
+                tools:ignore="RelativeOverlap,RtlSymmetry"
+                tools:text="Inventory_01" />
+
+            <TextView
+                android:id="@+id/tv_weight_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/inventory_bumber_of_bags"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_impurity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_impurity" />
+
+            <TextView
+                android:id="@+id/tv_weight_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_admixture_value"
+                app:layout_constraintEnd_toEndOf="@id/tv_weight_lbl"
+                app:layout_constraintTop_toTopOf="@id/tv_admixture_value"
+                tools:text="1000 MT" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_impurity"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_very_small"-->
+<!--                android:fontFamily="@font/gilroy_regular"-->
+<!--                android:text="@string/total_impurity"-->
+<!--                android:textColor="@color/grey_border"-->
+<!--                android:textSize="@dimen/text_size_small"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_humidity"-->
+<!--                app:layout_constraintHorizontal_weight="1"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_humidity"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_very_small"-->
+<!--                android:fontFamily="@font/gilroy_regular"-->
+<!--                android:text="@string/humidity"-->
+<!--                android:textColor="@color/grey_border"-->
+<!--                android:textSize="@dimen/text_size_small"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_mould"-->
+<!--                app:layout_constraintHorizontal_weight="1"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_impurity"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_mould"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_very_small"-->
+<!--                android:fontFamily="@font/gilroy_regular"-->
+<!--                android:text="@string/mould"-->
+<!--                android:textColor="@color/grey_border"-->
+<!--                android:textSize="@dimen/text_size_small"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_weight_lbl"-->
+<!--                app:layout_constraintHorizontal_weight="1.2"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_humidity"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_weight_lbl"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_very_small"-->
+<!--                android:fontFamily="@font/gilroy_regular"-->
+<!--                android:text="@string/weight"-->
+<!--                android:textColor="@color/grey_border"-->
+<!--                android:textSize="@dimen/text_size_small"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_weight="1"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_mould"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_impurity_value"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/gilroy_semibold"-->
+            <!--                android:textColor="@color/text_black"-->
+<!--                android:textSize="@dimen/text_size_xmedium"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_humidity_value"-->
+<!--                app:layout_constraintHorizontal_weight="1"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_impurity"-->
+<!--                tools:text="100" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_humidity_value"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/gilroy_semibold"-->
+            <!--                android:textColor="@color/text_black"-->
+<!--                android:textSize="@dimen/text_size_xmedium"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_mould_value"-->
+<!--                app:layout_constraintHorizontal_weight="1"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_impurity_value"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_humidity"-->
+<!--                tools:text="8%" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_mould_value"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/gilroy_semibold"-->
+            <!--                android:textColor="@color/text_black"-->
+<!--                android:textSize="@dimen/text_size_xmedium"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_weight_data"-->
+<!--                app:layout_constraintHorizontal_weight="1.2"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_humidity_value"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_mould"-->
+<!--                tools:text="2%" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_weight_data"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/gilroy_semibold"-->
+            <!--                android:textColor="@color/text_black"-->
+<!--                android:textSize="@dimen/text_size_xmedium"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_weight="1"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_mould_value"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_weight_lbl"-->
+<!--                tools:text="1000 QE" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

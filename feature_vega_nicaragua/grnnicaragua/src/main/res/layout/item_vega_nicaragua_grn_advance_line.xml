@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <CheckBox
+            android:id="@+id/cbAdvanceInfo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:checked="false"
+            />
+        <TextView
+            android:id="@+id/AdvanceNumHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_toRightOf="@+id/cbAdvanceInfo"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textSize="@dimen/text_size_small"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textColor="@color/text_black"
+            android:text="@string/advance_number" />
+        <TextView
+            android:id="@+id/AdvanceNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            android:layout_toRightOf="@+id/cbAdvanceInfo"
+            android:layout_below="@+id/AdvanceNumHeader"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textSize="@dimen/text_size_small"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textColor="@color/text_black"
+            android:text="034-3444-4" />
+        <TextView
+            android:id="@+id/tvAdvanceDateHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_toRightOf="@+id/AdvanceNumHeader"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textSize="@dimen/text_size_small"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textColor="@color/warmgrey"
+            android:text="@string/advance_date" />
+        <TextView
+            android:id="@+id/tvAdvanceDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            android:layout_toRightOf="@+id/AdvanceNumHeader"
+            android:layout_below="@+id/AdvanceNumHeader"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textSize="@dimen/text_size_small"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textColor="@color/text_black"
+            android:text="08-08-2020" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@+id/tvAdvanceDate"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:id="@+id/adv_amount_layout"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/tvAdvanceAmountHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:textSize="@dimen/text_size_small"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/warmgrey"
+                android:text="@string/advance_amount_cs" />
+            <TextView
+                android:id="@+id/tvAdvanceAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_marginRight="@dimen/margin_large"
+                android:textSize="@dimen/text_size_small"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/text_black"
+                android:text="C$ 0.00" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_below="@+id/adv_amount_layout"
+            android:id="@+id/KncokOffAmountLayout"
+            >
+            <TextView
+                android:id="@+id/EtAdvanceKnockAmountHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/knock_off_amount"
+                android:textColor="@color/text_black"
+                android:layout_weight="1"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/EtAdvanceKnockAmount"
+                style="@style/App_EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_large"
+                android:fontFamily="@font/gilroy_semibold"
+                android:inputType="numberDecimal"
+                android:enabled="false"
+                android:hint="@string/enter_rate"
+                android:textColor="@color/text_black"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_small"
+            android:layout_below="@+id/KncokOffAmountLayout"
+            android:id="@+id/intrestLayout"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EtInterestHeader"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/interest"
+                android:textColor="@color/text_black"
+                android:layout_weight="1"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/EtInterest"
+                style="@style/App_EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_large"
+                android:fontFamily="@font/gilroy_semibold"
+                android:inputType="numberDecimal"
+                android:hint="@string/enter_rate"
+                android:enabled="false"
+                android:textColor="@color/text_black"
+                android:text="" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_small"
+            android:layout_below="@+id/intrestLayout"
+            android:paddingBottom="@dimen/margin_small"
+            android:id="@+id/commissonLayout"
+            >
+            <TextView
+                android:id="@+id/EtComissionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/commission"
+                android:textColor="@color/text_black"
+                android:layout_weight="1"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/EtComission"
+                style="@style/App_EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_large"
+                android:fontFamily="@font/gilroy_semibold"
+                android:inputType="numberDecimal"
+                android:hint="@string/enter_rate"
+                android:enabled="false"
+                android:textColor="@color/text_black"
+                android:text="" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_small"
+            android:layout_below="@+id/commissonLayout"
+            android:paddingBottom="@dimen/margin_small"
+            android:id="@+id/EtCurrecncyDevaluationLayout"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/currecncy_devaluation"
+                android:id="@+id/EtCurrecncyDevaluationHeader"
+                android:textColor="@color/text_black"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/EtCurrecncyDevaluation"
+                style="@style/App_EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:fontFamily="@font/gilroy_semibold"
+                android:inputType="numberDecimal"
+                android:hint="@string/enter_rate"
+                android:enabled="false"
+                android:textColor="@color/text_black"
+                android:text="" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_small"
+            android:id="@+id/legal_expence_layout"
+            android:layout_below="@+id/EtCurrecncyDevaluationLayout"
+            android:paddingBottom="@dimen/margin_small"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/legal_expense"
+                android:textColor="@color/text_black"
+                android:layout_weight="1"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/EtLegalExpense"
+                style="@style/App_EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_large"
+                android:fontFamily="@font/gilroy_semibold"
+                android:inputType="numberDecimal"
+                android:hint="@string/enter_rate"
+                android:textColor="@color/text_black"
+                android:enabled="false"
+                android:text="" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_height"
+            android:layout_margin="@dimen/margin_mic_small"
+            android:background="@color/light_grey"
+            android:gravity="center"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small"
+            android:layout_below="@+id/legal_expence_layout"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/amount_cs"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="@dimen/nav_header_height"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:text="C$ 0.00"
+                android:textColor="@color/text_black" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

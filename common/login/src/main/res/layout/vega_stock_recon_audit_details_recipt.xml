@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/print_main_layout"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="@dimen/print_layout_height"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="@string/logo"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_olam_logo"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+        app:layout_constraintLeft_toRightOf="@+id/iv_logo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_logo">
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/table_info_title"
+        android:layout_width="1600dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_logo"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="@drawable/rectangle_black_line_border"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:minLines="3"
+            android:padding="@dimen/margin_padding_size_small"
+            android:text="Stock Recon Details"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table_info1"
+        android:layout_width="1600dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_logo"
+        app:layout_constraintTop_toBottomOf="@+id/table_info_title">
+
+        <TableRow android:weightSum="16">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/recon_id"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/recon_date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/warehouse"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/plant"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/storage_location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/lot_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/material"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/system_weight"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/no_of_bags"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/type_of_bag"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/full_bag_count"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/half_bag_count"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/damaged_bags"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/no_of_damaged_bags"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/weight_loss"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:minLines="3"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/remarks"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recon_details"
+        android:layout_width="1600dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_logo"
+        app:layout_constraintTop_toBottomOf="@+id/table_info1"
+        tools:listitem="@layout/item_stock_recon_audit_details" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

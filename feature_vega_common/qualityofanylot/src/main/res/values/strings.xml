@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="qty_assesment">Lot Quality Assessment</string>
+    <string name="inspection_lot">Inspection Lot No</string>
+    <string name="reject">Reject</string>
+    <string name="accept">Accept</string>
+    <string name="parcentage">%</string>
+    <string name="reject_quality">Confirm Reject Quality</string>
+    <string name="atleast_one_value">Please record all params value</string>
+    <string name="confirm_quality_message">Accept Quality</string>
+    <string name="lot_quality_analysis">Lot Quality Analysis</string>
+    <string name="lot_quality_offline_summary">Lot Quality Offline Summary</string>
+    <string name="lot_number">Batch Number</string>
+    <string name="success_post">Quality Posted Successfully in SAP</string>
+    <string name="success_save">Quality Saved Successfully</string>
+    <string name="batch_number">Batch Number</string>
+    <string name="accept_quality">Confirm Quality to post</string>
+    <string name="save_quality">Confirm Quality to save</string>
+    <string name="view_lot">View Lot Quality</string>
+    <string name="create_lot">Create Lot Quality</string>
+    <string name="scan_lot_id">Scan LotId</string>
+    <string name="lot_id">Lot Id</string>
+    <string name="remove">Remove</string>
+    <string name="trans_no">Transaction Number</string>
+    <string name="vendor_name">Vendor Name</string>
+    <string name="store_quality">Store quality in DW DB</string>
+    <string name="update_quality">Update quality in SAP</string>
+    <string name="st_location">St Location</string>
+    <string name="date">Date</string>
+    <string name="or">--OR--</string>
+    <string name="enter_lot_id">Enter LOT ID</string>
+    <string name="select_from_inventory">Select From Inventory</string>
+    <string name="lots_summary">LOTs Summary</string>
+    <string name="secret_id">Secret Id </string>
+    <string name="enter_secret_id">Enter Secret ID</string>
+    <string name="scan_secret_id">Scan Secret ID</string>
+    <string name="search_by_lot_id">Search by Lot id</string>
+
+</resources>

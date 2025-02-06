@@ -1,0 +1,503 @@
+package com.olam.warehouse.vegax.qualityindo.ui.transaction
+
+import android.app.Activity
+import android.app.KeyguardManager
+import android.content.Context
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.Rect
+import android.os.Build
+import android.os.Bundle
+import android.provider.Settings
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.RecyclerView
+import androidx.work.WorkInfo
+import androidx.work.WorkManager
+import androidx.work.workDataOf
+import com.afollestad.materialdialogs.MaterialDialog
+import com.olam.warehouse.login.ui.quickpinaccess.createpin.VegaCreatePinActivity
+import com.olam.warehouse.master.vega.entity.VegaQualityWBDetails
+import com.olam.warehouse.presentation.adapter.setUpAdapter
+import com.olam.warehouse.presentation.ui.BaseFragment
+import com.olam.warehouse.presentation.utils.*
+import com.olam.warehouse.presentation.utils.extension.*
+import com.olam.warehouse.vegax.App
+import com.olam.warehouse.vegax.qualityindo.R
+import com.olam.warehouse.vegax.qualityindo.databinding.FragmentVegaIndoCoffeeQualityTransactionBinding
+import com.olam.warehouse.vegax.qualityindo.databinding.ItemVegaIndoQualityTransactionBinding
+import com.olam.warehouse.vegax.qualityindo.ui.VegaIndoCoffeeQualityViewModel
+import com.olam.warehouse.vegax.qualityindo.utils.MTNR
+import com.olam.warehouse.vegax.qualityindo.utils.PROCURE
+import com.olam.warehouse.vegax.qualityindo.utils.STO
+import com.olam.warehouse.vegax.qualityindo.utils.SUPPLIER
+import com.olam.warehouse.vegax.qualityindo.work.getQualityOneTimeRequestWorker
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
+/**
+ * Created by Baskaran Kannan on 4/23/2021.
+ */
+class VegaIndoCoffeeQualityTransactionFragment : BaseFragment() {
+    override val layoutResourceId = R.layout.fragment_vega_indo_coffee_quality_transaction
+    private lateinit var binding: FragmentVegaIndoCoffeeQualityTransactionBinding
+    private val vm: VegaIndoCoffeeQualityViewModel by viewModel()
+    private var qualityList = arrayListOf<VegaQualityWBDetails>()
+    private var grnSearchList = arrayListOf<VegaQualityWBDetails>()
+    private var grnSortList = arrayListOf<VegaQualityWBDetails>()
+    private var selectedReceiving = VegaQualityWBDetails()
+    private var callBack: CallBack? = null
+    private val REQUEST_CODE = 220
+    private val LOCK_REQUEST_CODE = 221
+    private val SECURITY_SETTING_REQUEST_CODE = 233
+
+    companion object {
+        fun newInstance() = VegaIndoCoffeeQualityTransactionFragment().putArgs {
+        }
+    }
+
+    interface CallBack {
+        fun replaceFragment(moveFrag: String, receivingData: Any, VegaQualityWBDetails: Any)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as? CallBack
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentVegaIndoCoffeeQualityTransactionBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initUI()
+    }
+
+    private fun initUI() {
+        PreferenceHelper.save(Constants.START_SYNC, false)
+        binding.clProgress.gone()
+        vm.qualityOfflineList.observe(viewLifecycleOwner, Observer { updateUI(it) })
+        vm.getQualityOfflineList()
+        /*vm.quality.observe(viewLifecycleOwner, Observer {moveSummary(it) })*/
+
+        binding.tvPending.setOnClickListener { moveToPending() }
+        binding.tvHistory.setOnClickListener { moveToHistory() }
+        /*val data1 = VegaReceiving(tmpWbId = "Tmp1234")
+        grnList.add(data1)
+        setupAdapter(grnList)*/
+        binding.etSearchVendor.onChange {
+            if (it.isNotEmpty()) {
+                grnSearchList.clear()
+                qualityList.filter { it.status == 4 }.forEach { item ->
+                    if (item.supplierName?.contains(it, true) == true || item.supplierCode?.contains(
+                            it,
+                            true
+                        ) == true
+                    ) grnSearchList.add(item)
+                }
+                setupAdapter(grnSearchList)
+            } else {
+                setupAdapter(qualityList.filter { it.status == 4 })
+            }
+        }
+        binding.tvSortByDate.setOnClickListener { sortByDate() }
+        binding.tvSync.setOnClickListener {
+            if (qualityList.filter { it.status != 4 }.isNotEmpty()) showConfirmDialog()
+            else activity?.toast(getString(R.string.no_data_found))
+        }
+        EnableSync(AppUtils.isOnline())
+    }
+
+    private fun updateUI(data: List<VegaQualityWBDetails>?) {
+        qualityList.clear()
+        data?.let { qualityList.addAll(it) }
+        moveToPending()
+    }
+
+    private fun moveToHistory() {
+        binding.clProgress.gone()
+        binding.etSearchVendor.gone()
+        binding.tvSortByDate.gone()
+        binding.tvSync.gone()
+        binding.tvHistory.setBackgroundColor(
+            ContextCompat.getColor(
+                binding.tvHistory.context,
+                com.olam.warehouse.presentation.R.color.colorPrimaryOfi1
+            )
+        )
+        binding.tvPending.setBackgroundColor(
+            ContextCompat.getColor(
+                binding.tvHistory.context,
+                com.olam.warehouse.presentation.R.color.grey_light
+            )
+        )
+        binding.tvPendingCount.gone()
+        setupAdapter(qualityList.filter { it.status == 4 })
+    }
+
+    private fun moveToPending() {
+        binding.etSearchVendor.gone()
+        binding.tvSortByDate.gone()
+        binding.tvSync.visible()
+        binding.tvPending.setBackgroundColor(
+            ContextCompat.getColor(
+                binding.tvHistory.context,
+                com.olam.warehouse.presentation.R.color.colorPrimaryOfi1
+            )
+        )
+        binding.tvHistory.setBackgroundColor(
+            ContextCompat.getColor(
+                binding.tvHistory.context,
+                com.olam.warehouse.presentation.R.color.grey_light
+            )
+        )
+        binding.tvPendingCount.visible()
+        val count = qualityList.filter { it.status != 4 }
+        binding.tvPendingCount.text = count.size.toString()
+        if (count.size > 0) binding.tvPendingCount.visible() else binding.tvPendingCount.gone()
+        EnableSync(count.size > 0 && AppUtils.isOnline())
+        setupAdapter(qualityList.filter { it.status != 4 })
+    }
+
+    private fun sortByDate() {
+        if (qualityList.filter { it.status == 4 }.isNotEmpty()) {
+            grnSortList = qualityList.filter { it.status == 4 } as ArrayList<VegaQualityWBDetails>
+            if (grnSortList.size > 0)
+                setupAdapter(grnSortList.asReversed())
+        }
+    }
+
+    private fun setupAdapter(itemList: List<VegaQualityWBDetails>) {
+        if (itemList.size > 0) {
+            binding.rvTransaction.visible()
+            binding.tvNoData.gone()
+        } else {
+            binding.rvTransaction.gone()
+            binding.tvNoData.visible()
+        }
+        binding.rvTransaction.setUpAdapter(
+            itemList as ArrayList, R.layout.item_vega_indo_quality_transaction,
+            ItemVegaIndoQualityTransactionBinding::inflate,
+            { it, pos, bindItem ->
+                bindItem.tvOffloadTempIdValue.text = it.weighBridgeId
+                bindItem.tvVendorValue.text =
+                    if (it.supplierName?.isNotEmpty() == true) it.supplierName else it.transportVendorCode
+                bindItem.tvMaterialValue.text = it.materialName
+                bindItem.tvBatchNoValue.text = it.vehicleNumber
+                bindItem.tvProcureTypeValue.text = it.weighBridgeType
+                bindItem.tvErrorValue.text =
+                        /*if (it.syncStarted == 1) getString(R.string.sync_already_triggered) else*/
+                    it.message
+                //if(it.isSynced) ivScaleClose.gone() else ivScaleClose.visible()
+                if ("null" != it.erdat) {
+                    val times = it.erdat?.split('(', ')')
+                    bindItem.tvDateValue.text = times?.get(1)?.let { it1 ->
+                        DateUtils.getUTCDateTime(
+                            it1,
+                            App.getAppContext()
+                        )
+                    }
+                }
+                //ivScaleClose.setOnClickListener {view -> showItemDeleteDialog(it.tmpWbId) }
+                bindItem.ivEdit.setOnClickListener { view ->
+                    val popupMenu: PopupMenu = PopupMenu(requireActivity(), view)
+                    popupMenu.menuInflater.inflate(
+                        com.olam.warehouse.login.R.menu.transaction_menu,
+                        popupMenu.menu
+                    )
+                    popupMenu.menu.findItem(com.olam.warehouse.login.R.id.action_Sync).isVisible =
+                        false
+                    popupMenu.menu.findItem(com.olam.warehouse.login.R.id.action_copy).isVisible =
+                        false
+                    if (it.status == 4) {
+                        popupMenu.menu.findItem(com.olam.warehouse.login.R.id.action_edit).isVisible =
+                            true
+                    } else {
+                        popupMenu.menu.findItem(com.olam.warehouse.login.R.id.action_edit).isVisible =
+                            true
+                        popupMenu.menu.findItem(com.olam.warehouse.login.R.id.action_edit1).isVisible =
+                            true
+                        popupMenu.menu.findItem(com.olam.warehouse.login.R.id.action_delete).isVisible =
+                            true
+                    }
+                    popupMenu.setOnMenuItemClickListener { item ->
+                        when (item.itemId) {
+                            com.olam.warehouse.login.R.id.action_edit -> {
+                                moveViewSummary(it)
+                            }
+                            com.olam.warehouse.login.R.id.action_edit1 -> {
+                                moveEdit(it)
+                            }
+                            com.olam.warehouse.login.R.id.action_delete -> {
+                                showItemDeleteDialog(it.weighBridgeId.toString())
+                            }
+                        }
+                        true
+                    }
+                    popupMenu.show()
+                }
+                if (it.message.isNullOrEmpty() || it.status == 4) {
+                    bindItem.tvReadMore.gone()
+                    bindItem.tvError.gone()
+                    bindItem.tvErrorValue.gone()
+                } else {
+                    bindItem.tvReadMore.visible()
+                    bindItem.tvError.visible()
+                    bindItem.tvErrorValue.visible()
+                }
+                if (it.message.isNullOrEmpty() && it.status != 4) bindItem.clErrorStatus.gone() else bindItem.clErrorStatus.visible()
+                bindItem.tvReadMore.setOnClickListener { view -> showErrorDialog(it.message.toString()) }
+
+                //displayFragment(VegaSynStatusProgressFragment.newInstance(itemList), false)
+            }, {
+                // movePriceCalculationSummary(this)
+            })
+    }
+
+    private fun moveEdit(it: VegaQualityWBDetails) {
+        it.isCopy = false
+        if (it.weighBridgeType.equals(PROCURE)) moveToSupplier(it) else moveToMtnr(it)
+    }
+
+    private fun moveToSupplier(it: VegaQualityWBDetails) {
+        callBack?.replaceFragment(SUPPLIER, PROCURE, it)
+    }
+
+    private fun moveToMtnr(it: VegaQualityWBDetails) {
+        callBack?.replaceFragment(MTNR, STO, it)
+    }
+
+
+    private fun showConfirmDialog() {
+        MaterialDialog(requireContext()).show {
+            message(R.string.sync_all)
+            UIUtils.getMetirialCustomView(
+                this,
+                getString(R.string.proceed),
+                getString(R.string.cancel),
+                {
+                    startSync(qualityList.filter { it.status != 4 }, 0)
+//                checkQuickPin()
+                },
+                { dismiss() })
+        }
+    }
+
+    private fun checkQuickPin() {
+        val isDevicePin = PreferenceHelper.get(Constants.IS_DEVICE_PIN, false)
+        val createdNewPin = PreferenceHelper.get(Constants.QUICK_PIN, "")
+        if (isDevicePin) {
+            authenticateApp()
+        } else {
+            if (createdNewPin.isEmpty()) {
+                startSync(qualityList.filter { it.status != 4 }, 0)
+            } else {
+                val intent = Intent(activity, VegaCreatePinActivity::class.java)
+                intent.putExtra(UIUtils.EXTRA_SET_PIN, false)
+                startActivityForResult(intent, REQUEST_CODE)
+            }
+        }
+    }
+
+    //method to authenticate app
+    private fun authenticateApp() {
+        //Get the instance of KeyGuardManager
+        val keyguardManager = activity?.getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+
+        //Check if the device version is greater than or equal to Lollipop(21)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            //Create an intent to open device screen lock screen to authenticate
+            //Pass the Screen Lock screen Title and Description
+            val i = keyguardManager.createConfirmDeviceCredentialIntent(
+                resources.getString(com.olam.warehouse.login.R.string.unlock),
+                resources.getString(com.olam.warehouse.login.R.string.confirm_pattern)
+            )
+            try {
+                //Start activity for result
+                startActivityForResult(i, LOCK_REQUEST_CODE)
+            } catch (e: Exception) {
+
+                //If some exception occurs means Screen lock is not set up please set screen lock
+                //Open Security screen directly to enable patter lock
+                val intent = Intent(Settings.ACTION_SECURITY_SETTINGS)
+                try {
+
+                    //Start activity for result
+                    startActivityForResult(intent, SECURITY_SETTING_REQUEST_CODE)
+                } catch (ex: Exception) {
+
+                    //If app is unable to find any Security settings then user has to set screen lock manually
+//                    textView.setText(resources.getString(R.string.setting_label))
+                }
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when (requestCode) {
+            LOCK_REQUEST_CODE -> if (resultCode == Activity.RESULT_OK) {
+                //If screen lock authentication is success update text
+                startSync(qualityList.filter { it.status != 4 }, 0)
+            } else {
+                //If screen lock authentication is failed update text
+//                textView.setText(resources.getString(R.string.unlock_failed))
+            }
+            SECURITY_SETTING_REQUEST_CODE ->                 //When user is enabled Security settings then we don't get any kind of RESULT_OK
+                //So we need to check whether device has enabled screen lock or not
+                if (isDeviceSecure()) {
+                    //If screen lock enabled show toast and start intent to authenticate user
+                    activity?.toast(resources.getString(com.olam.warehouse.login.R.string.device_is_secure))
+                    authenticateApp()
+                } else {
+                    //If screen lock is not enabled just update text
+//                    textView.setText(resources.getString(R.string.security_device_cancelled))
+                }
+            REQUEST_CODE -> if (resultCode == Activity.RESULT_OK) {
+                //If screen lock authentication is success update text
+                startSync(qualityList.filter { it.status != 4 }, 0)
+            } else {
+                //If screen lock authentication is failed update text
+//                textView.setText(resources.getString(R.string.unlock_failed))
+            }
+        }
+    }
+
+    /**
+     * method to return whether device has screen lock enabled or not
+     */
+    private fun isDeviceSecure(): Boolean {
+        val keyguardManager = activity?.getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        //this method only work whose api level is greater than or equal to Jelly_Bean (16)
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN && keyguardManager.isKeyguardSecure
+        //You can also use keyguardManager.isDeviceSecure(); but it requires API Level 23
+    }
+
+    private fun showItemDeleteDialog(tmpWbId: String) {
+        MaterialDialog(requireContext()).show {
+            message(com.olam.warehouse.presentation.R.string.delete_msg)
+            UIUtils.getMetirialCustomView(
+                this,
+                getString(R.string.proceed),
+                getString(R.string.cancel),
+                {
+                    vm.deleteAllItem(tmpWbId)
+                },
+                { dismiss() })
+        }
+    }
+
+    private fun moveViewSummary(vegaReceiving: VegaQualityWBDetails) {
+        selectedReceiving = vegaReceiving
+        vegaReceiving.isCopy = true
+        if (vegaReceiving.weighBridgeType.equals(PROCURE)) moveToSupplier(vegaReceiving) else moveToMtnr(vegaReceiving)
+    }
+
+    private fun showErrorDialog(title: String) {
+        MaterialDialog(requireContext()).show {
+            message(null, title)
+            positiveButton(
+                text = UIUtils.getSpannedText(
+                    getString(com.olam.warehouse.presentation.R.string.ok),
+                    true
+                )
+            ) {
+                dismiss()
+            }
+        }
+    }
+
+    private fun EnableSync(flag: Boolean) {
+        binding.tvSync.isEnabled = flag
+        if (flag)
+            ViewCompat.setBackgroundTintList(
+                binding.tvSync,
+                context?.let {
+                    ContextCompat.getColorStateList(
+                        it,
+                        com.olam.warehouse.presentation.R.color.colorPrimaryOfi
+                    )
+                }
+            )
+        else
+            ViewCompat.setBackgroundTintList(
+                binding.tvSync,
+                context?.let {
+                    ContextCompat.getColorStateList(
+                        it,
+                        com.olam.warehouse.presentation.R.color.grey
+                    )
+                }
+            )
+
+    }
+
+    var syncCount = 0
+    private fun startSync(grnList1: List<VegaQualityWBDetails>, _index: Int) {
+        PreferenceHelper.save(Constants.START_SYNC, true)
+        if (_index == 0) {
+            binding.clProgress.visible()
+            binding.textViewCount.text = grnList1.size.toString()
+            binding.progressBar.max = grnList1.size
+            binding.progressBar.progress = grnList1.size
+            binding.clProgress.setBackgroundColor(Color.parseColor("#60000000"))
+            //binding.clCardProgress.setBackgroundColor(Color.parseColor("#70000000"))
+        }
+        val _element = grnList1[_index]
+        //grnList1.forEachIndexed { _index, _element ->
+        val input = workDataOf(UIUtils.TEMP_ID to _element.weighBridgeId, UIUtils.WB_ID to _element.weighBridgeType)
+        val worker = getQualityOneTimeRequestWorker(input, _index)
+        enQueueWorkerWithName(worker, _element.weighBridgeId.toString(), requireContext())
+        WorkManager.getInstance(App.getAppContext()).getWorkInfoByIdLiveData(worker.id)
+            .observe(viewLifecycleOwner, Observer { workInfo ->
+                if (workInfo != null) {
+                    when (workInfo.state) {
+                        WorkInfo.State.SUCCEEDED -> {
+                            val position = AppUtils.posExtension(workInfo.tags) + 1
+                            syncCount++
+                            binding.textViewCount.text = grnList1.size.minus(syncCount).toString()
+                            binding.progressBar.progress = grnList1.size.minus(syncCount)
+                            if (syncCount != grnList1.size) startSync(grnList1, syncCount)
+                            if (syncCount == grnList1.size) {
+                                syncCount = 0
+                                binding.clProgress.gone()
+                                PreferenceHelper.save(Constants.START_SYNC, false)
+                            }
+//                                    hideLoading()
+                        }
+                        WorkInfo.State.FAILED -> {
+                            val position = AppUtils.posExtension(workInfo.tags) + 1
+                            syncCount++
+                            binding.textViewCount.text = grnList1.size.minus(syncCount).toString()
+                            binding.progressBar.progress = grnList1.size.minus(syncCount)
+                            if (syncCount != grnList1.size) startSync(grnList1, syncCount)
+                            if (syncCount == grnList1.size) {
+                                syncCount = 0
+                                binding.clProgress.gone()
+                                PreferenceHelper.save(Constants.START_SYNC, false)
+                            }
+//                                    hideLoading()
+                        }
+                        WorkInfo.State.RUNNING -> {
+                        }
+                        else -> {}
+                    }
+                }
+            })
+        //if (_index == grnList1.size - 1) {}
+        //}
+    }
+}
+
+class OverlapDecoration : RecyclerView.ItemDecoration() {
+    var vertOverlap = -3
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        outRect.set(vertOverlap, 0, 0, 0)
+    }
+}

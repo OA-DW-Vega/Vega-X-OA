@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="dispatch_truck_list">Dispatch - Truck List</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="truck_list">Truck List</string>
+    <string name="truck_number">Truck No</string>
+    <string name="weigh_bridge_id">Weigh Bridge ID</string>
+    <string name="supplier">Supplier</string>
+    <string name="weight">Weight</string>
+    <string name="no_of_bags">No of Bags</string>
+    <string name="date">Date</string>
+
+    <string name="dispatch_mtn_t">Dispatch - MTN - T</string>
+    <string name="waybill_number">Waybill Number</string>
+    <string name="destination_warehouse">Destination</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="select_dispatch_warehouse">Select Dispatch WH</string>
+    <string name="confirm_dispatch">Confirm Dispatch</string>
+    <string name="error_valid_waybill_number">Enter a valid Waybill Number</string>
+    <string name="error_valid_destination_wh">Enter a valid Destination</string>
+    <string name="error_valid_truck_no">Enter a valid Truck No</string>
+    <string name="error_valid_dispatch_lots">Enter a valid Dispatch Lots</string>
+    <string name="error_valid_obd_no">Enter a valid OBD No</string>
+    <string name="error_valid_driver_name">Enter a valid Driver Name</string>
+
+    <string name="dispatch_summary">Dispatch Summary</string>
+    <string name="gross_weight">Gross Weight</string>
+    <string name="truck_tare_weight">Truck Tare Weight</string>
+    <string name="bag_tare_weight">Bag Tare Weight</string>
+    <string name="net_weight">NET Weight</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_dispatch_message">Confirm Dispatch</string>
+
+    <string name="success_dispatch">Dispatch Successful</string>
+    <string name="success_dispatch_offline">Dispatch Successful Offline</string>
+    <string name="truck_id_is">Truck ID:</string>
+    <string name="obd_no">OBD No</string>
+    <string name="lots_to_dispatch">LOTs to Dispatch</string>
+    <string name="dispatch_process">Dispatch Process</string>
+    <string name="lot_id">Lot Id</string>
+    <string name="origin">Origin</string>
+    <string name="sloc">Storage Location</string>
+    <string name="kor">KOR</string>
+    <string name="weight_to_dispatch">Weight to Dispatch</string>
+    <string name="lot_list">Lot List</string>
+    <string name="add_dispatch_wh">Add Lot to Dispatch WH</string>
+    <string name="stocks_count">Stocks : </string>
+    <string name="delete_msg">Are you sure? do you want delete this item</string>
+    <string name="deliveryqty">DeliveryQty</string>
+    <string name="exceed_weight">Should not exceed actual weight</string>
+    <string name="stockqty">StockQty</string>
+    <string name="delivery_no">Delivery No : </string>
+    <string name="delivery">Delivery</string>
+    <string name="material">Material</string>
+    <string name="batch_no">Batch No</string>
+    <string name="batch_no_empty">Batch no should not be empty</string>
+    <string name="dispatch_wh">Dispatch WH</string>
+    <string name="select_location">Select Location</string>
+    <string name="dispatch_confirm_dispatch">Confirm Dispatch</string>
+</resources>

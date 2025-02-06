@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white">
+
+    <TextView
+        android:id="@+id/tvGrnHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/transaction_details_offloading"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPending"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_mic_dark"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/pending"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGrnHeading" />
+
+    <TextView
+        android:id="@+id/tvPendingCount"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="@dimen/margin_mic_small"
+        android:layout_marginEnd="@dimen/margin_mic_small"
+        android:background="@drawable/circle_shape"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/tvHistory"
+        app:layout_constraintTop_toBottomOf="@+id/tvGrnHeading"
+        tools:text="30" />
+
+    <TextView
+        android:id="@+id/tvHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_light"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/transaction_history"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPending"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPending"
+        app:layout_constraintTop_toTopOf="@+id/tvPending" />
+
+    <EditText
+        android:id="@+id/etSearchVendor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_grey_border"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/margin_xlarge"
+        android:drawableTint="@color/grey"
+        android:gravity="start"
+        android:hint="@string/search_vendor_name"
+        android:padding="@dimen/margin_medium"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPending" />
+
+    <TextView
+        android:id="@+id/tvSortByDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_sort_black"
+        android:drawablePadding="@dimen/margin_medium"
+        android:drawableTint="@color/grey"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/sort_by_date"
+        android:textColor="@color/text_black"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearchVendor" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSync"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSortByDate"
+        tools:listitem="@layout/item_vega_indo_offloading_transaction" />
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/no_data_found"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tvSync"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSortByDate" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clProgress"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#00000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCardProgress"
+            android:layout_width="210dp"
+            android:layout_height="260dp"
+            android:background="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:indeterminate="false"
+                android:max="1"
+                android:padding="@dimen/margin_mic_small"
+                android:progress="1"
+                android:progressDrawable="@drawable/progress_circle"
+                android:progressTint="@color/grey_lit"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:elevation="5dp"
+                android:indeterminate="false"
+                android:padding="@dimen/margin_mic_small"
+                android:progressDrawable="@drawable/progress_circle"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="152dp"
+                android:gravity="center"
+                android:text="00"
+                android:textSize="60sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mic_small"
+                android:text="@string/syncing"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvSync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryOfi"
+        android:clickable="true"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        android:text="@string/sync"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

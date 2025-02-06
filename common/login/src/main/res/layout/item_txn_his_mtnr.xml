@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TableLayout
+        android:id="@+id/table_info"
+        android:layout_width="@dimen/print_table_width"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TableRow
+            android:id="@+id/tr_sub_header"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/tv_s_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/tv_delivery_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+
+            <TextView
+                android:id="@+id/tv_weighbridge_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+
+            <TextView
+                android:id="@+id/tv_qnty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/tv_uom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+
+
+            <TextView
+                android:id="@+id/tv_driver_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/tv_truck_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:id="@+id/tv_transporter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/sto_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/tv_transit_loss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_black_line_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="NA"
+                android:visibility="gone"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+
+
+
+
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

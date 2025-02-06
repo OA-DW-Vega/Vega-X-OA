@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/margin_very_small"
+        android:layout_marginTop="@dimen/margin_very_small"
+        android:layout_marginRight="@dimen/margin_very_small"
+        android:layout_marginBottom="@dimen/margin_very_small"
+        android:fontFamily="@font/gilroy_regular"
+        android:background="@drawable/border"
+        android:hint="@string/search_question"
+        android:imeActionLabel="@string/search"
+        android:imeOptions="actionSearch"
+        android:paddingStart="@dimen/text_size_medium"
+        tools:ignore="RtlSymmetry" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRelevantMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/scanbale_corner"
+        android:backgroundTint="@color/grey_lits"
+        android:padding="@dimen/margin_mic_small"
+        android:layout_margin="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="@dimen/font_16"
+        android:text="@string/relavant_msg"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_faq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_faq" />
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:text="@string/no_data_found"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+
+</LinearLayout>

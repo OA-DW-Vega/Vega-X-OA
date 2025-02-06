@@ -1,0 +1,64 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+<string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">History Transactions Ghana Cocoa</string>
+    <string name="okay">OK</string>
+    <string name="transporter">Transporter :</string>
+    <string name="truck_no_with_colon">Truck No :</string>
+    <string name="truck_details">Truck Details :</string>
+    <string name="driving_license">Driving License :</string>
+    <string name="driver_phone">Driver Phone No :</string>
+    <string name="driver_name_with_colon">Driver Name :</string>
+    <string name="driver_details">Driver Details :</string>
+    <string name="evacuation_certi">Evacuation Certificate :</string>
+    <string name="material_code">Material :</string>
+    <string name="waybill_no">Waybill No :</string>
+    <string name="uom">Unit of Measure :</string>
+    <string name="destination_wh_with_colon">Destination WH :</string>
+    <string name="date_with_colon">Date :</string>
+    <string name="wb_id">Weighbridge Id :</string>
+    <string name="unit_id">Unit Head :</string>
+    <string name="vendor_name">Vendor Name :</string>
+    <string name="delivery_no">Delivery No :</string>
+    <string name="history_trans_details">History Transaction Details :</string>
+    <string name="history_transactions_mtnt">History Transactions - MTNT</string>
+    <string name="no_data_found">No Transactions Found</string>
+    <string name="transactions_list">Transaction List :</string>
+    <string name="to_date">To Date :</string>
+    <string name="from_date">From Date :</string>
+    <string name="history_transactions_grn">History Transactions - GRN</string>
+
+    <string name="history_transactions_fgrn">History Transactions - FGRN</string>
+    <string name="history_transactions_rmin">History Transactions - RMIN</string>
+    <string name="price_per_unit">Price per Unit :</string>
+    <string name="total_price">Total Price :</string>
+    <string name="storage_location">Storage Location :</string>
+    <string name="quality_details">Quality Details</string>
+    <string name="quality">Quality :</string>
+    <string name="sto">STO Number :</string>
+    <string name="transitLoss">Transit Loss :</string>
+    <string name="quality_analysis">Quality Analysis :</string>
+    <string name="value">Value :</string>
+
+    <string name="grn_number">GRN Number :</string>
+    <string name="wh_receipt_number_colon">WH Receipt No :</string>
+    <string name="vendor_code">Vendor Code :</string>
+    <string name="history_transactions_mtnr">History Transactions - MTN-R</string>
+    <string name="history_transactions">History Transactions</string>
+    <string name="select_history_transactions">Select History Transactions :</string>
+    <string name="quantity">Quantity :</string>
+    <string name="sending_wh_colon">Sending WH :</string>
+
+
+    <string name="date">Date :</string>
+    <string name="processing_type">Processing Type :</string>
+    <string name="drying_loss">Drying Loss</string>
+
+    <string name="ponumber">Po Number :</string>
+    <string name="grn_price">GRN price</string>
+    <string name="total_grn_number">Total price per unit:</string>
+    <string name="material_description">Material Description:</string>
+    <string name="material_name_of_fgrn">Material of FGRN:</string>
+
+
+</resources>

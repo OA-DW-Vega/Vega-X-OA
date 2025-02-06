@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:gravity="center|start"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/view_bale_ids"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gilroy_semibold"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_smedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBaleHeader"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorSecondaryGrey"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center|start"
+        android:paddingStart="16dp"
+        android:text="No. of Bales:"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvBaleCount"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorSecondaryGrey"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center|start"
+        android:paddingStart="4dp"
+        android:text="20"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvBaleHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvBaleHeader"
+        app:layout_constraintTop_toTopOf="@id/tvBaleHeader" />
+
+    <TextView
+        android:id="@+id/tvBaleId"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center|start"
+        android:paddingStart="16dp"
+        android:text="@string/bale_id"
+        android:background="@color/colorSecondaryGrey"
+        android:textColor="@color/text_black"
+        app:layout_constraintEnd_toStartOf="@+id/tvGrade"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBaleHeader" />
+
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorSecondaryGrey"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center|start"
+        android:text="@string/weight"
+        android:textColor="@color/text_black"
+        app:layout_constraintBottom_toBottomOf="@id/tvBaleId"
+        app:layout_constraintEnd_toStartOf="@id/vi_delete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvGrade"
+        app:layout_constraintTop_toTopOf="@id/tvBaleId" />
+
+    <View
+        android:id="@+id/vi_delete"
+        android:layout_width="72dp"
+        android:layout_height="0dp"
+        android:background="@color/colorSecondaryGrey"
+        app:layout_constraintBottom_toBottomOf="@id/tvBaleId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvWeight"
+        app:layout_constraintTop_toTopOf="@id/tvBaleId" />
+
+    <TextView
+        android:id="@+id/tvGrade"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorSecondaryGrey"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="center"
+        android:text="Grade"
+        android:textColor="@color/text_black"
+        app:layout_constraintBottom_toBottomOf="@id/tvBaleId"
+        app:layout_constraintEnd_toStartOf="@+id/tvWeight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvBaleId"
+        app:layout_constraintTop_toTopOf="@id/tvBaleId" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnOk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBaleId"
+        tools:listitem="@layout/item_bale_summary" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="Ok"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

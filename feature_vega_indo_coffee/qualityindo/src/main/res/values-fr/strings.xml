@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="quality_analysis">Analyse de la qualité</string>
+    <string name="supplier">Fournisseur</string>
+    <string name="mtnr">MTN-R</string>
+    <string name="post_processing_quality">Qualité post-traitement</string>
+    <string name="search">rechercher</string>
+    <string name="quality_offline_list">Afficher la liste de qualité hors ligne</string>
+    <string name="back_navigation">navigation</string>
+    <string name="no_data">Aucune donnée disponible</string>
+    <string name="weigh_bridge_id">Identifiant du pont-bascule</string>
+    <string name="test_str">18GRD00028</string>
+    <string name="weight">Poids</string>
+    <string name="qty_assesment">Évaluation de la qualité-</string>
+    <string name="batch_no">Lot No</string>
+    <string name="proceed">Procéder</string>
+    <string name="percentage">%</string>
+    <string name="confirm_Quty_message">Accepter la qualité</string>
+    <string name="confirm_Grn_message">Confirmer GRN</string>
+    <string name="sort_by_im">Trier par <font fgcolor='#FFFFFF'>*</font></string>
+    <string name="truck_no">Camion No</string>
+    <string name="no_of_bags">Nombre de sacs</string>
+    <string name="date">Date</string>
+    <string name="reject">Rejeter</string>
+    <string name="accept">Accepter</string>
+    <string name="confirm_reject_message">Voulez-vous rejeter des données d’évaluation de qualité?</string>
+    <string name="enter_all_mandatory_fields">Veuillez saisir tous les champs obligatoires</string>
+    <string name="quality_success">Qualité approuvée avec succès</string>
+    <string name="quality_reject_success">Qualité rejetée avec succès</string>
+    <string name="new_lot_id_created">Un nouvel identifiant de lot a été créé avec succès \n</string>
+    <string name="lot_list">Liste des lots</string>
+    <string name="no_data_found">Aucune donnée trouvée</string>
+    <string name="add_weight">Ajouter du poids</string>
+    <string name="st_location">St Emplacement</string>
+    <string name="end_pile_lot">Pile d’extrémité/lot</string>
+    <string name="create_grn">Créer un GRN</string>
+    <string name="qc_status">Statut Qc</string>
+    <string name="qc_done">Faite</string>
+    <string name="qc_not_done">En instance</string>
+    <string name="batch_error">Veuillez entrer le numéro de lot</string>
+    <string name="transaction_history">Historique des transactions</string>
+    <string name="search_vendor_name">Rechercher le nom du fournisseur</string>
+    <string name="sort_by_date">Trier par date</string>
+    <string name="receiving_location">Lieu de réception</string>
+    <string name="procure_type">Type d’approvisionnement</string>
+    <string name="sap_error_message">Message d’erreur SAP</string>
+    <string name="read_more">Lire la suite...</string>
+    <string name="transaction_details_quality">Détails de la transaction - Qualité</string>
+    <string name="sync_all">Voulez-vous synchroniser toutes les données hors ligne vers le cloud ?</string>
+    <string name="cancel">Annuler</string>
+    <string name="confirm">Confirmer</string>
+    <string name="quality_completed_successfully">Qualité terminée avec succès</string>
+
+</resources>

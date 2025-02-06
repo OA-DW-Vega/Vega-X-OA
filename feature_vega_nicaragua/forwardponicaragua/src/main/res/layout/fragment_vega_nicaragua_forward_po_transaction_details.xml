@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="start"
+        android:padding="@dimen/margin_small"
+        android:text="@string/forward_po_creation_transaction_details"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnProceed"
+        android:layout_below="@+id/title">
+
+        <LinearLayout
+            android:id="@+id/llFgrn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="0dp"
+                android:text="@string/material"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:background="@drawable/shape_coffee_rect_white_bg"
+                android:padding="@dimen/margin_mic_small">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spMaterial"
+                    style="@style/Widget.AppCompat.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:backgroundTint="@color/black"
+                    android:dropDownWidth="1000dp"
+                    android:dropDownHeight="150dp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:hint="Select Quality Grade"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvQualityGrade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="0dp"
+                android:text="@string/quality_grade"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:background="@drawable/shape_coffee_rect_white_bg"
+                android:padding="@dimen/margin_mic_small">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spGrade"
+                    style="@style/Widget.AppCompat.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:backgroundTint="@color/black"
+                    android:dropDownWidth="1000dp"
+                    android:dropDownHeight="150dp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:hint="Select Quality Grade"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryOfi">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/colorPrimaryOfi"
+            android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+            android:drawablePadding="@dimen/margin_padding_size_small"
+            android:drawableTint="@color/white"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="@string/proceed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium" />
+    </RelativeLayout>
+</RelativeLayout>

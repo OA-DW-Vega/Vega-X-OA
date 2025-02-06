@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/truck_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/text_size_medium"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        tools:text="1949322398" />
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/truck_id"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_small"
+            android:text="@string/bag_refraction_type"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:enabled="true"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_small"
+            android:text="@string/count"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/layout_border"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_large"
+            android:text="@string/torn"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tvTorn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_grey_border"
+            android:enabled="true"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_large"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/second"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/layout_border"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_large"
+            android:text="@string/humid"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tvHumid"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_grey_border"
+            android:enabled="true"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_large"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="100" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fourth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/third"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/layout_border"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_large"
+            android:text="@string/recondition"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRecondition"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_grey_border"
+            android:enabled="true"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin_large"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="100" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fifth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fourth"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_medium"
+            android:layout_weight="1"
+            android:fontFamily="@font/gilroy_regular"
+            android:gravity="end"
+            android:text="@string/total"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/text_size_medium"
+            android:layout_weight="1"
+            android:enabled="true"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="100" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryOfi"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</RelativeLayout>

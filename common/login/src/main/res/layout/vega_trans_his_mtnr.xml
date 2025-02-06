@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/print_main_layout"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+    <ImageView
+        android:id="@+id/ivOlamLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:padding="36dp"
+        android:src="@drawable/ic_olam_logo"
+        android:layout_marginBottom="20dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="@string/transaction_history_title"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/ivOlamLogo"/>
+    <TableLayout
+        android:id="@+id/table_info"
+        android:layout_width="@dimen/print_table_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivOlamLogo">
+        <TableRow
+            android:id="@+id/tr_header"
+            android:weightSum="10">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/txn_s_no"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/delivery_no"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/weighbridge_id"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/txn_date"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/txn_qnty"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/unit_of_measure"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/tvDriverNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:minLines="2"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/driver_name"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+
+            <TextView
+                android:id="@+id/tvTruckNoLabel"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/truck_no1"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:id="@+id/tvTransporterLabel"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/transporter"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:id="@+id/tvTStoNumberLabel"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:text="@string/sto_number"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+            <TextView
+                android:id="@+id/tvTransitLossLabel"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:minLines="2"
+                android:background="@drawable/rectangle_print_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="left"
+                android:padding="@dimen/margin_padding_size_small"
+                android:visibility="gone"
+                android:text="@string/transit_loss"
+                android:textColor="@color/transparent_black"
+                android:textSize="@dimen/text_size_large" />
+
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListMtnr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_txn_his_mtnr"
+            app:layout_constraintTop_toBottomOf="@+id/table_info"
+            app:layout_constraintRight_toRightOf="@+id/table_info"
+            app:layout_constraintLeft_toLeftOf="@+id/table_info">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

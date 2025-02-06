@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tvClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@drawable/circle_shape"
+        android:backgroundTint="@color/black"
+        android:padding="@dimen/margin_min"
+        android:src="@drawable/ic_close_white_24dp" />
+
+    <LinearLayout
+        android:id="@+id/typeSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvClose"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvPlantSync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/plant"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@color/colorPrimaryOfi1"
+            android:padding="@dimen/margin_padding_size_small"/>
+
+        <TextView
+            android:id="@+id/tvMaterialSync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/material"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@color/grey_light"
+            android:padding="@dimen/margin_padding_size_small"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/typeSelection"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPlantHeadMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingStart="@dimen/margin_very_small"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:text="@string/plant_details"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_lit"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPlantHeadTwo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.3"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="start"
+                android:padding="@dimen/margin_very_small"
+                android:text="@string/plant"
+                android:textColor="@color/text_black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:padding="@dimen/margin_very_small"
+                android:text="@string/last_sync_time"
+                android:textColor="@color/text_black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight=".5"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:padding="@dimen/margin_very_small"
+                android:text="@string/sync"
+                android:textColor="@color/text_black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSyncDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_vega_inventory_sync" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/probressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="4dp"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/thirdparty_summary"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnProceed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMaterial"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:text="@string/from_vendor"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintEnd_toStartOf="@+id/tvStage"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:text="@string/to_vendor"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMaterial"
+                        app:layout_constraintEnd_toStartOf="@+id/tvProcees"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvMaterial"
+                        app:layout_constraintTop_toTopOf="@id/tvMaterial" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProcees"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_min"
+                        android:paddingEnd="@dimen/margin_small"
+                        android:text="@string/date"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMaterial"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvStage"
+                        app:layout_constraintTop_toTopOf="@id/tvMaterial" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMaterialValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintEnd_toStartOf="@+id/tvStage"
+                        app:layout_constraintStart_toStartOf="@id/tvMaterial"
+                        app:layout_constraintTop_toBottomOf="@id/tvMaterial"
+                        tools:text="Description" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStageValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMaterialValue"
+                        app:layout_constraintEnd_toStartOf="@+id/tvProcees"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvMaterialValue"
+                        app:layout_constraintTop_toTopOf="@id/tvMaterialValue"
+                        tools:text="Drying" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProceesValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_min"
+                        android:paddingEnd="@dimen/margin_small"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMaterialValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvStageValue"
+                        app:layout_constraintTop_toTopOf="@id/tvMaterialValue"
+                        tools:text="1000 Kg" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBom"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:text="@string/material"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintEnd_toStartOf="@+id/tvGrnPrice"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvMaterialValue" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGrnPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:text="@string/grn_price_per_unit"
+                        android:textColor="@color/text_black"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvBom"
+                        app:layout_constraintEnd_toStartOf="@+id/tvTotalGrnPrice"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvBom"
+                        app:layout_constraintTop_toTopOf="@id/tvBom"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalGrnPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:text="@string/total_grn_price"
+                        android:textColor="@color/text_black"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvBom"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvGrnPrice"
+                        app:layout_constraintTop_toTopOf="@id/tvBom"
+                        tools:visibility="visible" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBomValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:textColor="@color/text_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvGrnValue"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvBom"
+                        tools:text="B.O.M.001" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGrnValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:textColor="@color/text_black"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvBomValue"
+                        app:layout_constraintEnd_toStartOf="@+id/tvTotalGrnValue"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvBomValue"
+                        app:layout_constraintTop_toTopOf="@id/tvBomValue"
+                        tools:text="B.O.M.001"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalGrnValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/margin_small"
+                        android:paddingEnd="@dimen/margin_min"
+                        android:textColor="@color/text_black"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvBomValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvGrnValue"
+                        app:layout_constraintTop_toTopOf="@id/tvBomValue"
+                        tools:text="B.O.M.001"
+                        tools:visibility="visible" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--<TextView
+                android:id="@+id/tvRemarks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/remark"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clSummary" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvRemark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvRemarks">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRemark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_medium"
+                    android:textColor="@color/text_black"
+                    tools:text="Remarks values" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEditRemark"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:src="@drawable/ic_edit" />
+
+            </androidx.cardview.widget.CardView>-->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLotSummary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#F1F0EE"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvCard">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/lots_summary"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLotList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tvSummary"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_third_party_summary" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/confirm_dispatch"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

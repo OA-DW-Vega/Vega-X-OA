@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="92"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryHeadOfi"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="@string/qty_assesment"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_smedium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondaryGrey"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvParamsWeighBID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_padding_size_small"
+                android:layout_weight="1.2"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="ID del WB: TMP_-5140956060009801280"/>
+
+            <TextView
+                android:id="@+id/tvGrn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_padding_size_small"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:fontFamily="@font/gilroy_regular"
+                android:maxLines="1"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="GRN #5006615092"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/gilroy_regular"
+                android:text="@string/batch_no"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etBatchNo"
+                style="@style/App_EditTextStyle"
+                android:layout_width="@dimen/nav_header_height"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/text_size_medium"
+                android:digits="0003452"
+                android:gravity="center"
+                android:fontFamily="@font/gilroy_regular"
+                android:inputType="text"
+                android:maxLength="10"
+                tools:ignore="Autofill,LabelFor"
+                tools:text="0063464890" />
+
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBagDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_vega_nigeria_sesame_quality_params" />
+
+                <LinearLayout
+                    android:id="@+id/llParams"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_padding_size_small">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvImmatureLabel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text="Cashew Immature in gms"
+                                android:textColor="@color/text_black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:background="@drawable/do_custom_edit_text">
+
+                            <EditText
+                                android:id="@+id/edImmatureValue"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight=".8"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                tools:ignore="Autofill,LabelFor"
+                                tools:text="123" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                android:text="@string/percentage"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:textSize="@dimen/text_size_medium"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_padding_size_small">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvSpottedLabel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text="Cashew spotted in gms"
+                                android:textColor="@color/text_black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:background="@drawable/do_custom_edit_text"
+                            android:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/edSpottedValue"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight=".8"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                tools:ignore="Autofill,LabelFor"
+                                tools:text="123" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                android:text="@string/percentage"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:textSize="@dimen/text_size_medium"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_padding_size_small">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvGoodKernelLabel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text="Cashew Good Kernel in gms"
+                                android:textColor="@color/text_black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:background="@drawable/do_custom_edit_text"
+                            android:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/edGoodKernelValue"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight=".8"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                tools:ignore="Autofill,LabelFor"
+                                tools:text="123" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                android:text="@string/percentage"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:textSize="@dimen/text_size_medium"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_padding_size_small">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvKorLabel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:text="KOR in LBS"
+                                android:textColor="@color/text_black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:background="@drawable/do_custom_edit_text"
+                            android:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/edKorValue"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight=".8"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                tools:ignore="Autofill,LabelFor"
+                                tools:text="123" />
+
+                            <TextView
+                                android:id="@+id/tvUnit"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                android:text="@string/percentage"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:textSize="@dimen/text_size_medium"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llDropDown"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:background="@drawable/custom_edit_text"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/spItem"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:backgroundTint="@android:color/black"
+                                android:dropDownWidth="match_parent"
+                                android:dropDownHeight="150dp"
+                                android:overlapAnchor="false"
+                                android:padding="@dimen/margin_mic_small"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:popupBackground="@color/white"
+                                android:spinnerMode="dropdown" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+        /
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llItemBottomView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="2"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/btnReject"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/margin_very_small"
+            android:background="@color/dark_red"
+            android:visibility="visible">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_cancel"
+                android:drawablePadding="@dimen/margin_medium"
+                android:gravity="center"
+                android:text="@string/reject"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btnAccept"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/margin_very_small"
+            android:background="@color/dark_colorPrimaryOfi"
+            android:visibility="visible">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+                android:drawablePadding="@dimen/margin_medium"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:text="@string/accept"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnParamsProceed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryOfi"
+            android:text="@string/proceed"
+            android:fontFamily="@font/gilroy_semibold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+    </LinearLayout>
+
+<!--
+    <LinearLayout
+        android:id="@+id/llItemBottomView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="2"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btnReject"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/margin_very_small"
+            android:background="@color/red"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_cancel"
+                android:drawablePadding="@dimen/margin_medium"
+                android:gravity="center"
+                android:text="@string/reject"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnAccept"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/margin_very_small"
+            android:background="@color/colorPrimaryOfi"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+                android:drawablePadding="@dimen/margin_medium"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:text="@string/accept"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnParamsProceed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryOfi"
+            android:text="@string/proceed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="gone" />
+
+    </LinearLayout>
+-->
+
+</LinearLayout>

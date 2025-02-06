@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_small"
+        android:text="@string/inventory_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="@string/select_inventory"
+            android:textSize="@dimen/text_size_large" />
+
+        <LinearLayout
+            android:id="@+id/llRmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_min"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@drawable/custom_edit_text"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+
+            <View
+                android:layout_width="@dimen/margin_padding_size_zero"
+                android:layout_height="match_parent"
+                android:layout_weight=".4"
+                android:background="@drawable/left_round_corner" />
+
+            <TextView
+                android:layout_width="@dimen/margin_padding_size_zero"
+                android:layout_height="wrap_content"
+                android:layout_weight="7.6"
+                android:fontFamily="@font/gilroy_semibold"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:text="@string/storage_text"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/margin_padding_size_zero"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:contentDescription="@string/processing"
+                android:padding="@dimen/margin_small"
+                android:src="@drawable/ic_right_arrow" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFgrn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_min"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@drawable/custom_edit_text"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <View
+                android:layout_width="@dimen/margin_padding_size_zero"
+                android:layout_height="match_parent"
+                android:layout_weight=".4"
+                android:background="@drawable/left_round_corner" />
+
+            <TextView
+                android:layout_width="@dimen/margin_padding_size_zero"
+                android:layout_height="wrap_content"
+                android:layout_weight="7.6"
+                android:fontFamily="@font/gilroy_semibold"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:text="@string/transit_text"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/margin_padding_size_zero"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:contentDescription="@string/processing"
+                android:padding="@dimen/margin_small"
+                android:src="@drawable/ic_right_arrow" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

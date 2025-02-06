@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvUnRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/card_round_corner_grey"
+        android:backgroundTint="@color/grey_light"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingTop="@dimen/margin_padding_size_small"
+        android:paddingEnd="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_padding_size_small"
+        android:text="@string/unread_messages"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRead"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/card_round_corner_grey"
+        android:backgroundTint="@color/grey_light"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingTop="@dimen/margin_padding_size_small"
+        android:paddingEnd="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_padding_size_small"
+        android:text="@string/got_read_messages"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUnRead" />
+
+    <TextView
+        android:id="@+id/tvNotificationTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_padding_size_large"
+        android:fontFamily="@font/gilroy_semibold"
+        android:textColor="@color/text_black"
+        android:visibility="gone"
+        android:textSize="@dimen/text_size_medium"
+        android:paddingEnd="@dimen/margin_mic_small"
+        app:layout_constraintEnd_toStartOf="@+id/tvNotificationDate"
+        app:layout_constraintHorizontal_weight="3.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRead"
+        tools:text="Heading" />
+
+    <TextView
+        android:id="@+id/tvNotificationDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="@dimen/text_size_xmedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintTop_toTopOf="@+id/tvNotificationTitle"
+        tools:text="Heading" />
+
+    <TextView
+        android:id="@+id/tvNotificationDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_mic_small"
+        android:layout_marginTop="@dimen/margin_mic_small"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotificationDate"
+        tools:text="Description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

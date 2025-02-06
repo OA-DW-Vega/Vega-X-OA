@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="vendor">Vendor</string>
+    <string name="enter_vendor_name">Enter Vendor Name</string>
+    <string name="material">Material</string>
+    <string name="select_material">Select Material</string>
+    <string name="enter_vendor_error">Please enter a vendor</string>
+    <string name="select_material_error">Please select a material</string>
+    <string name="parcentage">%</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="peru_quality_title1">Hoja de analisis de calidad</string>
+    <string name="peru_quality_table_left1">Fecha</string>
+    <string name="peru_quality_table_left2">Origen</string>
+    <string name="peru_quality_table_left3">Cantidad de sacos</string>
+    <string name="peru_quality_table_left4">G/R</string>
+    <string name="peru_quality_table_left5"># Lote SAP</string>
+    <string name="peru_quality_signature">Quality Analyst</string>
+    <string name="peru_offloading_title1"> </string>
+    <string name="confirm_print">Print confirm</string>
+    <string name="enter_all_mandatory_fields">Please enter all the mandatory field</string>
+    <string name="quality_receipt">Quality receipt</string>
+    <string name="quality_vendor_name">Vendor name</string>
+    <string name="quality_material_name">Material name</string>
+    <string name="quality_transaction_number">Transaction number</string>
+    <string name="quality_transaction_date">Date</string>
+    <string name="conform_remove">Do you want to remove ?</string>
+    <string name="cancel_remove">Cancel</string>
+    <string name="or_enter_the_value">(OR) Enter the vendor name manually</string>
+</resources>

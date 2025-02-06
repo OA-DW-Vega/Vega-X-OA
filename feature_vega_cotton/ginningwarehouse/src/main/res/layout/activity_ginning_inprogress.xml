@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryHeadOfi"
+                    android:gravity="start"
+                    android:padding="10dp"
+                    android:text="@string/ginning_in_progress"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:textSize="@dimen/text_size_smedium"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSecondaryGrey"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/lot_in_process"
+                        android:textColor="@color/text_black"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvLotNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="start"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:textColor="@color/text_black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <Button
+                        android:id="@+id/btnPause"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ginning_on_hold_corner"
+                        android:text="@string/ginning_on_hold"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="start"
+                        android:text="@string/new_bales"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:textColor="@color/text_black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_scanBale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/ginning_scanbale_corner"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnScan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/dark_marun"
+                            android:drawableLeft="@drawable/qrcode"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:text="@string/scan_bale_id"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3.5">
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center|end"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="1.5"
+                            android:background="#808080" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="@string/or"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:textColor="@color/text_black"
+                            android:textSize="14dp" />
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1.5"
+                            android:background="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:id="@+id/ll_enterBaleID"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:background="@drawable/rectangle_grey_border"
+                            android:gravity="center">
+
+                            <EditText
+                                android:id="@+id/etBale"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/enter_bale_id"
+                                android:inputType="number"
+                                android:fontFamily="@font/gilroy_regular"
+                                android:singleLine="false"
+                                android:textColorHint="#808080" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/grey_button"
+                            android:gravity="center">
+
+                            <Button
+                                android:id="@+id/btnAdd"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorSecondaryGrey"
+                                android:enabled="false"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/gilroy_semibold"
+                                android:text="@string/add" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#808080" />
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/recyl_baleSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/dark_marun"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btnBaleCreate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/dark_marun"
+                                android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                                android:gravity="start|center"
+                                android:text="@string/bale_creation_summary"
+                                android:fontFamily="@font/gilroy_semibold"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llBaleList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvBales"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:background="#FFFFFF"
+                                android:scrollbars="vertical" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnProceed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@color/colorPrimaryOfi"
+                android:text="Proceed"
+                android:textAllCaps="false"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

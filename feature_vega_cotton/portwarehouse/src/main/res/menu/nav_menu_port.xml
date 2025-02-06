@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navQRScan"
+            android:icon="@drawable/ic_menu_qr_port"
+            android:title="@string/qr_scan" />
+        <item
+            android:id="@+id/navIncomingMtn"
+            android:icon="@drawable/ic_menu_incomingmtn_port"
+            android:title="@string/incoming_mtns" />
+        <item
+            android:id="@+id/navDispatch"
+            android:icon="@drawable/ic_menu_dispatch_port"
+            android:title="@string/dispatch" />
+        <item
+            android:id="@+id/navInventory"
+            android:icon="@drawable/ic_menu_inventory_port"
+            android:title="@string/inventory" />
+        <item
+            android:id="@+id/navReWeigh"
+            android:icon="@drawable/ic_menu_reweigh_port"
+            android:title="@string/re_weighbale" />
+        <item
+            android:id="@+id/navSettings"
+            android:icon="@drawable/ic_menu_setting_port"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/navHelp"
+            android:icon="@drawable/ic_menu_help_port"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/navLogout"
+            android:icon="@drawable/ic_logout_port"
+            android:title="@string/log_out" />
+    </group>
+
+
+</menu>

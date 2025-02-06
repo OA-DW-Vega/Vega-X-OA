@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionVega"
+        android:orderInCategory="1"
+        android:title="@string/title_reception_vega"
+        android:visible="false"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/actionDO"
+        android:orderInCategory="2"
+        android:title="@string/title_reception_do"
+        android:visible="false"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/actionDP"
+        android:orderInCategory="3"
+        android:title="@string/title_reception_dp"
+        android:visible="false"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/badge"
+        android:icon="@drawable/ic_baseline_notifications_none_24"
+        android:title="Notification"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>

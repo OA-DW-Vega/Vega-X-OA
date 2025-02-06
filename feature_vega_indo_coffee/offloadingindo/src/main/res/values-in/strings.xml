@@ -1,0 +1,131 @@
+<resources>
+    <string name="weighscale">Timbangan berat</string>
+    <string name="weighbridge_weighscale">Jembatan timbang - Timbangan berat</string>
+    <string name="consignment_details">Detail Pengiriman</string>
+    <string name="destination_wh">Mengirim ke WH</string>
+    <string name="truck_number">Nomor Truk</string>
+    <string name="driver_name">Nama Supir</string>
+    <string name="phone_number">Nomor Telepon</string>
+    <string name="obd_number">Nomor OBD</string>
+    <string name="receiving_location">Lokasi Penerima</string>
+    <string name="truck_details">Detail Truk</string>
+    <string name="transport_vendor">Vendor Transportasi</string>
+    <string name="lot_summary">Ringkasan Lot</string>
+    <string name="proceed">Memproses</string>
+    <string name="weight">Berat</string>
+    <string name="st_location">Lokasi Penyimpanan</string>
+    <string name="material">Bahan</string>
+    <string name="weight_summary">Ringkasan Berat</string>
+    <string name="add_weight">Tambah Berat</string>
+    <string name="no_weight_added">Tidak ada penambahan</string>
+    <string name="tare_n_bag_pallet">Tara \n (Karung + pallet)</string>
+    <string name="gross_n_weight">Berat Kotor</string>
+    <string name="net_n_weight">inventaris</string>
+    <string name="tare_weight">Berat Tara</string>
+    <string name="bag">Karung</string>
+    <string name="s_no">S.No</string>
+    <string name="stored_locally">Penyimpanan Lokal</string>
+    <string name="save">Simpan</string>
+    <string name="weigh_scale">Timbangan berat</string>
+    <string name="mtnr_weighscale">MTNR - Timbangan berat</string>
+    <string name="select_dest_wh">Pilih Lokasi Pengiriman</string>
+    <string name="select_obd">Pilih Nomor OBD</string>
+    <string name="select_receive_loc">Pilih Lokasi Penerima</string>
+    <string name="conform_bag_remove">Anda Yakin Ingin menghapus karung ?</string>
+    <string name="dispatch_weight">Berat Pengiriman</string>
+    <string name="receiving_weight">Menerima Berat</string>
+    <string name="sending_wh">Gudang Pengiirm</string>
+    <string name="receiving_wh">Gudang Penerima</string>
+    <string name="remark">Keterangan</string>
+    <string name="dispatch_summary">Ringkasan Lot</string>
+    <string name="conform_dispatch">Konfirmasi Bongkaran</string>
+    <string name="lot_more_weight">Lot yang dimasukkan lebih tinggi dari berat yang ada</string>
+    <string name="less_weight_error">Silahkan Masukkan Berat</string>
+    <string name="please_add_lot">Silahkan Tambah Lot</string>
+    <string name="end_load_msg">Apakah anda ingin berhenti memuat proses</string>
+    <string name="lot_no">Nomor Lot</string>
+    <string name="add_lot_weight">Tolong tambahkan banyak berat</string>
+    <string name="edit_lot">Apakah kamu ingin mengedit  Lot</string>
+    <string name="edit_remark">Apakah kamu ingin mengedit Keterangan</string>
+    <string name="success_offloading">Bongkaran Berhasil</string>
+    <string name="offline_success_offloading">Bongkaran Offline berhasil</string>
+    <string name="wb_id_is">ID Jembatan timbang: %1$2s\</string>
+    <string name="wb_id_and_grn">\n Nomor GRN: %1$2s\</string>
+    <string name="error_valid_truck_no">Silahkan Masukkan Nomor Truk</string>
+    <string name="error_valid_driver">Silahkan Masukkan Nama Pengemudi</string>
+    <string name="error_valid_mobile_no">Silahkan Masukkan Nomor Kontak</string>
+    <string name="error_valid_trans_vendor">Silahkan Masukkan Transportasi Vendor</string>
+    <string name="error_valid_receiving_loc">Silahkan Masukkan Lokasi Penerima</string>
+    <string name="please_add_less_three">Silahkan tambahkan kurang dari atau sama dengan 3 jenis Karung</string>
+    <string name="supplier">Pemasok</string>
+    <string name="mtn_r">MTN-R</string>
+    <string name="select_offloading">Pilih Bongkaran</string>
+    <string name="truck_list">Truk Daftar</string>
+    <string name="sort_by">Diurutkan</string>
+    <string name="no_data_found">Tidak ada data</string>
+    <string name="add_new_truck">Add New Truck</string>
+    <string name="truck_count">No of Truck :</string>
+    <string name="truck_no">Truck No</string>
+    <string name="weigh_bridge_id">ID Jembatan timbang</string>
+    <string name="date">Tanggal</string>
+    <string name="waiting_truck_header">Waiting Trucks -</string>
+    <string name="destination_wh_man">Mengirim ke WH<font color='#CB410B'>*</font></string>
+    <string name="truck_number_man">Nomor Truk<font color='#CB410B'>*</font></string>
+    <string name="driver_name_man">Nama Supir<font color='#CB410B'>*</font></string>
+    <string name="obd_number_man">Nomor OBD<font color='#CB410B'>*</font></string>
+    <string name="receiving_location_man">Lokasi Penerima<font color='#CB410B'>*</font></string>
+    <string name="transport_vendor_man">Vendor Transportasi</string>
+    <string name="material_man">Bahan<font color='#CB410B'>*</font></string>
+    <string name="supplier_man">Pemasok<font color='#CB410B'>*</font></string>
+    <string name="start_weighing">Mulai Menimbang</string>
+    <string name="bag_summary">Ringkasan Karung</string>
+    <string name="bag_count">Hitung Karung</string>
+    <string name="bagmaterial">Kemasan Karung</string>
+    <string name="purchase_order_no">Nomor Pesanan pembelian.<font color='#CB410B'>*</font></string>
+    <string name="select_material">Pilih Bahan</string>
+    <string name="select_supplier">Pilih Pemasok</string>
+    <string name="select_purchase_order">Pilih Pesanan Pembelian</string>
+    <string name="select_po_error">Silahkan pilih nomor pesanan pembelian</string>
+    <string name="summary_title">Ringkasan Bongkaran</string>
+    <string name="offloading_supplier">Pemasok Bongkaran</string>
+    <string name="mtnr_weighment">MTNR - Penimbangan</string>
+    <string name="supplier_weighment">Berat Pemasok</string>
+    <string name="grade">Grade</string>
+    <string name="add">tambah</string>
+    <string name="cancel">Membatalkan</string>
+    <string name="select_dispatch">Pilih pengiriman</string>
+    <string name="enter_remark">Enter Remark</string>
+    <string name="local_sales">Local sales</string>
+    <string name="lot_id">Lot id</string>
+    <string name="third_party_sales">Third party sales</string>
+    <string name="year">Year<font color='#CB410B'>*</font> </string>
+    <string name="select_year">Select Crop Year</string>
+    <string name="declared_bag_count">Declared Bag Count<font color='#CB410B'>*</font></string>
+    <string name="declared_bagcount">Declared Bag Count</string>
+    <string name="declared_weight">Declared Weight<font color='#CB410B'>*</font></string>
+    <string name="declaredweight">Declared Weight</string>
+    <string name="transport_cost">Transport Details</string>
+    <string name="enter_bagcount">Enter Bag Count</string>
+    <string name="enter_declaredweight">Enter Declared Weight</string>
+    <string name="error_valid_declared">Please Enter a valid Declared Weight</string>
+    <string name="error_valid_bagcount">Please Enter a valid BagCount</string>
+    <string name="origin">Origin<font color='#CB410B'>*</font></string>
+    <string name="origin_label">Origin</string>
+    <string name="department">Department<font color='#CB410B'>*</font></string>
+    <string name="department_label">Department</string>
+    <string name="select_origin">Select Origin</string>
+    <string name="select_Destination">Select Department</string>
+    <string name="transaction_history">Riwayat Transaksi</string>
+    <string name="search_vendor_name">Cari Nama Vendor</string>
+    <string name="sort_by_date">Urutkan berdasarkan tanggal</string>
+    <string name="sap_error_message">Pesan kesalahan SAP</string>
+    <string name="read_more">Baca Selengkapnya…</string>
+    <string name="vendor">Vendor</string>
+    <string name="procure_type">Jenis Pengadaan</string>
+    <string name="sync_all">Apakah anda ingin menyinkronkan semua data offline ke cloud ?</string>
+    <string name="transaction_details_offloading">Detail Transaksi - Bongkaran</string>
+    <string name="weighbridge">Jembatan Timbang</string>
+    <string name="quality">Kualitas</string>
+    <string name="grn">Grn</string>
+    <string name="confirm">Konfirmasi</string>
+</resources>

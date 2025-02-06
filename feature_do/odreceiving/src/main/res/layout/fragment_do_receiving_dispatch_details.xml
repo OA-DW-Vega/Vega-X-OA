@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryHeadOfi"
+            android:padding="@dimen/margin_small">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dispatch_details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_very_small"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select Material"
+                        android:visibility="gone"/>
+
+                    <!--<Spinner
+                        android:id="@+id/spinnerMaterialCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />-->
+
+                    <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                        android:id="@+id/spinnerMaterialCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintText="@string/select_material_id"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp"
+                    android:weightSum="1.0">
+
+                    <LinearLayout
+                        android:id="@+id/fromDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvFromDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/start_date" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/to" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/toDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvToDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/end_date" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@android:color/darker_gray">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1.0"
+                        android:padding="@dimen/margin_small">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_mic_small"
+                            android:padding="@dimen/margin_large"
+                            android:background="@drawable/rectangle_border"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_lot_dispatch_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/no_of_lot_dispatch"
+                                android:textColor="@color/text_black" />
+
+                            <TextView
+                                android:id="@+id/tvLotDispatchValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin_very_small"
+                                android:textStyle="bold"
+                                android:text="0"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/text_black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_mic_small"
+                            android:padding="@dimen/margin_large"
+                            android:background="@drawable/rectangle_border"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_lot_receive_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/no_of_lot_receive"
+                                android:textColor="@color/text_black" />
+
+                            <TextView
+                                android:id="@+id/tvLotReceiveValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin_very_small"
+                                android:textStyle="bold"
+                                android:text="0"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/text_black" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:padding="@dimen/margin_large"
+                        android:background="@drawable/rectangle_border"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_lot_complete_label"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/no_of_lot_complete"
+                            android:textColor="@color/text_black" />
+
+                        <TextView
+                            android:id="@+id/tvLotCompleteValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_very_small"
+                            android:textStyle="bold"
+                            android:text="0"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/text_black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="@color/black">
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryOfi"
+                android:text="@string/ok"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

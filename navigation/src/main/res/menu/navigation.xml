@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/actionReceiving"
+        android:title="@string/title_feature_receiving" />
+    <item
+        android:id="@+id/actionQuality"
+        android:title="@string/title_feature_quality" />
+</menu>

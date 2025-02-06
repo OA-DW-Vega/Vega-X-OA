@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/print_layout_width"
+    android:layout_height="@dimen/print_layout_height"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView2"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="150dp"
+            android:src="@drawable/ic_olam_logo"
+            app:layout_constraintBottom_toTopOf="@+id/datePrint"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitlePrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="100dp"
+            android:text="@string/nic_sa"
+            android:textColor="@color/text_black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/datePrint"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliveryNoPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="100dp"
+            android:text="A1234568900"
+            android:textColor="@color/text_black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/datePrint"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headingPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:text="@string/title_print"
+            android:textAlignment="textStart"
+            android:textColor="@color/text_black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/datePrint"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/deliveryNoPrint" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="390dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/black"
+            android:foregroundTint="@color/black"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headingPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/datePrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/date"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dateValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintBottom_toBottomOf="@+id/datePrint"
+            app:layout_constraintStart_toEndOf="@+id/datePrint"
+            app:layout_constraintTop_toTopOf="@+id/datePrint"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/harvestPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/harvest"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/dateValue"
+            app:layout_constraintStart_toEndOf="@+id/dateValue"
+            app:layout_constraintTop_toTopOf="@+id/dateValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/harvestPrintValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/harvestPrint"
+            app:layout_constraintStart_toEndOf="@+id/harvestPrint"
+            app:layout_constraintTop_toTopOf="@+id/harvestPrint"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sourcePrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/source"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/datePrint"
+            app:layout_constraintTop_toBottomOf="@+id/datePrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sourceValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/dateValue"
+            app:layout_constraintTop_toBottomOf="@+id/dateValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/contractNoPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/contract"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/harvestPrint"
+            app:layout_constraintTop_toBottomOf="@+id/harvestPrint"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/contractNoValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/harvestPrintValue"
+            app:layout_constraintTop_toBottomOf="@+id/harvestPrintValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/clientPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/client"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/sourcePrint"
+            app:layout_constraintTop_toBottomOf="@+id/sourcePrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/clientValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toEndOf="@+id/clientPrint"
+            app:layout_constraintStart_toStartOf="@+id/sourceValue"
+            app:layout_constraintTop_toBottomOf="@+id/sourceValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/portPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/port_country"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/clientPrint"
+            app:layout_constraintTop_toBottomOf="@+id/clientPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/portValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/clientValue"
+            app:layout_constraintTop_toBottomOf="@+id/clientValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/typeofCafePrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/type_of_cafe"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/portPrint"
+            app:layout_constraintTop_toBottomOf="@+id/portPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/typeofCafeValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/portValue"
+            app:layout_constraintTop_toBottomOf="@+id/portValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noBagsPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/no_of_bags"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/typeofCafePrint"
+            app:layout_constraintTop_toBottomOf="@+id/typeofCafePrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noBagsValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/typeofCafeValue"
+            app:layout_constraintTop_toBottomOf="@+id/typeofCafeValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lotsPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/lots"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/contractNoPrint"
+            app:layout_constraintTop_toBottomOf="@+id/contractNoPrint"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lotsValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/contractNoValue"
+            app:layout_constraintTop_toBottomOf="@+id/contractNoValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/netWtPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/net_weight"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/noBagsPrint"
+            app:layout_constraintTop_toBottomOf="@+id/noBagsPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/netWtValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/noBagsValue"
+            app:layout_constraintTop_toBottomOf="@+id/noBagsValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/grossQuintalesPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/gross_quinlates"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lotsPrint"
+            app:layout_constraintTop_toBottomOf="@+id/lotsPrint"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/grossQuintalesValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lotsValue"
+            app:layout_constraintTop_toBottomOf="@+id/lotsValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/departurePrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/departure"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/netWtPrint"
+            app:layout_constraintTop_toBottomOf="@+id/netWtPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/departureValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/netWtValue"
+            app:layout_constraintTop_toBottomOf="@+id/netWtValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customsAgentPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/custom_agent"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/departurePrint"
+            app:layout_constraintTop_toBottomOf="@+id/departurePrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customsAgentValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/departureValue"
+            app:layout_constraintTop_toBottomOf="@+id/departureValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shippingLinePrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/shipping_line"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/customsAgentPrint"
+            app:layout_constraintTop_toBottomOf="@+id/customsAgentPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shippingLineValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/customsAgentValue"
+            app:layout_constraintTop_toBottomOf="@+id/customsAgentValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/truckDriverPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/driver"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/shippingLinePrint"
+            app:layout_constraintTop_toBottomOf="@+id/shippingLinePrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/truckDriverValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/shippingLineValue"
+            app:layout_constraintTop_toBottomOf="@+id/shippingLineValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/containerNoPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/containerNo"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/truckDriverPrint"
+            app:layout_constraintTop_toBottomOf="@+id/truckDriverPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/containerNoValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/truckDriverValue"
+            app:layout_constraintTop_toBottomOf="@+id/truckDriverValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sealPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/seal"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/containerNoPrint"
+            app:layout_constraintTop_toBottomOf="@+id/containerNoPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sealValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/containerNoValue"
+            app:layout_constraintTop_toBottomOf="@+id/containerNoValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/truckPlatePrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/truck_plate"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/sealPrint"
+            app:layout_constraintTop_toBottomOf="@+id/sealPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/truckPlateValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/na"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/sealValue"
+            app:layout_constraintTop_toBottomOf="@+id/sealValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/custodianPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/custodian"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/truckPlatePrint"
+            app:layout_constraintTop_toBottomOf="@+id/truckPlatePrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/custodianValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/no_custody"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/truckPlateValue"
+            app:layout_constraintTop_toBottomOf="@+id/truckPlateValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/observationsPrint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/observations"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/custodianPrint"
+            app:layout_constraintTop_toBottomOf="@+id/custodianPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/observationsValue"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/no_observations"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="@+id/custodianValue"
+            app:layout_constraintTop_toBottomOf="@+id/custodianValue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/signOfCarrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/sign_of_carrier"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/observationsPrint"
+            app:layout_constraintTop_toBottomOf="@+id/observationsPrint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/olamSA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/nic_sa"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/storeSignature"
+            app:layout_constraintStart_toStartOf="@+id/storeSignature" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/storeSignature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="150dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/store_sign"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/signOfCarrier"
+            app:layout_constraintStart_toEndOf="@+id/signOfCarrier"
+            app:layout_constraintTop_toTopOf="@+id/signOfCarrier"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/authorization"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="150dp"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/i_authorize"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/storeSignature"
+            app:layout_constraintStart_toEndOf="@+id/storeSignature"
+            app:layout_constraintTop_toTopOf="@+id/storeSignature"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/signOfCarrierBlank"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/black"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintEnd_toEndOf="@+id/signOfCarrier"
+            app:layout_constraintStart_toStartOf="@+id/signOfCarrier"
+            app:layout_constraintTop_toBottomOf="@+id/signOfCarrier" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/storeSignatureBlank"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/black"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintEnd_toEndOf="@+id/storeSignature"
+            app:layout_constraintStart_toStartOf="@+id/storeSignature"
+            app:layout_constraintTop_toBottomOf="@+id/storeSignature" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/authorizationBlank"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/black"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintEnd_toEndOf="@+id/authorization"
+            app:layout_constraintStart_toStartOf="@+id/authorization"
+            app:layout_constraintTop_toBottomOf="@+id/authorization" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

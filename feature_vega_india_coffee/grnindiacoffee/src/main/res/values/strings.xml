@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="grn_list">GRN list</string>
+    <string name="weigh_bridge_id">WeighBridge ID</string>
+    <string name="procurement_type">Type</string>
+    <string name="supplier">Supplier</string>
+    <string name="truckno">Truck No</string>
+    <string name="weight">Weight</string>
+    <string name="date">Date</string>
+    <string name="total_value">Total Value</string>
+    <string name="usd">USD</string>
+    <string name="procurement_completed">Procurement Completed Successfully</string>
+    <string name="grn_no">GRN No :</string>
+    <string name="lot_id">LOT ID :</string>
+    <string name="do_you_want_proceed_grn">Do you want create GRN?</string>
+    <string name="approve_success">Approved Successfully</string>
+    <string name="approve_confirm_title"> Accept Approval </string>
+    <string name="approve_confirm_message">Accept this approval?</string>
+    <string name="confirm_grn">Confirm GRN</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="spot_purchase">Spot Purchase</string>
+    <string name="fixed_purchase">Fixed Purchase</string>
+    <string name="final_price_per_unit">Final price per unit</string>
+    <string name="wb_id">WB ID: </string>
+    <string name="ok_text">OK</string>
+    <string name="po_number">PO Number</string>
+    <string name="netWeight">Net Weight</string>
+    <string name="poPrice">PO Price</string>
+    <string name="storage_location">Storage Location</string>
+    <string name="plant_name">Plant</string>
+    <string name="batch_id">Batch ID</string>
+    <string name="select_procurement_type">Procurement Type</string>
+    <string name="ok">ok</string>
+    <string name="select_purchase_order">Select Purchase Order</string>
+    <string name="select_po_text">Select PO</string>
+    <string name="price_details">Price Details</string>
+    <string name="lot_information">Lot Information</string>
+    <string name="bc_approval_price">BC Approval - Price</string>
+    <string name="price_validation">Paid price should not be empty</string>
+    <string name="grn_success">GRN created Successfully</string>
+    <string name="grn_success_offline">Offline GRN created Successfully</string>
+    <string name="enter_all_mandatory_fields">Please enter all the mandatory field</string>
+    <string name="select_different_po">The PO selected has Gunny bag as returnable material and the gunny bag details are not captured in offloading for this consignment.Please select a different PO</string>
+    <string name="select_gunny_error_msg">Mismatch in PO and Gunnybag details captured.Please select a different PO</string>
+    <string name="select_po_error_msg">The PO selected has only Coffee material.Please select a different PO</string>
+    <string name="grn">GRN</string>
+    <string name="grn_fail_msg">GRN Failed</string>
+    <string name="grn_offline_summary">GRN Offline Summary</string>
+    <string name="material">Material</string>
+    <string name="view_details">View Details</string>
+    <string name="quality_details">Quality Details</string>
+    <string name="value">Value</string>
+    <string name="weighted_average">Quality Details</string>
+    <string name="ngn">NGN</string>
+    <string name="no_po_available">No PO Available</string>
+    <string name="waybill_no">Waybill no</string>
+    <string name="warehouse_receipt_no">WHR number</string>
+
+
+    <string name="spot">Spot</string>
+    <string name="fixed">Fixed</string>
+
+    <string-array name="numbers" tools:ignore="ExtraTranslation">
+        <item>@string/spot</item>
+        <item>@string/fixed</item>
+    </string-array>
+    <string name="cancel">Cancel</string>
+</resources>

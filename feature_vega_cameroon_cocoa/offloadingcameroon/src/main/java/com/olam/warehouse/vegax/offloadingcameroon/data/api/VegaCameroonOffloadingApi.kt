@@ -1,0 +1,113 @@
+package com.olam.warehouse.vegax.offloadingcameroon.data.api
+
+import com.olam.warehouse.master.common.model.VegaMtntResponse
+import com.olam.warehouse.master.common.model.VegaReceivingPost
+import com.olam.warehouse.master.common.model.VegaReceivingResponse
+import com.olam.warehouse.master.vega.entity.VegaOffloadingTrucks
+import com.olam.warehouse.master.vega.entity.VegaReceiving
+import com.olam.warehouse.master.vega.model.VegaCoffeeReceivingMtnWrapper
+import com.olam.warehouse.master.vegaecuador.entity.VegaEcuadorPurchaseOrder
+import com.olam.warehouse.presentation.data.domain.model.GenericReqAndResp
+import com.olam.warehouse.vegax.offloadingcameroon.data.domain.usecase.model.*
+import okhttp3.RequestBody
+import retrofit2.Call
+import retrofit2.http.*
+
+/**
+ * Created by Keerthi Santhanam on 23/6/2020.
+ */
+interface VegaCameroonOffloadingApi {
+
+    @GET("x-master/getWBListDetailsforQuality")
+    suspend fun fetchTruckList(
+        @Query("key") key: String,
+        @Query("qcFlag") qcFlag: String,
+        @Query("plantId") selectedPlantId: String
+    ): GenericReqAndResp<List<VegaOffloadingTrucks>>
+
+    @GET("x-master/getPurchaseOrders")
+    suspend fun getPurchaseOrders(
+        @Query("key") key: String,
+        @Query("werks") selectedPlantId: String
+    ): GenericReqAndResp<List<VegaEcuadorPurchaseOrder>>
+
+    //    @GET("x-master/getWBIdDetails")
+    @GET("x-master/getWSIdDetails")
+    suspend fun getMtntWeightDetails(
+        @Query("key") key: String,
+        @Query("wbId") wbId: String,
+        @Query("werks") selectedPlantId: String
+    ): GenericReqAndResp<VegaCameroonMtntDetails>
+
+//    @POST("x-pre-processing/vega/wb/create-wbid")
+//    suspend fun postEcuadorOffloadingDetail(@Body receivingData: VegaCameroonOffloadingPost): GenericReqAndResp<VegaReceivingResponse>
+
+    @POST("x-pre-processing/vega/wb/create-wbid-grn")
+    suspend fun postEcuadorOffloadingDetail(@Body receivingData: VegaCameroonOffloadingPost): GenericReqAndResp<VegaReceivingResponse>
+
+    /*************************************MTNR*****************************/
+
+    @POST("x-pre-processing/vega/wb/create-wbid")
+    suspend fun postReceivingDetail(@Body receivingData: VegaReceivingPost): GenericReqAndResp<VegaReceivingResponse>
+
+    @POST("x-pre-processing-ca/sto/wb/create-wb")
+    suspend fun postReceivingMtnDetail(@Body receivingData: VegaReceivingPost): GenericReqAndResp<VegaReceivingResponse>
+
+
+    @POST("pre-processing-ca/wb/create-wbid")
+    fun postReceiving(@Body receivingData: List<VegaReceiving>): Call<GenericReqAndResp<String>>
+
+    @POST("x-pre-processing/vega/wb/create-wbid")
+    fun postReceivingItem(@Body receivingData: VegaCameroonReceivingPostLineItem): Call<GenericReqAndResp<VegaReceivingResponse>>
+
+    @GET("x-master/mtn-details")
+    suspend fun fetchWarehouseWithMtns(@Query("key") currentKey: String): GenericReqAndResp<VegaCoffeeReceivingMtnWrapper>
+
+    @GET("x-master/getWBListDetails")
+    suspend fun fetchWeighBridgeDetail(@Query("key") key: String): GenericReqAndResp<List<VegaReceiving>>
+
+    @GET("x-master/getWBListNoWeightDetails")
+    suspend fun fetchTruckInWeighBridgeDetail(@Query("key") key: String): GenericReqAndResp<List<VegaReceiving>>
+
+    @GET("x-master/getWBIdDetails")
+    suspend fun getWeighBridgeIdDetail(
+        @Query("key") key: String,
+        @Query("wbId") wbId: String
+    ): GenericReqAndResp<VegaReceiving>
+
+    @GET("x-dispatch/vega/salesDispatch/getPalletDetails")
+    suspend fun getPalletDetails(
+        @Query("batchNumber") batchNumber: String,
+        @Query("key") key: String,
+        @Query("materialCode") materialCode: String
+    ): GenericReqAndResp<List<VegaCameroonWeighScalePallet>>
+
+    @POST("x-pre-processing/vega/wb/create-wsid")
+    suspend fun postOffloadingDetail(@Body vegaOffloadingPost: VegaCameroonOffloadingPostRequest): GenericReqAndResp<VegaMtntResponse>
+
+
+
+    @Multipart
+    @POST("/x-dispatch/reprint/upload/file")
+    suspend fun postprintformatdata(
+        @Part("moduleName") moduleName : RequestBody,
+        @Part("type") type : RequestBody,
+        @Part("moduleNo") moduleNo : RequestBody,
+        @Part("trasanctionNo") trasanctionNo : RequestBody,
+        @Part("materialName") materialName : RequestBody,
+        @Part("date") date : RequestBody,
+        @Part("companyCode") companyCode : RequestBody,
+        @Part("file") file : RequestBody
+    ): Call<GenericReqAndResp<CameroonSavePrintTicket>>
+
+    @GET("x-dispatch/reprint/list")
+    suspend fun getReprintList(
+        @Query("moduleName") moduleName: String,
+        @Query("companyCode") companycode: String
+    ):  GenericReqAndResp<List<VegaReprintList>>
+
+    @GET("x-dispatch/reprint/download")
+    suspend fun downloadReprintItems(
+        @Query("id") itemId: String,
+    ):  GenericReqAndResp<String>
+}

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_small"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingEnd="@dimen/margin_large"
+        android:text="@string/mtnt_weighbridge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTruckIDNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:fontFamily="@font/gilroy_regular"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/truck_id"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintEnd_toStartOf="@id/tvTruckValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tvTruckValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:fontFamily="@font/gilroy_regular"
+        android:paddingStart="4dp"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTruckIDNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTruckIDNo"
+        app:layout_constraintTop_toTopOf="@id/tvTruckIDNo"
+        tools:text="19gdggfg" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btnProceed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTruckIDNo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/tvDest"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_nigeriacoco_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/waybill_number"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvWhValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvWhValue"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/custom_edit_text"
+                android:gravity="center"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvDest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvDest"
+                app:layout_constraintTop_toTopOf="@id/tvDest"
+                tools:text="Sample" />
+
+
+            <TextView
+                android:id="@+id/tvsto"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_nigeriacoco_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/obd_no"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvWhValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDest" />
+
+            <TextView
+                android:id="@+id/tvstoValue"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_nigeriacoco_rect_white_bg"
+                android:gravity="center"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvsto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvsto"
+                app:layout_constraintTop_toTopOf="@id/tvsto" />
+
+            <TextView
+                android:id="@+id/tvMaterial"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/material_man"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvWhValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvsto" />
+
+            <TextView
+                android:id="@+id/tvMaterialName"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_rect_light_grey"
+                android:gravity="center"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvMaterial"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvMaterial"
+                app:layout_constraintTop_toTopOf="@id/tvMaterial" />
+
+            <TextView
+                android:id="@+id/tvStoWeight"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_rect_grey_border"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="@string/deliveryqty"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvWhValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMaterial" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStoWeightValue"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_rect_light_grey"
+                android:enabled="false"
+                android:gravity="center"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvStoWeight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvStoWeight"
+                app:layout_constraintTop_toTopOf="@id/tvStoWeight" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMaterialList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvStoWeight"
+                tools:listitem="@layout/item_nigeria_cocoa_material_layout" />
+
+            <include
+                android:id="@+id/clLotSummary"
+                layout="@layout/item_nigeria_cocoa_include_add_lot_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvMaterialList" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/gilroy_semibold"
+        android:text="@string/proceed"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

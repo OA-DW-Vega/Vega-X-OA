@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_corners"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:paddingTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ExtraText">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/nav_header_desc"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_circle_imag1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserNameLbl"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:text="@string/user_name"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintBottom_toTopOf="@id/tvPlantId"
+            app:layout_constraintEnd_toStartOf="@+id/tvUserNameValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserNameValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintBottom_toTopOf="@id/tvPlantIdValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvUserNameLbl"
+            tools:text="@string/user_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPlantId"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:text="@string/plantid"
+            app:layout_constraintBottom_toTopOf="@id/tvPlantName"
+            app:layout_constraintEnd_toStartOf="@id/tvPlantIdValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUserNameLbl"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPlantIdValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tvPlantNameValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvPlantId"
+            app:layout_constraintTop_toBottomOf="@id/tvUserNameValue"
+            tools:text="Plant Id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPlantName"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:text="@string/plant_name"
+            app:layout_constraintBottom_toTopOf="@id/tvKey"
+            app:layout_constraintEnd_toStartOf="@id/tvPlantNameValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPlantId"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPlantNameValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tvKeyValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvPlantName"
+            app:layout_constraintTop_toBottomOf="@id/tvPlantIdValue"
+            tools:text="Plant Name" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvKey"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:text="@string/key"
+            android:gravity="top"
+            app:layout_constraintEnd_toStartOf="@id/tvKeyValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPlantName"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvKeyValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvKey"
+            app:layout_constraintTop_toBottomOf="@id/tvPlantNameValue"
+            tools:text="Key" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRole"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:text="@string/role"
+            android:paddingTop="8dp"
+            android:gravity="top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvKey"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRoleValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvRole"
+            app:layout_constraintTop_toBottomOf="@id/tvKeyValue"
+            tools:text="Role" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

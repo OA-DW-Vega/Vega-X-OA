@@ -1,0 +1,9 @@
+<resources>
+    <string name="title_feature_receiving">Receiving</string>
+    <string name="title_feature_weighment">Weighment</string>
+    <string name="title_feature_offloading">Offloading</string>
+    <string name="title_feature_quality">Quality</string>
+    <string name="title_reception_vega">Vega</string>
+    <string name="title_reception_do">DO</string>
+    <string name="title_reception_dp">DP</string>
+</resources>

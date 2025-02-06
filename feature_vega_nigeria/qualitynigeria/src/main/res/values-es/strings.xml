@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="search">buscar</string>
+    <string name="quality_analysis">Análisis de calidad</string>
+    <string name="quality_assessment">Evaluación de calidad</string>
+    <string name="mtn_r">MTN-R</string>
+    <string name="supplier">Proveedor</string>
+    <string name="weigh_bridge_id">ID de WeighBridge</string>
+    <string name="quality_offline_list">Ver lista de calidad offline</string>
+    <string name="back_navigation">navegación</string>
+    <string name="weigh_bridge_count">Total WB 00</string>
+    <string name="weight">Peso</string>
+    <string name="date">Fecha</string>
+    <string name="no_data">Datos no encontrados</string>
+    <string name="type">Tipo</string>
+    <string name="material">Material</string>
+    <string name="spot_purchase">Compra Spot</string>
+    <string name="fixed_purchase">Compra Fixed</string>
+
+    <string name="qty_assesment">Evaluación de calidad -</string>
+    <string name="wb_id">ID del WB: </string>
+    <string name="batch_no">Lote N º</string>
+    <string name="percentage">%</string>
+    <string name="reject">Rechazar</string>
+    <string name="accept">Aceptar</string>
+    <string name="proceed">Continuar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm_quality_message">Aceptar calidad</string>
+    <string name="confirm_reject_message">¿Desea rechazar los datos de evaluación de calidad?</string>
+    <string name="enter_all_mandatory_fields">Por favor ingrese todos los campos obligatorios</string>
+
+    <string name="quality_success">Calidad exitosa</string>
+    <string name="quality_success_offline">Calidad Offline exitosa</string>
+    <string name="quality_reject">El envío ha sido rechazado.</string>
+    <string name="quality_reject_offline">El envío Offline ha sido rechazado.</string>
+    <string name="new_lot_id_created">Nueva identificación de LOTE se ha creado con éxito \n</string>
+    <string name="quality_offline_summary">Resumen de calidad offline</string>
+    <string name="view_details">Ver detalles</string>
+    <string name="grade">Grado</string>
+    <string name="quality_params_not_available">Parámetros de calidad no disponibles para este material</string>
+    <string name="select">Seleccionar</string>
+    <string name="quality_grn_success">Calidad publicada y GRN creado con éxito</string>
+    <string name="grn_no">"VERDE No "</string>
+</resources>

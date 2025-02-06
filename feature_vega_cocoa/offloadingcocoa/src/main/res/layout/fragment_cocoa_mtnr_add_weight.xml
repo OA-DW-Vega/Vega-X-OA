@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_small"
+        android:text="@string/dispatch_weight_entry"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:fontFamily="@font/gilroy_regular"
+        android:padding="@dimen/margin_very_small"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        tools:text="Material:123123875348573" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTruckLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="Truck In"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_entercontainerID1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/action_bar_height"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@drawable/custom_edit_text"
+                    android:gravity="center"
+                    android:weightSum="5">
+
+                    <EditText
+                        android:id="@+id/etTruckInWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_small"
+                        android:layout_weight="4"
+                        android:background="@android:color/transparent"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:hint="@string/enter_truck_weight"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:ignore="Autofill" />
+
+                    <TextView
+                        android:id="@+id/tvInUom"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:text="KG"
+                        android:textColor="@color/text_black"
+                        tools:text="KG" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvTruckOutLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_large"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/truck_tar_weight"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_entercontainerID"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/action_bar_height"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@drawable/custom_edit_text"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/etTruckOutWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_small"
+                        android:layout_weight="4"
+                        android:background="@android:color/transparent"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:hint="@string/enter_truck_weight"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColorHint="@color/grey"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:ignore="Autofill" />
+
+                    <TextView
+                        android:id="@+id/tvOutUom"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:text="KG"
+                        android:textColor="@color/text_black"
+                        tools:text="KG" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="@drawable/dash_line" />
+
+            <LinearLayout
+                android:id="@+id/llBagDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/bag_details"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_border"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:text="@string/bag_type"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_border"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:text="@string/no_of_bags"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvBagType1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:drawableEnd="@drawable/ic_add_icon_new"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start"
+                        android:hint="@string/select_type"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/etBagCount1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:autofillHints="no"
+                            android:background="@drawable/rectangle_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:hint="@string/enter_no_of_bags"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:singleLine="true"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold"
+                            tools:ignore="LabelFor" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivDeleteData1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/do_circle_blue"
+                            android:backgroundTint="@color/grey_button"
+                            android:contentDescription="@string/sync"
+                            android:elevation="5dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_close_white_24dp"
+                            android:tint="@color/white"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvBagType2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:drawableEnd="@drawable/ic_add_icon_new"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start"
+                        android:hint="@string/select_type"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/etBagCount2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:autofillHints="no"
+                            android:background="@drawable/rectangle_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:hint="@string/enter_no_of_bags"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:singleLine="true"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold"
+                            tools:ignore="LabelFor" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivDeleteData2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/do_circle_blue"
+                            android:backgroundTint="@color/grey_button"
+                            android:contentDescription="@string/sync"
+                            android:elevation="5dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_close_white_24dp"
+                            android:tint="@color/white"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvBagType3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_grey_border"
+                        android:drawableEnd="@drawable/ic_add_icon_new"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:gravity="start"
+                        android:hint="@string/select_type"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/margin_padding_size_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/etBagCount3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:autofillHints="no"
+                            android:background="@drawable/rectangle_grey_border"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center"
+                            android:hint="@string/enter_no_of_bags"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:padding="@dimen/margin_padding_size_medium"
+                            android:singleLine="true"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold"
+                            tools:ignore="LabelFor" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivDeleteData3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/do_circle_blue"
+                            android:backgroundTint="@color/grey_button"
+                            android:contentDescription="@string/sync"
+                            android:elevation="5dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_close_white_24dp"
+                            android:tint="@color/white"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@drawable/dash_line" />
+
+                <!--<LinearLayout
+                    android:id="@+id/llCamera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:background="@color/colorPrimaryOfi"
+                    android:gravity="center">
+
+
+                </LinearLayout>-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/photoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:paddingStart="@dimen/margin_xlarge"
+                    android:paddingEnd="@dimen/margin_xlarge"
+                    android:visibility="gone"
+                    app:layout_constraintHorizontal_bias="0.513"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_medium">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNetWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="@string/net_weight"
+                    android:textColor="@color/text_black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginBottom="@dimen/margin_medium" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etEnterWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:background="@drawable/layout_border"
+                    android:gravity="start|center"
+                    android:hint="@string/enter_weight"
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/margin_medium"
+                    app:layout_constraintEnd_toEndOf="@id/tvNetWeight"
+                    app:layout_constraintStart_toStartOf="@id/tvNetWeight"
+                    app:layout_constraintTop_toBottomOf="@id/tvNetWeight" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNetWeightUOM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/margin_medium"
+                    android:text="KG"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_xmedium"
+                    app:layout_constraintBottom_toBottomOf="@id/etEnterWeight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etEnterWeight" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@color/colorPrimaryOfi"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/add"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+</LinearLayout>

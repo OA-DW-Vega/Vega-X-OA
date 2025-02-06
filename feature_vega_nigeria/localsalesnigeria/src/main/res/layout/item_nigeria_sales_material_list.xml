@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_grey_border"
+    android:padding="@dimen/margin_small">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMaterialLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMaterialLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/material"
+            android:textColor="@color/grey_border"
+            app:layout_constraintEnd_toStartOf="@+id/tvSoWeightLbl"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSoWeightLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/so_weight"
+            android:textColor="@color/grey_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tvMaterialLbl"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clMaterialLbl">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMaterialNew"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvSoWeight"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="MANBO1/15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSoWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tvMaterialNew"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1000 KG" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

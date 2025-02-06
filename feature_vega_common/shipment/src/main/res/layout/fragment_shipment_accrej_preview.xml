@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_lit"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+   <!-- <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gilroy_regular"
+        android:gravity="start"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingEnd="4dp"
+        android:paddingBottom="@dimen/margin_small"
+        android:text="@string/ship_allocat_preview"
+        android:textColor="@color/warm_white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:id="@+id/rl_so_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="start"
+            android:text="@string/so_details"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSubTitle"
+            android:text="@string/warehouse"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium" />
+
+        <TextView
+            android:id="@+id/tvWarehouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_below="@+id/tvSubTitle"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="Warehouse Name1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWarehouse"
+            android:text="@string/saleOrder"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium" />
+
+        <TextView
+            android:id="@+id/tvSaleOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_below="@+id/tvWarehouse"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="2080011460" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_inventory_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_very_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_so_detail">
+        <TextView
+            android:id="@+id/tvInventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="start"
+            android:text="@string/inventory_details"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvInventTitle"
+            android:text="@string/material"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium" />
+
+        <TextView
+            android:id="@+id/tvMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_below="@+id/tvInventTitle"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="Grade 2" />
+        <TextView
+            android:id="@+id/tvQualityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMaterial"
+            android:text="@string/quality_parameter"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium" />
+
+        <TextView
+            android:id="@+id/tvQualityParams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:layout_toEndOf="@+id/tvQualityLabel"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_below="@+id/tvMaterial"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="parameter1/ 10/ Certified/ parameter2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvQualityParams"
+            android:text="@string/total_open_quantity"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium" />
+        <TextView
+            android:id="@+id/tvTotalOpenQnty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_below="@+id/tvQualityParams"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="1000 MT" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTotalOpenQnty"
+            android:text="@string/balance_quantity"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium" />
+        <TextView
+            android:id="@+id/tvBalanceQnty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_below="@+id/tvTotalOpenQnty"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="992 MT" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_lits"
+        android:padding="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_very_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_inventory_detail">
+        <TextView
+            android:id="@+id/tvAllocationSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:gravity="start"
+            android:text="@string/allocation_summary"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvInventTitle"
+            android:text="@string/material"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_xmedium" />
+
+        <TextView
+            android:id="@+id/tvMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:layout_below="@+id/tvInventTitle"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="Grade 2" />
+    </RelativeLayout>
+-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

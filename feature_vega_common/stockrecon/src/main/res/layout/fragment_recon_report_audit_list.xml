@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white"
+    android:clickable="true"
+    tools:ignore="MissingConstraints,MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryHeadOfi"
+        android:fontFamily="@font/gt_walsheim_pro_regular"
+        android:padding="@dimen/text_size_large"
+        android:text="@string/reconciliation_report"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/llRecReportDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_large"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <TextView
+            android:id="@+id/tvRecReportDetailsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:padding="5dp"
+            android:text="@string/rec_report_information"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tvDateRangeLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_border_top_left_corner"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:text="@string/date_range_space"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+
+            <TextView
+                android:id="@+id/tvDateRangeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/rectangle_grey_border_top_right_corner"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tvWarehouseLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:text="@string/warehouse"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+
+            <TextView
+                android:id="@+id/tvWarehouseValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_grey_border_with_pure_white"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tvRecReportIdLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:text="@string/rec_report_id"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+
+            <TextView
+                android:id="@+id/tvRecReportIdValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_grey_border_with_pure_white"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tvNoOfLotsLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:text="@string/no_of_lots"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+
+            <TextView
+                android:id="@+id/tvNoOfLotsValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_grey_border_with_pure_white"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tvTotalRecWeightLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:text="@string/total_rec_weight"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+
+            <TextView
+                android:id="@+id/tvTotalRecWeightValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_grey_border_with_pure_white"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tvTotalWeightLossLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/layout_border_bottom_left_corner"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:text="@string/total_weight_loss"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+
+            <TextView
+                android:id="@+id/tvTotalWeightLossValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:background="@drawable/rectangle_grey_border_bottom_right_corner"
+                android:fontFamily="@font/gt_walsheim_pro_regular"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintTop_toBottomOf="@id/tvPlantLabel" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@+id/llRecReportDetails" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="@dimen/margin_medium"
+        android:paddingRight="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <TextView
+            android:id="@+id/tvRecReportsListLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:fontFamily="@font/gt_walsheim_pro_regular"
+            android:padding="5dp"
+            android:text="@string/list_of_lots"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAudits"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margin_small"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecReportsListLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/item_recon_report_audit_list">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

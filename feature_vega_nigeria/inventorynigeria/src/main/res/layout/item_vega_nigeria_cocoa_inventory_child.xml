@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvLotDetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_padding_size_small"
+    android:background="@drawable/custom_edit_text"
+    app:cardCornerRadius="4dp">
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        tools:background="@color/green" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cbSelectStocks"
+        android:padding="@dimen/margin_padding_size_small">
+
+        <TextView
+            android:id="@+id/tv_storage_loc_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/storage_location"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RelativeOverlap,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_storage_location_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_storage_loc_lbl"
+            app:layout_constraintTop_toBottomOf="@id/tv_storage_loc_lbl"
+            tools:ignore="RelativeOverlap,RtlSymmetry"
+            tools:text="Inventory_01" />
+
+
+        <LinearLayout
+            android:id="@+id/llMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_large"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/margin_padding_size_medium"
+            android:paddingRight="@dimen/margin_padding_size_medium"
+            app:layout_constraintStart_toStartOf="@id/tv_storage_loc_lbl"
+            app:layout_constraintTop_toBottomOf="@id/tv_storage_location_value">
+
+            <TextView
+                android:id="@+id/tvMaterial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/material"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <TextView
+                android:id="@+id/tvHumidity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/admixture"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/weight"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_xmedium" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_next"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/margin_padding_size_medium"
+            android:paddingEnd="@dimen/margin_padding_size_medium"
+            app:layout_constraintTop_toBottomOf="@id/llMaterial" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
