@@ -1,8 +1,0 @@
-package com.olam.warehouse.vegax.gateentrycoffee.data.domain.model
-
-import com.olam.warehouse.master.user.model.Plant
-import com.olam.warehouse.master.vega.entity.VegaGateEntry
-
-data class VegaGateEntryPost(val key: String, val plant: Plant, val weighDetails: List<VegaGateEntry>)
-
-data class VegaGateEntryResponse(val wbId: String? = "", val txnId: String? = "")

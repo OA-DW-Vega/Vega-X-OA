@@ -9,14 +9,12 @@ plugins {
     id(GradlePluginId.ANDROID_APPLICATION)
     id(GradlePluginId.KOTLIN_ANDROID)
     id(GradlePluginId.PARCELIZE)
-    //id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
-    //id(GradlePluginId.FABRIC)
     id(GradlePluginId.SONAR)
     id(GradlePluginId.KTLINT_GRADLE)
     id(GradlePluginId.SAFE_ARGS)
 
 }
-var dymic = "\"OFI\""
+var dymic = "\"OGA\""
 android {
     signingConfigs {
         create("release_keystore") {
@@ -53,9 +51,6 @@ android {
     }
 
 
-    //############ Each feature module that is included in settings.gradle.kts is added here as dynamic feature
-    //setDynamicFeatures(ModuleDependency.getDynamicFeatureModules().toMutableSet())
-    //setDynamicFeatures(ModuleDependency.getDynamicFeatureModulesForGHNGCOTT().toMutableSet())
 
     //############ This is for Only Development
 
@@ -65,53 +60,13 @@ android {
     //TOGO Cotton Port & Ginning Warehouse
     //setDynamicFeatures(getTogoCottonDynamicFeatureModules())
 
-    //OD Features
-    //setDynamicFeatures(getODDynamicFeatureModules())
-
-    //Nicaragua Features
-    setDynamicFeatures(getNicaraguaDynamicFeatureModules())
-
-    //IVC Cocoa Features
-    //setDynamicFeatures(getCocoaDynamicFeatureModules())
-
-    //IVC Coffee Features
-    //setDynamicFeatures(getCoffeeDynamicFeatureModules())
-
-    //Ecudor Features
-    //setDynamicFeatures(getEcudorDynamicFeatureModules())
-
     //Nigeria Sesame Features
-    //setDynamicFeatures(getNigeriaSesameDynamicFeatureModules())
-
-    //Nigeria Cashew Features
-    //setDynamicFeatures(getNigeriaCashewDynamicFeatureModules())
-
-    //Nigeria Cococa Features
-    //setDynamicFeatures(getNigeriaCococaDynamicFeatureModules())
-
-    //Cameroon Features
-    //setDynamicFeatures(getCameroonDynamicFeatureModules())
+    setDynamicFeatures(getNigeriaSesameDynamicFeatureModules())
 
     //Nigeria Sesame and Cameroon Features
     //setDynamicFeatures(ModuleDependency.getSesameAndCameroonDynamicFeatureModules().toMutableSet())
 
-    //Ghana Cashew Features
-    //setDynamicFeatures(getGhanaCashewDynamicFeatureModules())
 
-//    //Ghana Cocoa Features
-//    setDynamicFeatures(getGhanaCocoaDynamicFeatureModules())
-
-    //IVC Cashew Features
-    //setDynamicFeatures(getCashewDynamicFeatureModules())
-
-    //Indo Coffee Features
-    //setDynamicFeatures(getIndoCoffeeDynamicFeatureModules())
-
-    //india coffee Features
-   // setDynamicFeatures(getIndiaCoffeeDynamicFeatureModules())
-
-    //Indo Coffee and OD Features
-    //setDynamicFeatures(getIndoCoffeeAndODDynamicFeatureModules())
 
     //val dymic = "".plus(dynamicFeatures.toString().replace("[","\"").replace("]","\"").replace(":",""))
 
@@ -340,30 +295,16 @@ dependencies {
     api(project(ModuleDependency.LOGIN))
     api(project(ModuleDependency.PRESENTATION))
     api(project(ModuleDependency.MASTER))
-    //api(project(ModuleDependency.INAPP))
-
-    //implementation(LibraryDependency.CRASH_ANALYTICS)
     debugImplementation(LibraryDependency.LEAK_CANARY)
 
     api(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
     api(LibraryDependency.RECYCLER_VIEW)
-    //api(LibraryDependency.MATERIAL)
     api(LibraryDependency.FRAGMENT_KTX)
     api(LibraryDependency.FIREBASE_MSG)
     implementation(LibraryDependency.CRASLYTICS)
     implementation(LibraryDependency.ANALYTICS)
     implementation(platform(LibraryDependency.FIREBASE_BOM))
 
-    //InApp Implenetation
-    /*implementation("com.github.danysantiago:sendgrid-android:1") {
-        exclude("org.apache.httpcomponents", "httpclient")
-    }
-    implementation("com.github.tarek360:instacapture:2.0.1")
-    implementation("com.squareup.okhttp3:okhttp:4.2.1")
-    implementation("com.google.code.gson:gson:2.8.5")
-    implementation("net.lingala.zip4j", "zip4j", "2.2.6")
-    implementation("com.googlecode.libphonenumber", "libphonenumber", "8.11.0")*/
-   // implementation("com.github.pratikbutani:MultiSelectSpinner:f47c0dadea")
 
     addTestDependencies()
 }
@@ -378,9 +319,9 @@ fun BaseFlavor.buildConfigFieldFromGradleProperty(gradlePropertyName: String) {
     buildConfigField("String", androidResourceName, propertyValue)
 }
 
-fun getDynamicFeatureModuleNames() = ModuleDependency.getDynamicFeatureModules()
+/*fun getDynamicFeatureModuleNames() = ModuleDependency.getDynamicFeatureModules()
     .map { it.replace(":feature_", "") }
-    .toSet()
+    .toSet()*/
 
 fun String.toSnakeCase() = this.split(Regex("(?=[A-Z])")).joinToString("_") { it.toLowerCase() }
 
@@ -391,10 +332,6 @@ fun DefaultConfig.buildConfigField(name: String, value: Set<String>) {
     buildConfigField("String[]", name, strValue)
 }
 
-fun getODDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-OD\""
-    return ModuleDependency.getODDynamicFeatureModules().toMutableSet()
-}
 
 fun getCottonDynamicFeatureModules(): MutableSet<String> {
     dymic = "\"OGA-IV-COTT\""
@@ -406,115 +343,27 @@ fun getTogoCottonDynamicFeatureModules(): MutableSet<String> {
     return ModuleDependency.getPortWarehouseDynamicFeatureModules().toMutableSet()
 }
 
-fun getNicaraguaDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-NI-COFF\""
-    return ModuleDependency.getNicaraguaDynamicFeatureModules().toMutableSet()
-}
-
-fun getCocoaDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-IV-COCO\""
-    return ModuleDependency.getCocoaDynamicFeatureModules().toMutableSet()
-}
-
-fun getCoffeeDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-IV-COFF\""
-    return ModuleDependency.getCoffeeDynamicFeatureModules().toMutableSet()
-}
-
-fun getEcudorDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-EC-COCO\""
-    return ModuleDependency.getEcudorDynamicFeatureModules().toMutableSet()
-}
-
 fun getNigeriaSesameDynamicFeatureModules(): MutableSet<String> {
     dymic = "\"OGA-NG-SESA\""
     return ModuleDependency.getNigeriaSesameDynamicFeatureModules().toMutableSet()
 }
 
-fun getNigeriaCashewDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-NG-CASH\""
-    return ModuleDependency.getNigeriaCocoaDynamicFeatureModules().toMutableSet()
-}
-
-fun getNigeriaCococaDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-NG-COCO\""
-    return ModuleDependency.getNigeriaCocoaDynamicFeatureModules().toMutableSet()
-}
-
-fun getCameroonDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-CM-COCO\""
-    return ModuleDependency.getCameroonDynamicFeatureModules().toMutableSet()
-}
-
-fun getGhanaCashewDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-GH-CASH\""
-    return ModuleDependency.getGhanaCashewDynamicFeatureModules().toMutableSet()
-}
-
-fun getGhanaCocoaDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-GH-COCO\""
-    return ModuleDependency.getGhanaCocoaDynamicFeatureModules().toMutableSet()
-}
-
-fun getCashewDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-IV-CASH\""
-    return ModuleDependency.getCashewDynamicFeatureModules().toMutableSet()
-}
-
-fun getIndoCoffeeDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-ID-COFF\""
-    return ModuleDependency.getIndoCoffeeDynamicFeatureModules().toMutableSet()
-}
-
-fun getIndiaCoffeeDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-IN-COFF\""
-    return ModuleDependency.getIndiaCoffeeDynamicFeatureModules().toMutableSet()
-}
-
-fun getIndoCoffeeAndODDynamicFeatureModules(): MutableSet<String> {
-    dymic = "\"OFI-ID-COFF\""
-    return ModuleDependency.getIndoCoffeeAndODDynamicFeatureModules().toMutableSet()
-}
-
 
 fun getClientID(entity: String, envir: String): String{
-    return when{
-        entity.contains("OFI") ->{
-            return when(envir){
-                BuildType.DEBUG -> BuildConfig.devKeyClientId
-                BuildType.SIT -> BuildConfig.sitKeyClientId
-                BuildType.UAT -> BuildConfig.uatKeyClientId
-                else -> BuildConfig.prodKeyClientId
-            }
-        }
-        else -> {
-            return when(envir){
-                BuildType.DEBUG -> BuildConfig.devKeyClientId_oga
-                BuildType.SIT -> BuildConfig.sitKeyClientId_oga
-                BuildType.UAT -> BuildConfig.uatKeyClientId_oga
-                else -> BuildConfig.prodKeyClientId_oga
-            }
-        }
+    return  when(envir){
+        BuildType.DEBUG -> BuildConfig.devKeyClientId_oga
+        BuildType.SIT -> BuildConfig.sitKeyClientId_oga
+        BuildType.UAT -> BuildConfig.uatKeyClientId_oga
+        else -> BuildConfig.prodKeyClientId_oga
     }
 }
 
 fun getClientSecret(entity: String, envir: String): String{
-    return when{
-        entity.contains("OFI") ->{
-            return when(envir){
-                BuildType.DEBUG -> BuildConfig.devKeyClientSecret
-                BuildType.SIT -> BuildConfig.sitKeyClientSecret
-                BuildType.UAT -> BuildConfig.uatKeyClientSecret
-                else -> BuildConfig.prodKeyClientSecret
-            }
-        }
-        else -> {
-            return when(envir){
-                BuildType.DEBUG -> BuildConfig.devKeyClientSecret_oga
-                BuildType.SIT -> BuildConfig.sitKeyClientSecret_oga
-                BuildType.UAT -> BuildConfig.uatKeyClientSecret_oga
-                else -> BuildConfig.prodKeyClientSecret_oga
-            }
-        }
+    return when(envir){
+        BuildType.DEBUG -> BuildConfig.devKeyClientSecret_oga
+        BuildType.SIT -> BuildConfig.sitKeyClientSecret_oga
+        BuildType.UAT -> BuildConfig.uatKeyClientSecret_oga
+        else -> BuildConfig.prodKeyClientSecret_oga
     }
+
 }

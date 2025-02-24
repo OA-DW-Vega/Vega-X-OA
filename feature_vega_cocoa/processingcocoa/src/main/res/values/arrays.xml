@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="weighmentType">
-        <item>Field of Index</item>
-        <item>Pallet Weighment</item>
-    </string-array>
-</resources>

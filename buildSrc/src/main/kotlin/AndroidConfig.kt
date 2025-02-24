@@ -7,8 +7,8 @@ object AndroidConfig {
     const val TARGET_SDK_VERSION = 34
     const val BUILD_TOOLS_VERSION = "34.0.0"
 
-    const val VERSION_CODE = 15
-    const val VERSION_NAME = "1.15"
+    const val VERSION_CODE = 2
+    const val VERSION_NAME = "1.1"
 
     const val ID = "com.olam.warehouse.vegax"
     const val ID_UAT = ".uat"
@@ -54,51 +54,12 @@ object BuildConfig {
     const val keyClientId = "KEY_CLIENT_ID"
     const val keyClientSecret = "KEY_CLIENT_SECRET"
 
-    //****************************Non Manna********************************************
-
-//    const val dev = "\"https://vega-zuul-proxy-dev.olamdigital.com/\""
-    /*const val dev = "\"https://vega-sit.olamdigital.com/\""
-    const val sit = "\"https://vega-sit.olamdigital.com/\""
-    const val uat = "\"https://vega-uat.olamdigital.com/\""
-    const val prod = "\"https://vega-prod.olamdigital.com/\""
-
-    const val doDev = "\"https://dev-apigateway.olamdirect.com/\""
-    const val doSit = "\"https://sit-apigateway.olamdirect.com/\""
-    const val doUat = "\"https://uat-apigateway-global.olamdirect.com/\""
-    const val doProd = "\"https://app-apigateway.olamdirect.com/\""
-
-    const val devBaseKeycloakUrl =
-        "\"https://digitalauthdev.olamnet.com/auth/realms/vega-dev/protocol/openid-connect/\""
-    const val devKeyClientId = "\"mobile-vega-dev\""
-    const val devKeyClientSecret = "\"2e138169-0153-4663-a5f1-b6557fb26b8c\""
-
-    const val sitBaseKeycloakUrl =
-        "\"https://digitalauthdev.olamnet.com/auth/realms/vega-sit/protocol/openid-connect/\""
-    const val sitKeyClientId = "\"mobile-vega-sit\""
-    const val sitKeyClientSecret = "\"3a1c013c-e3f6-4a44-9503-921cdc894a19\""
-
-    const val uatBaseKeycloakUrl =
-        "\"https://digitalauthdev.olamnet.com/auth/realms/vega-uat/protocol/openid-connect/\""
-    const val uatKeyClientId = "\"mobile-vega-uat\""
-    const val uatKeyClientSecret = "\"16b30559-aea7-45c2-b71d-66d8569b090f\""
-
-    const val prodBaseKeycloakUrl =
-        "\"https://digitalauth.olamnet.com/auth/realms/vega/protocol/openid-connect/\""
-    const val prodKeyClientId = "\"mobile-vega\""
-    const val prodKeyClientSecret = "\"921594ca-e351-4580-90e5-83f8c690468f\""
-
-    const val truckDev = "\"https://pixel-gateway-sit.olamghanadigital.com/\""
-    const val truckSit = "\"https://pixel-gateway-sit.olamghanadigital.com/\""
-    const val truckUat = "\"https://pixel-gateway-sit.olamghanadigital.com/\""
-    const val truckProd = "\"https://pixel-gateway-prod.olamghanadigital.com/\""*/
 
 
-    //**************************************Manna***************************************************
-
-//    const val dev = "\"https://vega-manna-dev.olamdigital.com/\""
-   const val dev = "\"https://vega-manna-uat.olamdigital.com/\""
-    const val sit = "\"https://vega-manna-sit.olamdigital.com/\""
-    const val uat = "\"https://vega-manna-uat.olamdigital.com/\""
+  // const val dev = "\"https://vega-manna-uat.olamagri.com/\""
+   const val dev = "\"https://vega-dev.olamagri.com/\""
+    const val sit = "\"https://vega-sit.olamagri.com/\""
+    const val uat = "\"https://vega-uat.olamagri.com/\""
     const val prod = "\"https://vega-prod.olamdigital.com/\""
     const val demo = "\"https://vega-api-demo.olamdigital.com/\""
 
@@ -107,7 +68,15 @@ object BuildConfig {
     const val doUat = "\"https://uat-apigateway-global.olamdirect.com/\""
     const val doProd = "\"https://app-apigateway.olamdirect.com/\""
 
-    /*const val devBaseKeycloakUrl =
+    const val devBaseKeycloakUrl =
+        "\"https://authdev.olamagri.com/auth/realms/vega-manna-uat/protocol/openid-connect/\""
+    const val devBaseKeycloakResetPassUrl = "\"https://digitalauthdev.olamnet.com/auth/admin/realms/vega-manna-uat/users/\""
+    const val devKeyClientId = "\"mobile-vega-uat\""
+    const val devKeyClientSecret = "\"f7373fc4-6f41-4ff6-ab60-b3ac56efea10\""
+    const val devKeyClientId_oga = "\"oga-mobile\""
+    const val devKeyClientSecret_oga = "\"5Jbx5Oaog0NFsTa8eqSmqP8jbroQ17nY\""
+
+  /*  const val devBaseKeycloakUrl =
         "\"https://digitalauthdev.olamnet.com/auth/realms/vega-manna-dev/protocol/openid-connect/\""
     const val devBaseKeycloakResetPassUrl = "\"https://digitalauthdev.olamnet.com/auth/admin/realms/vega-manna-dev/users/\""
     const val devKeyClientId = "\"mobile-vega-dev\""
@@ -115,34 +84,9 @@ object BuildConfig {
     const val devKeyClientId_oga = "\"oga-mobile\""
     const val devKeyClientSecret_oga = "\"xXk2auDFoyj1YqPQRK8eXFpbxMMa2Qdy\""*/
 
-   /*const val devBaseKeycloakUrl =
-        "\"https://digitalauthdev.olamnet.com/auth/realms/vega-manna-sit/protocol/openid-connect/\""
-    const val devBaseKeycloakResetPassUrl = "\"https://digitalauthdev.olamnet.com/auth/admin/realms/vega-manna-sit/users/\""
-    const val devKeyClientId = "\"mobile-vega-sit\""
-    const val devKeyClientSecret = "\"20af39cd-cc0c-4e5d-96da-bd2f01d45af5\""
-    const val devKeyClientId_oga = "\"oga-mobile\""
-    const val devKeyClientSecret_oga = "\"FNIrE52FqWWyd6g4mJ03YmYhPw0MYUsG\""*/
-
-
-     /*const val devBaseKeycloakUrl =
-         "\"https://digitalauth.olamnet.com/auth/realms/vega/protocol/openid-connect/\""
-     const val devBaseKeycloakResetPassUrl = "\"https://digitalauthdev.olamnet.com/auth/admin/realms/vega/users/\""
-     const val devKeyClientId = "\"mobile-vega\""
-     const val devKeyClientSecret = "\"921594ca-e351-4580-90e5-83f8c690468f\""
-     const val devKeyClientId_oga = "\"oga-mobile\""
-     const val devKeyClientSecret_oga = "\"ifNYElC8m3khAsqj8dRK2GSm8XBj0VLa\"" */
-
-    const val devBaseKeycloakUrl =
-        "\"https://digitalauthdev.olamnet.com/auth/realms/vega-manna-uat/protocol/openid-connect/\""
-    const val devBaseKeycloakResetPassUrl = "\"https://digitalauthdev.olamnet.com/auth/admin/realms/vega-manna-uat/users/\""
-    const val devKeyClientId = "\"mobile-vega-uat\""
-    const val devKeyClientSecret = "\"f7373fc4-6f41-4ff6-ab60-b3ac56efea10\""
-    const val devKeyClientId_oga = "\"oga-mobile\""
-    const val devKeyClientSecret_oga = "\"5Jbx5Oaog0NFsTa8eqSmqP8jbroQ17nY\""
-
 
     const val sitBaseKeycloakUrl =
-        "\"https://digitalauthdev.olamnet.com/auth/realms/vega-manna-sit/protocol/openid-connect/\""
+        "\"https://authdev.olamagri.com/auth/realms/vega-manna-sit/protocol/openid-connect/\""
     const val sitBaseKeycloakResetPassUrl = "\"https://digitalauthdev.olamnet.com/auth/admin/realms/vega-manna-sit/users/\""
     const val sitKeyClientId = "\"mobile-vega-sit\""
     const val sitKeyClientSecret = "\"20af39cd-cc0c-4e5d-96da-bd2f01d45af5\""
@@ -150,7 +94,7 @@ object BuildConfig {
     const val sitKeyClientSecret_oga = "\"FNIrE52FqWWyd6g4mJ03YmYhPw0MYUsG\""
 
     const val uatBaseKeycloakUrl =
-        "\"https://digitalauthdev.olamnet.com/auth/realms/vega-manna-uat/protocol/openid-connect/\""
+        "\"https://authdev.olamagri.com/auth/realms/vega-manna-uat/protocol/openid-connect/\""
     const val uatBaseKeycloakResetPassUrl = "\"https://digitalauthdev.olamnet.com/auth/admin/realms/vega-manna-uat/users/\""
     const val uatKeyClientId = "\"mobile-vega-uat\""
     const val uatKeyClientSecret = "\"f7373fc4-6f41-4ff6-ab60-b3ac56efea10\""
