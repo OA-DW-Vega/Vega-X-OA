@@ -147,25 +147,25 @@
 
         <item
             android:id="@+id/navIncomingLots"
-            android:icon="@drawable/ic_inventory"
+            android:icon="@drawable/ic_menu_incoming"
             android:title="@string/incoming_lots"
             android:visible="false" />
 
         <item
             android:id="@+id/navGinningInProgress"
-            android:icon="@drawable/ic_inventory"
+            android:icon="@drawable/ic_menu_ginning"
             android:title="@string/ginning_in_progress"
             android:visible="false" />
 
         <item
             android:id="@+id/navDryingInProgress"
-            android:icon="@drawable/ic_inventory"
+            android:icon="@drawable/ic_menu_drying"
             android:title="@string/drying_in_progress"
             android:visible="false" />
 
         <item
             android:id="@+id/navPileManagement"
-            android:icon="@drawable/ic_inventory"
+            android:icon="@drawable/ic_pile_menu"
             android:title="@string/pile_managemnet"
             android:visible="false" />
 

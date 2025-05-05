@@ -1310,7 +1310,7 @@ class HomeActivity : HomeBaseActivity() {
                     homeList.add(
                         HomeItems(
                             getString(R.string.incoming_lots),
-                            com.olam.warehouse.presentation.R.drawable.ic_inventory,
+                            com.olam.warehouse.presentation.R.drawable.ic_menu_incoming,
                             27
                         )
                     )
@@ -1321,7 +1321,7 @@ class HomeActivity : HomeBaseActivity() {
                     homeList.add(
                         HomeItems(
                             getString(R.string.ginning_in_progress),
-                            com.olam.warehouse.presentation.R.drawable.ic_inventory,
+                            com.olam.warehouse.presentation.R.drawable.ic_menu_ginning,
                             28
                         )
                     )
@@ -1332,7 +1332,7 @@ class HomeActivity : HomeBaseActivity() {
                     homeList.add(
                         HomeItems(
                             getString(R.string.drying_in_progress),
-                            com.olam.warehouse.presentation.R.drawable.ic_inventory,
+                            com.olam.warehouse.presentation.R.drawable.ic_menu_drying,
                             29
                         )
                     )
@@ -1342,7 +1342,7 @@ class HomeActivity : HomeBaseActivity() {
                     homeList.add(
                         HomeItems(
                             getString(R.string.dispatch),
-                            com.olam.warehouse.presentation.R.drawable.ic_inventory,
+                            com.olam.warehouse.presentation.R.drawable.ic_dispatch_menu,
                             30
                         )
                     )
@@ -1352,7 +1352,7 @@ class HomeActivity : HomeBaseActivity() {
                     homeList.add(
                         HomeItems(
                             getString(R.string.pile_managemnet),
-                            com.olam.warehouse.presentation.R.drawable.ic_inventory,
+                            com.olam.warehouse.presentation.R.drawable.ic_pile_menu,
                             31
                         )
                     )
