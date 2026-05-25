@@ -195,7 +195,7 @@ dependencies {
 //    kapt(LibraryDependency.PERMISSION_DISPATCHER_COMPILER)
     implementation(LibraryDependency.SQLCIPHER)
     runtimeOnly(LibraryDependency.SQLITE)
-    implementation(LibraryDependency.MINTSPRINT_ROOM_ENCRYPTION)
+//    implementation(LibraryDependency.MINTSPRINT_ROOM_ENCRYPTION)
     implementation("com.google.mlkit:barcode-scanning:17.3.0")
 }
 

@@ -26,6 +26,7 @@ import com.olam.warehouse.presentation.utils.extension.toast
 import com.olam.warehouse.vegax.BuildConfig.DEBUG
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.GlobalContext
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.core.logger.Level
@@ -132,12 +133,18 @@ class App : SplitCompatApplication() {
     }
 
     private fun initKoin() {
-        stopKoin()
-        startKoin {
-            androidLogger(Level.ERROR)
-            androidContext(this@App)
-            modules(listOf(/*createFeatureModule(this@App),*/ createNetworkModule(this@App)))
-            allowOverride(true)
+        // Only initialize Koin if not already started
+        if (GlobalContext.getOrNull() == null) {
+            startKoin {
+                androidLogger(Level.ERROR)
+                androidContext(this@App)
+                modules(
+                    listOf(
+                        createNetworkModule(this@App)
+                    )
+                )
+                allowOverride(true)
+            }
         }
     }
 

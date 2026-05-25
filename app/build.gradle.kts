@@ -55,13 +55,13 @@ android {
     //############ This is for Only Development
 
     //IVC Cotton Port & Ginning Warehouse
-    //setDynamicFeatures(getCottonDynamicFeatureModules())
+    setDynamicFeatures(getCottonDynamicFeatureModules())
 
     //TOGO Cotton Port & Ginning Warehouse
     //setDynamicFeatures(getTogoCottonDynamicFeatureModules())
 
     //Nigeria Sesame Features
-    setDynamicFeatures(getNigeriaSesameDynamicFeatureModules())
+//    setDynamicFeatures(getNigeriaSesameDynamicFeatureModules())
 
     //Nigeria Sesame and Cameroon Features
     //setDynamicFeatures(ModuleDependency.getSesameAndCameroonDynamicFeatureModules().toMutableSet())

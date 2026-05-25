@@ -56,11 +56,10 @@ object BuildConfig {
 
 
 
-  // const val dev = "\"https://vega-manna-uat.olamagri.com/\""
-   const val dev = "\"https://vega-dev.olamagri.com/\""
+    const val dev = "\"https://vega-uat.olamagri.com/\""
     const val sit = "\"https://vega-sit.olamagri.com/\""
     const val uat = "\"https://vega-uat.olamagri.com/\""
-    const val prod = "\"https://vega-prod.olamdigital.com/\""
+    const val prod = "\"https://vega.olamagri.com/\""
     const val demo = "\"https://vega-api-demo.olamdigital.com/\""
 
     const val doDev = "\"https://dev-apigateway.olamdirect.com/\""
